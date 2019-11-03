@@ -1,9 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import matplotlib as mat
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-import numpy as np
-import MAIN
+import matplotlib as mat; import matplotlib.pyplot as plt
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FC
+import numpy as np; import MAIN
 
 
 class Ui_MainWindow(object):
@@ -27,13 +25,13 @@ class Ui_MainWindow(object):
 
         #---------------------------------------------------Canvas------------------------------------------------------
         self.figure = plt.figure()
-        self.canvas_1 = FigureCanvas(self.figure)
+        self.canvas_1 = FC(self.figure)
         self.canvas_1.resize(351, 231)
-        self.canvas_2 = FigureCanvas(self.figure)
+        self.canvas_2 = FC(self.figure)
         self.canvas_2.resize(351, 231)
-        self.canvas_3 = FigureCanvas(self.figure)
+        self.canvas_3 = FC(self.figure)
         self.canvas_3.resize(351, 231)
-        self.canvas_4 = FigureCanvas(self.figure)
+        self.canvas_4 = FC(self.figure)
         self.canvas_4.resize(351, 231)
 
 
@@ -98,8 +96,6 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.gridLayout_4.addChildWidget(self.canvas_4)
 
-
-
         #-------------------------------------------------Label_5---------------------------------------------------
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(350, 50, 61, 16))
@@ -125,27 +121,8 @@ class Ui_MainWindow(object):
         self.comboBox_3.setGeometry(QtCore.QRect(212, 22, 101, 20))
         self.comboBox_3.setFrame(False)
         self.comboBox_3.setObjectName("comboBox_3")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-        self.comboBox_3.addItem("")
-
+        for x in range(20):
+            self.comboBox_3.addItem("")
 
         #------------------------------------------------LineEdit_5----------------------------------------------------
         self.lineEdit_5 = QtWidgets.QLineEdit(self.centralwidget)
@@ -157,26 +134,9 @@ class Ui_MainWindow(object):
         self.comboBox_4.setGeometry(QtCore.QRect(212, 331, 101, 20))
         self.comboBox_4.setFrame(False)
         self.comboBox_4.setObjectName("comboBox_4")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
+        x = 0
+        for x in range(20):
+            self.comboBox_4.addItem("")
 
         #-------------------------------------------------LineEdit_6---------------------------------------------------
         self.lineEdit_6 = QtWidgets.QLineEdit(self.centralwidget)
@@ -193,26 +153,8 @@ class Ui_MainWindow(object):
         self.comboBox_2.setGeometry(QtCore.QRect(12, 371, 81, 20))
         self.comboBox_2.setFrame(False)
         self.comboBox_2.setObjectName("comboBox_2")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
-        self.comboBox_2.addItem("")
+        for x in range(20):
+            self.comboBox_2.addItem("")
 
         #-----------------------------------------------------LineEdit_4-----------------------------------------------
         self.lineEdit_4 = QtWidgets.QLineEdit(self.centralwidget)
