@@ -9,14 +9,9 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(999, 686)
         MainWindow.setWindowFlags(QtCore.Qt.WindowCloseButtonHint | QtCore.Qt.WindowMinimizeButtonHint)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
-        MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QtCore.QSize(987, 661))
-        #MainWindow.setMaximumSize(QtCore.QSize(990, 700))
         MainWindow.setFocusPolicy(QtCore.Qt.ClickFocus)
+        MainWindow.setWindowState(QtCore.Qt.WindowMaximized)
 
         #-----------------------------------------------Central_Widget--------------------------------------------------
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -33,7 +28,6 @@ class Ui_MainWindow(object):
         self.canvas_3.resize(351, 231)
         self.canvas_4 = FC(self.figure)
         self.canvas_4.resize(351, 231)
-
 
         #-----------------------------------------------LineEdit_1------------------------------------------------------
         self.lineEdit_1 = QtWidgets.QLineEdit(self.centralwidget)
@@ -176,27 +170,8 @@ class Ui_MainWindow(object):
         self.comboBox_1.setGeometry(QtCore.QRect(12, 310, 81, 20))
         self.comboBox_1.setFrame(False)
         self.comboBox_1.setObjectName("comboBox_1")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
-        self.comboBox_1.addItem("")
+        for x in range(20):
+            self.comboBox_1.addItem("")
 
         #-----------------------------pushbutton_1 & pushbutton_2-------------------------------------------------------
         self.widget = QtWidgets.QWidget(self.centralwidget)
@@ -216,7 +191,6 @@ class Ui_MainWindow(object):
         self.pushButton_1.clicked.connect(self.plot)
         self.pushButton_2.clicked.connect(self.reset)
 
-
         self.widget1 = QtWidgets.QWidget(self.centralwidget)
         self.widget1.setGeometry(QtCore.QRect(920, 167, 67, 61))
         self.widget1.setObjectName("widget1")
@@ -228,10 +202,10 @@ class Ui_MainWindow(object):
         self.radioButton_1 = QtWidgets.QRadioButton(self.widget1)
         self.radioButton_1.setObjectName("radioButton_1")
         self.verticalLayout.addWidget(self.radioButton_1)
+
         self.radioButton_2 = QtWidgets.QRadioButton(self.widget1)
         self.radioButton_2.setObjectName("radioButton_2")
         self.verticalLayout.addWidget(self.radioButton_2)
-
 
         self.widget2 = QtWidgets.QWidget(self.centralwidget)
         self.widget2.setGeometry(QtCore.QRect(920, 460, 67, 61))
@@ -245,8 +219,8 @@ class Ui_MainWindow(object):
         self.radioButton_4 = QtWidgets.QRadioButton(self.widget2)
         self.radioButton_4.setObjectName("radioButton_4")
         self.verticalLayout_2.addWidget(self.radioButton_4)
-
         MainWindow.setCentralWidget(self.centralwidget)
+
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 999, 21))
         self.menubar.setObjectName("menubar")
@@ -256,6 +230,7 @@ class Ui_MainWindow(object):
         self.menuOptions.setObjectName("menuOptions")
         self.menuHelp = QtWidgets.QMenu(self.menubar)
         self.menuHelp.setObjectName("menuHelp")
+
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -263,8 +238,8 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuMenu.menuAction())
         self.menubar.addAction(self.menuOptions.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
-
         self.retranslateUi(MainWindow)
+
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.lineEdit_5, self.radioButton_1)
         MainWindow.setTabOrder(self.radioButton_1, self.radioButton_2)
@@ -384,7 +359,6 @@ class Ui_MainWindow(object):
     def plot(self):
         H = self.lineEdit_1.text()
         P = self.lineEdit_2.text()
-
         clock, pulse = MAIN.cal(H, P)
         print(clock,pulse)
         c = np.all(clock != -1)
@@ -404,7 +378,6 @@ class Ui_MainWindow(object):
         else:
             self.alert("Incorrect args...!!!")
 
-
     def reset(self):
         self.figure.clear()
         self.canvas_2.draw()
@@ -417,7 +390,6 @@ class Ui_MainWindow(object):
         alert = QtWidgets.QMessageBox()
         alert.setText(msg)
         alert.exec_()
-
 
 if __name__ == "__main__":
     import sys
