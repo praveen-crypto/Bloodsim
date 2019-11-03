@@ -1,0 +1,128 @@
+	Ascending aorta
+	Aortic arch
+	Left Subclavian artery
+	Common carotid(L)
+	Aortic arch
+	Brachiocephalic artery
+	Internal mammary left
+	Subclavian artery left
+	Vertebral artery left
+	Common carotid(L)
+	Thoracic aorta
+	Common carotid(R)
+	Vertebral artery right
+	Subclavian artery right
+	Internal mammary right
+	Costo-cervical artery left
+	Axilliary artery left
+	Suprascapular left
+	Thyrocervical left
+	Common carotid(L)
+	Thoracic aorta
+	Common carotid(R)
+	Thyrocervical right
+	Suprascapular right
+	Axilliary artery right
+	Costo-cervical artery right
+	Thoraco-acromial left
+	Axilliary artery left
+	Circumflex scapular left
+	Subscapular left
+	Carotid (internal) left
+	External carotid left
+	Superior thyroid artery left
+	Thoracic Aorta
+	Superior thyroid artery right
+	External carotid right
+	Carotid (internal) right
+	Subscapular right
+	Circumflex scapular right
+	Axilliary artery right
+	Thoraco-acromial right
+	Brachial artery left
+	Lingual artery left
+	Internal carotid left
+	Facial artery left
+	Middle cerebral left
+	Cerebral artery left
+	Ophthalmic artery left
+	Coeliac artery
+	Abdominal aorta
+	Ophthalmic artery right
+	Cerebral artery right
+	Middle cerebral right
+	Facial artery right
+	Internal carotid right
+	LIngual artery right
+	Brachial artery right
+	Profunda brachi left
+	Brachial artrey left
+	Internal carotid left
+	Gastric artery
+	Splenic artery
+	Hepatic artery
+	Renal artery
+	Abdominal aorta
+	Superior mesenteric
+	Gastric artery
+	Internal carotid right
+	Brachial artery right
+	Profunda brachi right
+	Brachial artery left
+	Superior ulnar collateral left
+	Superficial temporal left
+	Maxilliary artery left
+	Abdominal aorta
+	Maxilliary artery right
+	Superfical temporal right
+	Superior ulnar collateral right
+	Brachial artery right
+	Inferior ulnar collateral left
+	Brachial artery left
+	Common iliac left
+	Inferior mesenteric
+	Common iliac right
+	Brachial artery right
+	Inferior ulnar collateral right
+	Ulnar artery left
+	Radial artery left
+	External iliac left
+	Internal iliac left
+	Internal iliac right
+	External iliac right
+	Radial artery right
+	Ulnar artery right
+	Ulnar artery left
+	Interossea artery left
+	Radial artery left
+	External iliac left
+	External iliac right
+	Radial artery right
+	Interossea artery right
+	Ulnar artery right
+	Ulnar artery left
+	Femoral artery left
+	Profundis artery left
+	Profundis artery right
+	Femoral artery right
+	Ulnar artery right
+	Femoral artery left
+	Femoral artery right
+	Popliteal artery left
+	Popliteal artery right
+	Popliteal artery left
+	Popliteal artery right
+	Anterior tibial artery left
+	Posterior tibial artery left
+	Posterior tibial artery right
+	Anterior tibial artery right
+	Anterior tibial artery left
+	Peroneal artery left
+	Posterior tibial artery left
+	Posterior tibial artery right
+	Peroneal artery right
+	Anterior tibial artery right
+	Anterior tibial artery left
+	Peroneal artery left
+	Peroneal artery right
+	Anterior tibial artery right
