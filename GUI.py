@@ -370,7 +370,7 @@ class Ui_MainWindow(object):
             self.lineEdit_5.setText(txt)
             self.figure.suptitle(self.comboBox_3.currentText())
             self.figure.add_subplot(111)
-            plt.plot(clock, pulse)
+            plt.plot(clock, pulse[255][:])
             self.canvas_1.draw()
             self.canvas_2.draw()
             self.canvas_3.draw()

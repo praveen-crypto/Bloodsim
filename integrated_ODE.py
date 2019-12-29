@@ -1,20 +1,13 @@
 import numpy as np
 
-def integrated_ode(t,x,Vin,clock):
 
-    #print('value of x is',x)
+def integrated_ode(t, x, Vin, clock):
 
-
-    branch_list = open('branch_list.txt', 'r')
-    b = branch_list.readlines()
-    rlcval = np.genfromtxt('rlcval.txt', delimiter=',')
-    eqn_no = np.genfromtxt('eqn_no.txt', delimiter='')
-
-
-    Rs = rlcval[:,0]
-    L = rlcval[:,1]
-    C = rlcval[:,2]
-    Rp = rlcval[:,3]
+    rlcnewval = np.genfromtxt('rlcnewval.txt', delimiter=',')
+    Rs = rlcnewval[:, 0]
+    L = rlcnewval[:, 1]
+    C = rlcnewval[:, 2]
+    Rp = rlcnewval[:, 3]
 
     Vin = np.interp(t, clock, Vin)
 
