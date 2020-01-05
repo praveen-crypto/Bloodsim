@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ca53110-97f1-4f56-a816-d59f98aea204" name="Default Changelist" comment="" />
+    <list default="true" id="2ca53110-97f1-4f56-a816-d59f98aea204" name="Default Changelist" comment="updated 29/12">
+      <change afterPath="$PROJECT_DIR$/GUI_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data2.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data2.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stenosis.py" beforeDir="false" afterPath="$PROJECT_DIR$/stenosis.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -43,6 +49,7 @@
     <setting file="file://$PROJECT_DIR$/test_sample.ipynb" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/GUI.py" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/OneDrive/Desktop/ass.ui/tess.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/GUI_1.py" root0="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/MAIN.py" root0="SKIP_INSPECTION" />
   </component>
@@ -66,7 +73,8 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -85,21 +93,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GUI">
-    <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.GUI_1">
+    <configuration name="GUI_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,20 +157,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="gui_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/gui_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,20 +176,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scratch_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="status_bar" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/status_bar.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -222,9 +221,6 @@
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$USER_HOME$/OneDrive/Desktop/ass.ui" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -242,19 +238,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.GUI" />
       <item itemvalue="Python.stenosis" />
-      <item itemvalue="Python.scratch_1" />
+      <item itemvalue="Python.GUI_1" />
+      <item itemvalue="Python.gui_test" />
+      <item itemvalue="Python.status_bar" />
       <item itemvalue="Python.tess" />
-      <item itemvalue="Python.scratch_2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.scratch_2" />
-        <item itemvalue="Python.stenosis" />
-        <item itemvalue="Python.scratch_1" />
+        <item itemvalue="Python.GUI_1" />
         <item itemvalue="Python.tess" />
-        <item itemvalue="Python.GUI" />
+        <item itemvalue="Python.status_bar" />
+        <item itemvalue="Python.gui_test" />
+        <item itemvalue="Python.stenosis" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +280,16 @@
       <workItem from="1577498927077" duration="10908000" />
       <workItem from="1577535257786" duration="12079000" />
       <workItem from="1577603768753" duration="15000" />
-      <workItem from="1577610355432" duration="1061000" />
+      <workItem from="1577610355432" duration="11044000" />
+      <workItem from="1577724524162" duration="1996000" />
+      <workItem from="1577778501326" duration="70000" />
+      <workItem from="1577778874941" duration="6713000" />
+      <workItem from="1577858937646" duration="5647000" />
+      <workItem from="1577897393524" duration="721000" />
+      <workItem from="1577933721599" duration="1478000" />
+      <workItem from="1577948456904" duration="7644000" />
+      <workItem from="1578025987098" duration="4097000" />
+      <workItem from="1578111357390" duration="13650000" />
     </task>
     <task id="LOCAL-00001" summary="updated 29/12">
       <created>1577611377366</created>
@@ -293,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577611377366</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated 29/12">
+      <created>1577611633401</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577611633401</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +332,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/stenor_github_io$scratch_1.coverage" NAME="scratch_1 Coverage Results" MODIFIED="1577529161886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/stenor_github_io$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1577242519899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/stenor_github_io$stenosis.coverage" NAME="stenosis Coverage Results" MODIFIED="1577428763422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stenor_github_io$stenosis.coverage" NAME="stenosis Coverage Results" MODIFIED="1577631973453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stenor_github_io$tess.coverage" NAME="tess Coverage Results" MODIFIED="1577529917996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/OneDrive/Desktop/ass.ui" />
     <SUITE FILE_PATH="coverage/stenor_github_io$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1577018201857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
