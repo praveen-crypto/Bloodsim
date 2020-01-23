@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2ca53110-97f1-4f56-a816-d59f98aea204" name="Default Changelist" comment="updated 29/12">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data2.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,7 +75,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
   </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="myPyQtBackend" value="PyQt5" />
@@ -145,6 +146,9 @@
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -334,7 +338,9 @@
       <workItem from="1579690205483" duration="2693000" />
       <workItem from="1579693111922" duration="14876000" />
       <workItem from="1579741466643" duration="9298000" />
-      <workItem from="1579751631039" duration="12804000" />
+      <workItem from="1579751631039" duration="15968000" />
+      <workItem from="1579785311491" duration="6907000" />
+      <workItem from="1579799673404" duration="791000" />
     </task>
     <task id="LOCAL-00001" summary="updated 29/12">
       <created>1577611377366</created>
