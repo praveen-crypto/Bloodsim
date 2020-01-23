@@ -84,6 +84,7 @@ class Ui_MainWindow(object):
                                          "font: 12.5pt \"Garamond\";")
         self.radioButton_2.setObjectName("radioButton_2")
         self.gridLayout.addWidget(self.radioButton_2, 0, 7, 1, 1)
+        self.
 
         #Button_2
         self.pushButton_2.setStyleSheet("background-color: rgb(35, 35, 35);\n"
@@ -221,8 +222,6 @@ class Ui_MainWindow(object):
         #splitter_3
         self.splitter_3.setOrientation(QtCore.Qt.Horizontal)
         self.splitter_3.setObjectName("splitter_3")
-
-
 
         #doubleSpinBox
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
@@ -383,6 +382,7 @@ class Ui_MainWindow(object):
             Pos = 1
             plot_p = 3
             plot_f = 2
+
         elif Index==2:
             Pos = 7
             plot_p = 7
@@ -472,7 +472,7 @@ class Ui_MainWindow(object):
             Pos = 92
             plot_p = 245
             plot_f = 244
-        #Pos_1 = self.comboBox_2.currentIndex()
+
         print(Pos, S)
         stenosis.steno(Pos, S)
 
@@ -483,13 +483,17 @@ class Ui_MainWindow(object):
         if c and p:
             #self.figure.suptitle(self.comboBox_2.currentText())
             #self.figure.add_subplot(111)
-            if self.radioButton_1.isChecked():
+            def pressure_plot(self):
                 plt.plot(clock, pulse[plot_p][:])
-            if self.radioButton_2.isChecked():
-                plt.plot(clock, pulse[plot_f][:])
+                self.canvas_1.draw()
+                self.statusBar.showMessage('PLOTTED', msecs=3000)
 
-            self.canvas_1.draw()
-            self.statusBar.showMessage('PLOTTED', msecs = 3000)
+            def flow_plot(self):
+                plt.plot(clock, pulse[plot_f][:])
+                self.canvas_1.draw()
+                self.statusBar.showMessage('PLOTTED', msecs=3000)
+
+
 
         else:
             self.alert("Invalid values...!!")

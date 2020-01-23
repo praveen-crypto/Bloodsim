@@ -2,61 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca53110-97f1-4f56-a816-d59f98aea204" name="Default Changelist" comment="updated 29/12">
-      <change afterPath="$PROJECT_DIR$/GUI_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RLCtru.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/LICENSE-3RD-PARTY.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/cv2.cp37-win32.pyd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_eye.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_eye_tree_eyeglasses.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_frontalcatface.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_frontalcatface_extended.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_frontalface_alt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_frontalface_alt2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_frontalface_alt_tree.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_fullbody.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_lefteye_2splits.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_licence_plate_rus_16stages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_lowerbody.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_profileface.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_righteye_2splits.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_russian_plate_number.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_smile.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/data/haarcascade_upperbody.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/cv2/opencv_videoio_ffmpeg412.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/opencv_python-4.1.2.30.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/opencv_python-4.1.2.30.dist-info/LICENSE-3RD-PARTY.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/opencv_python-4.1.2.30.dist-info/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/opencv_python-4.1.2.30.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/opencv_python-4.1.2.30.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/opencv_python-4.1.2.30.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/opencv_python-4.1.2.30.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/activate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/activate.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/python.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Prave.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Prave.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/praveen-crypto.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/praveen-crypto.github.io.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data2.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data2.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arterytree.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/branch_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/branch_list.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fw.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integrated_ODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/integrated_ODE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pulse_ODE.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulse_ODE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stenosis.py" beforeDir="false" afterPath="$PROJECT_DIR$/stenosis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_sample.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_sample.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -387,7 +333,7 @@
       <workItem from="1579690205483" duration="2693000" />
       <workItem from="1579693111922" duration="14876000" />
       <workItem from="1579741466643" duration="9298000" />
-      <workItem from="1579751631039" duration="2480000" />
+      <workItem from="1579751631039" duration="3013000" />
     </task>
     <task id="LOCAL-00001" summary="updated 29/12">
       <created>1577611377366</created>
