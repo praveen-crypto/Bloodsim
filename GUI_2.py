@@ -482,14 +482,20 @@ class Ui_MainWindow(object):
         self.c = np.all(self.clock != -1)
         self.p = np.all(self.pulse != -10000)
         if self.c and self.p:
-            self.radioButton_1.setChecked(True)
-            plt.plot(self.clock, self.pulse[self.plot_p][:])
             self.canvas_1.draw()
-            self.statusBar.showMessage('PLOTTED', msecs=3000)
+            self.figure.clear()
+
+            self.radioButton_2.setChecked(True)
+            plt.plot(self.clock, self.pulse[self.plot_f][:])
+            self.canvas_1.draw()
+            self.statusBar.showMessage('PLOTTED', msecs=4000)
         else:
             self.alert("Invalid values...!!")
 
     def pressure_plot(self):
+        self.canvas_1.draw()
+        self.figure.clear()
+
         if self.c and self.p:
             plt.plot(self.clock, self.pulse[self.plot_p][:])
             self.canvas_1.draw()
@@ -498,6 +504,9 @@ class Ui_MainWindow(object):
             self.alert("Invalid values...!!")
 
     def flow_plot(self):
+        self.canvas_1.draw()
+        self.figure.clear()
+
         if self.c and self.p:
             plt.plot(self.clock, self.pulse[self.plot_f][:])
             self.canvas_1.draw()
