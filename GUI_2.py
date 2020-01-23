@@ -75,8 +75,9 @@ class Ui_MainWindow(object):
         self.radioButton_1.setSizePolicy(sizePolicy)
         self.radioButton_1.setStyleSheet("color: rgb(255, 255, 255);\n"
                                          "font: 12.5pt \"Garamond\";")
-        self.radioButton_1.setChecked(True)
+        #self.radioButton_1.setChecked(True)
         self.radioButton_1.setObjectName("radioButton_1")
+        self.radioButton_1.clicked.connect(self.pressure_plot)
         self.gridLayout.addWidget(self.radioButton_1, 0, 6, 1, 1)
 
         #Radiobutton_2
@@ -84,7 +85,7 @@ class Ui_MainWindow(object):
                                          "font: 12.5pt \"Garamond\";")
         self.radioButton_2.setObjectName("radioButton_2")
         self.gridLayout.addWidget(self.radioButton_2, 0, 7, 1, 1)
-        self.
+        self.radioButton_2.clicked.connect(self.flow_plot)
 
         #Button_2
         self.pushButton_2.setStyleSheet("background-color: rgb(35, 35, 35);\n"
@@ -375,126 +376,132 @@ class Ui_MainWindow(object):
 
         if Index==0:
             Pos = 0
-            plot_p = 1
-            plot_f = 0
+            self.plot_p = 1
+            self.plot_f = 0
 
         elif Index==1:
             Pos = 1
-            plot_p = 3
-            plot_f = 2
+            self.plot_p = 3
+            self.plot_f = 2
 
         elif Index==2:
             Pos = 7
-            plot_p = 7
-            plot_f = 6
+            self.plot_p = 7
+            self.plot_f = 6
 
         elif Index==3:
             Pos = 13
-            plot_p = 31
-            plot_f = 30
+            self.plot_p = 31
+            self.plot_f = 30
 
         elif Index==4:
             Pos = 3
-            plot_p = 53
-            plot_f = 52
+            self.plot_p = 53
+            self.plot_f = 52
 
         elif Index==5:
             Pos = 11
-            plot_p = 83
-            plot_f = 82
+            self.plot_p = 83
+            self.plot_f = 82
 
         elif Index==6:
             Pos = 10
-            plot_p = 113
-            plot_f = 112
+            self.plot_p = 113
+            self.plot_f = 112
 
         elif Index==7:
             Pos = 51
-            plot_p = 103
-            plot_f = 102
+            self.plot_p = 103
+            self.plot_f = 102
 
         elif Index==8:
             Pos = 46
-            plot_p = 75
-            plot_f = 74
+            self.plot_p = 75
+            self.plot_f = 74
 
         elif Index==9:
             Pos = 74
-            plot_p = 123
-            plot_f = 122
+            self.plot_p = 123
+            self.plot_f = 122
 
         elif Index==10:
             Pos = 56
-            plot_p = 207
-            plot_f = 206
+            self.plot_p = 207
+            self.plot_f = 206
 
         elif Index==11:
             Pos = 70
-            plot_p = 211
-            plot_f = 210
+            self.plot_p = 211
+            self.plot_f = 210
 
         elif Index==12:
             Pos = 62
-            plot_p = 131
-            plot_f = 130
+            self.plot_p = 131
+            self.plot_f = 130
 
         elif Index==13:
             Pos = 63
-            plot_p = 133
-            plot_f = 132
+            self.plot_p = 133
+            self.plot_f = 132
 
         elif Index==14:
             Pos = 108
-            plot_p = 149
-            plot_f = 148
+            self.plot_p = 149
+            self.plot_f = 148
 
         elif Index==15:
             Pos = 109
-            plot_p = 181
-            plot_f = 180
+            self.plot_p = 181
+            self.plot_f = 180
 
         elif Index==16:
             Pos = 102
-            plot_p = 249
-            plot_f = 248
+            self.plot_p = 249
+            self.plot_f = 248
 
         elif Index==17:
             Pos = 107
-            plot_p = 253
-            plot_f = 252
+            self.plot_p = 253
+            self.plot_f = 252
 
         elif Index == 18:
             Pos = 96
-            plot_p = 251
-            plot_f = 250
+            self.plot_p = 251
+            self.plot_f = 250
 
         elif Index == 19:
             Pos = 92
-            plot_p = 245
-            plot_f = 244
+            self.plot_p = 245
+            self.plot_f = 244
 
         print(Pos, S)
         stenosis.steno(Pos, S)
 
-        clock, pulse = MAIN.cal(H, P)
-        print(clock, pulse)
-        c = np.all(clock != -1)
-        p = np.all(pulse != -10000)
-        if c and p:
-            #self.figure.suptitle(self.comboBox_2.currentText())
-            #self.figure.add_subplot(111)
-            def pressure_plot(self):
-                plt.plot(clock, pulse[plot_p][:])
-                self.canvas_1.draw()
-                self.statusBar.showMessage('PLOTTED', msecs=3000)
+        self.clock, self.pulse = MAIN.cal(H, P)
+        print(self.clock, self.pulse)
+        self.c = np.all(self.clock != -1)
+        self.p = np.all(self.pulse != -10000)
+        if self.c and self.p:
+            self.radioButton_1.setChecked(True)
+            plt.plot(self.clock, self.pulse[self.plot_p][:])
+            self.canvas_1.draw()
+            self.statusBar.showMessage('PLOTTED', msecs=3000)
+        else:
+            self.alert("Invalid values...!!")
 
-            def flow_plot(self):
-                plt.plot(clock, pulse[plot_f][:])
-                self.canvas_1.draw()
-                self.statusBar.showMessage('PLOTTED', msecs=3000)
+    def pressure_plot(self):
+        if self.c and self.p:
+            plt.plot(self.clock, self.pulse[self.plot_p][:])
+            self.canvas_1.draw()
+            self.statusBar.showMessage('PLOTTED', msecs=3000)
+        else:
+            self.alert("Invalid values...!!")
 
-
-
+    def flow_plot(self):
+        if self.c and self.p:
+            plt.plot(self.clock, self.pulse[self.plot_f][:])
+            self.canvas_1.draw()
+            self.statusBar.showMessage('PLOTTED', msecs=3000)
         else:
             self.alert("Invalid values...!!")
 
