@@ -1,20 +1,25 @@
 import numpy as np; import runge_kutta as r_k
 import matplotlib.pyplot as plt; import pulse_ode as po
 import integrated_ode as so
-import pandas
+import pandas; import stenosis
 
 def cal(HR, PF):
     try:
-        print("111")
         branch_list = open('branch_list.txt', 'r')
         b = branch_list.readlines()
-        rlcnewval = np.genfromtxt('rlcnewval.txt', delimiter=',')
+        rlcnewval = np.genfromtxt('RLCtru.csv', delimiter=",")
         eqn_no = np.genfromtxt('eqn_no.txt', delimiter='')
+        #print(rlcnewval)
+
         print("pass")
         Rs = rlcnewval[:, 0]
         L = rlcnewval[:, 1]
         C = rlcnewval[:, 2]
         Rp = rlcnewval[:, 3]
+
+        f = open("RLCtru.csv", "w")
+        f.truncate()
+        f.close()
 
         HR = int(HR)
         PF = int(PF)
@@ -30,7 +35,7 @@ def cal(HR, PF):
         x1 = PF * (np.square(np.sin(3.14 * t3 / (0.3))))
         x2 = np.floor(t3 + 0.7)
         it = np.multiply((1 - x2), x1)
-        print("all thevidiyas")
+        print("all crct")
         R1 = 0.11
         L = 0.011
         R2 = 1.11
@@ -39,20 +44,15 @@ def cal(HR, PF):
         # GENERATION OF PULSE
         # initial value
         pulse_initial = np.zeros(2)
-        # input for solver function
-        pulse_generator = lambda t, x: po.pulsegen(t, x, R1, L, R2, C, clock, it)
-        # solving the ODEs
-        t, x = r_k.rungekutta4(pulse_generator, pulse_initial, 0.0, 10.0, dt)
-        # plotting the output
-        pu = it.transpose()
-        pulse = (pu - x[0, :]) * R1 + x[1, :]
 
+        pulse_generator = lambda t, x: po.pulsegen(t, x, R1, L, R2, C, clock, it)  # input for solver function
+        t, x = r_k.rungekutta4(pulse_generator, pulse_initial, 0.0, 10.0, dt)  # solving the ODEs
+        pu = it.transpose()                                           # plotting the output
+        pulse = (pu - x[0, :]) * R1 + x[1, :]
         system_initial = np.zeros(256)
         system_finder = lambda t, x: so.integrated_ode(t, x, pulse, clock)
         t, x = r_k.rungekutta4(system_finder, system_initial, 0.0, 10.0, dt)
 
-        #plt.plot(t, x[255][:])
-        #plt.show()
         return (t, x)
     except:
         return (-1,-10000)
@@ -60,5 +60,3 @@ def cal(HR, PF):
 if __name__ == "__main__":
     pass
     c,p = cal(60,430)
-    print(c)
-    print(p)

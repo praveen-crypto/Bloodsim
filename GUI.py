@@ -216,7 +216,6 @@ class Ui_MainWindow(object):
             self.figure.add_subplot(111)
             plt.plot(clock, pulse[255][:])
             self.canvas_1.draw()
-
         else:
             self.alert("Incorrect args...!!!")
 
