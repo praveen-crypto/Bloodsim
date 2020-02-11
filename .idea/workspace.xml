@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca53110-97f1-4f56-a816-d59f98aea204" name="Default Changelist" comment="updated 29/12">
+      <change afterPath="$PROJECT_DIR$/timing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data2.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAIN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RLCtru.csv" beforeDir="false" afterPath="$PROJECT_DIR$/RLCtru.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stenosis.py" beforeDir="false" afterPath="$PROJECT_DIR$/stenosis.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,50 +101,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.GUI_2">
-    <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="praveen-crypto.github.io" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="GUI_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="praveen-crypto.github.io" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI_1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="GUI_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -230,6 +189,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="praveen-crypto.github.io" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="odetest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="praveen-crypto.github.io" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Prave\.PyCharm2019.2\config\scratches\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="stenosis" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -254,19 +257,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.GUI_1" />
       <item itemvalue="Python.stenosis" />
-      <item itemvalue="Python.GUI" />
       <item itemvalue="Python.GUI_2" />
       <item itemvalue="Python.MAIN" />
+      <item itemvalue="Python.odetest" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.GUI_2" />
         <item itemvalue="Python.MAIN" />
         <item itemvalue="Python.stenosis" />
-        <item itemvalue="Python.GUI_1" />
-        <item itemvalue="Python.GUI" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.odetest" />
       </list>
     </recent_temporary>
   </component>
@@ -341,6 +344,23 @@
       <workItem from="1579751631039" duration="15968000" />
       <workItem from="1579785311491" duration="6907000" />
       <workItem from="1579799673404" duration="791000" />
+      <workItem from="1579827214924" duration="248000" />
+      <workItem from="1579835140142" duration="16000" />
+      <workItem from="1580040109782" duration="1368000" />
+      <workItem from="1580099031673" duration="392000" />
+      <workItem from="1580121313587" duration="1954000" />
+      <workItem from="1580143871641" duration="8150000" />
+      <workItem from="1580178138132" duration="3767000" />
+      <workItem from="1580279251161" duration="442000" />
+      <workItem from="1580382577896" duration="3678000" />
+      <workItem from="1580530291363" duration="650000" />
+      <workItem from="1580723484515" duration="271000" />
+      <workItem from="1580805030053" duration="754000" />
+      <workItem from="1580816463648" duration="7000" />
+      <workItem from="1581086853917" duration="617000" />
+      <workItem from="1581245116963" duration="285000" />
+      <workItem from="1581316155028" duration="221000" />
+      <workItem from="1581405903892" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="updated 29/12">
       <created>1577611377366</created>
@@ -398,5 +418,7 @@
     <SUITE FILE_PATH="coverage/stenor_github_io$tess.coverage" NAME="tess Coverage Results" MODIFIED="1577529917996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../Desktop/ass.ui" />
     <SUITE FILE_PATH="coverage/stenor_github_io$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1577018201857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stenor_github_io$GUI_1.coverage" NAME="GUI_1 Coverage Results" MODIFIED="1579620636565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stenor_github_io$MAIN.coverage" NAME="MAIN Coverage Results" MODIFIED="1580387363458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stenor_github_io$odetest.coverage" NAME="odetest Coverage Results" MODIFIED="1580144865946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
   </component>
 </project>

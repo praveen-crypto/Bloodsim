@@ -4,7 +4,6 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FC
 import numpy as np; import MAIN; import stenosis
 
 
-
 class Ui_MainWindow(object):
     def __init__(self):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
