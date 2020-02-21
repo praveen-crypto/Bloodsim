@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca53110-97f1-4f56-a816-d59f98aea204" name="Default Changelist" comment="updated 29/12">
-      <change afterPath="$PROJECT_DIR$/Data2.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HEART_MODEL.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/LATEST_HM.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/Main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/rungekutta.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/submain.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/vandfeq.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/canvas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Prave.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Prave.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Heartmodel/LATEST_HM.py" beforeDir="false" afterPath="$PROJECT_DIR$/Heartmodel/LATEST_HM.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -387,7 +377,8 @@
       <workItem from="1582130490911" duration="1801000" />
       <workItem from="1582166497268" duration="4270000" />
       <workItem from="1582171188742" duration="12737000" />
-      <workItem from="1582238753514" duration="3050000" />
+      <workItem from="1582238753514" duration="20460000" />
+      <workItem from="1582295629621" duration="2340000" />
     </task>
     <task id="LOCAL-00001" summary="updated 29/12">
       <created>1577611377366</created>
@@ -435,11 +426,6 @@
           <line>201</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Heartmodel/LATEST_HM.py</url>
-          <line>596</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -451,9 +437,11 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="MyResult1" language="Python" />
-        <watch expression="result" language="Python" />
-        <watch expression="P_0d" language="Python" />
+        <watch expression="diffv" language="Python" />
+        <watch expression="dvq" language="Python" />
+        <watch expression="rukuk" language="Python" />
+        <watch expression="v" language="Python" />
+        <watch expression="q" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -469,6 +457,6 @@
     <SUITE FILE_PATH="coverage/stenor_github_io$MAIN.coverage" NAME="MAIN Coverage Results" MODIFIED="1580387363458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stenor_github_io$matplot_test.coverage" NAME="matplot_test Coverage Results" MODIFIED="1581700969973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/stenor_github_io$odetest.coverage" NAME="odetest Coverage Results" MODIFIED="1580144865946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/stenor_github_io$LATEST_HM.coverage" NAME="LATEST_HM Coverage Results" MODIFIED="1582269431619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Heartmodel" />
+    <SUITE FILE_PATH="coverage/stenor_github_io$LATEST_HM.coverage" NAME="LATEST_HM Coverage Results" MODIFIED="1582294903120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Heartmodel" />
   </component>
 </project>

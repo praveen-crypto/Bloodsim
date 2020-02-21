@@ -1,5 +1,7 @@
+#new code
 import numpy as np
 import matplotlib.pyplot as plt
+
 
 global valve, Aav, Amv, Apv, Atv, Gpw
 global E_cardiopul, Elaa, Elab, Elva, Elvb, Eraa, Erab, Erva, Ervb, Epua, Epuc, Epuv, Epwa, Epwc, Epwv
@@ -38,13 +40,13 @@ def dvdqsdvsdq() :
 
     P_0d[0, 0] = v[0, 0] / Cven + Sven * dv[0, 0]  # Venous  Pressure
 
-    dvq[0, 1] = np.divide(np.divide(v[0, 0], Cven) + np.multiply(Sven, dv[0, 0]) - np.multiply(Rven, q[0, 0]) - np.divide(v[0, 1], Cvca) - np.multiply(Svca, dv[0, 1]),  yven)  # Venous flow
+    dvq[0, 1] = (v[0, 0] / Cven + Sven * dv[0, 0] - Rven * q[0, 0] - v[0, 1] / Cvca - Svca * dv[0, 1]) / yven  # Venous flow
 
     dvq[0, 2] = q[0, 0] - q[0, 1]  # VC volume
 
     P_0d[0, 1] = v[0, 1] / Cvca + Svca * dv[0, 1]  # VC Pressure
 
-    dvq[0, 3] = v[0, 1] / Cvca - era * v[0, 2] - Rvca * q[0, 1] + Svca * dv[0, 1] - Sra * dv[0, 2] - ppc - pit / yvca  # VC Flow
+    dvq[0, 3] = (v[0, 1] / Cvca - era * v[0, 2] - Rvca * q[0, 1] + Svca * dv[0, 1] - Sra * dv[0, 2] - ppc - pit) / yvca  # VC Flow
 
     qco = 0.0
 
@@ -64,19 +66,19 @@ def dvdqsdvsdq() :
 
     P_0d[0, 7] = Epua * Zpua + Spua * dv[0, 4] + pit  # Pulmonary Artery Pressure
 
-    dvq[0, 9] = Epua * Zpua - Epuc * Zpuc - Rpua * q[0, 4] + Spua * dv[0, 4] - Spuc * dv[0, 5] / ypua  # Pulmonary Artery Flow
+    dvq[0, 9] = (Epua * Zpua - Epuc * Zpuc - Rpua * q[0, 4] + Spua * dv[0, 4] - Spuc * dv[0, 5] )/ ypua  # Pulmonary Artery Flow
 
     dvq[0, 10] = q[0, 4] - q[0, 5]  # Pulmonary Capillary volume
 
     P_0d[0, 9] = Epuc * Zpuc + Spuc * dv[0, 5] + pit  # Pulmonary Capillary Pressure
 
-    dvq[0, 11] = Epuc * Zpuc - Epuv * Zpuv - Rpuc * q[0, 5] + Spuc * dv[0, 5] - Spuv * dv[0, 6] / ypuc  # Pulmonary Capillary Flow
+    dvq[0, 11] = (Epuc * Zpuc - Epuv * Zpuv - Rpuc * q[0, 5] + Spuc * dv[0, 5] - Spuv * dv[0, 6]) / ypuc  # Pulmonary Capillary Flow
 
     dvq[0, 12] = q[0, 5] - q[0, 6]  # Pulmonary Vein volume
 
     P_0d[0, 11] = Epuv * Zpuv + Spuv * dv[0, 6] + pit  # Pulmonary Vein Pressure
 
-    dvq[0, 13] = Epuv * Zpuv - ela * v[0, 9] - Rpuv * q[0, 6] + Spuv * dv[0, 6] - Sla * dv[0, 9] - ppc / ypuv  # Pulmonary Vein flow
+    dvq[0, 13] = (Epuv * Zpuv - ela * v[0, 9] - Rpuv * q[0, 6] + Spuv * dv[0, 6] - Sla * dv[0, 9] - ppc) / ypuv  # Pulmonary Vein flow
 
     if Gpw > 0:
         dvq[0, 14] = Epua * Zpua - Epwc * Zpwc - q[0, 7] / gpw + Spua * dv[0, 4] - Spwc * dv[0, 7] / ypwa  # Pulmonary Wedge ##Artery flow
@@ -87,14 +89,14 @@ def dvdqsdvsdq() :
 
     P_0d[0, 14] = Epwc * Zpwc + Spwc * dv[0, 7] + pit  # Pulmonary Wedge capillary Pressure
 
-    dvq[0, 16] = Epwc * Zpwc - Epwv * Zpwv - Rpwc * q[0, 8] + Spwc * dv[0, 7] - Spwv * dv[0, 8] / ypwc  # Pulmonary Wedge capillary Flow
+    dvq[0, 16] = (Epwc * Zpwc - Epwv * Zpwv - Rpwc * q[0, 8] + Spwc * dv[0, 7] - Spwv * dv[0, 8]) / ypwc  # Pulmonary Wedge capillary Flow
 
     dvq[0, 17] = q[0, 8] - q[0, 9]  # Pulmonary Wedge vein Volume
 
     P_0d[0, 16] = Epwv * Zpwv + Spwv * dv[0, 8] + pit  # Pulmonary Wedge vein Pressure
 
-    dvq[0, 18] = Epwv * Zpwv - ela * v[0, 9] - Rpwv * q[0, 9] + Spwv * dv[0, 8] - Sla * dv[
-        0, 9] - ppc / ypwv  # Pulmonary Wedge vein Flow
+    dvq[0, 18] = (Epwv * Zpwv - ela * v[0, 9] - Rpwv * q[0, 9] + Spwv * dv[0, 8] - Sla * dv[
+        0, 9] - ppc) / ypwv  # Pulmonary Wedge vein Flow
 
     dvq[0, 19] = q[0, 6] + q[0, 9] - q[0, 10]  # LA volume
 
@@ -107,38 +109,38 @@ def dvdqsdvsdq() :
 
     P_0d[0, 20] = plv + Slv * dv[0, 10] + ppc + pit  # LV Pressure
 
-    dvq[0, 22] = plv - v[0, 11] / Caor - Rav * q[0, 11] - bav * q[0, 11] * np.absolute(q[0, 11]) + Slv * dv[0, 10] - Saor * dv[0, 11] + ppc + pit / yav  # Aortic Flow
+    dvq[0, 22] = (plv - v[0, 11]) / Caor - Rav * q[0, 11] - (bav * q[0, 11] * np.absolute(q[0, 11]) + Slv * dv[0, 10] - Saor * dv[0, 11] + ppc + pit) / yav  # Aortic Flow
 
     #Adjust the state of cardiac valve
     if Aav == 0.0 and q[0, 12]<=0.000000001:
         dvq[0, 22] = 0.0
 
-    if (np.absolute([tcr - Tduration]) <= ddt*0.5 or tcr < 0.1) or (Amv == 0.0 and q[0, 10] < 0.000000001) :
+    if (np.absolute(tcr - Tduration) <= ddt*0.5 or tcr < 0.1) or (Amv == 0.0 and q[0, 10] < 0.000000001):
         dvq[0, 20] = 0.0
 
     if Apv == 0.0 and q[0, 3] <= 0.00000001:
         dvq[0, 7] = 0.0
 
-    if np.absolute([tcr - Tduration]) <= ddt*0.5 or tcr<0.1 or (Atv == 0.0 and q[0, 2] <= 0.000000001):
+    if np.absolute(tcr - Tduration) <= ddt*0.5 or tcr<0.1 or (Atv == 0.0 and q[0, 2] <= 0.000000001):
         dvq[0, 5] = 0.0
 
     dvq[0, 23] = q[0, 11] - q[0, 12]  # Aorta volume
 
     P_0d[0, 22] = v[0, 11] / Caor + Saor * dv[0, 11]  # Aorta Presuure
 
-    dvq[0, 24] = v[0, 11] / Caor + Saor * dv[0, 11] - q[0, 12] * Raor - v[0, 12] / Cart - Sart * dv[0, 12] / yaor  # Aorta Flow
+    dvq[0, 24] = (v[0, 11]) / Caor + Saor * dv[0, 11] - q[0, 12] * Raor - v[0, 12] / Cart - Sart * dv[0, 12] / yaor  # Aorta Flow
 
     dvq[0, 25] = q[0, 12] - q[0, 13]  # Artery Volume
 
     P_0d[0, 24] = v[0, 12] / Cart + Sart * dv[0, 12]  # Artery Pressure
 
-    dvq[0, 26] = v[0, 12] / Cart + Sart * dv[0, 12] - q[0, 13] * Rart - v[0, 13] / Ccap - Scap * dv[0, 13] / yart  # Artery Flow
+    dvq[0, 26] = (v[0, 12]) / Cart + Sart * dv[0, 12] - q[0, 13] * Rart - v[0, 13] / Ccap - Scap * dv[0, 13] / yart  # Artery Flow
 
     dvq[0, 27] = q[0, 13] - q[0, 14]  # Capillarya Volume
 
     P_0d[0, 26] = v[0, 13] / Ccap + Scap * dv[0, 13]  # Capillary Pressure
 
-    dvq[0, 28] = v[0, 13] / Ccap + Scap * dv[0, 13] - q[0, 14] * Rcap - v[0, 0] / Cven - Sven * dv[0, 0] / ycap  # Capillary Pressure
+    dvq[0, 28] = (v[0, 13]) / Ccap + Scap * dv[0, 13] - q[0, 14] * Rcap - v[0, 0] / Cven - Sven * dv[0, 0] / ycap  # Capillary Pressure
 
 
 def Ecal(EEE, ZZZ, vol):
@@ -230,8 +232,8 @@ def AAav():
         AAav = 4.0
     else:
         AAav = 0.0
-    return AAav
 
+    return AAav
 
 
 def AAmv():
@@ -270,13 +272,13 @@ def AAtv():
     return AAtv
 
 
-def rungekutta(subresultcr) :
+def rungekutta(subresultcr, count) :
     global Aav, Amv, Apv, Atv, dvq
     global dv, v, dq, q, ddt
 
     #call dvdqsdvsdq % == == == == == = make a note........................
     dvdqsdvsdq()
-
+    print('Valule of count:', count)
     # Declaration of variables
     dfl = np.zeros(shape=(2, 30))
     dq = np.zeros(shape=(2, 15))
@@ -291,7 +293,7 @@ def rungekutta(subresultcr) :
     #end do
     dq[0, :7] = dfl[0, 1:14:2]
     dq[0, 8:15] = dfl[0, 15:29:2]
-    dv[0, :7] = dfl[0, 1:14:2]
+    dv[0, :7] = dfl[0, 0:14:2]
     dv[0, 8:14] = dfl[0, 16:28:2]
 
     for nrk in np.arange(4):
@@ -310,8 +312,10 @@ def rungekutta(subresultcr) :
 
     inter[0, :28] = np.multiply(0.5, (subrukuk[nrk,1:29]))
     newpara[0, :29] = np.multiply(subresultcr[0, :29], inter[0, :29])
+
     q[0, :7] = newpara[0, 1:14:2]
     q[0, 8:15]= newpara[0, 15:29:2]
+
     v[0, :7] = newpara[0, 0:13:2]
     v[0, 8:14] = newpara[0, 16:28:2]
 
@@ -324,6 +328,8 @@ dvq = np.zeros(shape=(2, 29))
 diffv = np.zeros(shape=(2, 14))
 resultcr = np.zeros(shape=(2, 101))
 dv = np.zeros(shape=(2, 21))
+MyResult = np.zeros(shape=(65000, 28))
+MyResult1 = np.zeros(shape=(65000, 29))
 
 # initial values of all state equations (should be equal to number of equations in dvdqsdvdq.m file)
 odic = np.array([1068.2371, 52.4983, 181.7233, -41.7618, 65.0625, 0, 122.6637, 0, 67.0272, -0.3118, 135.11, -2.1737, 198.7568,
@@ -432,7 +438,7 @@ qco = 0.0
 
 # ------------------------------------------------------------------------------------------------
 Tduration = 0.65  # input('Please specify cardiac duration(s)')
-dt = 0.001  # input('Please specify time step(s)')
+dt = 0.0001  # input'Please specify time step(s)')
 
 # tee = 0.3*sqrt(Tduration) #!Moment when ventricular contractility reaches the peak
 tee = 0.31  # !Moment when ventricular contractility reaches the peak
@@ -452,8 +458,8 @@ for nstep in np.arange(ntotal):
         tcr = 0.0
         ppc = 0.0
         result = np.zeros(shape=(2, 101))
+        P_0d = np.zeros(shape=(2, 101))
         result[0, :29] = odic
-        print(result)
         i = 0
         for i in np.arange(14):
             if i <= 6:
@@ -478,20 +484,19 @@ for nstep in np.arange(ntotal):
         Atv = 0.0
 
         Pit = -2.5
-        P_0d = np.zeros(shape=(1, 101))
+
 
         # fid60  =  fopen('0Dresult.txt','a+')
         # fid63  =  fopen('0Dpress.txt','a+')
 
 
-    # ==========================================================================================
-    # --------------------------------------
-    # c*-----------------------Start computation---------------------------
+    # ----------------------Start computation---------------------------
     ncount = 0
     ncountadd = ncount + 1
     resultcr[0, :101] = result[0, :101]
-    tcr = np.remainder(np.multiply(nstep, dt), Tduration)
-    t = np.multiply(nstep, dt)
+    tcr = np.remainder(np.multiply(nstep+1, dt), Tduration)
+    print(tcr)
+    t = np.multiply(nstep+1, dt)
 
     # c.... Compute the pulmonary elastances
     Epua = Ecal(Epua0, Zpua, v[0, 4])
@@ -514,15 +519,14 @@ for nstep in np.arange(ntotal):
     cklr = erv / (Es + erv)
     ckrl = elv / (Es + elv)
 
-    ppp1 = np.multiply(np.multiply(np.multiply(np.add(np.multiply(np.multiply(ckrl, Es), v[0, 10]), ckrl), ckrl), Es), v[0, 3])#plv=(ckrl*Es*v(11)+ckrl*cklr*Es*v(4))/(1.0-cklr)
-    plv = np.divide(ppp1, np.subtract(1.0, cklr))
-    prv = np.divide(np.multiply(np.multiply(np.multiply(np.add(np.multiply(np.multiply(ckrl, Es), v[0, 3]), ckrl), ckrl), Es), v[0, 10]), np.subtract(1.0, cklr))
+    plv = ckrl * Es * v[0, 10] + ckrl *cklr * Es *v[0, 3] / 1.0 - cklr #np.divide(ppp1, np.subtract(1.0, cklr))
+    prv = cklr * Es * v[0, 3] + ckrl * cklr * Es * v[0, 10] / 1.0 - ckrl #np.divide(np.multiply(np.multiply(np.multiply(np.add(np.multiply(np.multiply(cklr, Es), v[0, 3]), ckrl), cklr), Es), v[0, 10]), np.subtract(1.0, ckrl))
 
     # All cardiac chambers viscoelastance calculation
-    Sla =  np.multiply(np.multiply(Sva0, v[0, 9]), ela)    #Sla = Sva0 * v[10] * ela
-    Slv = np.multiply(Sva0, plv)                           #Slv = Sva0 * plv
-    Sra = np.multiply(np.multiply(Sva0, v[0, 2]), era)     #Sra = Sva0 * v[3] * era
-    Srv = np.multiply(Sva0, prv)                           #Srv = Sva0 * prv
+    Sla = Sva0 * v[0, 9] * ela
+    Slv = Sva0 * plv
+    Sra = Sva0 * v[0, 2] * era
+    Srv = Sva0 * prv
 
     # Pericardium pressure calculations
     ppp = np.divide(np.subtract(np.add(np.add(np.add(np.add(v[0, 2], v[0, 3]), v[0, 9]), v[0, 10]), Vpe), Vpc0), Vcon)#ppp = (v[3] + v[4] + v[10] + v[11] + Vpe - Vpc0) / Vcon
@@ -533,19 +537,19 @@ for nstep in np.arange(ntotal):
     dvdqsdvsdq()#dvdqsdvsdq();  # = == == == == == == == == == == == == == = >> make a note.............................
 
     diffv[0, :7] = dvq[0, 0:13:2]
-    diffv[0, 8:14] = dvq[0, 16:28:2]
-    dv[0, :14] = diffv[0, 0:14]
+    diffv[0, 7:14] = dvq[0, 15:28:2]
+    dv[0, :14] = diffv[0, :14]
 
     # c.....Implement fourth - order Runge - Kutta method
     #print(resultcr)
 
-    rukuk = rungekutta(resultcr)
+    rukuk = rungekutta(resultcr, nstep)
 
     # c.....Update variables with Runge-Kutta method
     for j in np.arange(29):
-        result[ncountadd, j] = np.divide(np.add(result[ncount, j], np.add(rukuk[0, j], np.multiply(2, np.add(np.add(rukuk[1, j], rukuk[2, j]), rukuk[3, j])))), 6)
+        result[ncountadd, j] = result[ncount, j] +(rukuk[0, j]+2.0*(rukuk[1, j]+rukuk[2, j])+rukuk[3, j])  #np.divide(np.add(result[ncount, j], np.add(rukuk[0, j], np.multiply(2, np.add(np.add(rukuk[1, j], rukuk[2, j]), rukuk[3, j])))), 6)
 
-    print('for loop executed')
+    #print('for loop executed')
     delta = 0.00000001
 
 
@@ -572,37 +576,37 @@ for nstep in np.arange(ntotal):
 
     # c.....Update q() and v() to be used at next time
     v[0, :7] = result[ncountadd, 0:13:2]
-    v[0, 8:14] = result[ncountadd, 16:28:2]
+    v[0, 7:14] = result[ncountadd, 15:28:2]
 
     q[0, : 7] = result[ncountadd, 1:14:2]
-    q[0, 8: 15] = result[ncountadd, 15:29:2]
-    q[0, 16: 21] = result[ncountadd, 30:35:1]
+    q[0, 7: 15] = result[ncountadd, 14:29:2]
+    q[0, 15: 21] = result[ncountadd, 29:35:1]
 
     result[0, :29] = result[1, :29]
 
     # load calculated hemodynamic variables in an array
     jj += 1
 
-    MyResult = np.zeros(shape=(6500, 27))
-    MyResult1 = np.zeros(shape=(6500, 29))
 
+    print('Value of JJ:', jj-1)
     MyResult[jj - 1, :27] = P_0d[0, :27]                    # MyResult(jj,1:27)=P_0d(1:27);
-    MyResult1[jj - 1, :30] = result[0, :29]                 # MyResult1(jj,1:30)=result(1,1:29);
+    MyResult1[jj - 1, :29] = result[0, :29]                 # MyResult1(jj,1:30)=result(1,1:29);
+
 
     # Update the initial conditions for next cardiac cycle
     if nstep == ntotal:
         odic_new = result[0, :29]
 
 
-t = np.linspace(0, 0.001,6.4 )
+t = np.arange(0,65, 0.001 )
 T = t
+
 print('Plotting')
 Pa_1 = MyResult1[:, 24]
-
 F_1 = MyResult1[:, 23]
 
 plt.plot(T,F_1)
-
 plt.plot(T,Pa_1)
+plt.show()
 
 
