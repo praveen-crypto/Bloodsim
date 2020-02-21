@@ -1,7 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import matplotlib.pyplot as plt; import matplotlib.style as mplstyle
+import matplotlib.pyplot as plt
+import matplotlib.style as mplstyle
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FC
-import numpy as np; import MAIN; import stenosis
+import numpy as np
+import MAIN
+import stenosis
+
 
 
 class Ui_MainWindow(object):
@@ -10,8 +14,6 @@ class Ui_MainWindow(object):
         self.figure = plt.figure(dpi= 150, facecolor= (0.12941, 0.22353, 0.33725))
         self.canvas_1 = FC(self.figure)
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
-        self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.gridLayout_1 = QtWidgets.QGridLayout(self.widget)
         self.radioButton_1 = QtWidgets.QRadioButton(self.centralwidget)
         self.radioButton_2 = QtWidgets.QRadioButton(self.centralwidget)
         self.pushButton_1 = QtWidgets.QPushButton(self.centralwidget)
@@ -75,7 +77,6 @@ class Ui_MainWindow(object):
         self.radioButton_1.setSizePolicy(sizePolicy)
         self.radioButton_1.setStyleSheet("color: rgb(255, 255, 255);\n"
                                          "font: 12.5pt \"Garamond\";")
-        #self.radioButton_1.setChecked(True)
         self.radioButton_1.setObjectName("radioButton_1")
         self.radioButton_1.clicked.connect(self.pressure_plot)
         self.gridLayout.addWidget(self.radioButton_1, 0, 6, 1, 1)
@@ -200,8 +201,7 @@ class Ui_MainWindow(object):
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
-        sizePolicy.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
-
+        #sizePolicy.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
         self.canvas_1.setSizePolicy(sizePolicy)
         self.canvas_1.setSizeIncrement(QtCore.QSize(5, 5))
         self.gridLayout.addWidget(self.canvas_1, 2, 1, 1, 7)
@@ -275,7 +275,6 @@ class Ui_MainWindow(object):
         self.actionName_3 = QtWidgets.QAction(MainWindow)
         self.actionName_4 = QtWidgets.QAction(MainWindow)
         self.actionName_5 = QtWidgets.QAction(MainWindow)
-
 
         #sub_menu
         self.actionSave.setObjectName("actionSave")
@@ -366,7 +365,6 @@ class Ui_MainWindow(object):
         self.actionName_3.setText(_translate("MainWindow", "Name-2"))
         self.actionName_4.setText(_translate("MainWindow", "Name-1"))
         self.actionName_5.setText(_translate("MainWindow", "Name-2"))
-
 
     def plot(self):
         H = self.doubleSpinBox_2.value()              #read HR value
@@ -493,7 +491,6 @@ class Ui_MainWindow(object):
         else:
             self.alert("Invalid values...!!")
 
-
     def pressure_plot(self):
         self.canvas_1.draw()
         self.figure.clear()
@@ -505,7 +502,6 @@ class Ui_MainWindow(object):
             self.statusBar.showMessage('PLOTTED', msecs=3000)
         else:
             self.alert("Invalid values...!!")
-
 
     def flow_plot(self):
         self.canvas_1.draw()
@@ -519,22 +515,18 @@ class Ui_MainWindow(object):
         else:
             self.alert("Invalid values...!!")
 
-
     def reset(self):
         self.statusBar.showMessage('cleared', msecs =  2000)
         self.figure.clear()
         self.canvas_1.draw()
-
 
     def alert(self, msg):
         alert = QtWidgets.QMessageBox()
         alert.setText(msg)
         alert.exec_()
 
-
     def exit(self):
         MainWindow.close()
-
 
     def viewing(self):
 
@@ -920,7 +912,6 @@ class Ui_MainWindow(object):
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
-
 
 if __name__ == "__main__":
     import sys

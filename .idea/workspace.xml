@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca53110-97f1-4f56-a816-d59f98aea204" name="Default Changelist" comment="updated 29/12">
-      <change afterPath="$PROJECT_DIR$/timing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data2.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HEART_MODEL.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Heartmodel/LATEST_HM.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Heartmodel/Main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Heartmodel/rungekutta.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Heartmodel/submain.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Heartmodel/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Heartmodel/vandfeq.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/canvas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Prave.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Prave.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RLCtru.csv" beforeDir="false" afterPath="$PROJECT_DIR$/RLCtru.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stenosis.py" beforeDir="false" afterPath="$PROJECT_DIR$/stenosis.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,16 +52,20 @@
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../../../Desktop/ass.ui/tess.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/GUI.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/test_sample.ipynb" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/matplot_test.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/integrated_ode.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/stenosis.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/GUI_1.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/GUI_2.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/MAIN.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/GUI_1.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/GUI_2.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Heartmodel/LATEST_HM.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/HEART_MODEL.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Heartmodel/Main.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Heartmodel/submain.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1T6JdAFkt0TPCGX2BbjgT1TWm7l" />
   <component name="ProjectLevelVcsManager">
@@ -78,13 +88,18 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="myPyQtBackend" value="PyQt5" />
   </component>
   <component name="RecentsManager">
+    <key name="OPEN_URL_DIALOG">
+      <recent name="https://github.com/NewRegin/python_wavelet_digital_watermarking.git" />
+      <recent name="https://github.com/RagnarLothbrok-98/The-DEN" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Prave\OneDrive\Documents\GitHub\stenor.github.io" />
       <recent name="C:\Users\Prave\PycharmProjects\stenor.github.io" />
     </key>
   </component>
@@ -100,21 +115,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GUI_2">
-    <configuration name="GUI_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.LATEST_HM">
+    <configuration name="LATEST_HM" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Heartmodel" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI_2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Heartmodel/LATEST_HM.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,7 +135,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="MAIN" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -131,12 +143,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Heartmodel" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MAIN.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Heartmodel/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,7 +201,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="matplot_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -202,7 +214,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/main.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/matplot_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -211,7 +223,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="odetest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="opencv" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -224,7 +236,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Prave\.PyCharm2019.2\config\scratches\main.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/opencv.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -233,7 +245,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="stenosis" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -241,12 +253,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Heartmodel" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stenosis.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Heartmodel/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -257,19 +269,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.stenosis" />
-      <item itemvalue="Python.GUI_2" />
-      <item itemvalue="Python.MAIN" />
-      <item itemvalue="Python.odetest" />
-      <item itemvalue="Python.main" />
+      <item itemvalue="Python.matplot_test" />
+      <item itemvalue="Python.opencv" />
+      <item itemvalue="Python.Main" />
+      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.LATEST_HM" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.GUI_2" />
-        <item itemvalue="Python.MAIN" />
-        <item itemvalue="Python.stenosis" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.odetest" />
+        <item itemvalue="Python.LATEST_HM" />
+        <item itemvalue="Python.Main" />
+        <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.matplot_test" />
+        <item itemvalue="Python.opencv" />
       </list>
     </recent_temporary>
   </component>
@@ -360,7 +372,22 @@
       <workItem from="1581086853917" duration="617000" />
       <workItem from="1581245116963" duration="285000" />
       <workItem from="1581316155028" duration="221000" />
-      <workItem from="1581405903892" duration="35000" />
+      <workItem from="1581405903892" duration="2593000" />
+      <workItem from="1581561645896" duration="26419000" />
+      <workItem from="1581691920509" duration="6193000" />
+      <workItem from="1581732927836" duration="3864000" />
+      <workItem from="1581779599144" duration="616000" />
+      <workItem from="1581868607408" duration="1683000" />
+      <workItem from="1581913742565" duration="8958000" />
+      <workItem from="1581992395232" duration="4320000" />
+      <workItem from="1581997404311" duration="998000" />
+      <workItem from="1582017055683" duration="10392000" />
+      <workItem from="1582041546640" duration="1500000" />
+      <workItem from="1582087046620" duration="6075000" />
+      <workItem from="1582130490911" duration="1801000" />
+      <workItem from="1582166497268" duration="4270000" />
+      <workItem from="1582171188742" duration="12737000" />
+      <workItem from="1582238753514" duration="3050000" />
     </task>
     <task id="LOCAL-00001" summary="updated 29/12">
       <created>1577611377366</created>
@@ -402,6 +429,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Heartmodel/Main.py</url>
+          <line>201</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Heartmodel/LATEST_HM.py</url>
+          <line>596</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -410,15 +449,26 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="MyResult1" language="Python" />
+        <watch expression="result" language="Python" />
+        <watch expression="P_0d" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/stenor_github_io$scratch_1.coverage" NAME="scratch_1 Coverage Results" MODIFIED="1577529161886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/stenor_github_io$Main.coverage" NAME="Main Coverage Results" MODIFIED="1582268913975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Heartmodel" />
     <SUITE FILE_PATH="coverage/stenor_github_io$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1578734879582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/stenor_github_io$stenosis.coverage" NAME="stenosis Coverage Results" MODIFIED="1579591176788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stenor_github_io$tess.coverage" NAME="tess Coverage Results" MODIFIED="1577529917996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../Desktop/ass.ui" />
+    <SUITE FILE_PATH="coverage/stenor_github_io$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1582094283826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Heartmodel" />
     <SUITE FILE_PATH="coverage/stenor_github_io$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1577018201857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stenor_github_io$GUI_1.coverage" NAME="GUI_1 Coverage Results" MODIFIED="1579620636565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stenor_github_io$MAIN.coverage" NAME="MAIN Coverage Results" MODIFIED="1580387363458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stenor_github_io$matplot_test.coverage" NAME="matplot_test Coverage Results" MODIFIED="1581700969973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/stenor_github_io$odetest.coverage" NAME="odetest Coverage Results" MODIFIED="1580144865946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/stenor_github_io$LATEST_HM.coverage" NAME="LATEST_HM Coverage Results" MODIFIED="1582269431619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Heartmodel" />
   </component>
 </project>
