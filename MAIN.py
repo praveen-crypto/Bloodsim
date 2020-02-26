@@ -62,7 +62,7 @@ def cal(HR, PF):
         print('pass')
         system_initial = np.zeros(256)
         system_finder = lambda t, x: so.integrated_ode(t, x, pulse, clock)
-        print('pass-2')
+        print('pass-2', system_finder)
         sol = solve_ivp(system_finder,[0, 10],system_initial,method='Radau',t_eval=np.linspace(0,10,1000))
         t = sol.t
         x = sol.y
