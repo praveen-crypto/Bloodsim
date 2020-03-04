@@ -1,6 +1,8 @@
 # newww code  1
 import numpy as np
+import math  as m
 import matplotlib.pyplot as plt
+import time
 
 # functions definition:
 def Integrated_ode():
@@ -134,10 +136,8 @@ def Integrated_ode():
 
     P_0d[0, 26] = v[0, 13] / Ccap + Scap * dv[0, 13]  # Capillary Pressure
 
-    dvq[0, 28] = (v[0, 13] / Ccap + Scap * dv[0, 13] - q[0, 14] * Rcap - v[0, 0] / Cven - Sven * dv[
-        0, 0]) / ycap  # Capillary Pressure
+    dvq[0, 28] = (v[0, 13] / Ccap + Scap * dv[0, 13] - q[0, 14] * Rcap - v[0, 0] / Cven - Sven * dv[0, 0]) / ycap  # Capillary Pressure
 
-    return dvq, P_0d
 
 
 def Ecal(EEE, ZZZ, vol):
@@ -176,7 +176,7 @@ def Laecal():
         ela = Elab
 
     if (tcal > tac and tcal <= tar):
-        ela = Elaa * 0.5 * (1.0 - np.cos(3.1415926 * (tcal - tac) / teec)) + Elab
+        ela = Elaa * 0.5 * (1.0 -  np.cos(3.1415926 * (tcal - tac) / teec)) + Elab
 
     # c if (tcal > tar. and.tcal <= (tar+teer)) then
     if (tcal > tar and tcal <= Tduration):
@@ -275,6 +275,7 @@ def rungekutta(subresultcr):
 
     # call Integrated_ode % == == == == == = make a note........................
     Integrated_ode()
+
     # Declaration of variables
     dfl = np.zeros(shape=(2, 30))
     dq = np.zeros(shape=(2, 15))
@@ -284,13 +285,11 @@ def rungekutta(subresultcr):
 
     # -------------------------------------------------------------------------
     dfl[0, :29] = dvq[0, :29]
-    # do i = 0, 28
-    # dfl(i) = dvq(i + 1)
-    # end do
     dq[0, :7] = dfl[0, 1:14:2]
-    dq[0, 8:15] = dfl[0, 15:29:2]
+    dq[0, 7:15] = dfl[0, 14:29:2]
     dv[0, :7] = dfl[0, 0:13:2]
-    dv[0, 8:14] = dfl[0, 16:28:2]
+    dv[0, 7:14] = dfl[0, 15:28:2]
+
 
     for nrk in np.arange(4):
         subrukuk[nrk, :29] = np.multiply(ddt, dfl[0, :29])
@@ -302,21 +301,20 @@ def rungekutta(subresultcr):
             Atv = AAtv()
 
         if nrk < 3:
-            inter[0, :29] = 0.5 * subrukuk[nrk, :29]
+            inter[0, :29] = np.multiply(0.5, subrukuk[nrk, 0:29])
         else:
-            inter[0, :29] = subrukuk[nrk, :29]
+            inter[0, :29] = subrukuk[nrk, 0:29]
 
-    inter[0, :29] = np.multiply(0.5, subrukuk[nrk, :29])
-    newpara[0, :29] = np.add(subresultcr[0, :29], inter[0, :29])
+    inter[0, 0:29] = np.multiply(0.5, subrukuk[nrk, 0:29])
+    newpara[0, 0:29] = np.add(subresultcr[0, 0:29], inter[0, 0:29])
 
     q[0, :7] = newpara[0, 1:14:2]
-    q[0, 8:15] = newpara[0, 15:29:2]
+    q[0, 7:15] = newpara[0, 14:29:2]
 
     v[0, :7] = newpara[0, 0:13:2]
-    v[0, 8:14] = newpara[0, 16:28:2]
+    v[0, 7:14] = newpara[0, 15:28:2]
 
     return subrukuk
-
 
 # End of function definition ----------------------------------
 
@@ -347,36 +345,34 @@ def main():
     diffv = np.zeros(shape=(2, 14))
     resultcr = np.zeros(shape=(2, 101))
     dv = np.zeros(shape=(2, 21))
-    MyResult = np.zeros(shape=(8000, 28))
-    MyResult1 = np.zeros(shape=(8000, 29))
+    MyResult = np.zeros(shape=(6000, 28))
+    MyResult1 = np.zeros(shape=(6000, 29))
 
     # initial values of all state equations (should be equal to number of equations in dvdqsdvdq.m file)
     odic = np.array(
         [1068.2371, 52.4983, 181.7233, -41.7618, 65.0625, 0, 122.6637, 0, 67.0272, -0.3118, 135.1100, -2.1737, 198.7568,
          -64.1791, 0, 2.7983, 0.1357, 2.7932, 1.1042, 68.8587, 0, 121.2539, 0, 67.3641, 41.8262, 22.0472, 56.6627,
-         1.8539,
-         57.6473])
+         1.8539, 57.6473])
 
     Pit = -2.5
     pit = Pit
     jj = 0
-    kk = 0
 
     # --------------------------------------------------------------------------------
-    Elva = 2.87  # !Peak-systolic elastance of left ventricle
-    Elvb = 0.06  # !Basic diastolic elastance of left ventricle
-    Elaa = 0.07  # !Peak-systolic elastance of left atrium
+    Elva = 2.87   # !Peak-systolic elastance of left ventricle
+    Elvb = 0.06   # !Basic diastolic elastance of left ventricle
+    Elaa = 0.07   # !Peak-systolic elastance of left atrium
     Elab = 0.075  # !Basic diastolic elastance of left atrium
-    Erva = 0.52  # !Peak-systolic elastance of right ventricle
+    Erva = 0.52   # !Peak-systolic elastance of right ventricle
     Ervb = 0.043  # !Basic diastolic elastance of right ventricle
     Eraa = 0.055  # !Peak-systolic elastance of right atrium
-    Erab = 0.06  # !Basic diastolic elastance of right atrium
+    Erab = 0.06   # !Basic diastolic elastance of right atrium
 
-    Vmax = 900  # Reference volume of Frank-Starling law
-    Es = 45.9  # !Effective septal elastance
-    Vpc0 = 450  # !Reference total pericardial and cardiac volume old value 380
-    Vpe = 30.0  # !Pericardial volume of heart
-    Vcon = 40.0  # !Volume constant
+    Vmax = 900     # Reference volume of Frank-Starling law
+    Es = 45.9      # !Effective septal elastance
+    Vpc0 = 380.0   # !Reference total pericardial and cardiac volume old value 380
+    Vpe = 30.0     # !Pericardial volume of heart
+    Vcon = 40.0    # !Volume constant
     Sva0 = 0.0005  # !Coefficient of cardiac viscoelasticity
 
     # ! Cardiac valve parameters
@@ -432,8 +428,8 @@ def main():
     Spwv = 0.01
 
     # ! Peripheral circulation
-    Caor = 0.95
-    Cart = 0.45
+    Caor = 0.9
+    Cart = 0.3
     Ccap = 0.06
     Cven = 100.0
     Cvca = 30.0
@@ -458,13 +454,12 @@ def main():
     qco = 0.0
 
     # ------------------------------------------------------------------------------------------------
-    Tduration = 0.8  # input('Please specify cardiac duration(s)')
+    Tduration = 0.6  # input('Please specify cardiac duration(s)')
     dt = 0.001  # input'Please specify time step(s)')
 
-    # tee = 0.3*sqrt(Tduration) #!Moment when ventricular contractility reaches the peak
+    #tee = 0.3*sqrt(Tduration) #!Moment when ventricular contractility reaches the peak
     tee = 0.31  # !Moment when ventricular contractility reaches the peak
-
-    tac = 0.34  # Tduration - 0.02*tee - 0.02* (Tduration/0.855)# !Moment when atrium begins to contract
+    tac = 0.34  #Tduration - 0.5 * tee - 0.02 * (Tduration/0.855)  # Tduration - 0.02*tee - 0.02* (Tduration/0.855)# !Moment when atrium begins to contract
 
     tar = Tduration - 0.02 * (Tduration / 0.855)  # !Moment when atrium begins to relax
     ddt = dt
@@ -472,16 +467,20 @@ def main():
     ncycle = 10  # input('how many cardiac cycles to run ?')
 
     ntotal = ((ncycle) * Tduration / dt)
-    # print(ntotal)
+    ntotal = int(ntotal)
+    print(ntotal)
+
     # ------------------------------------------------------------------------
     for nstep in np.arange(ntotal):
         if nstep == 0:
             tcr = 0.0
             ppc = 0.0
+            cn =0
 
             i = 0
             for i in range(29):
                 result[0, i] = odic[i]
+
             i = 0
             for i in np.arange(14):
                 if i <= 6:
@@ -489,6 +488,7 @@ def main():
                 else:
                     v[0, i] = result[0, 2 * i + 1]
 
+            i =0
             for i in np.arange(15):
                 if i <= 6:
                     q[0, i] = result[0, 2 * i + 1]
@@ -499,10 +499,12 @@ def main():
             FL = 1.0
             FR1 = 1.0
             Gpw = 0.0
+
             Aav = 0.0
             Amv = 0.0
             Apv = 0.0
             Atv = 0.0
+
             Pit = -2.5
 
             # fid60  =  fopen('0Dresult.txt','a+')
@@ -511,11 +513,13 @@ def main():
         # ----------------------Start computation---------------------------
         ncount = 0
         ncountadd = ncount + 1
-        resultcr[0, :101] = result[0, :101]
-        tcr = np.remainder(nstep * dt, Tduration)
-        print(tcr)
-        t = nstep * dt
-        # print('Value of:', t)
+        if nstep == 750:
+            time.sleep(10)
+
+        cn += 1
+        tcr = np.remainder(cn * dt, Tduration)
+        print('tcr of ', cn,':', tcr)
+        t = cn * dt
 
         # c.... Compute the pulmonary elastances
         Epua = Ecal(Epua0, Zpua, v[0, 4])
@@ -526,8 +530,8 @@ def main():
 
         # c.....Update nolinear cardiac parameters
         if tcr == 0.0:
-            FL = np.subtract(1.0, np.divide(result[0, 21], Vmax))  # Left ventricle scaling factor
-            FR1 = np.subtract(1.0, np.divide(result[0, 6], Vmax))  # Right ventricle scaling factor
+            FL = 1.0 - (result[0, 21] / Vmax)  # Left ventricle scaling factor
+            FR1 = 1.0 - (result[0, 6] / Vmax)  # Right ventricle scaling factor
 
         Lvecal()  # LV elastance function calling
         Laecal()  # LA elastance function calling
@@ -537,8 +541,8 @@ def main():
         # Spetum cross talk pressure calculations
         cklr = erv / (Es + erv)
         ckrl = elv / (Es + elv)
-        plv = ckrl * Es * v[0, 10] + ckrl * cklr * Es * v[0, 3] / 1.0 - cklr
-        prv = cklr * Es * v[0, 3] + ckrl * cklr * Es * v[0, 10] / 1.0 - ckrl
+        plv = (ckrl * Es * v[0, 10] + ckrl * cklr * Es * v[0, 3]) / (1.0 - cklr)
+        prv = (cklr * Es * v[0, 3] + ckrl * cklr * Es * v[0, 10]) / (1.0 - ckrl)
 
         # All cardiac chambers viscoelastance calculation
         Sla = Sva0 * v[0, 9] * ela
@@ -547,8 +551,7 @@ def main():
         Srv = Sva0 * prv
 
         # Pericardium pressure calculations
-        ppp = np.divide(np.subtract(np.add(np.add(np.add(np.add(v[0, 2], v[0, 3]), v[0, 9]), v[0, 10]), Vpe), Vpc0),
-                        Vcon)  # ppp = (v[3] + v[4] + v[10] + v[11] + Vpe - Vpc0) / Vcon
+        ppp = (v[0, 2] + v[0, 3] + v[0, 9] + v[0, 10] + Vpe - Vpc0) / Vcon
         ppc = np.exp(ppp)
 
         # c....Update dv and state equation function calling
@@ -559,14 +562,12 @@ def main():
         dv[0, :14] = diffv[0, :14]
 
         # c.....Implement fourth - order Runge - Kutta method
-        #print(system_finder)
-        #sol = solve_ivp(system_finder, [0, 10], resultcr, method='Radau', t_eval=np.linspace(0, 10, 50000))
+        resultcr[0, :101] = result[0, :101]
         rukuk = rungekutta(resultcr)
 
         # c.....Update variables with Runge-Kutta method
         for j in np.arange(29):
-            result[ncountadd, j] = result[ncount, j] + (rukuk[0, j] + 2.0 * (rukuk[1, j] + rukuk[2, j]) + rukuk[
-                3, j])  # np.divide(np.add(result[ncount, j], np.add(rukuk[0, j], np.multiply(2, np.add(np.add(rukuk[1, j], rukuk[2, j]), rukuk[3, j])))), 6)
+            result[ncountadd, j] = result[ncount, j] + (rukuk[0, j] + 2.0 * (rukuk[1, j] + rukuk[2, j]) + rukuk[3, j]) / 6.0
 
         delta = 0.00000001
 
@@ -581,7 +582,7 @@ def main():
             resultcr[ncountadd, 20] = 0.0
             q[0, 10] = 0.0
 
-        if Apv == 0.0 and resultcr[0, 7] <= delta:
+        if (Apv == 0.0) and (resultcr[0, 7] <= delta):
             resultcr[0, 7] = 0.0
             resultcr[ncountadd, 7] = 0.0
             q[0, 3] = 0.0
@@ -603,28 +604,30 @@ def main():
 
         # load calculated hemodynamic variables in an array
         jj += 1
-
         print('Value of JJ:', jj - 1)
         MyResult[jj - 1, :27] = P_0d[0, :27]
         MyResult1[jj - 1, :29] = result[0, :29]
 
         # Update the initial conditions for next cardiac cycle
-        if nstep == ntotal:
+        if nstep+1 == ntotal:
             odic_new = result[0, :29]
 
-    t = np.arange(0, 8, 0.001)
-    T = t
-
+    t1 = np.arange(0, 5.9999, 0.001)
+    t2 = np.arange(0, 5.9999, 0.001)
+    T1 = t1
+    T2 = t2
     print('Plotting')
     Pa_1 = MyResult1[:, 23]
+    print(len(Pa_1))
     F_1 = MyResult1[:, 22]
-    plt.plot(T, F_1, label='Flow')
-    # plt.plot(T,P_1,label= 'Extra')
-    plt.plot(T, Pa_1, label='Pressure')
+    plt.figure()
+    plt.plot(T1, F_1, label='Flow')
+
+    plt.figure()
+    plt.plot(T2, Pa_1, label='Pressure')
     lg = plt.legend()
     plt.show()
-
+    time.sleep(10)
 
 if __name__ == "__main__":
     main()
-
