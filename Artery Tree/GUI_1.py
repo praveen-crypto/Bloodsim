@@ -1,5 +1,4 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-import matplotlib as mat
+from PyQt5 import QtCore, QtWidgets
 import matplotlib.pyplot as plt
 from PyQt5.QtWidgets import QMenuBar
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FC

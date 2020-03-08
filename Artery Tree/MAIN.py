@@ -1,7 +1,6 @@
 import numpy as np; import runge_kutta as r_k
-import matplotlib.pyplot as plt; import pulse_ode as po
+import pulse_ode as po
 import integrated_ode as so; import datetime
-import stenosis
 from scipy.integrate import solve_ivp
 
 

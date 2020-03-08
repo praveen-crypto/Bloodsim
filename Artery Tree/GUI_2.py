@@ -1,4 +1,4 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 import matplotlib.pyplot as plt
 import matplotlib.style as mplstyle
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FC
