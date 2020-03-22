@@ -6,8 +6,6 @@ import numpy as np
 import MAIN
 import stenosis
 
-
-
 class Ui_MainWindow(object):
     def __init__(self):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -369,7 +367,7 @@ class Ui_MainWindow(object):
     def plot(self):
         H = self.doubleSpinBox_2.value()              #read HR value
         P = self.doubleSpinBox_3.value()              #read P value
-        S = self.doubleSpinBox.value()
+        S = self.doubleSpinBox.value()                #Stenosis Value
         Index = self.comboBox_1.currentIndex()
 
         if Index==0:
@@ -377,8 +375,8 @@ class Ui_MainWindow(object):
             self.plot_p = 1
             self.plot_f = 0
 
-        elif Index==1:
-            Pos = 1
+        elif Index==1:                              #Index value in combo_box
+            Pos = 1                                 #Initalize position
             self.plot_p = 3
             self.plot_f = 2
 
@@ -472,19 +470,16 @@ class Ui_MainWindow(object):
             self.plot_p = 245
             self.plot_f = 244
 
-        print(Pos, S)
-        stenosis.steno(Pos, S)
+        print('positon value:', Pos, 'stenosis value:', S)
+        stenosis.steno(Pos, S) #s : value of stenosis in %, pos: in which area to induce
+        self.clock, self.pulse = MAIN.calc(H, P)
 
-        self.clock, self.pulse = MAIN.cal(H, P)
-        print(self.clock, self.pulse)
         self.c = np.all(self.clock != -1)
         self.p = np.all(self.pulse != -10000)
         if self.c and self.p:
             self.canvas_1.draw()
             self.figure.clear()
             self.radioButton_1.setChecked(True)
-            mplstyle.use(['ggplot', 'fast'])
-
             plt.plot(self.clock, self.pulse[self.plot_p][:],'g', linewidth=1.0,)
             self.canvas_1.draw()
             self.statusBar.showMessage('PLOTTED', msecs=4000)
@@ -494,7 +489,6 @@ class Ui_MainWindow(object):
     def pressure_plot(self):
         self.canvas_1.draw()
         self.figure.clear()
-        mplstyle.use(['ggplot', 'fast'])
 
         if self.c and self.p:
             plt.plot(self.clock, self.pulse[self.plot_p][:],'g', linewidth=1.0,)
@@ -506,7 +500,6 @@ class Ui_MainWindow(object):
     def flow_plot(self):
         self.canvas_1.draw()
         self.figure.clear()
-        mplstyle.use(['ggplot', 'fast'])
 
         if self.c and self.p:
             plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0,)
@@ -529,7 +522,6 @@ class Ui_MainWindow(object):
         MainWindow.close()
 
     def viewing(self):
-
         print('viewing called')
         Index = self.comboBox_2.currentIndex()
         if Index==0:
@@ -540,14 +532,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -559,14 +551,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -578,14 +570,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -597,14 +589,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -616,14 +608,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -635,14 +627,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -654,14 +646,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -673,14 +665,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -692,14 +684,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -711,14 +703,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -730,14 +722,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -749,14 +741,14 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
+
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -768,14 +760,12 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -787,14 +777,12 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -806,14 +794,12 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -825,14 +811,12 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -844,14 +828,12 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -863,14 +845,12 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -882,14 +862,12 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
@@ -901,14 +879,12 @@ class Ui_MainWindow(object):
             if self.radioButton_1.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_p][:], 'r', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)
             elif self.radioButton_2.isChecked():
                 self.canvas_1.draw()
                 self.figure.clear()
-                mplstyle.use(['ggplot', 'fast'])
                 plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
                 self.canvas_1.draw()
                 self.statusBar.showMessage('PLOTTED', msecs=3000)

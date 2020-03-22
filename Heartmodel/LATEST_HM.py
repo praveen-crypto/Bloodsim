@@ -431,21 +431,15 @@ def main():
     qco = 0.0
 
     # ------------------------------------------------------------------------------------------------
-    Tduration = 0.8  # input('Please specify cardiac duration(s)')
+    Tduration = 1/65  # input('Please specify cardiac duration(s)')
     dt = 0.0001  # input'Please specify time step(s)')
-
-    #tee = 0.3*sqrt(Tduration) #!Moment when ventricular contractility reaches the peak
-    tee = 0.31  # !Moment when ventricular contractility reaches the peak
-    tac = 0.34  #Tduration - 0.5 * tee - 0.02 * (Tduration/0.855)  # Tduration - 0.02*tee - 0.02* (Tduration/0.855)# !Moment when atrium begins to contract
-
+    tee = 0.3*np.sqrt(Tduration) #!Moment when ventricular contractility reaches the peak
+    tac = Tduration - 0.5 * tee - 0.02 * (Tduration/0.855)  # !Moment when atrium begins to contract
     tar = Tduration - 0.02 * (Tduration / 0.855)  # !Moment when atrium begins to relax
     ddt = dt
-
-    ncycle = 10  # input('how many cardiac cycles to run ?')
-
+    ncycle = 0 #GET INPUT FORM USER THROUGH TEXTBOX
     ntotal = ((ncycle) * Tduration / dt)
     ntotal = int(ntotal)
-    print(ntotal)
 
     # ------------------------------------------------------------------------
     for nstep in np.arange(ntotal):
@@ -575,7 +569,6 @@ def main():
         q[0, : 7] = result[ncountadd, 1:14:2]
         q[0, 7: 15] = result[ncountadd, 14:29:2]
         q[0, 15: 21] = result[ncountadd, 29:35:1]
-
         result[0, :29] = result[1, :29]
 
         # load calculated hemodynamic variables in an array
@@ -591,10 +584,13 @@ def main():
     stp_sz = Tduration * ncycle
     t = np.arange(0, stp_sz, dt)
     T = t
-    Pa_1 = MyResult1[:ntotal, 23]
-    F_1 = MyResult1[:ntotal, 22]
+    Pa_1 = MyResult1[:ntotal, 23]  #23
+    F_1 = MyResult1[:ntotal, 22]   #22
+
     plt.figure()
     plt.plot(T, F_1, label='Flow')
+    lg = plt.legend()
+
     plt.figure()
     plt.plot(T, Pa_1, label='Pressure')
     lg = plt.legend()
