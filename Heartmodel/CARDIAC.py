@@ -595,8 +595,8 @@ def lumped():
     plt.show()
     plt.plot(T, Pa_1, label='Pressure')
     lg = plt.legend()
-    plt.show()
-'''
+    plt.show()'''
+
 
 
 
