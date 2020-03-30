@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca53110-97f1-4f56-a816-d59f98aea204" name="Default Changelist" comment="updated 29/12">
-      <change afterPath="$PROJECT_DIR$/Artery Tree/MAIN2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Artery Tree/thesis_gui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Artery Tree/thesis_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Artery Tree/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Heartmodel/CARDIAC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Heartmodel/CARDIAC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Artery Tree/thesis_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/thesis_gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Artery Tree/thesis_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/thesis_main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +44,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Artery Tree/MAIN2.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Artery Tree/thesis_gui.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/test_sample.ipynb" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/matplot_test.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Artery Tree/integrated_ode.py" root0="SKIP_INSPECTION" />
@@ -118,8 +116,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.matplot_test">
-    <configuration name="CARDIAC" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.thesis_gui">
+    <configuration name="GUI_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -127,12 +125,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Heartmodel" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Artery Tree" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Heartmodel/CARDIAC.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Artery Tree/GUI_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -155,28 +153,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Artery Tree/MAIN.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="MAIN2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="praveen-crypto.github.io" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Artery Tree" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Artery Tree/MAIN2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -251,13 +227,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="thesis_gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="praveen-crypto.github.io" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Artery Tree" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Artery Tree/thesis_gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.thesis_gui" />
         <item itemvalue="Python.matplot_test" />
+        <item itemvalue="Python.GUI_2" />
         <item itemvalue="Python.canvas" />
         <item itemvalue="Python.MAIN" />
-        <item itemvalue="Python.CARDIAC" />
-        <item itemvalue="Python.MAIN2" />
       </list>
     </recent_temporary>
   </component>
@@ -397,6 +392,12 @@
       <workItem from="1584968722072" duration="1281000" />
       <workItem from="1585023267159" duration="11000" />
       <workItem from="1585024486667" duration="6807000" />
+      <workItem from="1585213586208" duration="1511000" />
+      <workItem from="1585233902796" duration="7372000" />
+      <workItem from="1585293682724" duration="6967000" />
+      <workItem from="1585364551226" duration="6125000" />
+      <workItem from="1585455671041" duration="24306000" />
+      <workItem from="1585543288810" duration="9312000" />
     </task>
     <task id="LOCAL-00001" summary="updated 29/12">
       <created>1577611377366</created>
