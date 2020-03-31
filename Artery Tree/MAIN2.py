@@ -31,15 +31,19 @@ def calc(HR, PF):
         clock = np.arange(0.0, 10.0, dt)
 
         T = 60 / HR
+        t1 = clock / T
+        t2 = t1 - np.floor(t1)
+        t3 = np.multiply(T, t2)
 
         x1 = PF * (np.square(np.sin(3.14 * t3 / 0.3)))
         x2 = np.floor(t3 + 0.7)
-        it = np.multiply((1 - x2), x1)
+
 
         R1 = 0.11
         L = 0.011
         R2 = 1.11
         C = 0.91
+        it = np.multiply((1 - x2), x1)
 
         # GENERATION OF PULSE
         # initial value
@@ -52,6 +56,7 @@ def calc(HR, PF):
         print('pulse-gen')
         print(datetime.datetime.now() - nn)
         s = datetime.datetime.now()
+
         system_initial = np.zeros(256)
         system_finder = lambda t, x: so.integrated_ode(t, x, pulse, clock)
         sol = solve_ivp(system_finder, [0, 10], system_initial, method='Radau', t_eval=np.linspace(0, 10, 1000))
@@ -59,13 +64,14 @@ def calc(HR, PF):
         x = sol.y
         print('ode-solver')
         print(datetime.datetime.now() - s)
+
         return (t, x)
     #except:
         #return (-1, -10000)
 
 if __name__ == "__main__":
-    import stenosis
+    import STENOSIS
     import matplotlib.pyplot as plt
-    stenosis.steno(0, 0)
+    STENOSIS.steno(0, 0)
     c, p = calc(72, 360)
     plt.plot(c, p[1][:])

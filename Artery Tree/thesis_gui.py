@@ -1,20 +1,15 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import matplotlib.pyplot as plt
+import matplotlib.figure as fig
 import matplotlib.style as mplstyle
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FC
+import MAIN2
 import numpy as np
-import MAIN
-import stenosis
+import STENOSIS
 
 class Ui_MainWindow(object):
     def __init__(self):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-
-        self.figure_1 = plt.figure(dpi=100, facecolor=(0.12941, 0.22353, 0.33725))
-        self.canvas_1 = FC(self.figure_1)
-
-        #self.figure_2 = plt.figure(dpi=100, facecolor=(0.12941, 0.22353, 0.33725))
-        self.canvas_2 = FC(self.figure_1)
 
         self.gridLayout_9 = QtWidgets.QGridLayout(self.centralwidget)
         self.widget_1 = QtWidgets.QWidget(self.centralwidget)
@@ -91,12 +86,21 @@ class Ui_MainWindow(object):
                                  "selection-background-color: rgb(33, 57, 86);")
         MainWindow.setDockOptions(
             QtWidgets.QMainWindow.AllowNestedDocks | QtWidgets.QMainWindow.AllowTabbedDocks | QtWidgets.QMainWindow.AnimatedDocks | QtWidgets.QMainWindow.ForceTabbedDocks | QtWidgets.QMainWindow.VerticalTabs)
-        #self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_9.setObjectName("gridLayout_9")
 
 ####GRAPH - 1 ======================================================================================================
-        #Widget_1
+        #GRAPH
+        self.figure_1 = plt.figure(1, dpi=100, facecolor=(0.12941, 0.22353, 0.33725))
+        self.canvas_1 = FC(self.figure_1)
+        ax1 = plt.axes(facecolor=(0.12941, 0.22353, 0.33725))
+        plt.tick_params(colors=(1.00000, 0.43137, 0.46667))
+        ax1.spines['bottom'].set_visible(True)
+        ax1.spines['left'].set_visible(True)
+        ax1.spines['top'].set_visible(False)
+        ax1.spines['right'].set_visible(False)
+        plt.tight_layout()
+
         #self.widget_1 = QtWidgets.QWidget(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
@@ -104,23 +108,24 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.widget_1.sizePolicy().hasHeightForWidth())
         self.canvas_1.setSizePolicy(sizePolicy)
         self.canvas_1.setMinimumSize(QtCore.QSize(0, 0))
-        #self.canvas_1.setStyleSheet("background-color: rgb(33, 57, 86);\n"
-        #                            "border-color: rgb(0,0,0);\n"
-        #                            "gridline-color: rgb(0, 0, 0);")
         self.canvas_1.setObjectName("widget_1")
         self.gridLayout_9.addWidget(self.canvas_1, 1, 0, 1, 3)
-        a = plt.axes(facecolor=(0.12941, 0.22353, 0.33725))
-        plt.tick_params(colors=(1.00000, 0.43137, 0.46667))
-        a.spines['bottom'].set_visible(True)
-        a.spines['left'].set_visible(True)
-        a.spines['top'].set_visible(False)
-        a.spines['right'].set_visible(False)
-        plt.ylim(0,140)
-        #plt.subplot(111)
-        #self.canvas_1.draw()
+
+
+
 
 #####GRAPH - 2 ======================================================================================================
-        #Widget_2
+        #GRAPH-2
+        self.figure_2 = plt.figure(2, dpi=100, facecolor=(0.12941, 0.22353, 0.33725))
+        self.canvas_2 = FC(self.figure_2)
+        ax = plt.axes(facecolor=(0.12941, 0.22353, 0.33725))
+        plt.tick_params(colors=(1.00000, 0.43137, 0.46667))
+        ax.spines['bottom'].set_visible(True)
+        ax.spines['left'].set_visible(True)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        plt.tight_layout()
+
         #self.widget_2 = QtWidgets.QWidget(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(1)
@@ -129,16 +134,11 @@ class Ui_MainWindow(object):
         self.canvas_2.setSizePolicy(sizePolicy)
         self.canvas_2.setMinimumSize(QtCore.QSize(0, 0))
         self.canvas_2.setSizeIncrement(QtCore.QSize(5, 5))
-        #self.widget_2.setStyleSheet("background-color: rgb(33, 57, 86);\n"
-        #                            "border-color: rgb(0,0,0);\n"
-        #                            "gridline-color: rgb(0, 0, 0);")
         self.canvas_2.setObjectName("widget_2")
         self.gridLayout_9.addWidget(self.canvas_2, 3, 0, 1, 3)
 
-        #self.canvas_2.draw()
 
 ####SECOND GRAPH=====================================================================================================
-
         #ComboBox_G2
         #self.comboBox_G2 = QtWidgets.QComboBox(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -232,9 +232,6 @@ class Ui_MainWindow(object):
         self.buttonGroup.addButton(self.radioButton_2)
         self.gridLayout_9.addWidget(self.radioButton_2, 0, 2, 1, 1)
 
-
-
-
 #####LEFT SIDE DOCK WIDGET====================================================================================
         #DockWid_1
         #self.dockWidget_1 = QtWidgets.QDockWidget(MainWindow)
@@ -244,11 +241,11 @@ class Ui_MainWindow(object):
         self.dockWidget_1.setFeatures(
             QtWidgets.QDockWidget.DockWidgetFloatable | QtWidgets.QDockWidget.DockWidgetMovable)
         self.dockWidget_1.setObjectName("dockWidget_1")
-        #self.dockWidgetContents_1 = QtWidgets.QWidget()
+
         self.dockWidgetContents_1.setObjectName("dockWidgetContents_1")
         self.gridLayout.setObjectName("gridLayout")
 
-       # LEFTSIDE SECOND BOX========================================================================================
+       # LEFTSIDE SECOND GroupBox========================================================================================
 
        #GroupBox_2
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
@@ -343,6 +340,7 @@ class Ui_MainWindow(object):
         self.checkBox_3.setChecked(False)
         self.checkBox_3.setObjectName("checkBox_3")
         self.gridLayout_2.addWidget(self.checkBox_3, 1, 2, 1, 1)
+        self.checkBox_3.clicked.connect(self.enable)
 
         #checkBox_4
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
@@ -354,6 +352,7 @@ class Ui_MainWindow(object):
         self.checkBox_4.setChecked(False)
         self.checkBox_4.setObjectName("checkBox_4")
         self.gridLayout_2.addWidget(self.checkBox_4, 2, 2, 1, 1)
+        self.checkBox_4.clicked.connect(self.enable)
 
         #checkBox_5
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
@@ -365,6 +364,7 @@ class Ui_MainWindow(object):
         self.checkBox_5.setChecked(False)
         self.checkBox_5.setObjectName("checkBox_5")
         self.gridLayout_2.addWidget(self.checkBox_5, 3, 2, 1, 1)
+        self.checkBox_5.clicked.connect(self.enable)
 
         #label_10
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
@@ -431,6 +431,8 @@ class Ui_MainWindow(object):
         self.checkBox_1.setChecked(False)
         self.checkBox_1.setObjectName("checkBox_1")
         self.gridLayout_3.addWidget(self.checkBox_1, 1, 2, 1, 1)
+        self.checkBox_1.clicked.connect(self.enable)
+
 
         #doubleSpinBox_1
         self.doubleSpinBox_1.setEnabled(False)
@@ -466,7 +468,7 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_2.setProperty("showGroupSeparator", False)
         self.doubleSpinBox_2.setDecimals(0)
         self.doubleSpinBox_2.setMinimum(450.0)
-        self.doubleSpinBox_2.setMaximum(150.0)
+        self.doubleSpinBox_2.setMaximum(600.0)
         self.doubleSpinBox_2.setObjectName("doubleSpinBox_2")
         self.gridLayout_3.addWidget(self.doubleSpinBox_2, 2, 3, 1, 1)
 
@@ -637,6 +639,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.groupBox_1, 0, 0, 1, 1)
         self.dockWidget_1.setWidget(self.dockWidgetContents_1)
         MainWindow.addDockWidget(QtCore.Qt.DockWidgetArea(1), self.dockWidget_1)
+        self.checkBox_2.clicked.connect(self.enable)
 
         #dockWidget_2
         self.dockWidget_2.setMinimumSize(QtCore.QSize(250, 487))
@@ -702,7 +705,7 @@ class Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
-        #Action
+        #Action_Declaration
         self.actionRun = QtWidgets.QAction(MainWindow)
         self.actionRun.setObjectName("actionRUN")
 
@@ -715,8 +718,8 @@ class Ui_MainWindow(object):
         self.actionQuit = QtWidgets.QAction(MainWindow)
         self.actionQuit.setObjectName("actionQuit_2")
 
-        self.actionView = QtWidgets.QAction(MainWindow)
-        self.actionView.setObjectName("actionView")
+        self.actionIp = QtWidgets.QAction(MainWindow)
+        self.actionIp.setObjectName("actionView")
 
         self.actionReset = QtWidgets.QAction(MainWindow)
         self.actionReset.setObjectName("actionReset")
@@ -728,7 +731,7 @@ class Ui_MainWindow(object):
         self.actionWaveform.setObjectName("actionWaveform")
 
         self.actionQuit = QtWidgets.QAction(MainWindow)
-        self.actionQuit.setObjectName("actionQuite")
+        self.actionQuit.setObjectName("actionQuit")
 
         self.actionBloodsim = QtWidgets.QAction(MainWindow)
         self.actionBloodsim.setObjectName("actionBloodsim")
@@ -736,12 +739,13 @@ class Ui_MainWindow(object):
         self.actionAbout_Bloodsim = QtWidgets.QAction(MainWindow)
         self.actionAbout_Bloodsim.setObjectName("actionAbout_Bloodsim")
 
+        #Action_Adding
         self.menuFile.addAction(self.actionClear)
         self.menuFile.addAction(self.actionReset_2)
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionQuit)
 
-        self.menuView.addAction(self.actionView)
+        self.menuView.addAction(self.actionIp)
         self.menuView.addAction(self.actionWaveform)
 
         self.menuRun.addAction(self.actionRun)
@@ -749,6 +753,7 @@ class Ui_MainWindow(object):
         self.menuRun.addAction(self.actionStop)
         self.menuRun.addSeparator()
         self.menuRun.addAction(self.actionReset)
+
         self.menuHelp.addAction(self.actionBloodsim)
         self.menuHelp.addSeparator()
         self.menuHelp.addAction(self.actionAbout_Bloodsim)
@@ -759,8 +764,10 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuHelp.menuAction())
 
         #MenuTrigger
-        self.actionClear.triggered.connect(self.exit)
-
+        self.actionQuit.triggered.connect(self.exit)
+        self.actionIp.triggered.connect(self.showDock)
+        self.actionWaveform.triggered.connect(self.showDock)
+        self.actionRun.triggered.connect(self.plot)
 
         #setBuddy
         self.label_10.setBuddy(self.checkBox_3)
@@ -798,13 +805,11 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Bloodsim"))
         self.radioButton_2.setText(_translate("MainWindow", "Flow"))
-        self.comboBox_G2.setItemText(0, _translate("MainWindow", "Ascending Aorta"))
-        self.comboBox_G2.setItemText(1, _translate("MainWindow", "Aortic arch"))
+
         self.radioButton_4.setText(_translate("MainWindow", "Flow"))
         self.radioButton_3.setText(_translate("MainWindow", "Pressure"))
         self.radioButton_1.setText(_translate("MainWindow", "Pressure"))
-        self.comboBox_G1.setItemText(0, _translate("MainWindow", "Ascending Aorta"))
-        self.comboBox_G1.setItemText(1, _translate("MainWindow", "Aortic arch"))
+
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.menuView.setTitle(_translate("MainWindow", "View"))
         self.menuRun.setTitle(_translate("MainWindow", "Run"))
@@ -816,6 +821,55 @@ class Ui_MainWindow(object):
         self.label_8.setText(_translate("MainWindow", "Property"))
         self.label_12.setText(_translate("MainWindow", "Reflection Coefficient"))
         self.label_6.setText(_translate("MainWindow", "Number of Arteries"))
+        self.label_7.setText(_translate("MainWindow", "Select Artery"))
+        self.label_1.setText(_translate("MainWindow", "Property"))
+        self.label_2.setText(_translate("MainWindow", "Value"))
+        self.label_4.setText(_translate("MainWindow", "Peak Flow"))
+        self.label_3.setText(_translate("MainWindow", "Heart Rate"))
+        self.label_5.setText(_translate("MainWindow", "Stenosis"))
+
+        self.comboBox_G1.setItemText(0, _translate("MainWindow", "Ascending aorta"))
+        self.comboBox_G1.setItemText(1, _translate("MainWindow", "Aortic arch"))
+        self.comboBox_G1.setItemText(2, _translate("MainWindow", "Subclavian artery left"))
+        self.comboBox_G1.setItemText(3, _translate("MainWindow", "Subclavian artery right"))
+        self.comboBox_G1.setItemText(4, _translate("MainWindow", "Common carotid(L)"))
+        self.comboBox_G1.setItemText(5, _translate("MainWindow", "Common carotid(R)"))
+        self.comboBox_G1.setItemText(6, _translate("MainWindow", "Thoracic aorta"))
+        self.comboBox_G1.setItemText(7, _translate("MainWindow", "Cerebral artery right"))
+        self.comboBox_G1.setItemText(8, _translate("MainWindow", "Cerebral artey left"))
+        self.comboBox_G1.setItemText(9, _translate("MainWindow", "Abdominal aorta"))
+        self.comboBox_G1.setItemText(10, _translate("MainWindow", "Brachial Artery Right"))
+        self.comboBox_G1.setItemText(11, _translate("MainWindow", "Brachial Artery Left"))
+        self.comboBox_G1.setItemText(12, _translate("MainWindow", "Hepatic artery"))
+        self.comboBox_G1.setItemText(13, _translate("MainWindow", "Renal Artery"))
+        self.comboBox_G1.setItemText(14, _translate("MainWindow", "Femoral Artery Left"))
+        self.comboBox_G1.setItemText(15, _translate("MainWindow", "Femoral Artery Right"))
+        self.comboBox_G1.setItemText(16, _translate("MainWindow", "Ulnar artery left"))
+        self.comboBox_G1.setItemText(17, _translate("MainWindow", "Ulnar artery right"))
+        self.comboBox_G1.setItemText(18, _translate("MainWindow", "Radial Artery Left"))
+        self.comboBox_G1.setItemText(19, _translate("MainWindow", "Radial Artery Right"))
+
+        self.comboBox_G2.setItemText(0, _translate("MainWindow", "Ascending aorta"))
+        self.comboBox_G2.setItemText(1, _translate("MainWindow", "Aortic arch"))
+        self.comboBox_G2.setItemText(2, _translate("MainWindow", "Subclavian artery left"))
+        self.comboBox_G2.setItemText(3, _translate("MainWindow", "Subclavian artery right"))
+        self.comboBox_G2.setItemText(4, _translate("MainWindow", "Common carotid(L)"))
+        self.comboBox_G2.setItemText(5, _translate("MainWindow", "Common carotid(R)"))
+        self.comboBox_G2.setItemText(6, _translate("MainWindow", "Thoracic aorta"))
+        self.comboBox_G2.setItemText(7, _translate("MainWindow", "Cerebral artery right"))
+        self.comboBox_G2.setItemText(8, _translate("MainWindow", "Cerebral artey left"))
+        self.comboBox_G2.setItemText(9, _translate("MainWindow", "Abdominal aorta"))
+        self.comboBox_G2.setItemText(10, _translate("MainWindow", "Brachial Artery Right"))
+        self.comboBox_G2.setItemText(11, _translate("MainWindow", "Brachial Artery Left"))
+        self.comboBox_G2.setItemText(12, _translate("MainWindow", "Hepatic artery"))
+        self.comboBox_G2.setItemText(13, _translate("MainWindow", "Renal Artery"))
+        self.comboBox_G2.setItemText(14, _translate("MainWindow", "Femoral Artery Left"))
+        self.comboBox_G2.setItemText(15, _translate("MainWindow", "Femoral Artery Right"))
+        self.comboBox_G2.setItemText(16, _translate("MainWindow", "Ulnar artery left"))
+        self.comboBox_G2.setItemText(17, _translate("MainWindow", "Ulnar artery right"))
+        self.comboBox_G2.setItemText(18, _translate("MainWindow", "Radial Artery Left"))
+        self.comboBox_G2.setItemText(19, _translate("MainWindow", "Radial Artery Right"))
+
         self.comboBox_1.setItemText(0, _translate("MainWindow", "1"))
         self.comboBox_1.setItemText(1, _translate("MainWindow", "2"))
         self.comboBox_1.setItemText(2, _translate("MainWindow", "3"))
@@ -836,10 +890,7 @@ class Ui_MainWindow(object):
         self.comboBox_1.setItemText(17, _translate("MainWindow", "18"))
         self.comboBox_1.setItemText(18, _translate("MainWindow", "19"))
         self.comboBox_1.setItemText(19, _translate("MainWindow", "20"))
-        self.label_7.setText(_translate("MainWindow", "Select Artery"))
-        self.label_1.setText(_translate("MainWindow", "Property"))
-        self.label_2.setText(_translate("MainWindow", "Value"))
-        self.label_4.setText(_translate("MainWindow", "Peak Flow"))
+
         self.comboBox_2.setItemText(0, _translate("MainWindow", "1"))
         self.comboBox_2.setItemText(1, _translate("MainWindow", "2"))
         self.comboBox_2.setItemText(2, _translate("MainWindow", "3"))
@@ -860,7 +911,7 @@ class Ui_MainWindow(object):
         self.comboBox_2.setItemText(17, _translate("MainWindow", "18"))
         self.comboBox_2.setItemText(18, _translate("MainWindow", "19"))
         self.comboBox_2.setItemText(19, _translate("MainWindow", "20"))
-        self.label_3.setText(_translate("MainWindow", "Heart Rate"))
+
         self.comboBox_3.setItemText(0, _translate("MainWindow", "Ascending aorta"))
         self.comboBox_3.setItemText(1, _translate("MainWindow", "Aortic arch"))
         self.comboBox_3.setItemText(2, _translate("MainWindow", "Subclavian artery left"))
@@ -881,14 +932,14 @@ class Ui_MainWindow(object):
         self.comboBox_3.setItemText(17, _translate("MainWindow", "Ulnar artery right"))
         self.comboBox_3.setItemText(18, _translate("MainWindow", "Radial artery left"))
         self.comboBox_3.setItemText(19, _translate("MainWindow", "Radial artery right"))
-        self.label_5.setText(_translate("MainWindow", "Stenosis"))
-        self.dockWidget_2.setWindowTitle(_translate("MainWindow", "Waveform"))
+
+        self.dockWidget_2.setWindowTitle(_translate("MainWindow", "Information"))
 
         self.actionRun.setText(_translate("MainWindow", "Run.."))
         self.actionStop.setText(_translate("MainWindow", "Stop"))
 
         self.actionClear.setText(_translate("MainWindow", "Clear"))
-        self.actionView.setText(_translate("MainWindow", "Input Parmeters"))
+        self.actionIp.setText(_translate("MainWindow", "Input Parmeters"))
 
         self.actionReset.setText(_translate("MainWindow", "Reset"))
         self.actionReset_2.setText(_translate("MainWindow", "Reset"))
@@ -901,8 +952,84 @@ class Ui_MainWindow(object):
         self.actionAbout_Bloodsim.setText(_translate("MainWindow", "About Bloodsim"))
 
 
+    def enable(self):
+        if self.checkBox_1.isChecked() == True:
+            self.doubleSpinBox_1.setEnabled(True)
+        else:
+            self.doubleSpinBox_1.setEnabled(False)
+
+        if self.checkBox_2.isChecked() == True:
+            self.doubleSpinBox_2.setEnabled(True)
+        else:
+            self.doubleSpinBox_2.setEnabled(False)
+
+        if self.checkBox_3.isChecked() == True:
+            self.doubleSpinBox_4.setEnabled(True)
+        else:
+            self.doubleSpinBox_4.setEnabled(False)
+
+        if self.checkBox_4.isChecked() == True:
+            self.doubleSpinBox_5.setEnabled(True)
+        else:
+            self.doubleSpinBox_5.setEnabled(False)
+        if self.checkBox_5.isChecked() == True:
+            self.doubleSpinBox_6.setEnabled(True)
+        else:
+            self.doubleSpinBox_6.setEnabled(False)
+
     def exit(self):
         MainWindow.close()
+
+    def showDock(self):
+        if self.dockWidget_1.isVisible() == True:
+            self.dockWidget_1.hide()
+        if self.dockWidget_1.isVisible() == False:
+            self.dockWidget_1.show()
+
+
+    def plot(self):
+        t = np.arange(0.0,2.0,0.02)
+        x = np.sin(2*3.14*t)
+
+        plt.figure(1)
+        plt.plot(t, x)
+        self.canvas_1.draw()
+
+        plt.figure(2)
+        plt.plot(t, x)
+        self.canvas_2.draw()
+
+    def pressure_plot(self):
+        self.canvas_1.draw()
+        self.figure.clear()
+
+        if self.c and self.p:
+            plt.plot(self.clock, self.pulse[self.plot_p][:],'g', linewidth=1.0,)
+            self.canvas_1.draw()
+            self.statusbar.showMessage('PLOTTED', msecs=3000)
+        else:
+            self.alert("Invalid values...!!")
+
+    def flow_plot(self):
+        self.canvas_1.draw()
+        self.figure_1.clear()
+
+        if self.c and self.p:
+            plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0,)
+            self.canvas_1.draw()
+            self.statusbar.showMessage('PLOTTED', msecs=3000)
+        else:
+            self.alert("Invalid values...!!")
+
+    def alert(self, msg):
+        alert = QtWidgets.QMessageBox()
+        alert.setText(msg)
+        alert.exec_()
+
+    def reset(self):
+        self.statusbar.showMessage('cleared', msecs =  2000)
+        self.figure_1.clear()
+        self.canvas_1.draw()
 
 
 if __name__ == "__main__":
