@@ -1,8 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import matplotlib.pyplot as plt
-import matplotlib.figure as fig
-import matplotlib.style as mplstyle
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FC
+import pyqtgraph as pg
 import MAIN2
 import numpy as np
 import STENOSIS
@@ -89,53 +86,41 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_9.setObjectName("gridLayout_9")
 
-####GRAPH - 1 ======================================================================================================
+####GRAPH_WIDGET - 1 ======================================================================================================
         #GRAPH
-        self.figure_1 = plt.figure(1, dpi=100, facecolor=(0.12941, 0.22353, 0.33725))
-        self.canvas_1 = FC(self.figure_1)
-        ax1 = plt.axes(facecolor=(0.12941, 0.22353, 0.33725))
-        plt.tick_params(colors=(1.00000, 0.43137, 0.46667))
-        ax1.spines['bottom'].set_visible(True)
-        ax1.spines['left'].set_visible(True)
-        ax1.spines['top'].set_visible(False)
-        ax1.spines['right'].set_visible(False)
-        plt.tight_layout()
+        self.graphWidget_1 = pg.PlotWidget()
+        self.graphWidget_1.setBackground('#213956')
+        self.graphWidget_1.setAntialiasing(True)
+        labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
+        self.graphWidget_1.setLabel('left', text='x axis' , **labelStyle )
+        self.graphWidget_1.setLabel('bottom', text='y axis',**labelStyle )
 
-        #self.widget_1 = QtWidgets.QWidget(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.widget_1.sizePolicy().hasHeightForWidth())
-        self.canvas_1.setSizePolicy(sizePolicy)
-        self.canvas_1.setMinimumSize(QtCore.QSize(0, 0))
-        self.canvas_1.setObjectName("widget_1")
-        self.gridLayout_9.addWidget(self.canvas_1, 1, 0, 1, 3)
+        self.graphWidget_1.setSizePolicy(sizePolicy)
+        self.graphWidget_1.setMinimumSize(QtCore.QSize(0, 0))
+        self.graphWidget_1.setObjectName("widget_1")
+        self.gridLayout_9.addWidget(self.graphWidget_1, 1, 0, 1, 3)
 
 
-
-
-#####GRAPH - 2 ======================================================================================================
+#####GRAPH_WIDGET - 2 ======================================================================================================
         #GRAPH-2
-        self.figure_2 = plt.figure(2, dpi=100, facecolor=(0.12941, 0.22353, 0.33725))
-        self.canvas_2 = FC(self.figure_2)
-        ax = plt.axes(facecolor=(0.12941, 0.22353, 0.33725))
-        plt.tick_params(colors=(1.00000, 0.43137, 0.46667))
-        ax.spines['bottom'].set_visible(True)
-        ax.spines['left'].set_visible(True)
-        ax.spines['top'].set_visible(False)
-        ax.spines['right'].set_visible(False)
-        plt.tight_layout()
-
-        #self.widget_2 = QtWidgets.QWidget(self.centralwidget)
+        self.graphWidget_2 = pg.PlotWidget()
+        self.graphWidget_2.setBackground('#213956')
+        self.graphWidget_2.setAntialiasing(True)
+        self.graphWidget_2.setLabel('left', text='x axis')
+        self.graphWidget_2.setLabel('bottom', text='y axis')
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.widget_2.sizePolicy().hasHeightForWidth())
-        self.canvas_2.setSizePolicy(sizePolicy)
-        self.canvas_2.setMinimumSize(QtCore.QSize(0, 0))
-        self.canvas_2.setSizeIncrement(QtCore.QSize(5, 5))
-        self.canvas_2.setObjectName("widget_2")
-        self.gridLayout_9.addWidget(self.canvas_2, 3, 0, 1, 3)
+        self.graphWidget_2.setSizePolicy(sizePolicy)
+        self.graphWidget_2.setMinimumSize(QtCore.QSize(0, 0))
+        self.graphWidget_2.setSizeIncrement(QtCore.QSize(5, 5))
+        self.graphWidget_2.setObjectName("widget_2")
+        self.gridLayout_9.addWidget(self.graphWidget_2, 3, 0, 1, 3)
 
 
 ####SECOND GRAPH=====================================================================================================
@@ -163,7 +148,6 @@ class Ui_MainWindow(object):
         for i in range(20):
             self.comboBox_G2.addItem("")
         self.gridLayout_9.addWidget(self.comboBox_G2, 2, 0, 1, 1)
-
 
         # Radiobutton_3
         # self.radioButton_3 = QtWidgets.QRadioButton(self.centralwidget)
@@ -208,6 +192,7 @@ class Ui_MainWindow(object):
         for i in range(20):
             self.comboBox_G1.addItem("")
         self.gridLayout_9.addWidget(self.comboBox_G1, 0, 0, 1, 1)
+        self.comboBox_G1.currentIndexChanged.connect(self.viewing)
 
         # radioButton_1
         # self.radioButton_1 = QtWidgets.QRadioButton(self.centralwidget)
@@ -433,7 +418,6 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.checkBox_1, 1, 2, 1, 1)
         self.checkBox_1.clicked.connect(self.enable)
 
-
         #doubleSpinBox_1
         self.doubleSpinBox_1.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
@@ -647,6 +631,7 @@ class Ui_MainWindow(object):
 
         #dockWidgetContents_5
         self.dockWidgetContents_5.setObjectName("dockWidgetContents_5")
+
         #gridLayout_4
         self.gridLayout_4.setObjectName("gridLayout_4")
 
@@ -659,7 +644,7 @@ class Ui_MainWindow(object):
         #gridLayout_8
         self.gridLayout_8.setObjectName("gridLayout_8")
 
-        #textEdit
+        #textEdit_1
         self.textEdit_1.setStyleSheet("background-color: rgb(33, 57, 86);")
         self.textEdit_1.setObjectName("textEdit")
         self.gridLayout_8.addWidget(self.textEdit_1, 0, 0, 1, 1)
@@ -747,6 +732,10 @@ class Ui_MainWindow(object):
 
         self.menuView.addAction(self.actionIp)
         self.menuView.addAction(self.actionWaveform)
+        self.actionIp.setCheckable(True)
+        self.actionWaveform.setCheckable(True)
+        self.actionIp.setChecked(True)
+        self.actionWaveform.setChecked(True)
 
         self.menuRun.addAction(self.actionRun)
         self.menuRun.addSeparator()
@@ -765,9 +754,10 @@ class Ui_MainWindow(object):
 
         #MenuTrigger
         self.actionQuit.triggered.connect(self.exit)
-        self.actionIp.triggered.connect(self.showDock)
-        self.actionWaveform.triggered.connect(self.showDock)
+        self.actionIp.triggered.connect(self.showDock_1)
+        self.actionWaveform.triggered.connect(self.showDock_2)
         self.actionRun.triggered.connect(self.plot)
+        self.actionReset.triggered.connect(self.reset)
 
         #setBuddy
         self.label_10.setBuddy(self.checkBox_3)
@@ -945,12 +935,11 @@ class Ui_MainWindow(object):
         self.actionReset_2.setText(_translate("MainWindow", "Reset"))
 
         self.actionQuit.setText(_translate("MainWindow", "Quit"))
-        self.actionWaveform.setText(_translate("MainWindow", "Waveform"))
+        self.actionWaveform.setText(_translate("MainWindow", "Information"))
 
         self.actionQuit.setText(_translate("MainWindow", "Quit"))
         self.actionBloodsim.setText(_translate("MainWindow", "Bloodsim Help"))
         self.actionAbout_Bloodsim.setText(_translate("MainWindow", "About Bloodsim"))
-
 
     def enable(self):
         if self.checkBox_1.isChecked() == True:
@@ -980,24 +969,152 @@ class Ui_MainWindow(object):
     def exit(self):
         MainWindow.close()
 
-    def showDock(self):
-        if self.dockWidget_1.isVisible() == True:
-            self.dockWidget_1.hide()
-        if self.dockWidget_1.isVisible() == False:
+    def showDock_1(self):
+        if self.actionIp.isChecked() == True:
             self.dockWidget_1.show()
+
+        if self.actionIp.isChecked() == False:
+            self.dockWidget_1.hide()
+
+    def showDock_2(self):
+        if self.actionWaveform.isChecked() == True:
+            self.dockWidget_2.show()
+
+        if self.actionWaveform.isChecked() == False:
+            self.dockWidget_2.hide()
 
 
     def plot(self):
-        t = np.arange(0.0,2.0,0.02)
-        x = np.sin(2*3.14*t)
+        #t = np.arange(0.0,2.0,0.02)
+        #x = np.sin(2*3.14*t)
 
-        plt.figure(1)
-        plt.plot(t, x)
-        self.canvas_1.draw()
+        H = self.doubleSpinBox_1.value()  # read HR value
+        P = self.doubleSpinBox_2.value()  # read P value
+        S = self.doubleSpinBox_3.value()  # Stenosis Value
+        Index = self.comboBox_3.currentIndex()
 
-        plt.figure(2)
-        plt.plot(t, x)
-        self.canvas_2.draw()
+        if Index==0:
+            Pos = 0
+            self.plot_p = 1
+            self.plot_f = 0
+
+        elif Index==1:                              #Index value in combo_box
+            Pos = 1                                 #Initalize position
+            self.plot_p = 3
+            self.plot_f = 2
+
+        elif Index==2:
+            Pos = 7
+            self.plot_p = 7
+            self.plot_f = 6
+
+        elif Index==3:
+            Pos = 13
+            self.plot_p = 31
+            self.plot_f = 30
+
+        elif Index==4:
+            Pos = 3
+            self.plot_p = 53
+            self.plot_f = 52
+
+        elif Index==5:
+            Pos = 11
+            self.plot_p = 83
+            self.plot_f = 82
+
+        elif Index==6:
+            Pos = 10
+            self.plot_p = 113
+            self.plot_f = 112
+
+        elif Index==7:
+            Pos = 51
+            self.plot_p = 103
+            self.plot_f = 102
+
+        elif Index==8:
+            Pos = 46
+            self.plot_p = 75
+            self.plot_f = 74
+
+        elif Index==9:
+            Pos = 74
+            self.plot_p = 123
+            self.plot_f = 122
+
+        elif Index==10:
+            Pos = 56
+            self.plot_p = 207
+            self.plot_f = 206
+
+        elif Index==11:
+            Pos = 70
+            self.plot_p = 211
+            self.plot_f = 210
+
+        elif Index==12:
+            Pos = 62
+            self.plot_p = 131
+            self.plot_f = 130
+
+        elif Index==13:
+            Pos = 63
+            self.plot_p = 133
+            self.plot_f = 132
+
+        elif Index==14:
+            Pos = 108
+            self.plot_p = 149
+            self.plot_f = 148
+
+        elif Index==15:
+            Pos = 109
+            self.plot_p = 181
+            self.plot_f = 180
+
+        elif Index==16:
+            Pos = 102
+            self.plot_p = 249
+            self.plot_f = 248
+
+        elif Index==17:
+            Pos = 107
+            self.plot_p = 253
+            self.plot_f = 252
+
+        elif Index == 18:
+            Pos = 96
+            self.plot_p = 251
+            self.plot_f = 250
+
+        elif Index == 19:
+            Pos = 92
+            self.plot_p = 245
+            self.plot_f = 244
+
+        print('positon value:', Pos, 'stenosis value:', S)
+        STENOSIS.steno(Pos, S)  # s : value of stenosis in %, pos: in which area to induce
+        self.clock, self.pulse = MAIN2.calc(H, P)
+
+        self.p_Peak = self.pulse[self.plot_p][:].max()
+        self.p_Peak = str(self.p_Peak)
+        
+        #self.graphWidget_1.addLegend()
+        self.graphWidget_1.showGrid(x=True, y=True)
+        self.graphWidget_1.plotItem.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+        self.graphWidget_1.plotItem.setLabel('left', 'Amplitude', color='red', size=40)
+        self.graphWidget_1.plotItem.setLabel('bottom', 'Time', color='red', size=40)
+
+        #self.graphWidget_2.addLegend()
+        self.graphWidget_2.showGrid(x=True, y=True)
+        self.graphWidget_2.plotItem.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=self.comboBox_G2.currentText())
+        self.graphWidget_2.plotItem.setLabel('left', 'Amplitude', color='red', size=40)
+        self.graphWidget_2.plotItem.setLabel('bottom', 'Time', color='red', size=40)
+
+        self.textEdit_1.clear()
+        self.textEdit_1.insertPlainText(self.p_Peak)
+        self.statusbar.showMessage('PLOTTED', msecs=9000)
 
     def pressure_plot(self):
         self.canvas_1.draw()
@@ -1010,9 +1127,11 @@ class Ui_MainWindow(object):
         else:
             self.alert("Invalid values...!!")
 
+
     def flow_plot(self):
+
         self.canvas_1.draw()
-        self.figure_1.clear()
+
 
         if self.c and self.p:
             plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0,)
@@ -1028,13 +1147,243 @@ class Ui_MainWindow(object):
 
     def reset(self):
         self.statusbar.showMessage('cleared', msecs =  2000)
-        self.figure_1.clear()
-        self.canvas_1.draw()
+        self.graphWidget_1.plotItem.clearPlots()
+        self.graphWidget_2.plotItem.clearPlots()
 
+    def viewing(self):
+        print('viewing called')
+
+        Index = self.comboBox_G1.currentIndex()
+        pli = self.graphWidget_1.getPlotItem()
+        self.graphWidget_1.plotItem.clear()
+        self.graphWidget_1.useOpenGL(True)
+
+        plt = self.graphWidget_1
+        if Index==0:
+            Pos = 0
+            self.plot_p = 1
+            self.plot_f = 0
+
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==1:
+            Pos = 1
+            self.plot_p = 3
+            self.plot_f = 2
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==2:
+            Pos = 7
+            self.plot_p = 7
+            self.plot_f = 6
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==3:
+            Pos = 13
+            self.plot_p = 31
+            self.plot_f = 30
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==4:
+            Pos = 3
+            self.plot_p = 53
+            self.plot_f = 52
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==5:
+            Pos = 11
+            self.plot_p = 83
+            self.plot_f = 82
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==6:
+            Pos = 10
+            self.plot_p = 113
+            self.plot_f = 112
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==7:
+            Pos = 51
+            self.plot_p = 103
+            self.plot_f = 102
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==8:
+            Pos = 46
+            self.plot_p = 75
+            self.plot_f = 74
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==9:
+            Pos = 74
+            self.plot_p = 123
+            self.plot_f = 122
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==10:
+            Pos = 56
+            self.plot_p = 207
+            self.plot_f = 206
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==11:
+            Pos = 70
+            self.plot_p = 211
+            self.plot_f = 210
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==12:
+            Pos = 62
+            self.plot_p = 131
+            self.plot_f = 130
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==13:
+            Pos = 63
+            self.plot_p = 133
+            self.plot_f = 132
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==14:
+            Pos = 108
+            self.plot_p = 149
+            self.plot_f = 148
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==15:
+            Pos = 109
+            self.plot_p = 181
+            self.plot_f = 180
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==16:
+            Pos = 102
+            self.plot_p = 249
+            self.plot_f = 248
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index==17:
+            Pos = 107
+            self.plot_p = 253
+            self.plot_f = 252
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index == 18:
+            Pos = 96
+            self.plot_p = 251
+            self.plot_f = 250
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+
+        elif Index == 19:
+            Pos = 92
+            self.plot_p = 245
+            self.plot_f = 244
+            if self.radioButton_1.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
+            elif self.radioButton_2.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], 'b', linewidth=1.0, )
+                self.statusbar.showMessage('PLOTTED', msecs=3000)
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
