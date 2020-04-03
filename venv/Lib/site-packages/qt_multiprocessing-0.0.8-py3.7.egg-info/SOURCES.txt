@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+qt_multiprocessing/__init__.py
+qt_multiprocessing/application.py
+qt_multiprocessing/close_app_helper.py
+qt_multiprocessing/qt_mp_event_loop.py
+qt_multiprocessing/qt_proxy.py
+qt_multiprocessing.egg-info/PKG-INFO
+qt_multiprocessing.egg-info/SOURCES.txt
+qt_multiprocessing.egg-info/dependency_links.txt
+qt_multiprocessing.egg-info/requires.txt
+qt_multiprocessing.egg-info/top_level.txt
