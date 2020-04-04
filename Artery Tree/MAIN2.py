@@ -6,7 +6,7 @@ import datetime
 from scipy.integrate import solve_ivp
 
 def calc(HR, PF):
-    #try:
+    try:
         nn = datetime.datetime.now()
         branch_list = open('DB/branch_list.txt', 'r')
         b = branch_list.readlines()
@@ -66,8 +66,8 @@ def calc(HR, PF):
         print(datetime.datetime.now() - s)
 
         return (t, x)
-    #except:
-        #return (-1, -10000)
+    except:
+        return (-1, -10000)
 
 if __name__ == "__main__":
     import STENOSIS
