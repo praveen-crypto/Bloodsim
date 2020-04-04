@@ -110,8 +110,9 @@ class Ui_MainWindow(object):
         self.graphWidget_2 = pg.PlotWidget()
         self.graphWidget_2.setBackground('#213956')
         self.graphWidget_2.setAntialiasing(True)
-        self.graphWidget_2.setLabel('left', text='x axis')
-        self.graphWidget_2.setLabel('bottom', text='y axis')
+        labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
+        self.graphWidget_2.setLabel('left', text='x axis', **labelStyle)
+        self.graphWidget_2.setLabel('bottom', text='y axis', **labelStyle)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
@@ -121,6 +122,7 @@ class Ui_MainWindow(object):
         self.graphWidget_2.setSizeIncrement(QtCore.QSize(5, 5))
         self.graphWidget_2.setObjectName("widget_2")
         self.gridLayout_9.addWidget(self.graphWidget_2, 3, 0, 1, 3)
+
 
 
 ####SECOND GRAPH=====================================================================================================
@@ -297,6 +299,8 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_6.setMaximum(3.0)
         self.doubleSpinBox_6.setObjectName("doubleSpinBox_6")
         self.gridLayout_2.addWidget(self.doubleSpinBox_6, 3, 3, 1, 1)
+
+
 
         #doubleSpinBox_4
         self.doubleSpinBox_4.setEnabled(False)
@@ -487,6 +491,11 @@ class Ui_MainWindow(object):
         self.comboBox_1.setObjectName("comboBox_1")
         for i in range(20):
             self.comboBox_1.addItem("")
+        self.comboBox_1.currentIndexChanged.connect(self.val)
+
+
+
+
         self.gridLayout_3.addWidget(self.comboBox_1, 4, 3, 1, 1)
 
         #label_7
@@ -566,8 +575,11 @@ class Ui_MainWindow(object):
                                       "font: 10pt \"MS Shell Dlg 2\";")
         self.comboBox_2.setFrame(False)
         self.comboBox_2.setObjectName("comboBox_2")
-        for i in range(20):
+        self.comboBox_2.addItem("1")
+        '''for i in range(20):
             self.comboBox_2.addItem("")
+        '''
+
         self.gridLayout_3.addWidget(self.comboBox_2, 5, 3, 1, 1)
 
         #label_3
@@ -726,6 +738,9 @@ class Ui_MainWindow(object):
         self.actionAbout_Bloodsim = QtWidgets.QAction(MainWindow)
         self.actionAbout_Bloodsim.setObjectName("actionAbout_Bloodsim")
 
+        self.actionHeart_Parameter = QtWidgets.QAction(MainWindow)
+        self.actionHeart_Parameter.setObjectName("actionHeart_Parameter")
+
         #Action_Adding
         self.menuFile.addAction(self.actionClear)
         self.menuFile.addAction(self.actionReset_2)
@@ -734,10 +749,13 @@ class Ui_MainWindow(object):
 
         self.menuView.addAction(self.actionIp)
         self.menuView.addAction(self.actionWaveform)
+        self.menuView.addAction(self.actionHeart_Parameter)
         self.actionIp.setCheckable(True)
         self.actionWaveform.setCheckable(True)
         self.actionIp.setChecked(True)
         self.actionWaveform.setChecked(True)
+        self.actionHeart_Parameter.setCheckable(True)
+        self.actionHeart_Parameter.setChecked(True)
 
         self.menuRun.addAction(self.actionRun)
         self.menuRun.addSeparator()
@@ -768,7 +786,7 @@ class Ui_MainWindow(object):
         self.actionRun.triggered.connect(self.plot)
         self.actionReset.triggered.connect(self.reset)
         #HelpMenu_trigger
-        #self.actionBloodsim.triggered.connect(self.help)
+        self.actionBloodsim.triggered.connect(self.about)
         #self.actionAbout_Bloodsim.triggered.connect(self.about)
 
         #setBuddy
@@ -893,27 +911,6 @@ class Ui_MainWindow(object):
         self.comboBox_1.setItemText(18, _translate("MainWindow", "19"))
         self.comboBox_1.setItemText(19, _translate("MainWindow", "20"))
 
-        self.comboBox_2.setItemText(0, _translate("MainWindow", "1"))
-        self.comboBox_2.setItemText(1, _translate("MainWindow", "2"))
-        self.comboBox_2.setItemText(2, _translate("MainWindow", "3"))
-        self.comboBox_2.setItemText(3, _translate("MainWindow", "4"))
-        self.comboBox_2.setItemText(4, _translate("MainWindow", "5"))
-        self.comboBox_2.setItemText(5, _translate("MainWindow", "6"))
-        self.comboBox_2.setItemText(6, _translate("MainWindow", "7"))
-        self.comboBox_2.setItemText(7, _translate("MainWindow", "8"))
-        self.comboBox_2.setItemText(8, _translate("MainWindow", "9"))
-        self.comboBox_2.setItemText(9, _translate("MainWindow", "10"))
-        self.comboBox_2.setItemText(10, _translate("MainWindow", "11"))
-        self.comboBox_2.setItemText(11, _translate("MainWindow", "12"))
-        self.comboBox_2.setItemText(12, _translate("MainWindow", "13"))
-        self.comboBox_2.setItemText(13, _translate("MainWindow", "14"))
-        self.comboBox_2.setItemText(14, _translate("MainWindow", "15"))
-        self.comboBox_2.setItemText(15, _translate("MainWindow", "16"))
-        self.comboBox_2.setItemText(16, _translate("MainWindow", "17"))
-        self.comboBox_2.setItemText(17, _translate("MainWindow", "18"))
-        self.comboBox_2.setItemText(18, _translate("MainWindow", "19"))
-        self.comboBox_2.setItemText(19, _translate("MainWindow", "20"))
-
         self.comboBox_3.setItemText(0, _translate("MainWindow", "Ascending aorta"))
         self.comboBox_3.setItemText(1, _translate("MainWindow", "Aortic arch"))
         self.comboBox_3.setItemText(2, _translate("MainWindow", "Subclavian artery left"))
@@ -941,17 +938,28 @@ class Ui_MainWindow(object):
         self.actionStop.setText(_translate("MainWindow", "Stop"))
 
         self.actionClear.setText(_translate("MainWindow", "Clear"))
+
         self.actionIp.setText(_translate("MainWindow", "Input Parmeters"))
+        self.actionWaveform.setText(_translate("MainWindow", "Information"))
+        self.actionHeart_Parameter.setText(_translate("MainWindow", "Heart Parameter"))
 
         self.actionReset.setText(_translate("MainWindow", "Reset"))
         self.actionReset_2.setText(_translate("MainWindow", "Reset"))
 
         self.actionQuit.setText(_translate("MainWindow", "Quit"))
-        self.actionWaveform.setText(_translate("MainWindow", "Information"))
 
         self.actionQuit.setText(_translate("MainWindow", "Quit"))
         self.actionBloodsim.setText(_translate("MainWindow", "Bloodsim Help"))
         self.actionAbout_Bloodsim.setText(_translate("MainWindow", "About Bloodsim"))
+
+    def val(self):
+        data = self.comboBox_1.currentIndex()
+        data = int(data)
+        self.comboBox_2.clear()
+        for i in range(data+1):
+            j = i + 1
+            j = str(j)
+            self.comboBox_2.addItem(j)
 
     def enable(self):
         if self.checkBox_1.isChecked() == True:
@@ -1113,12 +1121,12 @@ class Ui_MainWindow(object):
         if self.c and self.p:
             self.p_Peak = self.pulse[self.plot_p][:].max()
             self.p_Peak = str(self.p_Peak)
-
+            labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
             #self.graphWidget_1.addLegend()
             self.graphWidget_1.showGrid(x=True, y=True)
-            self.graphWidget_1.plotItem.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = self.comboBox_G1.currentText())
-            self.graphWidget_1.plotItem.setLabel('left', 'Amplitude', color='red', size=40)
-            self.graphWidget_1.plotItem.setLabel('bottom', 'Time', color='red', size=40)
+            self.graphWidget_1.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_1.setLabel('left', 'Pressure (mmHg)', **labelStyle)
+            self.graphWidget_1.plotItem.setLabel('bottom', 'Time (s)', **labelStyle)
 
             self.textEdit_1.clear()
             self.textEdit_1.insertPlainText(self.p_Peak)
@@ -1126,9 +1134,9 @@ class Ui_MainWindow(object):
 
             #self.graphWidget_2.addLegend()
             self.graphWidget_2.showGrid(x=True, y=True)
-            self.graphWidget_2.plotItem.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=self.comboBox_G2.currentText())
-            self.graphWidget_2.plotItem.setLabel('left', 'Amplitude', color='red', size=40)
-            self.graphWidget_2.plotItem.setLabel('bottom', 'Time', color='red', size=40)
+            self.graphWidget_2.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Pressure (mmHg)', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
 
             self.textEdit_2.clear()
             self.textEdit_2.insertPlainText(self.p_Peak)
@@ -1152,7 +1160,6 @@ class Ui_MainWindow(object):
         plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
         self.statusbar.showMessage('PLOTTED', msecs=5000)
 
-
     def flow_plot_1(self):
         self.graphWidget_1.plotItem.clear()
         plt = self.graphWidget_1
@@ -1173,6 +1180,20 @@ class Ui_MainWindow(object):
         alert = QtWidgets.QMessageBox()
         alert.setText(msg)
         alert.exec_()
+
+    def Help(self):
+        help = QtWidgets.QMessageBox()
+        help.setWindowTitle("Help")
+        help.setText("Kindly ")
+        help.exec_()
+
+
+    def about(self):
+        about = QtWidgets.QMessageBox()
+        about.setWindowTitle("About")
+        about.setText('This is an open source software developed for the simulation of blood pressure and blood flow'
+                      '\nKindly support us by contributing your part to this software.')
+        about.exec_()
 
     def reset(self):
         self.statusbar.showMessage('cleared', msecs =  6000)
@@ -1199,15 +1220,14 @@ class Ui_MainWindow(object):
 
     def viewing(self, Index, Txt, plt):
         print('viewing called')
-
         if Index==0:
             Pos = 0
             self.plot_p = 1
             self.plot_f = 0
             if self.radioButton_1.isChecked()  or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2), name = Txt)
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen('#3CAEA3', width=2), name = Txt)
 
         elif Index==1:
             Pos = 1
@@ -1393,13 +1413,32 @@ class Ui_MainWindow(object):
             Pos = 92
             self.plot_p = 245
             self.plot_f = 244
-            if self.radioButton_1.isChecked()or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+            if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2), name = Txt)
 
-            elif self.radioButton_2.isChecked()or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
-
-        self.statusbar.showMessage('PLOTTED', msecs=6000)
+            elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2), name = Txt)
+        labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
+        if self.radioButton_1.isChecked():
+            self.graphWidget_1.setLabel('left', text='Pressure (mmHg)', **labelStyle)
+            self.graphWidget_1.setLabel('bottom', text='Time', **labelStyle)
+            self.peak = self.pulse[self.plot_p][:].max()
+        if self.radioButton_3.isChecked():
+            self.graphWidget_2.setLabel('left', text='Pressure (mmHg)', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', text='Time', **labelStyle)
+            self.peak = self.pulse[self.plot_p][:].max()
+        if self.radioButton_2.isChecked():
+            self.graphWidget_1.setLabel('left', text='Pressure (mmHg)', **labelStyle)
+            self.graphWidget_1.setLabel('bottom', text='Time', **labelStyle)
+            self.peak = self.pulse[self.plot_f][:].max()
+        if self.radioButton_4.isChecked():
+            self.graphWidget_2.setLabel('left', text='Pressure (mmHg)', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', text='Time', **labelStyle)
+            self.peak = self.pulse[self.plot_f][:].max()
+        self.Peak = str(self.peak)
+        self.textEdit_1.clear()
+        self.textEdit_1.setText(self.Peak)
+        self.statusbar.showMessage('PLOTTED', msecs=10000)
 
 if __name__ == "__main__":
     import sys
