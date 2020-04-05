@@ -237,6 +237,7 @@ class Ui_MainWindow(object):
        # LEFTSIDE SECOND GroupBox========================================================================================
 
        #GroupBox_2
+
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -403,7 +404,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.label_12, 3, 0, 1, 2)
         self.gridLayout.addWidget(self.groupBox_2, 1, 0, 1, 1)
 
-###LEFTSIDE FIRST BOX========================================================================================
+###groupBox_1========================================================================================
         #groupBox_1
         self.groupBox_1.setTitle("")
         self.groupBox_1.setFlat(True)
@@ -421,12 +422,12 @@ class Ui_MainWindow(object):
         self.checkBox_1.setText("")
         self.checkBox_1.setChecked(False)
         self.checkBox_1.setObjectName("checkBox_1")
-        self.gridLayout_3.addWidget(self.checkBox_1, 1, 2, 1, 1)
+        self.gridLayout_3.addWidget(self.checkBox_1, 1, 1, 1, 1)
         self.checkBox_1.clicked.connect(self.enable)
 
         #doubleSpinBox_1
         self.doubleSpinBox_1.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.doubleSpinBox_1.sizePolicy().hasHeightForWidth())
@@ -441,11 +442,11 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_1.setMinimum(72.0)
         self.doubleSpinBox_1.setMaximum(150.0)
         self.doubleSpinBox_1.setObjectName("doubleSpinBox_1")
-        self.gridLayout_3.addWidget(self.doubleSpinBox_1, 1, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.doubleSpinBox_1, 1, 2, 1, 1)
 
         #doubleSpinBox_2
         self.doubleSpinBox_2.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.doubleSpinBox_2.sizePolicy().hasHeightForWidth())
@@ -460,7 +461,64 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_2.setMinimum(450.0)
         self.doubleSpinBox_2.setMaximum(600.0)
         self.doubleSpinBox_2.setObjectName("doubleSpinBox_2")
-        self.gridLayout_3.addWidget(self.doubleSpinBox_2, 2, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.doubleSpinBox_2, 2, 2, 1, 1)
+
+        # label_1
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_1.sizePolicy().hasHeightForWidth())
+        self.label_1.setSizePolicy(sizePolicy)
+        self.label_1.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_1.setStyleSheet("background-color: rgb(32, 99, 155);\n"
+                                   "font: 9pt \"MS Shell Dlg 2\";")
+        self.label_1.setObjectName("label_1")
+        self.gridLayout_3.addWidget(self.label_1, 0, 0, 1, 1)
+
+        # label_2
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy)
+        self.label_2.setMaximumSize(QtCore.QSize(16777215, 15))
+        self.label_2.setStyleSheet("background-color: rgb(32, 99, 155);\n"
+                                   "font: 9pt \"MS Shell Dlg 2\";")
+        self.label_2.setObjectName("label_2")
+        self.gridLayout_3.addWidget(self.label_2, 0, 2, 1, 1)
+
+        # label_3
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
+        self.label_3.setSizePolicy(sizePolicy)
+        self.label_3.setStyleSheet("font: 9pt \"MS Shell Dlg 2\";\n"
+                                   "color: rgb(255,255,255);")
+        self.label_3.setObjectName("label_3")
+        self.gridLayout_3.addWidget(self.label_3, 1, 0, 1, 1)
+
+        # label_4
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
+        self.label_4.setSizePolicy(sizePolicy)
+        self.label_4.setStyleSheet("font: 9pt \"MS Shell Dlg 2\";\n"
+                                   "color: rgb(255,255,255);")
+        self.label_4.setObjectName("label_4")
+        self.gridLayout_3.addWidget(self.label_4, 2, 0, 1, 1)
+
+        # label_5
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
+        self.label_5.setSizePolicy(sizePolicy)
+        self.label_5.setStyleSheet("background-color: rgb(32, 99, 155);\n"
+                                   "font: 9pt \"MS Shell Dlg 2\";")
+        self.label_5.setObjectName("label_5")
+        self.gridLayout_3.addWidget(self.label_5, 3, 0, 1, 1)
 
         #label_6
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
@@ -471,7 +529,7 @@ class Ui_MainWindow(object):
         self.label_6.setStyleSheet("font: 9pt \"MS Shell Dlg 2\";\n"
                                    "color: rgb(255,255,255);")
         self.label_6.setObjectName("label_6")
-        self.gridLayout_3.addWidget(self.label_6, 4, 0, 1, 2)
+        self.gridLayout_3.addWidget(self.label_6, 4, 0, 1, 1)
 
         #comboBox_1
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
@@ -492,11 +550,7 @@ class Ui_MainWindow(object):
         for i in range(20):
             self.comboBox_1.addItem("")
         self.comboBox_1.currentIndexChanged.connect(self.val)
-
-
-
-
-        self.gridLayout_3.addWidget(self.comboBox_1, 4, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.comboBox_1, 4, 2, 1, 1)
 
         #label_7
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
@@ -509,20 +563,8 @@ class Ui_MainWindow(object):
         self.label_7.setObjectName("label_7")
         self.gridLayout_3.addWidget(self.label_7, 5, 0, 1, 1)
 
-        #label_1
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_1.sizePolicy().hasHeightForWidth())
-        self.label_1.setSizePolicy(sizePolicy)
-        self.label_1.setMaximumSize(QtCore.QSize(16777215, 15))
-        self.label_1.setStyleSheet("background-color: rgb(32, 99, 155);\n"
-                                   "font: 9pt \"MS Shell Dlg 2\";")
-        self.label_1.setObjectName("label_1")
-        self.gridLayout_3.addWidget(self.label_1, 0, 0, 1, 2)
-
         #doubleSpinBox_3
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.doubleSpinBox_3.sizePolicy().hasHeightForWidth())
@@ -534,30 +576,13 @@ class Ui_MainWindow(object):
                                            "font: 12.5pt \"Garamond\";")
         self.doubleSpinBox_3.setDecimals(0)
         self.doubleSpinBox_3.setObjectName("doubleSpinBox_3")
-        self.gridLayout_3.addWidget(self.doubleSpinBox_3, 6, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.doubleSpinBox_3, 6, 2, 1, 1)
 
-        #label_2
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
-        self.label_2.setSizePolicy(sizePolicy)
-        self.label_2.setMaximumSize(QtCore.QSize(16777215, 15))
-        self.label_2.setStyleSheet("background-color: rgb(32, 99, 155);\n"
-                                   "font: 9pt \"MS Shell Dlg 2\";")
-        self.label_2.setObjectName("label_2")
-        self.gridLayout_3.addWidget(self.label_2, 0, 3, 1, 1)
-
-        #label_4
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
-        self.label_4.setSizePolicy(sizePolicy)
-        self.label_4.setStyleSheet("font: 9pt \"MS Shell Dlg 2\";\n"
-                                   "color: rgb(255,255,255);")
-        self.label_4.setObjectName("label_4")
-        self.gridLayout_3.addWidget(self.label_4, 2, 0, 1, 1)
+        #PushButton
+        self.pushButton_1 = QtWidgets.QPushButton(self.groupBox_1)
+        self.pushButton_1.setStyleSheet("background-color: rgb(35, 35, 35);")
+        self.pushButton_1.setObjectName("pushButton_1")
+        self.gridLayout_3.addWidget(self.pushButton_1, 7, 0, 1, 3)
 
         #comboBox_2
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
@@ -579,22 +604,12 @@ class Ui_MainWindow(object):
         '''for i in range(20):
             self.comboBox_2.addItem("")
         '''
+        self.gridLayout_3.addWidget(self.comboBox_2, 5, 2, 1, 1)
 
-        self.gridLayout_3.addWidget(self.comboBox_2, 5, 3, 1, 1)
 
-        #label_3
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
-        self.label_3.setSizePolicy(sizePolicy)
-        self.label_3.setStyleSheet("font: 9pt \"MS Shell Dlg 2\";\n"
-                                   "color: rgb(255,255,255);")
-        self.label_3.setObjectName("label_3")
-        self.gridLayout_3.addWidget(self.label_3, 1, 0, 1, 1)
 
         #comboBox_3
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.comboBox_3.sizePolicy().hasHeightForWidth())
@@ -613,16 +628,7 @@ class Ui_MainWindow(object):
             self.comboBox_3.addItem("")
         self.gridLayout_3.addWidget(self.comboBox_3, 6, 0, 1, 1)
 
-        #label_5
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
-        self.label_5.setSizePolicy(sizePolicy)
-        self.label_5.setStyleSheet("background-color: rgb(32, 99, 155);\n"
-                                   "font: 9pt \"MS Shell Dlg 2\";")
-        self.label_5.setObjectName("label_5")
-        self.gridLayout_3.addWidget(self.label_5, 3, 0, 1, 1)
+
 
         #checkBox_2
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
@@ -633,7 +639,7 @@ class Ui_MainWindow(object):
         self.checkBox_2.setText("")
         self.checkBox_2.setChecked(False)
         self.checkBox_2.setObjectName("checkBox_2")
-        self.gridLayout_3.addWidget(self.checkBox_2, 2, 2, 1, 1)
+        self.gridLayout_3.addWidget(self.checkBox_2, 2, 1, 1, 1)
         self.gridLayout.addWidget(self.groupBox_1, 0, 0, 1, 1)
         self.dockWidget_1.setWidget(self.dockWidgetContents_1)
         MainWindow.addDockWidget(QtCore.Qt.DockWidgetArea(1), self.dockWidget_1)
@@ -824,8 +830,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Bloodsim"))
-        self.radioButton_2.setText(_translate("MainWindow", "Flow"))
+        self.pushButton_1.setText(_translate("MainWindow", "OK"))
 
+        self.radioButton_2.setText(_translate("MainWindow", "Flow"))
         self.radioButton_4.setText(_translate("MainWindow", "Flow"))
         self.radioButton_3.setText(_translate("MainWindow", "Pressure"))
         self.radioButton_1.setText(_translate("MainWindow", "Pressure"))
@@ -1127,7 +1134,6 @@ class Ui_MainWindow(object):
             self.graphWidget_1.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_1.setLabel('left', 'Pressure (mmHg)', **labelStyle)
             self.graphWidget_1.plotItem.setLabel('bottom', 'Time (s)', **labelStyle)
-
             self.textEdit_1.clear()
             self.textEdit_1.insertPlainText(self.p_Peak)
             self.statusbar.showMessage('PLOTTED', msecs=9000)
@@ -1186,7 +1192,6 @@ class Ui_MainWindow(object):
         help.setWindowTitle("Help")
         help.setText("Kindly ")
         help.exec_()
-
 
     def about(self):
         about = QtWidgets.QMessageBox()

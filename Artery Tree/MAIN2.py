@@ -38,7 +38,6 @@ def calc(HR, PF):
         x1 = PF * (np.square(np.sin(3.14 * t3 / 0.3)))
         x2 = np.floor(t3 + 0.7)
 
-
         R1 = 0.11
         L = 0.011
         R2 = 1.11
@@ -71,7 +70,13 @@ def calc(HR, PF):
 
 if __name__ == "__main__":
     import STENOSIS
-    import matplotlib.pyplot as plt
+
+    import pandas as pd
     STENOSIS.steno(0, 0)
-    c, p = calc(72, 360)
-    plt.plot(c, p[1][:])
+    c, p = calc(70, 340)
+    df = pd.DataFrame(p)
+    writer = pd.ExcelWriter('sim.xlsx')
+    df.to_excel(writer, 'Sheet1', index=False)
+    writer.save()
+
+
