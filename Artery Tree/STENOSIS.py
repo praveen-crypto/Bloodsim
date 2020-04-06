@@ -17,10 +17,10 @@ def steno(p, value):
     D[p] = value
     at = np.genfromtxt('DB/arterytree.txt', delimiter=',')
 
-    l = at[:, 0]                                          #assigning l with dataframe of 0 column of a variable
-    r = at[:, 1]                                          #assigning r with dataframe of 1st column of a variable
-    h = at[:, 2]                                          #assigning h with dataframe of 2nd column of a variable
-    E = np.multiply(at[:, 3], 10e+5)                      #assigning E with dataframe of 3rd column of a variable    E = a(:,4).*10^6;
+    l = at[:, 0]                                          #assigning l with dataframe of 0th col of a variable
+    r = at[:, 1]                                          #assigning r with dataframe of 1st col of a variable
+    h = at[:, 2]                                          #assigning h with dataframe of 2nd col of a variable
+    E = np.multiply(at[:, 3], 10e+5)                      #assigning E with dataframe of 3rd col of a variable
 
     RLCtru[:, 0] = np.true_divide(8*mu*l, np.power(pi*np.multiply(np.subtract(r, D), r), 4))   #8*mu*l ./ (pi*(r-D.*r).^4);
     RLCtru[:, 1] = np.true_divide(np.multiply(l, rho), ((pi*np.power(np.multiply(np.subtract(r, D), r), 2))))   # l.*rho ./ ((pi*(r-D.*r).^2))

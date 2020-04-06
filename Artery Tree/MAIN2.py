@@ -49,7 +49,7 @@ def calc(HR, PF):
         pulse_initial = np.zeros(2)
         print('pulse')
         pulse_generator = lambda t, x: po.pulsegen(t, x, R1, L, R2, C, clock, it)  # input for solver function
-        t, x = r_k.rungekutta4(pulse_generator, pulse_initial, 0.0, 10, dt)
+        t, x = r_k.rungekutta4(pulse_generator, pulse_initial, 0.0, 10.0, dt)
         pu = it.transpose()  # plotting the output
         pulse = (pu - x[0, :]) * R1 + x[1, :]
         print('pulse-gen')
@@ -58,7 +58,7 @@ def calc(HR, PF):
 
         system_initial = np.zeros(256)
         system_finder = lambda t, x: so.integrated_ode(t, x, pulse, clock)
-        sol = solve_ivp(system_finder, [0, 10], system_initial, method='Radau', t_eval=np.linspace(0, 10, 1000))
+        sol = solve_ivp(system_finder, [0, 10], system_initial, method='Radau', t_eval=np.arange(0.0, 10.0, dt))
         t = sol.t
         x = sol.y
         print('ode-solver')
@@ -70,13 +70,11 @@ def calc(HR, PF):
 
 if __name__ == "__main__":
     import STENOSIS
-
     import pandas as pd
     STENOSIS.steno(0, 0)
-    c, p = calc(70, 340)
+    c, p = calc(72, 450)
     df = pd.DataFrame(p)
-    writer = pd.ExcelWriter('sim.xlsx')
+
+    writer = pd.ExcelWriter('sim1.xlsx')
     df.to_excel(writer, 'Sheet1', index=False)
     writer.save()
-
-

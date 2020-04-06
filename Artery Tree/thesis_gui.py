@@ -70,6 +70,9 @@ class Ui_MainWindow(object):
         self.textEdit_1 = QtWidgets.QTextEdit(self.groupBox_3)
         self.groupBox_4 = QtWidgets.QGroupBox(self.dockWidgetContents_5)
         self.textEdit_2 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.stn_dat = {0: None, 1: None, 7: None, 13: None, 3: None, 11: None, 10: None, 51: None, 46: None, 74: None,\
+                   56: None, 70: None, 62: None, 63: None, 108: None, 109: None, 102: None, 107: None, 96: None, 92: None}
+        self.c = 0
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -438,12 +441,13 @@ class Ui_MainWindow(object):
                                            "\n"
                                            "font: 11pt \"Calibri\";")
         self.doubleSpinBox_1.setProperty("showGroupSeparator", False)
-        self.doubleSpinBox_1.setDecimals(0)
-        self.doubleSpinBox_1.setMinimum(72.0)
+        self.doubleSpinBox_1.setDecimals(2)
+        self.doubleSpinBox_1.setMinimum(50.0)
         self.doubleSpinBox_1.setMaximum(150.0)
+        self.doubleSpinBox_1.setValue(72.0)
         self.doubleSpinBox_1.setObjectName("doubleSpinBox_1")
         self.gridLayout_3.addWidget(self.doubleSpinBox_1, 1, 2, 1, 1)
-
+        
         #doubleSpinBox_2
         self.doubleSpinBox_2.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
@@ -457,11 +461,12 @@ class Ui_MainWindow(object):
                                            "\n"
                                            "font: 11pt \"Calibri\";")
         self.doubleSpinBox_2.setProperty("showGroupSeparator", False)
-        self.doubleSpinBox_2.setDecimals(0)
-        self.doubleSpinBox_2.setMinimum(450.0)
+        self.doubleSpinBox_2.setDecimals(2)
+        self.doubleSpinBox_2.setMinimum(0.0)
         self.doubleSpinBox_2.setMaximum(600.0)
         self.doubleSpinBox_2.setObjectName("doubleSpinBox_2")
         self.gridLayout_3.addWidget(self.doubleSpinBox_2, 2, 2, 1, 1)
+        self.doubleSpinBox_2.setValue(350.0)
 
         # label_1
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
@@ -583,6 +588,7 @@ class Ui_MainWindow(object):
         self.pushButton_1.setStyleSheet("background-color: rgb(35, 35, 35);")
         self.pushButton_1.setObjectName("pushButton_1")
         self.gridLayout_3.addWidget(self.pushButton_1, 7, 0, 1, 3)
+        self.pushButton_1.clicked.connect(self.store)
 
         #comboBox_2
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
@@ -968,6 +974,31 @@ class Ui_MainWindow(object):
             j = str(j)
             self.comboBox_2.addItem(j)
 
+    def store(self):
+        self.c = self.c + 1
+        print(self.c)
+        if self.c - 1 == 0: ck =[];self.cbnew = {}
+        cb1 = int(self.comboBox_1.currentText())
+        cb2 = self.comboBox_2.currentIndex()
+        pos = self.comboBox_3.currentIndex()
+        cn = self.comboBox_2.count()
+        print(cn)
+        cbdic = {cb2:pos}
+        print(cbdic)
+        if cn is not self.c:
+            self.cbnew.update(cbdic)
+            print("if executed")
+        print(self.cbnew)
+        #position = [0, 1, 7, 13, 3, 11, 10, 51, 46, 74, 56, 70, 62, 63, 108, 109, 102, 107, 96, 92]
+        if self.cbnew.items() not in self.cbnew.items():
+            u_Pos = position[pos]
+            val = self.doubleSpinBox_3.value()
+            for dat in self.stn_dat:
+                if dat == u_Pos:
+                    self.stn_dat[u_Pos] = val
+                    del cbdic
+                    print(self.stn_dat)
+
     def enable(self):
         if self.checkBox_1.isChecked() == True:
             self.doubleSpinBox_1.setEnabled(True)
@@ -1128,14 +1159,16 @@ class Ui_MainWindow(object):
         if self.c and self.p:
             self.p_Peak = self.pulse[self.plot_p][:].max()
             self.p_Peak = str(self.p_Peak)
+            self.bottom = self.pulse[self.plot_p][:].min()
+            self.Bottom = str(self.bottom)
             labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
-            #self.graphWidget_1.addLegend()
             self.graphWidget_1.showGrid(x=True, y=True)
             self.graphWidget_1.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_1.setLabel('left', 'Pressure (mmHg)', **labelStyle)
             self.graphWidget_1.plotItem.setLabel('bottom', 'Time (s)', **labelStyle)
             self.textEdit_1.clear()
-            self.textEdit_1.insertPlainText(self.p_Peak)
+            self.textEdit_1.setPlainText(self.p_Peak)
+            self.textEdit_1.setPlainText(self.Bottom)
             self.statusbar.showMessage('PLOTTED', msecs=9000)
 
             #self.graphWidget_2.addLegend()
@@ -1428,21 +1461,28 @@ class Ui_MainWindow(object):
             self.graphWidget_1.setLabel('left', text='Pressure (mmHg)', **labelStyle)
             self.graphWidget_1.setLabel('bottom', text='Time', **labelStyle)
             self.peak = self.pulse[self.plot_p][:].max()
+            self.bottom = self.pulse[self.plot_p][:].min()
         if self.radioButton_3.isChecked():
             self.graphWidget_2.setLabel('left', text='Pressure (mmHg)', **labelStyle)
             self.graphWidget_2.setLabel('bottom', text='Time', **labelStyle)
             self.peak = self.pulse[self.plot_p][:].max()
+            self.bottom = self.pulse[self.plot_p][:].min()
         if self.radioButton_2.isChecked():
             self.graphWidget_1.setLabel('left', text='Pressure (mmHg)', **labelStyle)
             self.graphWidget_1.setLabel('bottom', text='Time', **labelStyle)
             self.peak = self.pulse[self.plot_f][:].max()
+            self.bottom = self.pulse[self.plot_p][:].min()
         if self.radioButton_4.isChecked():
             self.graphWidget_2.setLabel('left', text='Pressure (mmHg)', **labelStyle)
             self.graphWidget_2.setLabel('bottom', text='Time', **labelStyle)
             self.peak = self.pulse[self.plot_f][:].max()
+            self.bottom = self.pulse[self.plot_p][:].min()
         self.Peak = str(self.peak)
+        self.Bottom = str(self.bottom)
         self.textEdit_1.clear()
-        self.textEdit_1.setText(self.Peak)
+        self.textEdit_2.clear()
+        self.textEdit_1.setPlainText(self.Bottom)
+        self.textEdit_2.setPlainText(self.Peak)
         self.statusbar.showMessage('PLOTTED', msecs=10000)
 
 if __name__ == "__main__":
