@@ -85,8 +85,9 @@ class Ui_MainWindow(object):
         self.textEdit_1 = QtWidgets.QTextEdit(self.groupBox_3)
         self.groupBox_4 = QtWidgets.QGroupBox(self.dockWidgetContents_5)
         self.textEdit_2 = QtWidgets.QTextEdit(self.groupBox_4)
-        self.stn_dat = {0: None, 1: None, 7: None, 13: None, 3: None, 11: None, 10: None, 51: None, 46: None, 74: None,\
-                   56: None, 70: None, 62: None, 63: None, 108: None, 109: None, 102: None, 107: None, 96: None, 92: None}
+        self.stn_dat = {'0': None, '1': None, '7': None, '13': None, '3': None, '11': None, '10': None, '51': None,\
+                   '46': None, '74': None, '56': None,'70': None, '62': None, '63': None, '108': None, '109': None,\
+                   '102': None, '107': None, '96': None,'92': None}
         self.c = 0
 
         self.dockWidget_3 = QtWidgets.QDockWidget(MainWindow)

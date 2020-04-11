@@ -2,6 +2,7 @@ import numpy as np
 import csv
 import math as m
 import datetime
+import operator
 
 def steno(**data):
     #s = datetime.datetime.now()
@@ -11,17 +12,19 @@ def steno(**data):
     rho = 1.05                                           #blood density
     G0 = 0.6                                             #Reflection coefficient
     pi = m.pi                                            #value of pi
-    i = 0
+
+    pos = []
+    values = []
     for keys, value in data.items():
-        pos[i] = keys
-        values[i] = value
-        i = i + 1
-    print("ppos :",pos,"vlaue:",values)
+        print(keys,value)
+        pos.append(int(keys))
+        if value is None:
+            values.append(0)
+        else: values.append(value)
     j = 0
-    for i in len(D):
-        if i == pos[j]:
-            D[i] = values[j]
-            j = j +1
+    for i in pos:
+        D[i] = values[j]
+        j = j +1
     #D[p] = value
     at = np.genfromtxt('DB/arterytree.txt', delimiter=',')
 
@@ -44,4 +47,7 @@ def steno(**data):
 
 if __name__ == "__main__":
     import datetime
-    steno(10, 26)
+    stn_dat = {'0': None, '1': 3, '7': 4, '13':6, '3': 7, '11': 20, '10': 0, '51': 0, '46': 0,
+               '74': 0, '56': None, '70': 0, '62': 0, '63': 0, '108': 0, '109': 0, \
+               '102': 0, '107': 0, '96': 0, '92': 55}
+    steno(**stn_dat)

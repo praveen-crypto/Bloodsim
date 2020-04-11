@@ -2,41 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca53110-97f1-4f56-a816-d59f98aea204" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Artery Tree/Volume venousVv.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Artery Tree/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Artery Tree/mba_error.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/DB/RLCtru.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/DB/arterytree.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/DB/branch_list.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/DB/eqn_no.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/DB/rlcnewval.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/RLCtru.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/STENOSIS.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Heartmodel/integrated_ode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/RLCtru.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/arterytree.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/branch_list.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/chambers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/eqn_no.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/heart_GUI.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/iandolets.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/rlcnewval.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/DB/valves.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/chambers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/iandolets.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/valves.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Artery Tree/MAIN2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/MAIN2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Artery Tree/RLCtru.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/PRAVEEN_GUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Artery Tree/STENOSIS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/STENOSIS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Artery Tree/thesis_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/thesis_gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Heartmodel/CARDIAC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Heartmodel/CARDIAC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Heartmodel/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/Heartmodel/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Untitled.ipynb" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,29 +118,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testting">
-    <configuration name="CARDIAC" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="praveen-crypto.github.io" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Heartmodel" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Heartmodel/CARDIAC.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.thesis_gui">
     <configuration name="MAIN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="praveen-crypto.github.io" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,6 +133,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Heartmodel/MAIN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="STENOSIS" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="praveen-crypto.github.io" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Artery Tree" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Artery Tree/STENOSIS.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -282,11 +250,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.testting" />
         <item itemvalue="Python.thesis_gui" />
-        <item itemvalue="Python.mba_error" />
+        <item itemvalue="Python.STENOSIS" />
         <item itemvalue="Python.MAIN" />
-        <item itemvalue="Python.CARDIAC" />
+        <item itemvalue="Python.testting" />
+        <item itemvalue="Python.mba_error" />
       </list>
     </recent_temporary>
   </component>
@@ -449,7 +417,8 @@
       <workItem from="1586264965131" duration="12653000" />
       <workItem from="1586346860508" duration="15684000" />
       <workItem from="1586399856363" duration="29979000" />
-      <workItem from="1586576856656" duration="10713000" />
+      <workItem from="1586576856656" duration="14025000" />
+      <workItem from="1586608506609" duration="7520000" />
     </task>
     <task id="LOCAL-00001" summary="updated 29/12">
       <created>1577611377366</created>
@@ -545,13 +514,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Artery Tree/thesis_gui.py</url>
-          <line>1314</line>
+          <line>1315</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$APPLICATION_CONFIG_DIR$/scratches/testting.py</url>
-          <line>4</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -564,9 +528,7 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="pressure" language="Python" />
-        <watch expression="t" language="Python" />
-        <watch expression="self.stn_dat" language="Python" />
+        <watch expression="D" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -587,6 +549,7 @@
     <SUITE FILE_PATH="coverage/stenor_github_io$thesis_gui.coverage" NAME="thesis_gui Coverage Results" MODIFIED="1586588327291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Artery Tree" />
     <SUITE FILE_PATH="coverage/stenor_github_io$graph.coverage" NAME="graph Coverage Results" MODIFIED="1586250047604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/stenor_github_io$testting.coverage" NAME="testting Coverage Results" MODIFIED="1586588935550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/stenor_github_io$STENOSIS.coverage" NAME="STENOSIS Coverage Results" MODIFIED="1586614594020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Artery Tree" />
     <SUITE FILE_PATH="coverage/stenor_github_io$odetest.coverage" NAME="odetest Coverage Results" MODIFIED="1580144865946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
   </component>
 </project>
