@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def lumped():
+def lumped(HR, ncyc, dt):
     # working code
     # functions definition:
 
@@ -344,36 +344,36 @@ def lumped():
     jj = 0
 
     # --------------------------------------------------------------------------------
-    Elva = 2.87  # !Peak-systolic elastance of left ventricle
-    Elvb = 0.06  # !Basic diastolic elastance of left ventricle
-    Elaa = 0.07  # !Peak-systolic elastance of left atrium
-    Elab = 0.075  # !Basic diastolic elastance of left atrium
-    Erva = 0.52  # !Peak-systolic elastance of right ventricle
-    Ervb = 0.043  # !Basic diastolic elastance of right ventricle
-    Eraa = 0.055  # !Peak-systolic elastance of right atrium
-    Erab = 0.06  # !Basic diastolic elastance of right atrium
+    Elva = 2.87                       # !Peak-systolic elastance of left ventricle
+    Elvb = 0.06                       # !Basic diastolic elastance of left ventricle
+    Elaa = 0.07                       # !Peak-systolic elastance of left atrium
+    Elab = 0.075                      # !Basic diastolic elastance of left atrium
+    Erva = 0.52                       # !Peak-systolic elastance of right ventricle
+    Ervb = 0.043                      # !Basic diastolic elastance of right ventricle
+    Eraa = 0.055                      # !Peak-systolic elastance of right atrium
+    Erab = 0.06                       # !Basic diastolic elastance of right atrium
 
-    Vmax = 900  # Reference volume of Frank-Starling law
-    Es = 45.9  # !Effective septal elastance
-    Vpc0 = 380.0  # !Reference total pericardial and cardiac volume old value 380
-    Vpe = 30.0  # !Pericardial volume of heart
-    Vcon = 40.0  # !Volume constant
-    Sva0 = 0.0005  # !Coefficient of cardiac viscoelasticity
+    Vmax = 900                        # Reference volume of Frank-Starling law
+    Es = 45.9                         # !Effective septal elastance
+    Vpc0 = 380.0                      # !Reference total pericardial and cardiac volume old value 380
+    Vpe = 30.0                        # !Pericardial volume of heart
+    Vcon = 40.0                       # !Volume constant
+    Sva0 = 0.0005                     # !Coefficient of cardiac viscoelasticity
 
     # ! Cardiac valve parameters
     # !(aortic valve(AV),mitral valve(MV), tricuspid valve(TV),pulmonary valve(PV))
-    bav = 0.000025  # !Bernoulli's resistance of AV
-    bmv = 0.000016  # !Bernoulli's resistance of MV
-    btv = 0.000016  # !Bernoulli's resistance of TV
-    bpv = 0.000025  # !Bernoulli's resistance of PV
-    Rav = 0.005  # !Viscous resistance of AV
-    Rmv = 0.005  # !Viscous resistance of MV
-    Rtv = 0.005  # !Viscous resistance of TV
-    Rpv = 0.005  # !Viscous resistance of PV
-    yav = 0.0005  # !Inertance of AV
-    ymv = 0.0002  # !Inertance of MV
-    ytv = 0.0002  # !Inertance of TV
-    ypv = 0.0005  # !Inertance of PV
+    bav = 0.000025                         # !Bernoulli's resistance of AV
+    bmv = 0.000016                         # !Bernoulli's resistance of MV
+    btv = 0.000016                         # !Bernoulli's resistance of TV
+    bpv = 0.000025                         # !Bernoulli's resistance of PV
+    Rav = 0.005                            # !Viscous resistance of AV
+    Rmv = 0.005                            # !Viscous resistance of MV
+    Rtv = 0.005                            # !Viscous resistance of TV
+    Rpv = 0.005                            # !Viscous resistance of PV
+    yav = 0.0005                           # !Inertance of AV
+    ymv = 0.0002                           # !Inertance of MV
+    ytv = 0.0002                           # !Inertance of TV
+    ypv = 0.0005                           # !Inertance of PV
 
     # ! Pulmonary circulation
     Epua0 = 0.0200
@@ -430,13 +430,14 @@ def lumped():
     qco = 0.0
 
     # ------------------------------------------------------------------------------------------------
-    HR = 72
-    Tduration = 60/HR  # input('Please specify cardiac duration(s)')
-    dt = 0.00015  # input'Please specify time step(s)')
-    ncycle = 10
-    tee = 0.3 * np.sqrt(Tduration) #!Moment when ventricular contractility reaches the peak
-    tac = Tduration - 0.5 * tee - 0.02 * (Tduration/0.855)  # Tduration - 0.02*tee - 0.02* (Tduration/0.855)# !Moment when atrium begins to contract
-    tar = Tduration - 0.02 * (Tduration / 0.855)  # !Moment when atrium begins to relax
+    HR = HR
+    Tduration = 60 / HR                                # input('Please specify cardiac duration(s)')
+    dt = dt                                            # input'Please specify time step(s)')
+    ncycle = ncyc
+    tee = 0.3 * np.sqrt(Tduration)                     # !Moment when ventricular contractility reaches the peak
+    tac = Tduration - 0.5 * tee - 0.02 * (
+            Tduration / 0.855)                         # !Moment when atrium begins to contract
+    tar = Tduration - 0.02 * (Tduration / 0.855)       # !Moment when atrium begins to relax
     ddt = dt
     ntotal = (ncycle * Tduration / dt)
     ntotal = int(ntotal)
@@ -476,11 +477,7 @@ def lumped():
             Amv = 0.0
             Apv = 0.0
             Atv = 0.0
-
             Pit = -2.5
-
-            # fid60  =  fopen('0Dresult.txt','a+')
-            # fid63  =  fopen('0Dpress.txt','a+')
 
         # ----------------------Start computation---------------------------
         ncount = 0
@@ -498,13 +495,13 @@ def lumped():
 
         # c.....Update nolinear cardiac parameters
         if tcr == 0.0:
-            FL = 1.0 - (result[0, 21] / Vmax)  # Left ventricle scaling factor
-            FR1 = 1.0 - (result[0, 6] / Vmax)  # Right ventricle scaling factor
+            FL = 1.0 - (result[0, 21] / Vmax)        # Left ventricle scaling factor
+            FR1 = 1.0 - (result[0, 6] / Vmax)        # Right ventricle scaling factor
 
-        Lvecal()  # LV elastance function calling
-        Laecal()  # LA elastance function calling
-        Rvecal()  # RV elastance function calling
-        Raecal()  # RA elastance function calling
+        Lvecal()                                     # LV elastance function calling
+        Laecal()                                     # LA elastance function calling
+        Rvecal()                                     # RV elastance function calling
+        Raecal()                                     # RA elastance function calling
 
         # Spetum cross talk pressure calculations
         cklr = erv / (Es + erv)
@@ -536,12 +533,12 @@ def lumped():
         # c.....Update variables with Runge-Kutta method
         for j in np.arange(29):
             result[ncountadd, j] = result[ncount, j] + (
-                        rukuk[0, j] + 2.0 * (rukuk[1, j] + rukuk[2, j]) + rukuk[3, j]) / 6.0
+                    rukuk[0, j] + 2.0 * (rukuk[1, j] + rukuk[2, j]) + rukuk[3, j]) / 6.0
 
         delta = 0.00000001
 
         # update all four cardiac valve flow as zero when they were closed
-        if (Aav == 0.0 and resultcr[0, 22] <= delta):
+        if Aav == 0.0 and resultcr[0, 22] <= delta:
             resultcr[0, 22] = 0.0
             result[ncountadd, 22] = 0.0
             q[0, 11] = 0.0
@@ -588,18 +585,16 @@ def lumped():
     print('hello')
 
     return Pa_1, F_1
-'''
+    '''
     plt.figure()
     plt.plot(T, F_1, label='Flow')
     plt.figure()
     plt.show()
     plt.plot(T, Pa_1, label='Pressure')
     lg = plt.legend()
-    plt.show()'''
-
-
-
+    plt.show()
+    '''
 
 
 if __name__ == "__main__":
-    lumped()
+    lumped(72, 10, 0.00015)
