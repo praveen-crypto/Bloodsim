@@ -2,9 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ca53110-97f1-4f56-a816-d59f98aea204" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Artery Tree/CARDIAC.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Artery Tree/Picture1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Artery Tree/Picture_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Artery Tree/Picture_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Artery Tree/main_logo.qrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/aorta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/aortic_valve.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/aortic_valve_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/left_atrium.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/left_atrium_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/left_ventricle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/left_ventricle_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mitral_valve.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/mitral_valve_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/original.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/pulmonary_artery.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/pulmonary_valve.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/pulmonary_valve_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/pulmonary_vein.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/right_atrium.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/right_atrium_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/right_ventricle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/right_ventricle_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/tricuspid_valve.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/tricuspid_valve_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/vena_cava.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Artery Tree/STENOSIS.py" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/STENOSIS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Artery Tree/Volume venousVv.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/Volume venousVv.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Artery Tree/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Artery Tree/sim.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Artery Tree/sim1.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Artery Tree/thesis_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/Artery Tree/thesis_gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/RLCtru.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/arterytree.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/branch_list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/chambers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/eqn_no.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/heart_GUI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/iandolets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/rlcnewval.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/DB/valves.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/chambers.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/chambers.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/create-octocat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/heart.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/heart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/iandolets.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/iandolets.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/valves.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/valves.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,16 +140,16 @@
       <recent name="https://github.com/NewRegin/python_wavelet_digital_watermarking.git" />
       <recent name="https://github.com/RagnarLothbrok-98/The-DEN" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Prave\OneDrive\Documents\GitHub\stenor.github.io\images" />
-      <recent name="C:\Users\Prave\OneDrive\Documents\GitHub\stenor.github.io\Artery Tree\DB" />
-      <recent name="C:\Users\Prave\OneDrive\Documents\GitHub\stenor.github.io\Artery Tree" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Prave\OneDrive\Documents\GitHub\stenor.github.io\Artery Tree" />
       <recent name="C:\Users\Prave\OneDrive\Documents\GitHub\stenor.github.io\Heartmodel" />
       <recent name="C:\Users\Prave\OneDrive\Documents\GitHub\stenor.github.io" />
       <recent name="C:\Users\Prave\PycharmProjects\stenor.github.io" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Prave\OneDrive\Documents\GitHub\stenor.github.io\images" />
+      <recent name="C:\Users\Prave\OneDrive\Documents\GitHub\stenor.github.io\Artery Tree\DB" />
+      <recent name="C:\Users\Prave\OneDrive\Documents\GitHub\stenor.github.io\Artery Tree" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -418,7 +464,10 @@
       <workItem from="1586346860508" duration="15684000" />
       <workItem from="1586399856363" duration="29979000" />
       <workItem from="1586576856656" duration="14025000" />
-      <workItem from="1586608506609" duration="7520000" />
+      <workItem from="1586608506609" duration="8120000" />
+      <workItem from="1586658356198" duration="3074000" />
+      <workItem from="1586664860742" duration="19938000" />
+      <workItem from="1586724137575" duration="279000" />
     </task>
     <task id="LOCAL-00001" summary="updated 29/12">
       <created>1577611377366</created>
@@ -511,13 +560,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Artery Tree/thesis_gui.py</url>
-          <line>1315</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">

@@ -25,7 +25,7 @@ def steno(**data):
     for i in pos:
         D[i] = values[j]
         j = j +1
-    #D[p] = value
+
     at = np.genfromtxt('DB/arterytree.txt', delimiter=',')
 
     l = at[:, 0]                                          #assigning l with dataframe of 0th col of a variable
@@ -42,8 +42,7 @@ def steno(**data):
     R0 =  np.true_divide(rho*c0, np.power(pi*np.multiply(np.subtract(r, D), r), 2 ))     #rho*c0./(pi*(r-D.*r).^2)
     RLCtru[:, 3] = R0 *(1+G0)/(1-G0)
     np.savetxt("DB/RLCtru.csv", RLCtru,delimiter=",")
-    #print('Finished')
-    #print(datetime.datetime.now() - s)
+
 
 if __name__ == "__main__":
     import datetime

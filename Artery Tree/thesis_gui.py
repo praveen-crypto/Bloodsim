@@ -4,6 +4,7 @@ import MAIN2
 import numpy as np
 import STENOSIS
 import os
+import CARDIAC
 
 class Ui_MainWindow(object):
     def __init__(self):
@@ -97,22 +98,22 @@ class Ui_MainWindow(object):
         self.gridLayout_12 = QtWidgets.QGridLayout(self.groupBox_5)
         self.label_heart = QtWidgets.QLabel(self.groupBox_5)
         self.groupBox_6 = QtWidgets.QGroupBox(self.dockWidgetContents_3)
-        self.label_text_4 = QtWidgets.QLabel(self.groupBox_6)
+        self.text_heartinfo = QtWidgets.QTextBrowser(self.groupBox_6)
 
     def setupUi(self, MainWindow):
         MainWindow.setWindowTitle(self._translate("MainWindow", "Bloodsim"))
         MainWindow.setObjectName("MainWindow")
         MainWindow.setWindowIcon(QtGui.QIcon('logo.png'))
-        MainWindow.resize(1143, 685)
-        MainWindow.setMinimumSize(QtCore.QSize(259, 0))
+        MainWindow.resize(1400, 800)
+        MainWindow.setMinimumSize(QtCore.QSize(1400, 800))
         MainWindow.setStyleSheet("color: rgb(255, 210, 119);\n"
                                  "gridline-color: rgb(33, 57, 86);\n"
                                  "background-color: rgb(46, 80, 120);\n"
                                  "selection-color: rgb(237, 85, 59);\n"
-                                 "\n"
                                  "selection-background-color: rgb(33, 57, 86);")
         MainWindow.setDockOptions(
-            QtWidgets.QMainWindow.AllowNestedDocks | QtWidgets.QMainWindow.AllowTabbedDocks | QtWidgets.QMainWindow.AnimatedDocks | QtWidgets.QMainWindow.ForceTabbedDocks | QtWidgets.QMainWindow.VerticalTabs)
+            QtWidgets.QMainWindow.AllowNestedDocks | QtWidgets.QMainWindow.AllowTabbedDocks | \
+            QtWidgets.QMainWindow.AnimatedDocks | QtWidgets.QMainWindow.ForceTabbedDocks | QtWidgets.QMainWindow.VerticalTabs)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_9.setObjectName("gridLayout_9")
 
@@ -249,9 +250,8 @@ class Ui_MainWindow(object):
         self.gridLayout_9.addWidget(self.radioButton_4, 2, 2, 1, 1)
         self.radioButton_4.clicked.connect(self.flow_plot_2)
 
-        #####GRAPH_BOX -1 =================================================================================
-        #comboBox_G1
-        #self.comboBox_G1 = QtWidgets.QComboBox(self.centralwidget)
+#####GRAPH_BOX -1 =================================================================================
+    #comboBox_G1
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
@@ -297,19 +297,18 @@ class Ui_MainWindow(object):
         self.radioButton_2.clicked.connect(self.flow_plot_1)
 
 #####LEFT SIDE DOCK WIDGET====================================================================================
-        #DockWidget_1
+    #DockWidget_1
         self.dockWidget_1.setMinimumSize(QtCore.QSize(366, 534))
         self.dockWidget_1.setMouseTracking(True)
         self.dockWidget_1.setFloating(False)
         self.dockWidget_1.setFeatures(
             QtWidgets.QDockWidget.DockWidgetFloatable | QtWidgets.QDockWidget.DockWidgetMovable)
         self.dockWidget_1.setObjectName("dockWidget_1")
-
         self.dockWidgetContents_1.setObjectName("dockWidgetContents_1")
         self.gridLayout.setObjectName("gridLayout")
 
-       # LEFTSIDE SECOND GroupBox========================================================================================
-       #GroupBox_2
+#LEFTSIDE SECOND GroupBox========================================================================================
+    #GroupBox_2
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -334,6 +333,25 @@ class Ui_MainWindow(object):
                                    "font: 9pt \"MS Shell Dlg 2\";")
         self.label_9.setObjectName("label_9")
         self.gridLayout_2.addWidget(self.label_9, 0, 3, 1, 1)
+
+        # doubleSpinBox_4
+        self.doubleSpinBox_4.setEnabled(False)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.doubleSpinBox_4.sizePolicy().hasHeightForWidth())
+        self.doubleSpinBox_4.setSizePolicy(sizePolicy)
+        self.doubleSpinBox_4.setStyleSheet("background-color: rgb(35, 35, 35);\n"
+                                           "selection-color: rgb(237, 85, 59);\n"
+                                           "selection-background-color: rgb(33, 57, 86);\n"
+                                           "\n"
+                                           "font: 11pt \"Calibri\";")
+        self.doubleSpinBox_4.setProperty("showGroupSeparator", False)
+        self.doubleSpinBox_4.setDecimals(3)
+        self.doubleSpinBox_4.setMinimum(0.04)
+        self.doubleSpinBox_4.setMaximum(3.00)
+        self.doubleSpinBox_4.setObjectName("doubleSpinBox_4")
+        self.gridLayout_2.addWidget(self.doubleSpinBox_4, 1, 3, 1, 1)
 
         #doublePsinBox_5
         self.doubleSpinBox_5.setEnabled(False)
@@ -372,25 +390,6 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_6.setMaximum(3.0)
         self.doubleSpinBox_6.setObjectName("doubleSpinBox_6")
         self.gridLayout_2.addWidget(self.doubleSpinBox_6, 3, 3, 1, 1)
-
-        #doubleSpinBox_4
-        self.doubleSpinBox_4.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.doubleSpinBox_4.sizePolicy().hasHeightForWidth())
-        self.doubleSpinBox_4.setSizePolicy(sizePolicy)
-        self.doubleSpinBox_4.setStyleSheet("background-color: rgb(35, 35, 35);\n"
-                                           "selection-color: rgb(237, 85, 59);\n"
-                                           "selection-background-color: rgb(33, 57, 86);\n"
-                                           "\n"
-                                           "font: 11pt \"Calibri\";")
-        self.doubleSpinBox_4.setProperty("showGroupSeparator", False)
-        self.doubleSpinBox_4.setDecimals(3)
-        self.doubleSpinBox_4.setMinimum(0.04)
-        self.doubleSpinBox_4.setMaximum(3.00)
-        self.doubleSpinBox_4.setObjectName("doubleSpinBox_4")
-        self.gridLayout_2.addWidget(self.doubleSpinBox_4, 1, 3, 1, 1)
 
         #checkBox_3
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
@@ -533,7 +532,7 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_2.setMaximum(600.0)
         self.doubleSpinBox_2.setObjectName("doubleSpinBox_2")
         self.gridLayout_3.addWidget(self.doubleSpinBox_2, 2, 2, 1, 1)
-        self.doubleSpinBox_2.setValue(350.0)
+        self.doubleSpinBox_2.setValue(450.0)
 
         # label_1
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
@@ -713,6 +712,7 @@ class Ui_MainWindow(object):
         self.dockWidget_1.setWidget(self.dockWidgetContents_1)
         MainWindow.addDockWidget(QtCore.Qt.DockWidgetArea(1), self.dockWidget_1)
         self.checkBox_2.clicked.connect(self.enable)
+
 #========dockWidget_2================================================
         self.dockWidget_2.setMinimumSize(QtCore.QSize(250, 487))
         self.dockWidget_2.setObjectName("dockWidget_2")
@@ -747,7 +747,8 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addWidget(self.groupBox_4, 1, 0, 1, 1)
         self.dockWidget_2.setWidget(self.dockWidgetContents_5)
         MainWindow.addDockWidget(QtCore.Qt.DockWidgetArea(2), self.dockWidget_2)
-    # ========================================================================================
+
+# ========================================================================================
         # dockWidget_3
         self.dockWidget_3.setMinimumSize(QtCore.QSize(250, 487))
         self.dockWidget_3.setMaximumWidth(450)
@@ -778,7 +779,7 @@ class Ui_MainWindow(object):
         self.label_heart.setObjectName("label_heart")
         self.gridLayout_12.addWidget(self.label_heart, 0, 0, 1, 1)
         self.gridLayout_11.addWidget(self.groupBox_5, 0, 0, 1, 1)
-        # self.dockWidget_3.setWidget(self.dockWidgetContents_3)
+        #self.dockWidget_3.setWidget(self.dockWidgetContents_3)
 
         # groupBox_6
         self.groupBox_6.setMinimumSize(QtCore.QSize(221, 241))
@@ -789,11 +790,10 @@ class Ui_MainWindow(object):
         self.gridLayout_13.setObjectName("gridLayout_13")
 
         # label_text_4
-        self.label_text_4.setObjectName("label_text_4")
-        self.label_text_4.setStyleSheet("font: 9pt \"MS Shell Dlg 2\";\n"
-                                        "background - color: rgb(33, 57, 86);")
-        self.gridLayout_13.addWidget(self.label_text_4, 1, 0, 1, 3)
-        # self.gridLayout_11.addWidget(self.groupBox_6, 1, 0, 1, 1)
+        self.text_heartinfo.setObjectName("text_heartinfo")
+        self.text_heartinfo.setStyleSheet("font: 9pt \"MS Shell Dlg 2\";\n"
+                                          "background - color: rgb(33, 57, 86);")
+        self.gridLayout_13.addWidget(self.text_heartinfo, 1, 0, 1, 3)
 
         self.pushButton_2 = QtWidgets.QPushButton(self.groupBox_6)
         self.pushButton_2.setStyleSheet("background-color: rgb(35, 35, 35);")
@@ -1099,22 +1099,19 @@ class Ui_MainWindow(object):
             j = i + 1
             j = str(j)
             self.comboBox_2.addItem(j)
+        self.c = 0
 
     def store(self):
         self.c = self.c + 1
-        print(self.c)
         if self.c - 1 == 0: ck =[];self.cbnew = {}
         cb1 = int(self.comboBox_1.currentText())
         cb2 = self.comboBox_2.currentIndex()
         pos = self.comboBox_3.currentIndex()
         cn = self.comboBox_2.count()
-        print(cn)
         cbdic = {cb2:pos}
-        print(cbdic)
+        print(self.c, cn)
         if self.c <= cn:
             self.cbnew.update(cbdic)
-            print("if executed")
-            print(self.cbnew)
             position = [0, 1, 7, 13, 3, 11, 10, 51, 46, 74, 56, 70, 62, 63, 108, 109, 102, 107, 96, 92]
             if self.cbnew.items() not in self.cbnew.items():
                 u_Pos = position[pos]
@@ -1123,7 +1120,7 @@ class Ui_MainWindow(object):
                     if dat == u_Pos:
                         self.stn_dat[u_Pos] = val
                         del cbdic
-                        print(self.stn_dat)
+                        self.statusbar.showMessage('UPDATED', msecs=5000)
         else:self.alert("can't update")
 
     def enable(self):
@@ -1173,25 +1170,15 @@ class Ui_MainWindow(object):
         if self.actionHeart_Parameter.isChecked():
             self.comboBox_G2.hide()
             self.comboBox_G3.show()
+            self.graphWidget_2.plotItem.clear()
             self.radioButton_3.setText(self._translate("MainWindow", "Volume"))
             self.dockWidget_2.hide()
             self.dockWidget_3.show()
             self.actionWaveform.setChecked(False)
-            self.label_text_4.setText("The input to the distribuded arterial tree system\n"
-                                      "is given by the signal coming out from the lumped\n"
-                                      "parameter model of the heart.\n\n"
-                                      "This cardiovascular model consists of component models of\n"
-                                      "\natrium and ventricular mechanics\n"
-                                      "1. cardiac valve mechanics\n"
-                                      "2. direct ventricular interaction through septum\n"
-                                      "3. systemic and pulmonary circulation\n"
-                                      "4. venous system and\n"
-                                      "5. influence of the pericardiumon on heart performance\n\n"
-                                      "\nThis model uses time varying elastance representation \n"
-                                      "function due to its direct relationship between pressure\n"
-                                      "and volume.")
-            self.label_text_4.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-            self.label_heart.setPixmap(QtGui.QPixmap(os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images','heart.png')))
+            self.text_heartinfo.setText(
+                "The heart is comprised of two atria and two ventricles. Blood enters the heart through the two atria and exits through the two ventricles. Deoxygenated blood enters the right atrium through the inferior and superior vena cava. The right side of the heart then pumps this deoxygenated blood into the pulmonary arteries around the lungs. There, fresh oxygen enters the blood stream, and the blood moves to the left side of the heart. From the lungs, blood is brought to the left atrium through the pulmonary vein, and then to the left ventricle through the mitral valve, from where it is pumped to the rest of the body.")
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'heart.png')))
         if not self.actionHeart_Parameter.isChecked():
             self.dockWidget_3.hide()
             self.dockWidget_2.show()
@@ -1201,6 +1188,8 @@ class Ui_MainWindow(object):
         #t = np.arange(0.0,2.0,0.02)
         #x = np.sin(2*3.14*t)
 
+        self.comboBox_G1.setEnabled(True)
+        self.comboBox_G2.setEnabled(True)
         self.radioButton_1.setEnabled(True)
         self.radioButton_2.setEnabled(True)
         self.radioButton_3.setEnabled(True)
@@ -1209,6 +1198,7 @@ class Ui_MainWindow(object):
         P = self.doubleSpinBox_2.value()  # read P value
         S = self.doubleSpinBox_3.value()  # Stenosis Value
         Index = self.comboBox_3.currentIndex()
+        self.cardiac, self.ctime = CARDIAC.lumped(H, 5, 0.00015)
 
         if Index==0:
             Pos = 0
@@ -1380,6 +1370,7 @@ class Ui_MainWindow(object):
 
     def alert(self, msg):
         alert = QtWidgets.QMessageBox()
+        alert.setWindowTitle("Warning!!")
         alert.setText(msg)
         alert.exec_()
 
@@ -1421,84 +1412,53 @@ class Ui_MainWindow(object):
 
     def button_chambers(self):
         self.comboBox_G3.clear()
-        for i in range(4):
+        for i in range(5):
             self.comboBox_G3.addItem("")
-        self.comboBox_G3.setItemText(0, self._translate("MainWindow", "RIGHT ATRIUM"))
-        self.comboBox_G3.setItemText(1, self._translate("MainWindow", "RIGHT VENTRICLE"))
-        self.comboBox_G3.setItemText(2, self._translate("MainWindow", "LEFT ATRIUM"))
-        self.comboBox_G3.setItemText(3, self._translate("MainWindow", "LEFT VENTRICLE"))
+        self.comboBox_G3.setItemText(0, self._translate("MainWindow", "Select section"))
+        self.comboBox_G3.setItemText(1, self._translate("MainWindow", "Left atrium"))
+        self.comboBox_G3.setItemText(2, self._translate("MainWindow", "Left ventricle"))
+        self.comboBox_G3.setItemText(3, self._translate("MainWindow", "Right atrium"))
+        self.comboBox_G3.setItemText(4, self._translate("MainWindow", "Right ventricle"))
         self.label_heart.clear()
-        self.label_heart.setPixmap(QtGui.QPixmap(os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images','chambers.png')))
-        self.label_text_4.setText("The flow and volume waveforms of the four chambers of\n"
-                                  "the heart have been modelled through lumped parameter\n"
-                                  "approach with the interventricular septum coupling into\n"
-                                  "consideration\n"
-                                  "\n"
-                                  "\nThe heart has four chambers\n"
-                                  "\nRIGHT ATRIUM - pumps oxygen-poor blood collected\n"
-                                  "                        from the body  to right ventricle\n"
-                                  "RIGHT VENTRICLE - pumps the oxygen-poor blood to \n"
-                                  "                           the lungs\n"
-                                  "LEFT ATRIUM - pumps oxygen-rich blood recieved\n"
-                                  "                       from lungs to left ventricle\n"
-                                  "LEFT VENTRICLE - pumps the oxygen-rich blood to\n"
-                                  "the body")
-        self.label_text_4.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.label_heart.setPixmap(QtGui.QPixmap(
+            os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'chambers.png')))
+        self.text_heartinfo.setText("The heart is comprised of two atria and two ventricles. Blood enters the heart through the two atria and exits through the two ventricles. Deoxygenated blood enters the right atrium through the inferior and superior vena cava. The right side of the heart then pumps this deoxygenated blood into the pulmonary arteries around the lungs. There, fresh oxygen enters the blood stream, and the blood moves to the left side of the heart. From the lungs, blood is brought to the left atrium through the pulmonary vein, and then to the left ventricle through the mitral valve, from where it is pumped to the rest of the body.")
+
+        self.comboBox_G3.currentIndexChanged.connect(self.chamber_plot)
 
     def button_valves(self):
         self.comboBox_G3.clear()
-        for i in range(4):
+        for i in range(5):
             self.comboBox_G3.addItem("")
-        self.comboBox_G3.setItemText(0, self._translate("MainWindow", "MITRAL VALVE"))
-        self.comboBox_G3.setItemText(1, self._translate("MainWindow", "TRICUSPID VALVE"))
-        self.comboBox_G3.setItemText(2, self._translate("MainWindow", "AORTIC VALVE"))
-        self.comboBox_G3.setItemText(3, self._translate("MainWindow", "PULMONARY VALVE"))
+        self.comboBox_G3.setItemText(0, self._translate("MainWindow", "Select section"))
+        self.comboBox_G3.setItemText(1, self._translate("MainWindow", "Mitral valve"))
+        self.comboBox_G3.setItemText(2, self._translate("MainWindow", "Tricuspid valve"))
+        self.comboBox_G3.setItemText(3, self._translate("MainWindow", "Aortic valve"))
+        self.comboBox_G3.setItemText(4, self._translate("MainWindow", "Pulmonary valve"))
         self.label_heart.clear()
-        self.label_text_4.clear()
-        self.label_heart.setPixmap(QtGui.QPixmap(os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images','valves.png')))
-        self.label_text_4.setText("The Flow and volume of blood in the four valves of the heart\n"
-                                  "have been modelled through a lumped parameter approach.\n\n"
-                                  "Valves are present between the chambers and the inlet and\n"
-                                  "outlet vessels of the heart to prevent reguritation i.e. backflow\n"
-                                  "into the previous chamber.\n"
-                                  "\nThere are four valves in the heart,\n"
-                                  "\n1.MITRAL VALVE (left heart)\n"
-                                  "2.TRICUSPID VALVE (right heart)\n"
-                                  "3.AORTIC VALVE (aorta and left ventriccle)\n"
-                                  "4.PULMONARY VALVE (pulmonary artery and right ventricle )\n"
-                                  "\nTo achieve two-way flow representation of heart valves,\n"
-                                  "The model uses three elements namely Bernoulli‟s resistance,\n"
-                                  "inertance and resistance")
-        self.label_text_4.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.text_heartinfo.clear()
+        self.label_heart.setPixmap(QtGui.QPixmap(
+            os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'valves.png')))
+        self.text_heartinfo.setText("The heart has four valves - one for each chamber of the heart. The valves keep blood moving through the heart in the right direction. The mitral valve and tricuspid valve are located between the atria and the ventricles. The aortic valve and pulmonic valve are located between the ventricles and the major blood vessels leaving the heart. The four valves are to open and close to let blood flow through the heart. The valves prevent the backward flow of blood. Valves are actually flaps (leaflets) that act as one-way inlets for blood coming into a ventricle and one-way outlets for blood leaving a ventricle. Normal valves have 3 flaps (leaflets), except the mitral valve. It only has 2 flaps.")
+
+        self.comboBox_G3.currentIndexChanged.connect(self.valve_plot)
 
     def button_iandolet(self):
         self.comboBox_G3.clear()
-        for i in range(8):
+        for i in range(5):
             self.comboBox_G3.addItem("")
-        self.comboBox_G3.setItemText(0, self._translate("MainWindow", "Aorta"))
-        self.comboBox_G3.setItemText(1, self._translate("MainWindow", "Pulmonary artery"))
-        self.comboBox_G3.setItemText(2, self._translate("MainWindow", "Vena cava"))
-        self.comboBox_G3.setItemText(3, self._translate("MainWindow", "Pulmonary cappilaries"))
+        self.comboBox_G3.setItemText(0, self._translate("MainWindow", "select section"))
+        self.comboBox_G3.setItemText(1, self._translate("MainWindow", "Aorta"))
+        self.comboBox_G3.setItemText(2, self._translate("MainWindow", "Pulmonary artery"))
+        self.comboBox_G3.setItemText(3, self._translate("MainWindow", "Vena cava"))
         self.comboBox_G3.setItemText(4, self._translate("MainWindow", "Pulmonary vein"))
-        self.comboBox_G3.setItemText(5, self._translate("MainWindow", "Arteries within the heart"))
-        self.comboBox_G3.setItemText(6, self._translate("MainWindow", "Veins within the heart"))
-        self.comboBox_G3.setItemText(7, self._translate("MainWindow", "Capillaries within the heart"))
         self.label_heart.clear()
-        self.label_text_4.clear()
-        self.label_heart.setPixmap(QtGui.QPixmap(os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images','iandolets.png')))
-        self.label_text_4.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
-        self.label_text_4.setText("This section represents the blood flow and pressure of all\n"
-                                  "the major vessels that deliver blood to and from the heart\n"
-                                  "\nThe major arteries and veins modelled are\n"
-                                  "\n"
-                                  "1.Aorta\n"
-                                  "2.Pulmonary artery\n"
-                                  "3.Vena cava\n"
-                                  "4.Pulmonary cappilaries\n"
-                                  "5.Pulmonary vein\n"
-                                  "6.Arteries within the heart\n"
-                                  "7.Veins within the heart\n"
-                                  "8.Capillaries within the heart\n")
+        self.text_heartinfo.clear()
+        self.label_heart.setPixmap(QtGui.QPixmap(
+            os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'iandolets.png')))
+
+        self.text_heartinfo.setText("This section is about the volume and flow representation of some of the major blood vessels that deliver blood to and from the heart. This section also involves the modelling of the arterioles and venules that deliver blood within the heart, to the heart muscles.")
+        self.comboBox_G3.currentIndexChanged.connect(self.iandolet_plot)
 
     def viewing(self, Index, Txt, plt):
         print('viewing called')
@@ -1728,6 +1688,122 @@ class Ui_MainWindow(object):
         self.textEdit_1.setPlainText(self.Bottom)
         self.textEdit_2.setPlainText(self.Peak)
         self.statusbar.showMessage('PLOTTED', msecs=10000)
+
+    def chamber_plot(self):
+        self.graphWidget_2.plotItem.clear()
+        total =  len(self.ctime)
+        labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
+        if self.comboBox_G3.currentIndex() == 1:
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'left_atrium.png')))
+            self.text_heartinfo.setText("The left atrium is located on the left posterior of the heart. It acts as a holding chamber for blood returning from the lungs and to act as a pump to transport blood to other areas of the heart. The walls of the left atrium are slightly thicker than the walls of the right atrium. Oxygen-rich blood from the lungs enters the left atrium through the pulmonary vein. The blood is then pumped into the left ventricle chamber of the heart through the mitral valve.")
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 20], pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+        elif self.comboBox_G3.currentIndex() == 2:
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'left_ventricle.png')))
+            self.text_heartinfo.setText("The left Ventricle is located on the left side of the heart, below the left atrium. It is separated from the atrium by the mitral valve. Of all the chambers, the left ventricle has the thickest wall. The blood coming from the left atrium is pumped by this chamber to the rest of the body through the aorta. The valve between the left ventricle and the aorta is the aortic valve. The left ventricle is separated from the right by the intra ventricular septum. The contraction of the left ventricle corresponds to the QRS complex in the electrocardiogram.")
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 22],  pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+        elif self.comboBox_G3.currentIndex() == 3:
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'right_atrium.png')))
+            self.text_heartinfo.setText("The right atrium is located superior to the right ventricle and anteromedial to the left atrium. The right atrium receives the vena cava and coronary sinus, has an appendage, and directs blood into the right ventricle through the tricuspid valve. The right atrium is the first chamber of the heart to receive deoxygenated and carbon dioxide-rich systemic blood from the body through the superior and inferior vena cava. The right atrium also houses the first part of the conduction system, the sinoatrial node (SAN), which is located in the upper section near the superior vena cava. The SAN is made up of pacemaker cells which polarize to generate an action potential.")
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 4],  pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+        elif self.comboBox_G3.currentIndex() == 4:
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'right_ventricle.png')))
+            self.text_heartinfo.setText("The right ventricle lies anterior to the other heart chambers. Posteriorly and to the left, it is related to the left ventricle from which it is separated by the interventricular septum. The right ventricle is a unique, asymmetric, crescent-shape structure that is designed to accommodate the entire venous return while maintaining a low atrial pressure. The right ventricle is separated from the right atrium by the tricuspid valve. And the right atrium pumps blood to the lungs through the pulmonary artery gated by the pulmonary valve.")
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 6],  pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+
+    def valve_plot(self):
+        total = len(self.ctime)
+        self.graphWidget_2.plotItem.clear()
+        labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
+        if self.comboBox_G3.currentIndex() == 1:
+            self.graphWidget_2.plot(self.ctime, self.cardiac,  pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'mitral_valve.png')))
+            self.text_heartinfo.setText("Bicuspid valve, also called the mitral valve, is present between the left atrium and the left ventricle. The mitral valve has only two leaflets. The leaflets are attached to and supported by a ring of tough, fibrous tissue called the annulus. The annulus helps to maintain the proper shape of the valve. The leaflets of the mitral valve are also supported by:\n"
+                                        "\n\n •  Chordae tendineae: tough, fibrous strings. These are similar to the strings supporting a parachute\n"
+                                        "\n•	Papillary muscles: part of the inside walls of the ventricles."
+                                        "\n\nThe chordae tendineae and papillary muscles keep the leaflets stable to prevent blood from flowing backward.\n"
+                                        "\n\nBlood flows from the left atrium into the left ventricle through the open mitral valve. When the left ventricle is full, the mitral valve closes and keeps blood from flowing backward into the left atrium when the ventricle contracts.")
+        elif self.comboBox_G3.currentIndex() == 2:
+            self.graphWidget_2.plot(self.ctime, self.cardiac, pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'tricuspid_valve.png')))
+            self.text_heartinfo.setText("The tricuspid valve is present between the right atrium and the right ventricle. Unlike the mitral valve, the tricuspid valve has three leaflets. The leaflets of the tricuspid valve are also supported by:"
+                                        "\n\n•	Chordae tendineae: tough, fibrous strings. These are similar to the strings supporting a parachute."
+                                        "\n•	Papillary muscles: part of the inside walls of the ventricles.\n"
+                                        "\n\nThe chordae tendineae and papillary muscles keep the leaflets stable to prevent blood from flowing backward."
+                                        "\n\nBlood flows from the right atrium into the right ventricle through the open tricuspid valve. When the right ventricle is full, the tricuspid valve closes and keeps blood from flowing backward into the right atrium when the ventricle contracts.")
+        elif self.comboBox_G3.currentIndex() == 3:
+            self.graphWidget_2.plot(self.ctime, self.cardiac, pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'aortic_valve.png')))
+            self.text_heartinfo.setText("The aortic valve is present between the left ventricle and the aorta. Like the tricuspid valve, the aortic valve also has three leaflets. As the left ventricle begins to contract, the aortic valve is forced open. Blood is pumped out of the left ventricle through the aortic valve into the aorta. The aorta branches into many arteries and provides blood to the body. When the left ventricle finishes contracting and begins to relax, the aortic valve snaps shut. This keeps blood from flowing back into the left ventricle.")
+        elif self.comboBox_G3.currentIndex() == 4:
+            self.graphWidget_2.plot(self.ctime, self.cardiac, pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'pulmonary_valve.png')))
+            self.text_heartinfo.setText("The pulmonary valve is present between the right ventricle and the pulmonary artery. This pulmonary valve is also a three-leaflet valve. As the right ventricle begins to contract, the pulmonic valve is forced open. Blood is pumped out of the right ventricle through the pulmonic valve into the pulmonary artery to the lungs. When the right ventricle finishes contracting and starts to relax, the pulmonic valve snaps shut. This keeps blood from flowing back into the right ventricle. This pattern is repeated, causing blood to flow continuously to the heart, lungs, and body. The four normally working heart valves make sure blood always flows freely in one direction and that there is no backward leakage.")
+
+    def iandolet_plot(self):
+        total = len(self.ctime)
+        labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
+        if self.comboBox_G3.currentIndex() == 1:
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 23], pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'aorta.png')))
+            self.text_heartinfo.setText("The aorta is the main and largest artery in the human body, originating from the left ventricle of the heart and extending down to the abdomen, where it splits into two smaller arteries. After the blood leaves the heart through the aortic valve, it travels through the aorta, making a cane-shaped curve that connects with other major arteries to deliver oxygen-rich blood to the brain, muscles, and other cells.\n"
+                                        "\nThe aorta is more than an inch wide in some places and has three layers:\n"
+                                        "•	intima\n"
+                                        "•	media\n"
+                                        "•	adventitia\n"
+                                        "The aorta supplies all of the systemic circulation, which means that the entire body, except for the respiratory zone of the lung, receives its blood from the aorta.\n"
+                                        "\n In anatomical sources, the aorta is usually divided into sections. They correspond to "
+                                        "\n•	Ascending aorta"
+                                        "\n•	Aortic arch"
+                                        "\n•	Thoracic aorta"
+                                        "\n•	Abdominal aorta")
+        elif self.comboBox_G3.currentIndex() == 2:
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 8], pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'pulmonary_artery.png')))
+            self.text_heartinfo.setText("A pulmonary artery is an artery in the pulmonary circulation that carries deoxygenated blood from the right side of the heart to the lungs. The largest pulmonary artery is the main pulmonary artery or pulmonary trunk from the heart, and the smallest ones are the arterioles, which lead to the capillaries that surround the pulmonary alveoli. The pulmonary artery carries deoxygenated blood from the right ventricle to the lungs. The blood here passes through capillaries adjacent to alveoli and becomes oxygenated as part of the process of respiration. In contrast to the pulmonary arteries, the bronchial arteries supply nutrition to the lungs themselves. ")
+        elif self.comboBox_G3.currentIndex() == 3:
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 2], pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'vena_cava.png')))
+            self.text_heartinfo.setText("The venae cavae, singular 'vena cava' are two large veins that return deoxygenated blood from the body into the heart. In humans there are the superior vena cava and the inferior vena cava, and both empty into the right atrium. The inferior vena cava (or caudal vena cava in some animals) travels up alongside the abdominal aorta with blood from the lower part of the body. It is the largest vein in the human body. The superior vena cava (or cranial vena cava in animals) is above the heart, and forms from a convergence of the left and right brachiocephalic veins, which contain blood from the head and the arms. ")
+        elif self.comboBox_G3.currentIndex() == 4:
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 12], pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
+            self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+            self.label_heart.setPixmap(QtGui.QPixmap(
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'pulmonary_vein.png')))
+            self.text_heartinfo.setText("Veins are vessels that bring blood to the heart. Pulmonary veins carry oxygenated blood from the lungs to the left atrium. There are four pulmonary veins which extend from the left atrium to the lungs. They are the right superior, right inferior, left superior, and left inferior pulmonary veins. Two main pulmonary veins emerge from each lung hilum, receiving blood from three or four bronchial veins apiece and draining into the left atrium. At the root of the lung, the right superior pulmonary vein lies in front of and a little below the pulmonary artery; the inferior is situated at the lowest part of the lung hilum. Behind the pulmonary artery is the bronchus.[2] The right main pulmonary veins (contains oxygenated blood) pass behind the right atrium and superior vena cava; the left in front of the descending thoracic aorta.")
 
     def exit(self):
         MainWindow.close()
