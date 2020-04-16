@@ -584,17 +584,22 @@ def lumped(HR, ncyc, dt):
     F_1 = MyResult1[:ntotal, 22]
     print('hello')
 
-    return Pa_1, F_1
-    '''
-    plt.figure()
-    plt.plot(T, F_1, label='Flow')
-    plt.figure()
-    plt.show()
-    plt.plot(T, Pa_1, label='Pressure')
-    lg = plt.legend()
-    plt.show()
-    '''
+    return MyResult1
+    #return Pa_1, F_1
+
 
 
 if __name__ == "__main__":
-    lumped(72, 10, 0.00015)
+    import pandas as pd
+    import numpy as np
+    newd = []
+    for i in range(2):
+        num = 60
+        BAK = lumped(num, 10, 0.00015)
+        num = num + 1
+        newd.extend(BAK)
+
+    np.savetxt("DB/bakcup.csv", newd, delimiter=",")
+    #df = pd.DataFrame(newd)
+    #writer = pd.ExcelWriter("backup.xlsx")
+    #df.to_excel(writer, 'Sheet1', index=False)

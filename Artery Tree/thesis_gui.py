@@ -7,7 +7,8 @@ import os
 import CARDIAC
 
 class Ui_MainWindow(object):
-    def __init__(self):
+
+    def init(self, MainWindow):
         self._translate = QtCore.QCoreApplication.translate
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.gridLayout_9 = QtWidgets.QGridLayout(self.centralwidget)
@@ -83,12 +84,13 @@ class Ui_MainWindow(object):
         self.gridLayout_4 = QtWidgets.QGridLayout(self.dockWidgetContents_5)
         self.groupBox_3 = QtWidgets.QGroupBox(self.dockWidgetContents_5)
         self.gridLayout_8 = QtWidgets.QGridLayout(self.groupBox_3)
-        self.textEdit_1 = QtWidgets.QTextEdit(self.groupBox_3)
+        self.labelEdit_1 = QtWidgets.QLabel(self.groupBox_3)
         self.groupBox_4 = QtWidgets.QGroupBox(self.dockWidgetContents_5)
         self.textEdit_2 = QtWidgets.QTextEdit(self.groupBox_4)
-        self.stn_dat = {'0': None, '1': None, '7': None, '13': None, '3': None, '11': None, '10': None, '51': None,\
-                   '46': None, '74': None, '56': None,'70': None, '62': None, '63': None, '108': None, '109': None,\
-                   '102': None, '107': None, '96': None,'92': None}
+        self.stn_dat = {'0': None, '1': None, '7': None, '13': None, '3': None, '11': None, '10': None, '51': None, \
+                        '46': None, '74': None, '56': None, '70': None, '62': None, '63': None, '108': None,
+                        '109': None, \
+                        '102': None, '107': None, '96': None, '92': None}
         self.c = 0
 
         self.dockWidget_3 = QtWidgets.QDockWidget(MainWindow)
@@ -101,6 +103,7 @@ class Ui_MainWindow(object):
         self.text_heartinfo = QtWidgets.QTextBrowser(self.groupBox_6)
 
     def setupUi(self, MainWindow):
+        self.init(MainWindow)
         MainWindow.setWindowTitle(self._translate("MainWindow", "Bloodsim"))
         MainWindow.setObjectName("MainWindow")
         MainWindow.setWindowIcon(QtGui.QIcon('logo.png'))
@@ -117,14 +120,14 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_9.setObjectName("gridLayout_9")
 
-####GRAPH_WIDGET - 1 ======================================================================================================
-        #GRAPH
+        ####GRAPH_WIDGET - 1 ======================================================================================================
+        # GRAPH
         self.graphWidget_1 = pg.PlotWidget()
         self.graphWidget_1.setBackground('#213956')
         self.graphWidget_1.setAntialiasing(True)
         labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
-        self.graphWidget_1.setLabel('left', text='x axis' , **labelStyle )
-        self.graphWidget_1.setLabel('bottom', text='y axis',**labelStyle )
+        self.graphWidget_1.setLabel('left', text='x axis', **labelStyle)
+        self.graphWidget_1.setLabel('bottom', text='y axis', **labelStyle)
 
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
@@ -135,8 +138,8 @@ class Ui_MainWindow(object):
         self.graphWidget_1.setObjectName("widget_1")
         self.gridLayout_9.addWidget(self.graphWidget_1, 1, 0, 1, 3)
 
-#####GRAPH_WIDGET - 2 ======================================================================================================
-        #GRAPH-2
+        #####GRAPH_WIDGET - 2 ======================================================================================================
+        # GRAPH-2
         self.graphWidget_2 = pg.PlotWidget()
         self.graphWidget_2.setBackground('#213956')
         self.graphWidget_2.setAntialiasing(True)
@@ -153,8 +156,8 @@ class Ui_MainWindow(object):
         self.graphWidget_2.setObjectName("widget_2")
         self.gridLayout_9.addWidget(self.graphWidget_2, 3, 0, 1, 3)
 
-####SECOND GRAPH=====================================================================================================
-        #ComboBox_G2
+        ####SECOND GRAPH=====================================================================================================
+        # ComboBox_G2
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
@@ -193,7 +196,7 @@ class Ui_MainWindow(object):
         self.gridLayout_9.addWidget(self.radioButton_3, 2, 1, 1, 1)
         self.radioButton_3.clicked.connect(self.pressure_plot_2)
 
-        #RadioButton_4
+        # RadioButton_4
         self.radioButton_4.setStyleSheet("color: rgb(255, 255, 255);")
         self.radioButton_4.setObjectName("radioButton_4")
         self.buttonGroup_2.setObjectName("buttonGroup_2")
@@ -201,7 +204,7 @@ class Ui_MainWindow(object):
         self.gridLayout_9.addWidget(self.radioButton_4, 2, 2, 1, 1)
         self.radioButton_4.clicked.connect(self.flow_plot_2)
 
-####THIRD GRAPH=====================================================================================================
+        ####THIRD GRAPH=====================================================================================================
         # ComboBox_G3
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
@@ -226,7 +229,7 @@ class Ui_MainWindow(object):
             self.comboBox_G3.addItem("")
         self.gridLayout_9.addWidget(self.comboBox_G3, 2, 0, 1, 1)
         self.comboBox_G3.hide()
-        #self.comboBox_G3.currentIndexChanged.connect(self.mainViewer_2)
+        # self.comboBox_G3.currentIndexChanged.connect(self.mainViewer_2)
 
         # Radiobutton_3
         # self.radioButton_3 = QtWidgets.QRadioButton(self.centralwidget)
@@ -250,8 +253,8 @@ class Ui_MainWindow(object):
         self.gridLayout_9.addWidget(self.radioButton_4, 2, 2, 1, 1)
         self.radioButton_4.clicked.connect(self.flow_plot_2)
 
-#####GRAPH_BOX -1 =================================================================================
-    #comboBox_G1
+        #####GRAPH_BOX -1 =================================================================================
+        # comboBox_G1
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
@@ -288,7 +291,7 @@ class Ui_MainWindow(object):
 
         # radioButton_2
         # self.radioButton_2 = QtWidgets.QRadioButton(self.centralwidget)
-        self.radioButton_2.setStyleSheet(  "color: rgb(255, 255, 255);")
+        self.radioButton_2.setStyleSheet("color: rgb(255, 255, 255);")
         self.radioButton_2.setChecked(False)
         self.radioButton_2.setObjectName("radioButton_2")
         self.buttonGroup.setObjectName("buttonGroup")
@@ -296,8 +299,8 @@ class Ui_MainWindow(object):
         self.gridLayout_9.addWidget(self.radioButton_2, 0, 2, 1, 1)
         self.radioButton_2.clicked.connect(self.flow_plot_1)
 
-#####LEFT SIDE DOCK WIDGET====================================================================================
-    #DockWidget_1
+        #####LEFT SIDE DOCK WIDGET====================================================================================
+        # DockWidget_1
         self.dockWidget_1.setMinimumSize(QtCore.QSize(366, 534))
         self.dockWidget_1.setMouseTracking(True)
         self.dockWidget_1.setFloating(False)
@@ -307,8 +310,8 @@ class Ui_MainWindow(object):
         self.dockWidgetContents_1.setObjectName("dockWidgetContents_1")
         self.gridLayout.setObjectName("gridLayout")
 
-#LEFTSIDE SECOND GroupBox========================================================================================
-    #GroupBox_2
+        # LEFTSIDE SECOND GroupBox========================================================================================
+        # GroupBox_2
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -319,10 +322,10 @@ class Ui_MainWindow(object):
         self.groupBox_2.setFlat(True)
         self.groupBox_2.setObjectName("groupBox_2")
 
-        #gridLayout_2
+        # gridLayout_2
         self.gridLayout_2.setObjectName("gridLayout_2")
 
-        #label_9
+        # label_9
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -353,7 +356,7 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_4.setObjectName("doubleSpinBox_4")
         self.gridLayout_2.addWidget(self.doubleSpinBox_4, 1, 3, 1, 1)
 
-        #doublePsinBox_5
+        # doublePsinBox_5
         self.doubleSpinBox_5.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -372,7 +375,7 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_5.setObjectName("doubleSpinBox_5")
         self.gridLayout_2.addWidget(self.doubleSpinBox_5, 2, 3, 1, 1)
 
-        #doubleSpinBox_6
+        # doubleSpinBox_6
         self.doubleSpinBox_6.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -391,7 +394,7 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_6.setObjectName("doubleSpinBox_6")
         self.gridLayout_2.addWidget(self.doubleSpinBox_6, 3, 3, 1, 1)
 
-        #checkBox_3
+        # checkBox_3
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -403,7 +406,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.checkBox_3, 1, 2, 1, 1)
         self.checkBox_3.clicked.connect(self.enable)
 
-        #checkBox_4
+        # checkBox_4
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -415,7 +418,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.checkBox_4, 2, 2, 1, 1)
         self.checkBox_4.clicked.connect(self.enable)
 
-        #checkBox_5
+        # checkBox_5
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -427,7 +430,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.checkBox_5, 3, 2, 1, 1)
         self.checkBox_5.clicked.connect(self.enable)
 
-        #label_10
+        # label_10
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -438,7 +441,7 @@ class Ui_MainWindow(object):
         self.label_10.setObjectName("label_10")
         self.gridLayout_2.addWidget(self.label_10, 1, 0, 1, 2)
 
-        #label_11
+        # label_11
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -449,7 +452,7 @@ class Ui_MainWindow(object):
         self.label_11.setObjectName("label_11")
         self.gridLayout_2.addWidget(self.label_11, 2, 0, 1, 2)
 
-        #label_8
+        # label_8
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -461,7 +464,7 @@ class Ui_MainWindow(object):
         self.label_8.setObjectName("label_8")
         self.gridLayout_2.addWidget(self.label_8, 0, 0, 1, 2)
 
-        #label_12
+        # label_12
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -473,16 +476,16 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.label_12, 3, 0, 1, 2)
         self.gridLayout.addWidget(self.groupBox_2, 1, 0, 1, 1)
 
-###groupBox_1========================================================================================
-        #groupBox_1
+        ###groupBox_1========================================================================================
+        # groupBox_1
         self.groupBox_1.setTitle("")
         self.groupBox_1.setFlat(True)
         self.groupBox_1.setObjectName("groupBox_1")
 
-        #gridLayout_3
+        # gridLayout_3
         self.gridLayout_3.setObjectName("gridLayout_3")
 
-        #checkBox_1
+        # checkBox_1
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -494,7 +497,7 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.checkBox_1, 1, 1, 1, 1)
         self.checkBox_1.clicked.connect(self.enable)
 
-        #doubleSpinBox_1
+        # doubleSpinBox_1
         self.doubleSpinBox_1.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -513,8 +516,8 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_1.setValue(72.0)
         self.doubleSpinBox_1.setObjectName("doubleSpinBox_1")
         self.gridLayout_3.addWidget(self.doubleSpinBox_1, 1, 2, 1, 1)
-        
-        #doubleSpinBox_2
+
+        # doubleSpinBox_2
         self.doubleSpinBox_2.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -591,7 +594,7 @@ class Ui_MainWindow(object):
         self.label_5.setObjectName("label_5")
         self.gridLayout_3.addWidget(self.label_5, 3, 0, 1, 1)
 
-        #label_6
+        # label_6
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -602,7 +605,7 @@ class Ui_MainWindow(object):
         self.label_6.setObjectName("label_6")
         self.gridLayout_3.addWidget(self.label_6, 4, 0, 1, 1)
 
-        #comboBox_1
+        # comboBox_1
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
@@ -623,7 +626,7 @@ class Ui_MainWindow(object):
         self.comboBox_1.currentIndexChanged.connect(self.val)
         self.gridLayout_3.addWidget(self.comboBox_1, 4, 2, 1, 1)
 
-        #label_7
+        # label_7
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -634,7 +637,7 @@ class Ui_MainWindow(object):
         self.label_7.setObjectName("label_7")
         self.gridLayout_3.addWidget(self.label_7, 5, 0, 1, 1)
 
-        #doubleSpinBox_3
+        # doubleSpinBox_3
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
@@ -649,14 +652,14 @@ class Ui_MainWindow(object):
         self.doubleSpinBox_3.setObjectName("doubleSpinBox_3")
         self.gridLayout_3.addWidget(self.doubleSpinBox_3, 6, 2, 1, 1)
 
-        #PushButton-1
+        # PushButton-1
         self.pushButton_1 = QtWidgets.QPushButton(self.groupBox_1)
         self.pushButton_1.setStyleSheet("background-color: rgb(35, 35, 35);")
         self.pushButton_1.setObjectName("pushButton_1")
         self.gridLayout_3.addWidget(self.pushButton_1, 7, 0, 1, 3)
         self.pushButton_1.clicked.connect(self.store)
 
-        #comboBox_2
+        # comboBox_2
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
@@ -678,7 +681,7 @@ class Ui_MainWindow(object):
         '''
         self.gridLayout_3.addWidget(self.comboBox_2, 5, 2, 1, 1)
 
-        #comboBox_3
+        # comboBox_3
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
@@ -698,7 +701,7 @@ class Ui_MainWindow(object):
             self.comboBox_3.addItem("")
         self.gridLayout_3.addWidget(self.comboBox_3, 6, 0, 1, 1)
 
-        #checkBox_2
+        # checkBox_2
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -713,26 +716,38 @@ class Ui_MainWindow(object):
         MainWindow.addDockWidget(QtCore.Qt.DockWidgetArea(1), self.dockWidget_1)
         self.checkBox_2.clicked.connect(self.enable)
 
-#========dockWidget_2================================================
+        # ========dockWidget_2================================================
         self.dockWidget_2.setMinimumSize(QtCore.QSize(250, 487))
         self.dockWidget_2.setObjectName("dockWidget_2")
-        #dockWidgetContents_5
+
+        # dockWidgetContents_5
         self.dockWidgetContents_5.setObjectName("dockWidgetContents_5")
-        #gridLayout_4
+
+        # gridLayout_4
         self.gridLayout_4.setObjectName("gridLayout_4")
-        #groupBox_3
+
+        # groupBox_3
         self.groupBox_3.setMinimumSize(QtCore.QSize(221, 191))
         self.groupBox_3.setTitle("")
         self.groupBox_3.setFlat(True)
         self.groupBox_3.setObjectName("groupBox_3")
-        #gridLayout_8
+
+        # gridLayout_8
         self.gridLayout_8.setObjectName("gridLayout_8")
-        #textEdit_1
-        self.textEdit_1.setStyleSheet("background-color: rgb(33, 57, 86);")
-        self.textEdit_1.setObjectName("textEdit")
-        self.gridLayout_8.addWidget(self.textEdit_1, 0, 0, 1, 1)
+
+        # textEdit_1
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.labelEdit_1.sizePolicy().hasHeightForWidth())
+
+        self.labelEdit_1.setStyleSheet("background-color: rgb(33, 57, 86);")
+        self.labelEdit_1.setObjectName("textEdit")
+
+        self.gridLayout_8.addWidget(self.labelEdit_1, 0, 0, 1, 1)
         self.gridLayout_4.addWidget(self.groupBox_3, 0, 0, 1, 1)
-        #groupBox_4
+
+        # groupBox_4
         self.groupBox_4.setMinimumSize(QtCore.QSize(221, 241))
         self.groupBox_4.setTitle("")
         self.groupBox_4.setFlat(True)
@@ -740,15 +755,34 @@ class Ui_MainWindow(object):
         self.gridLayout_5 = QtWidgets.QGridLayout(self.groupBox_4)
         self.gridLayout_5.setObjectName("gridLayout_5")
 
-        #textEdit_2
+        # textEdit_2
         self.textEdit_2.setStyleSheet("background-color: rgb(33, 57, 86);")
         self.textEdit_2.setObjectName("textEdit_2")
-        self.gridLayout_5.addWidget(self.textEdit_2, 0, 0, 1, 1)
+        self.gridLayout_5.addWidget(self.textEdit_2, 1, 0, 1, 3)
+
+        #pushButton_5
+        self.pushButton_5 = QtWidgets.QPushButton(self.groupBox_4)
+        self.pushButton_5.setStyleSheet("background-color: rgb(35, 35, 35);")
+        self.pushButton_5.setObjectName("pushButton_2")
+        self.gridLayout_5.addWidget(self.pushButton_5, 0, 0, 1, 1)
+
+        #pushButton_6
+        self.pushButton_6 = QtWidgets.QPushButton(self.groupBox_4)
+        self.pushButton_6.setStyleSheet("background-color: rgb(35, 35, 35);")
+        self.pushButton_6.setObjectName("pushButton_3")
+        self.gridLayout_5.addWidget(self.pushButton_6, 0, 1, 1, 1)
+
+        #pushButton_7
+        self.pushButton_7 = QtWidgets.QPushButton(self.groupBox_4)
+        self.pushButton_7.setStyleSheet("background-color: rgb(35, 35, 35);")
+        self.pushButton_7.setObjectName("pushButton_4")
+        self.gridLayout_5.addWidget(self.pushButton_7, 0, 2, 1, 1)
         self.gridLayout_4.addWidget(self.groupBox_4, 1, 0, 1, 1)
+
         self.dockWidget_2.setWidget(self.dockWidgetContents_5)
         MainWindow.addDockWidget(QtCore.Qt.DockWidgetArea(2), self.dockWidget_2)
 
-# ========================================================================================
+        # ========================================================================================
         # dockWidget_3
         self.dockWidget_3.setMinimumSize(QtCore.QSize(250, 487))
         self.dockWidget_3.setMaximumWidth(450)
@@ -766,20 +800,19 @@ class Ui_MainWindow(object):
         self.groupBox_5.setFlat(True)
         self.groupBox_5.setObjectName("groupBox_5")
 
-        # gridLayout_11
-        self.gridLayout_11.setObjectName("gridLayout_8")
+        # gridLayout_12
+        self.gridLayout_12.setObjectName("gridLayout_12")
 
         # label_heart
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_heart.sizePolicy().hasHeightForWidth())
+        #sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
+        #sizePolicy.setHorizontalStretch(0)
+        #sizePolicy.setVerticalStretch(0)
+        #sizePolicy.setHeightForWidth(self.label_heart.sizePolicy().hasHeightForWidth())
         self.label_heart.setStyleSheet("background-color: rgb(33, 57, 86);")
-
+        
         self.label_heart.setObjectName("label_heart")
         self.gridLayout_12.addWidget(self.label_heart, 0, 0, 1, 1)
         self.gridLayout_11.addWidget(self.groupBox_5, 0, 0, 1, 1)
-        #self.dockWidget_3.setWidget(self.dockWidgetContents_3)
 
         # groupBox_6
         self.groupBox_6.setMinimumSize(QtCore.QSize(221, 241))
@@ -800,14 +833,12 @@ class Ui_MainWindow(object):
         self.pushButton_2.setObjectName("pushButton_2")
         self.gridLayout_13.addWidget(self.pushButton_2, 0, 0, 1, 1)
         self.pushButton_2.clicked.connect(self.button_chambers)
-        # self.gridLayout_11.addWidget(self.groupBox_6, 1, 0, 1, 1)
 
         self.pushButton_3 = QtWidgets.QPushButton(self.groupBox_6)
         self.pushButton_3.setStyleSheet("background-color: rgb(35, 35, 35);")
         self.pushButton_3.setObjectName("pushButton_3")
         self.gridLayout_13.addWidget(self.pushButton_3, 0, 1, 1, 1)
         self.pushButton_3.clicked.connect(self.button_valves)
-        # self.gridLayout_11.addWidget(self.groupBox_6, 1, 0, 1, 1)
 
         self.pushButton_4 = QtWidgets.QPushButton(self.groupBox_6)
         self.pushButton_4.setStyleSheet("background-color: rgb(35, 35, 35);")
@@ -821,21 +852,23 @@ class Ui_MainWindow(object):
         self.dockWidget_3.hide()
 
 ##########################END OF DOCKWIDGET_3
-
         # Menubar
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1143, 26))
         self.menubar.setObjectName("menubar")
-        #File Menu
+
+        # File Menu
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuMenu")
-        #View
+
+        # View
         self.menuView = QtWidgets.QMenu(self.menubar)
         self.menuView.setObjectName("menuOptions")
-        #Run
+        # Run
         self.menuRun = QtWidgets.QMenu(self.menubar)
         self.menuRun.setObjectName("menuHelp")
-        #Help
+
+        # Help
         self.menuHelp = QtWidgets.QMenu(self.menubar)
         self.menuHelp.setObjectName("menuHelp_2")
         MainWindow.setMenuBar(self.menubar)
@@ -846,7 +879,7 @@ class Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
-        #Action_Declaration
+        # Action_Declaration
         self.actionRun = QtWidgets.QAction(MainWindow)
         self.actionRun.setObjectName("actionRUN")
 
@@ -865,9 +898,6 @@ class Ui_MainWindow(object):
         self.actionReset = QtWidgets.QAction(MainWindow)
         self.actionReset.setObjectName("actionReset")
 
-        self.actionReset_2 = QtWidgets.QAction(MainWindow)
-        self.actionReset_2.setObjectName("actionReset_2")
-
         self.actionWaveform = QtWidgets.QAction(MainWindow)
         self.actionWaveform.setObjectName("actionWaveform")
 
@@ -883,9 +913,8 @@ class Ui_MainWindow(object):
         self.actionHeart_Parameter = QtWidgets.QAction(MainWindow)
         self.actionHeart_Parameter.setObjectName("actionHeart_Parameter")
 
-        #Action_Adding
+        # Action_Adding
         self.menuFile.addAction(self.actionClear)
-        self.menuFile.addAction(self.actionReset_2)
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionQuit)
 
@@ -913,23 +942,27 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuRun.menuAction())
         self.menubar.addAction(self.menuHelp.menuAction())
 
-        #MenuTrigger
-         #FileMenu_trigger
+        # MenuTrigger
+        # FileMenu_trigger
         self.actionClear.triggered.connect(self.reset)
-        self.actionReset_2.triggered.connect(self.reset)
         self.actionQuit.triggered.connect(self.exit)
-        #ViewMenu_trigger
+
+        # ViewMenu_trigger
         self.actionIp.triggered.connect(self.showDock_1)
         self.actionWaveform.triggered.connect(self.showDock_2)
         self.actionHeart_Parameter.triggered.connect(self.showDock_3)
-        #RunMenu_trigger
+        self.actionClear.triggered.connect(self.clear)
+
+        # RunMenu_trigger
         self.actionRun.triggered.connect(self.plot)
         self.actionReset.triggered.connect(self.reset)
-        #HelpMenu_trigger
-        self.actionBloodsim.triggered.connect(self.about)
-        #self.actionAbout_Bloodsim.triggered.connect(self.about)
+        self.actionStop.triggered.connect(self.cardiac_model)
 
-        #setBuddy
+        # HelpMenu_trigger
+        self.actionBloodsim.triggered.connect(self.help)
+        self.actionAbout_Bloodsim.triggered.connect(self.about)
+
+        # setBuddy
         self.label_10.setBuddy(self.checkBox_3)
         self.label_11.setBuddy(self.checkBox_4)
         self.label_12.setBuddy(self.checkBox_5)
@@ -938,7 +971,7 @@ class Ui_MainWindow(object):
         self.label_4.setBuddy(self.checkBox_2)
         self.label_3.setBuddy(self.checkBox_1)
 
-        #TabOrder
+        # TabOrder
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.comboBox_G1, self.radioButton_1)
@@ -962,11 +995,14 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.checkBox_5, self.doubleSpinBox_6)
 
     def retranslateUi(self, MainWindow):
-        #self._translate = QtCore.QCoreApplication.translate
         self.pushButton_1.setText(self._translate("MainWindow", "OK"))
         self.pushButton_2.setText(self._translate("MainWindow", "CHAMBERS"))
         self.pushButton_3.setText(self._translate("MainWindow", "VALVES"))
         self.pushButton_4.setText(self._translate("MainWindow", "INLET/OUTLET"))
+
+        self.pushButton_5.setText(self._translate("MainWindow", "GRAPH-1"))
+        self.pushButton_6.setText(self._translate("MainWindow", "GRAPH-2"))
+        self.pushButton_7.setText(self._translate("MainWindow", "ANALYSE"))
 
         self.radioButton_2.setText(self._translate("MainWindow", "Flow"))
         self.radioButton_4.setText(self._translate("MainWindow", "Flow"))
@@ -987,8 +1023,8 @@ class Ui_MainWindow(object):
         self.label_7.setText(self._translate("MainWindow", "Select Artery"))
         self.label_1.setText(self._translate("MainWindow", "Property"))
         self.label_2.setText(self._translate("MainWindow", "Value"))
-        self.label_4.setText(self._translate("MainWindow", "Peak Flow"))
-        self.label_3.setText(self._translate("MainWindow", "Heart Rate"))
+        self.label_4.setText(self._translate("MainWindow", "Peak Flow (ml/sec)"))
+        self.label_3.setText(self._translate("MainWindow", "Heart Rate (bpm)"))
         self.label_5.setText(self._translate("MainWindow", "Stenosis"))
 
         self.comboBox_G1.setItemText(0, self._translate("MainWindow", "Ascending aorta"))
@@ -1075,17 +1111,17 @@ class Ui_MainWindow(object):
         self.comboBox_3.setItemText(18, self._translate("MainWindow", "Radial artery left"))
         self.comboBox_3.setItemText(19, self._translate("MainWindow", "Radial artery right"))
 
-        self.dockWidget_2.setWindowTitle(self._translate("MainWindow", "Information"))
-        self.dockWidget_3.setWindowTitle(self._translate("MainWindow", "HEART PARAMETERS"))
+        self.dockWidget_2.setWindowTitle(self._translate("MainWindow", "ARTERY DOCK"))
+        self.dockWidget_3.setWindowTitle(self._translate("MainWindow", "HEART DOCK"))
 
-        self.actionRun.setText(self._translate("MainWindow", "Run.."))
-        self.actionStop.setText(self._translate("MainWindow", "Stop"))
+        self.actionRun.setText(self._translate("MainWindow", "Artery Model"))
+        self.actionStop.setText(self._translate("MainWindow", "Heart Model"))
         self.actionClear.setText(self._translate("MainWindow", "Clear"))
         self.actionIp.setText(self._translate("MainWindow", "Input Parmeters"))
-        self.actionWaveform.setText(self._translate("MainWindow", "Information"))
-        self.actionHeart_Parameter.setText(self._translate("MainWindow", "Heart Parameter"))
+        self.actionWaveform.setText(self._translate("MainWindow", "Artery Dock"))
+        self.actionHeart_Parameter.setText(self._translate("MainWindow", "Heart Dock"))
         self.actionReset.setText(self._translate("MainWindow", "Reset"))
-        self.actionReset_2.setText(self._translate("MainWindow", "Reset"))
+
         self.actionQuit.setText(self._translate("MainWindow", "Quit"))
         self.actionQuit.setText(self._translate("MainWindow", "Quit"))
         self.actionBloodsim.setText(self._translate("MainWindow", "Bloodsim Help"))
@@ -1095,7 +1131,7 @@ class Ui_MainWindow(object):
         data = self.comboBox_1.currentIndex()
         data = int(data)
         self.comboBox_2.clear()
-        for i in range(data+1):
+        for i in range(data + 1):
             j = i + 1
             j = str(j)
             self.comboBox_2.addItem(j)
@@ -1103,12 +1139,12 @@ class Ui_MainWindow(object):
 
     def store(self):
         self.c = self.c + 1
-        if self.c - 1 == 0: ck =[];self.cbnew = {}
+        if self.c - 1 == 0: ck = [];self.cbnew = {}
         cb1 = int(self.comboBox_1.currentText())
         cb2 = self.comboBox_2.currentIndex()
         pos = self.comboBox_3.currentIndex()
         cn = self.comboBox_2.count()
-        cbdic = {cb2:pos}
+        cbdic = {cb2: pos}
         print(self.c, cn)
         if self.c <= cn:
             self.cbnew.update(cbdic)
@@ -1121,7 +1157,8 @@ class Ui_MainWindow(object):
                         self.stn_dat[u_Pos] = val
                         del cbdic
                         self.statusbar.showMessage('UPDATED', msecs=5000)
-        else:self.alert("can't update")
+        else:
+            self.alert("can't update")
 
     def enable(self):
         if self.checkBox_1.isChecked() == True:
@@ -1149,10 +1186,10 @@ class Ui_MainWindow(object):
             self.doubleSpinBox_6.setEnabled(False)
 
     def showDock_1(self):
+        if not self.actionIp.isChecked():
+            self.dockWidget_1.hide()
         if self.actionIp.isChecked():
             self.dockWidget_1.show()
-        if self.actionIp.isChecked():
-            self.dockWidget_1.hide()
 
     def showDock_2(self, MainWindow):
         if self.actionWaveform.isChecked():
@@ -1171,7 +1208,8 @@ class Ui_MainWindow(object):
             self.comboBox_G2.hide()
             self.comboBox_G3.show()
             self.graphWidget_2.plotItem.clear()
-            self.radioButton_3.setText(self._translate("MainWindow", "Volume"))
+            self.radioButton_3.setText(self._translate("MainWindow", "Flow"))
+            self.radioButton_4.setText(self._translate("MainWindow", "Volume"))
             self.dockWidget_2.hide()
             self.dockWidget_3.show()
             self.actionWaveform.setChecked(False)
@@ -1185,8 +1223,8 @@ class Ui_MainWindow(object):
             self.actionWaveform.setChecked(True)
 
     def plot(self):
-        #t = np.arange(0.0,2.0,0.02)
-        #x = np.sin(2*3.14*t)
+        # t = np.arange(0.0,2.0,0.02)
+        # x = np.sin(2*3.14*t)
 
         self.comboBox_G1.setEnabled(True)
         self.comboBox_G2.setEnabled(True)
@@ -1198,94 +1236,94 @@ class Ui_MainWindow(object):
         P = self.doubleSpinBox_2.value()  # read P value
         S = self.doubleSpinBox_3.value()  # Stenosis Value
         Index = self.comboBox_3.currentIndex()
-        self.cardiac, self.ctime = CARDIAC.lumped(H, 5, 0.00015)
 
-        if Index==0:
+
+        if Index == 0:
             Pos = 0
             self.plot_p = 1
             self.plot_f = 0
 
-        elif Index==1:                              #Index value in combo_box
-            Pos = 1                                 #Initalize position
+        elif Index == 1:  # Index value in combo_box
+            Pos = 1  # Initalize position
             self.plot_p = 3
             self.plot_f = 2
 
-        elif Index==2:
+        elif Index == 2:
             Pos = 7
             self.plot_p = 7
             self.plot_f = 6
 
-        elif Index==3:
+        elif Index == 3:
             Pos = 13
             self.plot_p = 31
             self.plot_f = 30
 
-        elif Index==4:
+        elif Index == 4:
             Pos = 3
             self.plot_p = 53
             self.plot_f = 52
 
-        elif Index==5:
+        elif Index == 5:
             Pos = 11
             self.plot_p = 83
             self.plot_f = 82
 
-        elif Index==6:
+        elif Index == 6:
             Pos = 10
             self.plot_p = 113
             self.plot_f = 112
 
-        elif Index==7:
+        elif Index == 7:
             Pos = 51
             self.plot_p = 103
             self.plot_f = 102
 
-        elif Index==8:
+        elif Index == 8:
             Pos = 46
             self.plot_p = 75
             self.plot_f = 74
 
-        elif Index==9:
+        elif Index == 9:
             Pos = 74
             self.plot_p = 123
             self.plot_f = 122
 
-        elif Index==10:
+        elif Index == 10:
             Pos = 56
             self.plot_p = 207
             self.plot_f = 206
 
-        elif Index==11:
+        elif Index == 11:
             Pos = 70
             self.plot_p = 211
             self.plot_f = 210
 
-        elif Index==12:
+        elif Index == 12:
             Pos = 62
             self.plot_p = 131
             self.plot_f = 130
 
-        elif Index==13:
+        elif Index == 13:
             Pos = 63
             self.plot_p = 133
             self.plot_f = 132
 
-        elif Index==14:
+        elif Index == 14:
             Pos = 108
             self.plot_p = 149
             self.plot_f = 148
 
-        elif Index==15:
+        elif Index == 15:
             Pos = 109
             self.plot_p = 181
             self.plot_f = 180
 
-        elif Index==16:
+        elif Index == 16:
             Pos = 102
             self.plot_p = 249
             self.plot_f = 248
 
-        elif Index==17:
+        elif Index == 17:
             Pos = 107
             self.plot_p = 253
             self.plot_f = 252
@@ -1302,7 +1340,7 @@ class Ui_MainWindow(object):
 
         datas = self.stn_dat
 
-        #print('positon value:', Pos, 'stenosis value:', S)
+        # print('positon value:', Pos, 'stenosis value:', S)
         STENOSIS.steno(**datas)  # s : value of stenosis in %, pos: in which area to induce
         self.clock, self.pulse = MAIN2.calc(H, P)
 
@@ -1324,7 +1362,7 @@ class Ui_MainWindow(object):
             self.textEdit_1.setPlainText(self.Bottom)
             self.statusbar.showMessage('PLOTTED', msecs=9000)
 
-            #self.graphWidget_2.addLegend()
+            # self.graphWidget_2.addLegend()
             self.graphWidget_2.showGrid(x=True, y=True)
             self.graphWidget_2.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Pressure (mmHg)', **labelStyle)
@@ -1335,6 +1373,16 @@ class Ui_MainWindow(object):
             self.statusbar.showMessage('PLOTTED', msecs=9000)
         else:
             self.alert("Invalid values...!!")
+
+    def cardiac_model(self):
+        self.cardiac, self.ctime = CARDIAC.lumped(H, 5, 0.00015)
+        self.graphWidget_2.showGrid(x=True, y=True)
+        self.graphWidget_2.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2))
+        self.graphWidget_2.setLabel('left', 'Pressure (mmHg)', **labelStyle)
+        self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
+        self.textEdit_2.clear()
+        self.textEdit_2.insertPlainText(self.p_Peak)
+        self.statusbar.showMessage('PLOTTED', msecs=9000)
 
     def pressure_plot_1(self):
         self.graphWidget_1.plotItem.clear()
@@ -1349,7 +1397,7 @@ class Ui_MainWindow(object):
         plt = self.graphWidget_2
         Txt = self.comboBox_G2.currentText()
         print('graphWidget-2_pressure')
-        plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+        plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
         self.statusbar.showMessage('PLOTTED', msecs=5000)
 
     def flow_plot_1(self):
@@ -1374,7 +1422,7 @@ class Ui_MainWindow(object):
         alert.setText(msg)
         alert.exec_()
 
-    def Help(self):
+    def help(self):
         help = QtWidgets.QMessageBox()
         help.setWindowTitle("Help")
         help.setText("Kindly ")
@@ -1383,18 +1431,30 @@ class Ui_MainWindow(object):
     def about(self):
         about = QtWidgets.QMessageBox()
         about.setWindowTitle("About")
-        about.setText('This is an open source software developed for the simulation of blood pressure and blood flow'
-                      '\nKindly support us by contributing your part to this software.')
+        about.setText('Bloodsim is developed entirely in python and is designed to simulate the pressure and flow of '
+                      'blood in any part of the arterial tree. Effect of stenosis on the blood pressure and flow is'
+                      ' also modelled. In addition to the simulation of blood in the arterial tree, the software also '
+                      'simulates the volume and flow waveforms of blood in the cardiac system,'
+                      'i.e. the heart chambers, valves and the vessels that deliver blood to and from the heart.')
         about.exec_()
 
     def reset(self):
-        self.statusbar.showMessage('cleared', msecs =  6000)
         self.graphWidget_1.plotItem.clearPlots()
         self.graphWidget_2.plotItem.clearPlots()
         self.textEdit_1.clear()
         self.textEdit_2.clear()
         self.comboBox_G1.setCurrentIndex(0)
         self.comboBox_G2.setCurrentIndex(0)
+        self.stn_dat = {'0': None, '1': None, '7': None, '13': None, '3': None, '11': None, '10': None, '51': None, \
+                        '46': None, '74': None, '56': None, '70': None, '62': None, '63': None, '108': None,
+                        '109': None, \
+                        '102': None, '107': None, '96': None, '92': None}
+        self.c = 0
+        self.doubleSpinBox_1.value('72')
+        self.doubleSpinBox_2.value('450')
+        self.comboBox_2.clear()
+
+        self.statusbar.showMessage('cleared', msecs=6000)
 
     def mainViewer_1(self):
         Id = self.comboBox_G1.currentIndex()
@@ -1422,7 +1482,8 @@ class Ui_MainWindow(object):
         self.label_heart.clear()
         self.label_heart.setPixmap(QtGui.QPixmap(
             os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'chambers.png')))
-        self.text_heartinfo.setText("The heart is comprised of two atria and two ventricles. Blood enters the heart through the two atria and exits through the two ventricles. Deoxygenated blood enters the right atrium through the inferior and superior vena cava. The right side of the heart then pumps this deoxygenated blood into the pulmonary arteries around the lungs. There, fresh oxygen enters the blood stream, and the blood moves to the left side of the heart. From the lungs, blood is brought to the left atrium through the pulmonary vein, and then to the left ventricle through the mitral valve, from where it is pumped to the rest of the body.")
+        self.text_heartinfo.setText(
+            "The heart is comprised of two atria and two ventricles. Blood enters the heart through the two atria and exits through the two ventricles. Deoxygenated blood enters the right atrium through the inferior and superior vena cava. The right side of the heart then pumps this deoxygenated blood into the pulmonary arteries around the lungs. There, fresh oxygen enters the blood stream, and the blood moves to the left side of the heart. From the lungs, blood is brought to the left atrium through the pulmonary vein, and then to the left ventricle through the mitral valve, from where it is pumped to the rest of the body.")
 
         self.comboBox_G3.currentIndexChanged.connect(self.chamber_plot)
 
@@ -1439,7 +1500,8 @@ class Ui_MainWindow(object):
         self.text_heartinfo.clear()
         self.label_heart.setPixmap(QtGui.QPixmap(
             os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'valves.png')))
-        self.text_heartinfo.setText("The heart has four valves - one for each chamber of the heart. The valves keep blood moving through the heart in the right direction. The mitral valve and tricuspid valve are located between the atria and the ventricles. The aortic valve and pulmonic valve are located between the ventricles and the major blood vessels leaving the heart. The four valves are to open and close to let blood flow through the heart. The valves prevent the backward flow of blood. Valves are actually flaps (leaflets) that act as one-way inlets for blood coming into a ventricle and one-way outlets for blood leaving a ventricle. Normal valves have 3 flaps (leaflets), except the mitral valve. It only has 2 flaps.")
+        self.text_heartinfo.setText(
+            "The heart has four valves - one for each chamber of the heart. The valves keep blood moving through the heart in the right direction. The mitral valve and tricuspid valve are located between the atria and the ventricles. The aortic valve and pulmonic valve are located between the ventricles and the major blood vessels leaving the heart. The four valves are to open and close to let blood flow through the heart. The valves prevent the backward flow of blood. Valves are actually flaps (leaflets) that act as one-way inlets for blood coming into a ventricle and one-way outlets for blood leaving a ventricle. Normal valves have 3 flaps (leaflets), except the mitral valve. It only has 2 flaps.")
 
         self.comboBox_G3.currentIndexChanged.connect(self.valve_plot)
 
@@ -1457,209 +1519,210 @@ class Ui_MainWindow(object):
         self.label_heart.setPixmap(QtGui.QPixmap(
             os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'iandolets.png')))
 
-        self.text_heartinfo.setText("This section is about the volume and flow representation of some of the major blood vessels that deliver blood to and from the heart. This section also involves the modelling of the arterioles and venules that deliver blood within the heart, to the heart muscles.")
+        self.text_heartinfo.setText(
+            "This section is about the volume and flow representation of some of the major blood vessels that deliver blood to and from the heart. This section also involves the modelling of the arterioles and venules that deliver blood within the heart, to the heart muscles.")
         self.comboBox_G3.currentIndexChanged.connect(self.iandolet_plot)
 
     def viewing(self, Index, Txt, plt):
         print('viewing called')
-        if Index==0:
+        if Index == 0:
             Pos = 0
             self.plot_p = 1
             self.plot_f = 0
-            if self.radioButton_1.isChecked()  or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2), name = Txt)
+            if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2), name=Txt)
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen('#3CAEA3', width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen('#3CAEA3', width=2), name=Txt)
 
-        elif Index==1:
+        elif Index == 1:
             Pos = 1
             self.plot_p = 3
             self.plot_f = 2
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==2:
+        elif Index == 2:
             Pos = 7
             self.plot_p = 7
             self.plot_f = 6
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==3:
+        elif Index == 3:
             Pos = 13
             self.plot_p = 31
             self.plot_f = 30
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==4:
+        elif Index == 4:
             Pos = 3
             self.plot_p = 53
             self.plot_f = 52
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==5:
+        elif Index == 5:
             Pos = 11
             self.plot_p = 83
             self.plot_f = 82
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==6:
+        elif Index == 6:
             Pos = 10
             self.plot_p = 113
             self.plot_f = 112
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==7:
+        elif Index == 7:
             Pos = 51
             self.plot_p = 103
             self.plot_f = 102
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==8:
+        elif Index == 8:
             Pos = 46
             self.plot_p = 75
             self.plot_f = 74
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==9:
+        elif Index == 9:
             Pos = 74
             self.plot_p = 123
             self.plot_f = 122
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==10:
+        elif Index == 10:
             Pos = 56
             self.plot_p = 207
             self.plot_f = 206
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==11:
+        elif Index == 11:
             Pos = 70
             self.plot_p = 211
             self.plot_f = 210
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
                 plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==12:
+        elif Index == 12:
             Pos = 62
             self.plot_p = 131
             self.plot_f = 130
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==13:
+        elif Index == 13:
             Pos = 63
             self.plot_p = 133
             self.plot_f = 132
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-            elif self.radioButton_2.isChecked()or self.radioButton_4.isChecked():
+            elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
                 plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==14:
+        elif Index == 14:
             Pos = 108
             self.plot_p = 149
             self.plot_f = 148
-            if self.radioButton_1.isChecked()or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+            if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-            elif self.radioButton_2.isChecked()or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name= Txt)
+            elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==15:
+        elif Index == 15:
             Pos = 109
             self.plot_p = 181
             self.plot_f = 180
-            if self.radioButton_1.isChecked()or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+            if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-            elif self.radioButton_2.isChecked()or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name= Txt)
+            elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==16:
+        elif Index == 16:
             Pos = 102
             self.plot_p = 249
             self.plot_f = 248
-            if self.radioButton_1.isChecked()or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+            if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-            elif self.radioButton_2.isChecked()or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2),  name= Txt)
+            elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-        elif Index==17:
+        elif Index == 17:
             Pos = 107
             self.plot_p = 253
             self.plot_f = 252
-            if self.radioButton_1.isChecked()or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+            if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-            elif self.radioButton_2.isChecked()or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2),  name = Txt)
+            elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
         elif Index == 18:
             Pos = 96
             self.plot_p = 251
             self.plot_f = 250
-            if self.radioButton_1.isChecked()or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name = Txt)
+            if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen(2, width=2), name=Txt)
 
-            elif self.radioButton_2.isChecked()or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name= Txt)
+            elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
+                plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen(2, width=2), name=Txt)
 
         elif Index == 19:
             Pos = 92
             self.plot_p = 245
             self.plot_f = 244
             if self.radioButton_1.isChecked() or self.radioButton_3.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2), name=Txt)
 
             elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
-                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2), name = Txt)
+                plt.plot(self.clock, self.pulse[self.plot_p][:], pen=pg.mkPen('#3CAEA3', width=2), name=Txt)
         labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
         if self.radioButton_1.isChecked():
             self.graphWidget_1.setLabel('left', text='Pressure (mmHg)', **labelStyle)
@@ -1691,34 +1754,39 @@ class Ui_MainWindow(object):
 
     def chamber_plot(self):
         self.graphWidget_2.plotItem.clear()
-        total =  len(self.ctime)
+        total = len(self.ctime)
         labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
         if self.comboBox_G3.currentIndex() == 1:
             self.label_heart.setPixmap(QtGui.QPixmap(
                 os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'left_atrium.png')))
-            self.text_heartinfo.setText("The left atrium is located on the left posterior of the heart. It acts as a holding chamber for blood returning from the lungs and to act as a pump to transport blood to other areas of the heart. The walls of the left atrium are slightly thicker than the walls of the right atrium. Oxygen-rich blood from the lungs enters the left atrium through the pulmonary vein. The blood is then pumped into the left ventricle chamber of the heart through the mitral valve.")
+            self.text_heartinfo.setText(
+                "The left atrium is located on the left posterior of the heart. It acts as a holding chamber for blood returning from the lungs and to act as a pump to transport blood to other areas of the heart. The walls of the left atrium are slightly thicker than the walls of the right atrium. Oxygen-rich blood from the lungs enters the left atrium through the pulmonary vein. The blood is then pumped into the left ventricle chamber of the heart through the mitral valve.")
             self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 20], pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
         elif self.comboBox_G3.currentIndex() == 2:
             self.label_heart.setPixmap(QtGui.QPixmap(
                 os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'left_ventricle.png')))
-            self.text_heartinfo.setText("The left Ventricle is located on the left side of the heart, below the left atrium. It is separated from the atrium by the mitral valve. Of all the chambers, the left ventricle has the thickest wall. The blood coming from the left atrium is pumped by this chamber to the rest of the body through the aorta. The valve between the left ventricle and the aorta is the aortic valve. The left ventricle is separated from the right by the intra ventricular septum. The contraction of the left ventricle corresponds to the QRS complex in the electrocardiogram.")
-            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 22],  pen=pg.mkPen('#3CAEA3', width=2))
+            self.text_heartinfo.setText(
+                "The left Ventricle is located on the left side of the heart, below the left atrium. It is separated from the atrium by the mitral valve. Of all the chambers, the left ventricle has the thickest wall. The blood coming from the left atrium is pumped by this chamber to the rest of the body through the aorta. The valve between the left ventricle and the aorta is the aortic valve. The left ventricle is separated from the right by the intra ventricular septum. The contraction of the left ventricle corresponds to the QRS complex in the electrocardiogram.")
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 22], pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
         elif self.comboBox_G3.currentIndex() == 3:
             self.label_heart.setPixmap(QtGui.QPixmap(
                 os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'right_atrium.png')))
-            self.text_heartinfo.setText("The right atrium is located superior to the right ventricle and anteromedial to the left atrium. The right atrium receives the vena cava and coronary sinus, has an appendage, and directs blood into the right ventricle through the tricuspid valve. The right atrium is the first chamber of the heart to receive deoxygenated and carbon dioxide-rich systemic blood from the body through the superior and inferior vena cava. The right atrium also houses the first part of the conduction system, the sinoatrial node (SAN), which is located in the upper section near the superior vena cava. The SAN is made up of pacemaker cells which polarize to generate an action potential.")
-            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 4],  pen=pg.mkPen('#3CAEA3', width=2))
+            self.text_heartinfo.setText(
+                "The right atrium is located superior to the right ventricle and anteromedial to the left atrium. The right atrium receives the vena cava and coronary sinus, has an appendage, and directs blood into the right ventricle through the tricuspid valve. The right atrium is the first chamber of the heart to receive deoxygenated and carbon dioxide-rich systemic blood from the body through the superior and inferior vena cava. The right atrium also houses the first part of the conduction system, the sinoatrial node (SAN), which is located in the upper section near the superior vena cava. The SAN is made up of pacemaker cells which polarize to generate an action potential.")
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 4], pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
         elif self.comboBox_G3.currentIndex() == 4:
             self.label_heart.setPixmap(QtGui.QPixmap(
-                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'right_ventricle.png')))
-            self.text_heartinfo.setText("The right ventricle lies anterior to the other heart chambers. Posteriorly and to the left, it is related to the left ventricle from which it is separated by the interventricular septum. The right ventricle is a unique, asymmetric, crescent-shape structure that is designed to accommodate the entire venous return while maintaining a low atrial pressure. The right ventricle is separated from the right atrium by the tricuspid valve. And the right atrium pumps blood to the lungs through the pulmonary artery gated by the pulmonary valve.")
-            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 6],  pen=pg.mkPen('#3CAEA3', width=2))
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images',
+                             'right_ventricle.png')))
+            self.text_heartinfo.setText(
+                "The right ventricle lies anterior to the other heart chambers. Posteriorly and to the left, it is related to the left ventricle from which it is separated by the interventricular septum. The right ventricle is a unique, asymmetric, crescent-shape structure that is designed to accommodate the entire venous return while maintaining a low atrial pressure. The right ventricle is separated from the right atrium by the tricuspid valve. And the right atrium pumps blood to the lungs through the pulmonary artery gated by the pulmonary valve.")
+            self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 6], pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
 
@@ -1727,41 +1795,47 @@ class Ui_MainWindow(object):
         self.graphWidget_2.plotItem.clear()
         labelStyle = {'color': '#ED553B', 'font-size': '9pt'}
         if self.comboBox_G3.currentIndex() == 1:
-            self.graphWidget_2.plot(self.ctime, self.cardiac,  pen=pg.mkPen('#3CAEA3', width=2))
+            self.graphWidget_2.plot(self.ctime, self.cardiac, pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
             self.label_heart.setPixmap(QtGui.QPixmap(
                 os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'mitral_valve.png')))
-            self.text_heartinfo.setText("Bicuspid valve, also called the mitral valve, is present between the left atrium and the left ventricle. The mitral valve has only two leaflets. The leaflets are attached to and supported by a ring of tough, fibrous tissue called the annulus. The annulus helps to maintain the proper shape of the valve. The leaflets of the mitral valve are also supported by:\n"
-                                        "\n\n •  Chordae tendineae: tough, fibrous strings. These are similar to the strings supporting a parachute\n"
-                                        "\n•	Papillary muscles: part of the inside walls of the ventricles."
-                                        "\n\nThe chordae tendineae and papillary muscles keep the leaflets stable to prevent blood from flowing backward.\n"
-                                        "\n\nBlood flows from the left atrium into the left ventricle through the open mitral valve. When the left ventricle is full, the mitral valve closes and keeps blood from flowing backward into the left atrium when the ventricle contracts.")
+            self.text_heartinfo.setText(
+                "Bicuspid valve, also called the mitral valve, is present between the left atrium and the left ventricle. The mitral valve has only two leaflets. The leaflets are attached to and supported by a ring of tough, fibrous tissue called the annulus. The annulus helps to maintain the proper shape of the valve. The leaflets of the mitral valve are also supported by:\n"
+                "\n\n •  Chordae tendineae: tough, fibrous strings. These are similar to the strings supporting a parachute\n"
+                "\n•	Papillary muscles: part of the inside walls of the ventricles."
+                "\n\nThe chordae tendineae and papillary muscles keep the leaflets stable to prevent blood from flowing backward.\n"
+                "\n\nBlood flows from the left atrium into the left ventricle through the open mitral valve. When the left ventricle is full, the mitral valve closes and keeps blood from flowing backward into the left atrium when the ventricle contracts.")
         elif self.comboBox_G3.currentIndex() == 2:
             self.graphWidget_2.plot(self.ctime, self.cardiac, pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
             self.label_heart.setPixmap(QtGui.QPixmap(
-                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'tricuspid_valve.png')))
-            self.text_heartinfo.setText("The tricuspid valve is present between the right atrium and the right ventricle. Unlike the mitral valve, the tricuspid valve has three leaflets. The leaflets of the tricuspid valve are also supported by:"
-                                        "\n\n•	Chordae tendineae: tough, fibrous strings. These are similar to the strings supporting a parachute."
-                                        "\n•	Papillary muscles: part of the inside walls of the ventricles.\n"
-                                        "\n\nThe chordae tendineae and papillary muscles keep the leaflets stable to prevent blood from flowing backward."
-                                        "\n\nBlood flows from the right atrium into the right ventricle through the open tricuspid valve. When the right ventricle is full, the tricuspid valve closes and keeps blood from flowing backward into the right atrium when the ventricle contracts.")
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images',
+                             'tricuspid_valve.png')))
+            self.text_heartinfo.setText(
+                "The tricuspid valve is present between the right atrium and the right ventricle. Unlike the mitral valve, the tricuspid valve has three leaflets. The leaflets of the tricuspid valve are also supported by:"
+                "\n\n•	Chordae tendineae: tough, fibrous strings. These are similar to the strings supporting a parachute."
+                "\n•	Papillary muscles: part of the inside walls of the ventricles.\n"
+                "\n\nThe chordae tendineae and papillary muscles keep the leaflets stable to prevent blood from flowing backward."
+                "\n\nBlood flows from the right atrium into the right ventricle through the open tricuspid valve. When the right ventricle is full, the tricuspid valve closes and keeps blood from flowing backward into the right atrium when the ventricle contracts.")
         elif self.comboBox_G3.currentIndex() == 3:
             self.graphWidget_2.plot(self.ctime, self.cardiac, pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
             self.label_heart.setPixmap(QtGui.QPixmap(
                 os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'aortic_valve.png')))
-            self.text_heartinfo.setText("The aortic valve is present between the left ventricle and the aorta. Like the tricuspid valve, the aortic valve also has three leaflets. As the left ventricle begins to contract, the aortic valve is forced open. Blood is pumped out of the left ventricle through the aortic valve into the aorta. The aorta branches into many arteries and provides blood to the body. When the left ventricle finishes contracting and begins to relax, the aortic valve snaps shut. This keeps blood from flowing back into the left ventricle.")
+            self.text_heartinfo.setText(
+                "The aortic valve is present between the left ventricle and the aorta. Like the tricuspid valve, the aortic valve also has three leaflets. As the left ventricle begins to contract, the aortic valve is forced open. Blood is pumped out of the left ventricle through the aortic valve into the aorta. The aorta branches into many arteries and provides blood to the body. When the left ventricle finishes contracting and begins to relax, the aortic valve snaps shut. This keeps blood from flowing back into the left ventricle.")
         elif self.comboBox_G3.currentIndex() == 4:
             self.graphWidget_2.plot(self.ctime, self.cardiac, pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
             self.label_heart.setPixmap(QtGui.QPixmap(
-                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'pulmonary_valve.png')))
-            self.text_heartinfo.setText("The pulmonary valve is present between the right ventricle and the pulmonary artery. This pulmonary valve is also a three-leaflet valve. As the right ventricle begins to contract, the pulmonic valve is forced open. Blood is pumped out of the right ventricle through the pulmonic valve into the pulmonary artery to the lungs. When the right ventricle finishes contracting and starts to relax, the pulmonic valve snaps shut. This keeps blood from flowing back into the right ventricle. This pattern is repeated, causing blood to flow continuously to the heart, lungs, and body. The four normally working heart valves make sure blood always flows freely in one direction and that there is no backward leakage.")
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images',
+                             'pulmonary_valve.png')))
+            self.text_heartinfo.setText(
+                "The pulmonary valve is present between the right ventricle and the pulmonary artery. This pulmonary valve is also a three-leaflet valve. As the right ventricle begins to contract, the pulmonic valve is forced open. Blood is pumped out of the right ventricle through the pulmonic valve into the pulmonary artery to the lungs. When the right ventricle finishes contracting and starts to relax, the pulmonic valve snaps shut. This keeps blood from flowing back into the right ventricle. This pattern is repeated, causing blood to flow continuously to the heart, lungs, and body. The four normally working heart valves make sure blood always flows freely in one direction and that there is no backward leakage.")
 
     def iandolet_plot(self):
         total = len(self.ctime)
@@ -1772,48 +1846,161 @@ class Ui_MainWindow(object):
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
             self.label_heart.setPixmap(QtGui.QPixmap(
                 os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'aorta.png')))
-            self.text_heartinfo.setText("The aorta is the main and largest artery in the human body, originating from the left ventricle of the heart and extending down to the abdomen, where it splits into two smaller arteries. After the blood leaves the heart through the aortic valve, it travels through the aorta, making a cane-shaped curve that connects with other major arteries to deliver oxygen-rich blood to the brain, muscles, and other cells.\n"
-                                        "\nThe aorta is more than an inch wide in some places and has three layers:\n"
-                                        "•	intima\n"
-                                        "•	media\n"
-                                        "•	adventitia\n"
-                                        "The aorta supplies all of the systemic circulation, which means that the entire body, except for the respiratory zone of the lung, receives its blood from the aorta.\n"
-                                        "\n In anatomical sources, the aorta is usually divided into sections. They correspond to "
-                                        "\n•	Ascending aorta"
-                                        "\n•	Aortic arch"
-                                        "\n•	Thoracic aorta"
-                                        "\n•	Abdominal aorta")
+            self.text_heartinfo.setText(
+                "The aorta is the main and largest artery in the human body, originating from the left ventricle of the heart and extending down to the abdomen, where it splits into two smaller arteries. After the blood leaves the heart through the aortic valve, it travels through the aorta, making a cane-shaped curve that connects with other major arteries to deliver oxygen-rich blood to the brain, muscles, and other cells.\n"
+                "\nThe aorta is more than an inch wide in some places and has three layers:\n"
+                "•	intima\n"
+                "•	media\n"
+                "•	adventitia\n"
+                "The aorta supplies all of the systemic circulation, which means that the entire body, except for the respiratory zone of the lung, receives its blood from the aorta.\n"
+                "\n In anatomical sources, the aorta is usually divided into sections. They correspond to "
+                "\n•	Ascending aorta"
+                "\n•	Aortic arch"
+                "\n•	Thoracic aorta"
+                "\n•	Abdominal aorta")
         elif self.comboBox_G3.currentIndex() == 2:
             self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 8], pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
             self.label_heart.setPixmap(QtGui.QPixmap(
-                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'pulmonary_artery.png')))
-            self.text_heartinfo.setText("A pulmonary artery is an artery in the pulmonary circulation that carries deoxygenated blood from the right side of the heart to the lungs. The largest pulmonary artery is the main pulmonary artery or pulmonary trunk from the heart, and the smallest ones are the arterioles, which lead to the capillaries that surround the pulmonary alveoli. The pulmonary artery carries deoxygenated blood from the right ventricle to the lungs. The blood here passes through capillaries adjacent to alveoli and becomes oxygenated as part of the process of respiration. In contrast to the pulmonary arteries, the bronchial arteries supply nutrition to the lungs themselves. ")
+                os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images',
+                             'pulmonary_artery.png')))
+            self.text_heartinfo.setText(
+                "A pulmonary artery is an artery in the pulmonary circulation that carries deoxygenated blood from the right side of the heart to the lungs. The largest pulmonary artery is the main pulmonary artery or pulmonary trunk from the heart, and the smallest ones are the arterioles, which lead to the capillaries that surround the pulmonary alveoli. The pulmonary artery carries deoxygenated blood from the right ventricle to the lungs. The blood here passes through capillaries adjacent to alveoli and becomes oxygenated as part of the process of respiration. In contrast to the pulmonary arteries, the bronchial arteries supply nutrition to the lungs themselves. ")
         elif self.comboBox_G3.currentIndex() == 3:
             self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 2], pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
             self.label_heart.setPixmap(QtGui.QPixmap(
                 os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'vena_cava.png')))
-            self.text_heartinfo.setText("The venae cavae, singular 'vena cava' are two large veins that return deoxygenated blood from the body into the heart. In humans there are the superior vena cava and the inferior vena cava, and both empty into the right atrium. The inferior vena cava (or caudal vena cava in some animals) travels up alongside the abdominal aorta with blood from the lower part of the body. It is the largest vein in the human body. The superior vena cava (or cranial vena cava in animals) is above the heart, and forms from a convergence of the left and right brachiocephalic veins, which contain blood from the head and the arms. ")
+            self.text_heartinfo.setText(
+                "The venae cavae, singular 'vena cava' are two large veins that return deoxygenated blood from the body into the heart. In humans there are the superior vena cava and the inferior vena cava, and both empty into the right atrium. The inferior vena cava (or caudal vena cava in some animals) travels up alongside the abdominal aorta with blood from the lower part of the body. It is the largest vein in the human body. The superior vena cava (or cranial vena cava in animals) is above the heart, and forms from a convergence of the left and right brachiocephalic veins, which contain blood from the head and the arms. ")
         elif self.comboBox_G3.currentIndex() == 4:
             self.graphWidget_2.plot(self.ctime, self.cardiac[:total, 12], pen=pg.mkPen('#3CAEA3', width=2))
             self.graphWidget_2.setLabel('left', 'Volume', **labelStyle)
             self.graphWidget_2.setLabel('bottom', 'Time (s)', **labelStyle)
             self.label_heart.setPixmap(QtGui.QPixmap(
                 os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'pulmonary_vein.png')))
-            self.text_heartinfo.setText("Veins are vessels that bring blood to the heart. Pulmonary veins carry oxygenated blood from the lungs to the left atrium. There are four pulmonary veins which extend from the left atrium to the lungs. They are the right superior, right inferior, left superior, and left inferior pulmonary veins. Two main pulmonary veins emerge from each lung hilum, receiving blood from three or four bronchial veins apiece and draining into the left atrium. At the root of the lung, the right superior pulmonary vein lies in front of and a little below the pulmonary artery; the inferior is situated at the lowest part of the lung hilum. Behind the pulmonary artery is the bronchus.[2] The right main pulmonary veins (contains oxygenated blood) pass behind the right atrium and superior vena cava; the left in front of the descending thoracic aorta.")
+            self.text_heartinfo.setText(
+                "Veins are vessels that bring blood to the heart. Pulmonary veins carry oxygenated blood from the lungs to the left atrium. There are four pulmonary veins which extend from the left atrium to the lungs. They are the right superior, right inferior, left superior, and left inferior pulmonary veins. Two main pulmonary veins emerge from each lung hilum, receiving blood from three or four bronchial veins apiece and draining into the left atrium. At the root of the lung, the right superior pulmonary vein lies in front of and a little below the pulmonary artery; the inferior is situated at the lowest part of the lung hilum. Behind the pulmonary artery is the bronchus.[2] The right main pulmonary veins (contains oxygenated blood) pass behind the right atrium and superior vena cava; the left in front of the descending thoracic aorta.")
+
+    def clear(self):
+        self.graphWidget_2.clear()
+        self.graphWidget_1.clear()
 
     def exit(self):
         MainWindow.close()
 
+class Ui_HomeWindow(object):
 
-if __name__ == "__main__":
+    def setupUi(self, MainWin):
+        MainWin.setObjectName("MainWindow")
+        MainWin.resize(800, 400)
+        MainWin.setMinimumSize(QtCore.QSize(800, 400))
+        MainWin.setMaximumSize(QtCore.QSize(1000, 500))
+        MainWin.setStyleSheet("background-color: rgb(37, 118, 184);\n")
+        MainWin.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
+        MainWin.setDocumentMode(False)
+        MainWin.setTabShape(QtWidgets.QTabWidget.Triangular)
+        #MainWin.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+
+
+        self.centralwidget = QtWidgets.QWidget(MainWin)
+        self.centralwidget.setObjectName("centralwidget")
+        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setGeometry(QtCore.QRect(570, 260, 191, 41))
+        self.pushButton_2.setStyleSheet("background-color: rgb(23, 63, 95);\n"
+                                        "color: rgb(246, 213, 92);\n"
+                                        "font: 75 12pt \"MS Shell Dlg 2\";")
+        self.pushButton_2.setFlat(False)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_2.setIcon(QtGui.QIcon(
+            os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'Homebutton2.png')
+        ))
+        self.pushButton_2.setIconSize(QtCore.QSize(190, 41))
+        self.pushButton_2.setFlat(True)
+        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setGeometry(QtCore.QRect(570, 320, 191, 41))
+        self.pushButton_3.setFocusPolicy(QtCore.Qt.WheelFocus)
+        self.pushButton_3.setStyleSheet("background-color: rgb(23, 63, 95);\n"
+                                        "font: 75 12pt \"MS Shell Dlg 2\";\n"
+                                        "color: rgb(246, 213, 92);")
+        self.pushButton_3.setFlat(False)
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_3.setIcon(QtGui.QIcon(
+            os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'Homebutton3.png')
+        ))
+        self.pushButton_3.setIconSize(QtCore.QSize(190, 41))
+        self.pushButton_3.setFlat(True)
+        self.pushButton_1 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_1.setGeometry(QtCore.QRect(570, 200, 191, 41))
+        self.pushButton_1.setStyleSheet("border-color: rgb(0, 0, 0);\n"
+                                        "selection-background-color: rgb(170, 85, 255);\n"
+                                        "selection-color: rgb(255, 85, 127);\n"
+                                        "color: rgb(246, 213, 92);\n"
+                                        "background-color: rgb(23, 63, 95);\n"
+                                        "font: 75 12pt \"MS Shell Dlg 2\";")
+        self.pushButton_1.setDefault(False)
+        self.pushButton_1.setFlat(False)
+        self.pushButton_1.setObjectName("pushButton_1")
+        self.pushButton_1.setIcon(QtGui.QIcon(
+            os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'Homebutton1.png')
+        ))
+        self.pushButton_1.setIconSize(QtCore.QSize(190,41))
+        self.pushButton_1.setFlat(True)
+        #self.pushButton_1.clicked.connect(self.openWindow)
+
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(60, 0, 491, 296))
+        #self.label.setStyleSheet("background-color: rgb(37, 118, 184);\n")
+        self.label.setObjectName("label")
+        self.label.setPixmap(QtGui.QPixmap(
+            os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'icon.jpeg')))
+
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(55, 290, 491, 81))
+        #self.label_2.setStyleSheet("background-color: rgb(37, 118, 184);\n")
+        self.label_2.setObjectName("label_2")
+        self.label_2.setPixmap(QtGui.QPixmap(
+            os.path.join('C:/Users/Prave/OneDrive/Documents/GitHub/stenor.github.io/images', 'title.jpeg')))
+
+        MainWin.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MainWin)
+        QtCore.QMetaObject.connectSlotsByName(MainWin)
+
+    def retranslateUi(self, OthrMainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        OthrMainWindow.setWindowTitle(_translate("MainWindow", "BloodSim"))
+
+class Controller:
+
+    def __init__(self):
+        pass
+
+    def Show_HomeWindow(self):
+        self.HomeWindow = QtWidgets.QMainWindow()
+        self.ui = Ui_HomeWindow()
+        self.ui.setupUi(self.HomeWindow)
+        self.ui.pushButton_1.clicked.connect(self.Show_SecondWindow)
+
+        self.HomeWindow.show()
+
+    def Show_SecondWindow(self):
+        self.MainWindow = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self.MainWindow)
+        #self.ui.pushButton.clicked.connect(self.Print)
+        self.MainWindow.show()
+        self.HomeWindow.close()
+
+    def Print(self):
+        print('After 99 hours of trying out everything')
+
+if __name__ == '__main__':
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    Controller = Controller()
+    Controller.Show_HomeWindow()
     sys.exit(app.exec_())
+

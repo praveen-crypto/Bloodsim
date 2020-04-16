@@ -27,8 +27,10 @@ def calc(HR, PF):
         PF = int(PF)
         print(HR)
         print(PF)
-        dt = 0.002
-        clock = np.arange(0.0, 20.0, dt)
+        dt = 0.001
+        st = 0
+        et = 10
+        clock = np.arange(st, et, dt)
 
         T = 60 / HR
         t1 = clock / T
@@ -49,7 +51,7 @@ def calc(HR, PF):
         pulse_initial = np.zeros(2)
         print('pulse')
         pulse_generator = lambda t, x: po.pulsegen(t, x, R1, L, R2, C, clock, it)  # input for solver function
-        t, x = r_k.rungekutta4(pulse_generator, pulse_initial, 0.0, 20.0, dt)
+        t, x = r_k.rungekutta4(pulse_generator, pulse_initial, st, et, dt)
         pu = it.transpose()  # plotting the output
         pulse = (pu - x[0, :]) * R1 + x[1, :]
         print('pulse-gen')
@@ -58,7 +60,7 @@ def calc(HR, PF):
 
         system_initial = np.zeros(256)
         system_finder = lambda t, x: so.integrated_ode(t, x, pulse, clock)
-        sol = solve_ivp(system_finder, [0, 20], system_initial, method='Radau', t_eval=np.arange(0.0, 20.0, dt))
+        sol = solve_ivp(system_finder, [st, et], system_initial, method='Radau', t_eval=np.arange(st, et, dt))
         to = sol.t
         xo = sol.y
 
@@ -74,11 +76,9 @@ def calc(HR, PF):
 if __name__ == "__main__":
     import STENOSIS
     import pandas as pd
+    import matplotlib.pyplot as plt
     STENOSIS.steno(0, 0)
     c, p = calc(72, 450)
+    plt.plot(c,p[1,:])
     print(c)
     print(p)
-    '''
-    writer = pd.ExcelWriter('sim1.xlsx')
-    df.to_excel(writer, 'Sheet1', index=False)
-    writer.save()'''

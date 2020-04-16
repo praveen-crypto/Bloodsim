@@ -49,6 +49,7 @@ def calc(HR, PF):
     sol = solve_ivp(system_finder, [0, es], system_initial, method='Radau', t_eval=np.arange(0, es, dt))
     t = sol.t
     x = sol.y
+    print(datetime.datetime.now() - nn)
 
     return t, x
 
@@ -58,5 +59,5 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
     STENOSIS.steno(0, 0)
-    c, p = calc(75, 450)
+    c, p = calc(72, 450)
     plt.plot(c, p[1, :])
