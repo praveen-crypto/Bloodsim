@@ -1,10 +1,7 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 def lumped(HR, ncyc, dt):
-    # working code
-    # functions definition:
 
     def Integrated_ode():
         global Aav, Amv, Apv, Atv, Gpw, cn
@@ -441,7 +438,7 @@ def lumped(HR, ncyc, dt):
     ddt = dt
     ntotal = (ncycle * Tduration / dt)
     ntotal = int(ntotal)
-    print(ntotal)
+    # print(ntotal)
 
     # ------------------------------------------------------------------------
     for nstep in np.arange(ntotal):
@@ -450,18 +447,15 @@ def lumped(HR, ncyc, dt):
             ppc = 0.0
             cn = 0
 
-            i = 0
             for i in range(29):
                 result[0, i] = odic[i]
 
-            i = 0
             for i in np.arange(14):
                 if i <= 6:
                     v[0, i] = result[0, 2 * i]
                 else:
                     v[0, i] = result[0, 2 * i + 1]
 
-            i = 0
             for i in np.arange(15):
                 if i <= 6:
                     q[0, i] = result[0, 2 * i + 1]
@@ -472,13 +466,11 @@ def lumped(HR, ncyc, dt):
             FL = 1.0
             FR1 = 1.0
             Gpw = 0.0
-
             Aav = 0.0
             Amv = 0.0
             Apv = 0.0
             Atv = 0.0
             Pit = -2.5
-
         # ----------------------Start computation---------------------------
         ncount = 0
         ncountadd = ncount + 1
@@ -497,24 +489,20 @@ def lumped(HR, ncyc, dt):
         if tcr == 0.0:
             FL = 1.0 - (result[0, 21] / Vmax)        # Left ventricle scaling factor
             FR1 = 1.0 - (result[0, 6] / Vmax)        # Right ventricle scaling factor
-
         Lvecal()                                     # LV elastance function calling
         Laecal()                                     # LA elastance function calling
         Rvecal()                                     # RV elastance function calling
         Raecal()                                     # RA elastance function calling
-
         # Spetum cross talk pressure calculations
         cklr = erv / (Es + erv)
         ckrl = elv / (Es + elv)
         plv = ckrl * Es * v[0, 10] + ckrl * cklr * Es * v[0, 3] / (1.0 - cklr)
         prv = cklr * Es * v[0, 3] + ckrl * cklr * Es * v[0, 10] / (1.0 - ckrl)
-
         # All cardiac chambers viscoelastance calculation
         Sla = Sva0 * v[0, 9] * ela
         Slv = Sva0 * plv
         Sra = Sva0 * v[0, 2] * era
         Srv = Sva0 * prv
-
         # Pericardium pressure calculations
         ppp = (v[0, 2] + v[0, 3] + v[0, 9] + v[0, 10] + Vpe - Vpc0) / Vcon
         ppc = np.exp(ppp)
@@ -570,7 +558,7 @@ def lumped(HR, ncyc, dt):
 
         # load calculated hemodynamic variables in an array
         jj += 1
-        print('Value of JJ:', jj - 1)
+        # print('Value of JJ:', jj - 1)
         MyResult[jj - 1, :27] = P_0d[0, :27]
         MyResult1[jj - 1, :29] = result[0, :29]
 
@@ -580,21 +568,11 @@ def lumped(HR, ncyc, dt):
 
     t = np.arange(0, 4.8, dt)
     T = t
-    Pa_1 = MyResult1[:ntotal, 23]
-    F_1 = MyResult1[:ntotal, 22]
+    # Pa_1 = MyResult1[:ntotal, 23]
+    # F_1 = MyResult1[:ntotal, 22]
     print('hello')
 
     return MyResult1, T
-
-    '''
-    plt.figure()
-    plt.plot(T, F_1, label='Flow')
-    plt.figure()
-    plt.show()
-    plt.plot(T, Pa_1, label='Pressure')
-    lg = plt.legend()
-    plt.show()
-    '''
 
 
 if __name__ == "__main__":

@@ -1,0 +1,18 @@
+
+mpython:S1542À"ORename function "Raecal" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ƒ¾ß¼ıÿÿÿÿ
+Hpython:S1656°"/Remove or correct this useless self-assignment.(ÀèÖÑ
+kpython:S1542Õ"MRename function "AAav" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(£È¼æûÿÿÿÿ
+fpython:S1542"MRename function "Ecal" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(Àê—›
+mpython:S3776"URefactor this function to reduce its Cognitive Complexity from 116 to the 15 allowed.(½ƒ·Œ
+]python:S3827J"@gpw is not defined. Change its name or define it before using it(Ïà˜Éşÿÿÿÿ
+mpython:S1542‘"ORename function "Lvecal" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ì¬ôŸøÿÿÿÿ
+fpython:S1542í"MRename function "AApv" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ÑÅ…Ç
+Hpython:S1656®"/Remove or correct this useless self-assignment.(ô—ÛË
+fpython:S1854Ù"HRemove this assignment to local variable 'Pit'; the value is never used.(Ğ¶°éùÿÿÿÿ
+Qpython:S1481·",Remove the unused local variable "odic_new".(İ¦ËÌşÿÿÿÿ8†ƒÆÙ™.
+tpython:S1542"WRename function "Integrated_ode" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ë Å¾üÿÿÿÿ
+mpython:S1542Ÿ"ORename function "Laecal" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(¯ƒÅûÿÿÿÿ
+>python:S125»"Remove this commented out code.(»Éæ§8œÇÙ™.
+fpython:S1542â"MRename function "AAmv" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ˆêó»
+kpython:S1542ö"MRename function "AAtv" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(Õï–ıÿÿÿÿ
+gpython:S1542³"ORename function "Rvecal" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(¾ï±v

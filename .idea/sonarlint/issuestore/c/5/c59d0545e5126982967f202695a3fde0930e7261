@@ -1,0 +1,237 @@
+
+zpython:S116*"\Rename this field "dockWidgetContents_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬Ó®À8´ÁÙ™.
+wpython:S116J"TRename this field "dockWidget_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(æšæ—øÿÿÿÿ8´ÁÙ™.
+Jpython:S1481¬"%Remove the unused local variable "i".(Ïµõ¢ıÿÿÿÿ8àÙÂÙ™.
+qpython:S116í"RRename this field "HomeWindow" to match the regular expression ^[_a-z][_a-z0-9]*$.(áú”8àÙÂÙ™.
+rpython:S116N"TRename this field "gridLayout_8" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ñîö’8´ÁÙ™.
+wpython:S100™
+"SRename method "mainViewer_1" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(å³öºøÿÿÿÿ8àÙÂÙ™.
+wpython:S1192À"RDefine a constant instead of duplicating this literal "Run Heart Model!!" 3 times.(Û¥“Æüÿÿÿÿ8àÙÂÙ™.
+Gpython:S1481Ï
+"'Remove the unused local variable "Pos".(·„ëñ8àÙÂÙ™.
+Gpython:S1481ß
+"'Remove the unused local variable "Pos".(˜æÆ8àÙÂÙ™.
+xpython:S1192°"SDefine a constant instead of duplicating this literal "Ulnar artery right" 3 times.(ò·Ğ¨úÿÿÿÿ8´ÁÙ™.
+Epython:S1481"%Remove the unused local variable "i".(¤›öÌ8´ÁÙ™.
+®python:S1192«"Define a constant instead of duplicating this literal 'The subclavian arteries are paired major arteries of the upper thorax, below' 3 times.(ŸÍˆ8´ÁÙ™.
+spython:S116‚"URename this field "graphWidget_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(«ã®8´ÁÙ™.
+Lpython:S1481¬	"'Remove the unused local variable "Pos".(³´à§şÿÿÿÿ8´ÁÙ™.
+Lpython:S1481³
+"'Remove the unused local variable "Pos".(´”½äüÿÿÿÿ8àÙÂÙ™.
+spython:S116¾"TRename this field "pushButton_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(ØòİÏ8´ÁÙ™.
+npython:S1192"ODefine a constant instead of duplicating this literal 'ulnar_left.png' 3 times.(»€¡48àÙÂÙ™.
+spython:S1192œ"TDefine a constant instead of duplicating this literal 'subclavian_left.png' 3 times.(”è }8àÙÂÙ™.
+spython:S116Ê"TRename this field "pushButton_7" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÄÊû¯8´ÁÙ™.
+rpython:S116X"TRename this field "dockWidget_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(¡úÙ¯8´ÁÙ™.
+ppython:S116I"RRename this field "checkBox_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÖÊ˜¯8´ÁÙ™.
+ˆpython:S1192®"cDefine a constant instead of duplicating this literal "background-color: rgb(33, 57, 86);" 3 times.(£Ç—ßÿÿÿÿÿ8´ÁÙ™.
+xpython:S1192Ş"SDefine a constant instead of duplicating this literal 'thoracic_aorta.png' 3 times.(ºö€Øüÿÿÿÿ8àÙÂÙ™.
+ python:S1192Ô"€Define a constant instead of duplicating this literal 'The common hepatic artery is a short blood vessel that supplies' 3 times.(•ÑÌ8´ÁÙ™.
+{python:S1192º"[Define a constant instead of duplicating this literal "color: rgb(255, 255, 255);" 6 times.(ÔË™¾8´ÁÙ™.
+upython:S116¤"QRename this field "actionRun" to match the regular expression ^[_a-z][_a-z0-9]*$.(ñ€Á±ùÿÿÿÿ8´ÁÙ™.
+Gpython:S1481ë
+"'Remove the unused local variable "Pos".(”æƒ8àÙÂÙ™.
+Fpython:S1481Š"&Remove the unused local variable "ck".(ÃïäÓ8´ÁÙ™.
+vpython:S1192í"QDefine a constant instead of duplicating this literal 'femoral_left.png' 3 times.(åÏÈ¤øÿÿÿÿ8àÙÂÙ™.
+opython:S1192s"PDefine a constant instead of duplicating this literal 'images/logo.png' 3 times.(ŞÂßİ8´ÁÙ™.
+spython:S116"URename this field "radioButton_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(ªšøŸ8´ÁÙ™.
+tpython:S116‘"URename this field "graphWidget_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(û£¦Ï8´ÁÙ™.
+spython:S116·"TRename this field "gridLayout_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(©í«§8´ÁÙ™.
+gpython:S3827€
+"GMainWindow is not defined. Change its name or define it before using it(ŞÂßİ8àÙÂÙ™.
+ppython:S116#"SRename this field "comboBox_G1" to match the regular expression ^[_a-z][_a-z0-9]*$.(†ùÄ;8´ÁÙ™.
+tpython:S3776Ù"TRefactor this function to reduce its Cognitive Complexity from 20 to the 15 allowed.(•åïé8àÙÂÙ™.
+tpython:S3776å"TRefactor this function to reduce its Cognitive Complexity from 22 to the 15 allowed.(¬õ°¤8´ÁÙ™.
+qpython:S1192±"QDefine a constant instead of duplicating this literal 'radial_right.png' 6 times.(™œŞó8àÙÂÙ™.
+wpython:S116®"SRename this field "actionReset" to match the regular expression ^[_a-z][_a-z0-9]*$.(» øÿÿÿÿ8´ÁÙ™.
+Fpython:S1481€	"'Remove the unused local variable "Pos".(ªß…8´ÁÙ™.
+qpython:S1192¤"RDefine a constant instead of duplicating this literal "Common carotid(R)" 3 times.(³¬ïP8´ÁÙ™.
+ppython:S1192¨"PDefine a constant instead of duplicating this literal "Abdominal aorta" 3 times.(ßÙÆŞ8´ÁÙ™.
+spython:S116ı"TRename this field "pushButton_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(©ğ‹€8´ÁÙ™.
+ypython:S3776Í"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ã¨ÿÏùÿÿÿÿ8àÙÂÙ™.
+ypython:S1192…"TDefine a constant instead of duplicating this literal 'ascending_aorta.png' 3 times.(şÙÜÏøÿÿÿÿ8àÙÂÙ™.
+}python:S1192º"XDefine a constant instead of duplicating this literal 'common_carotid_left.png' 3 times.(ªíãûÿÿÿÿ8àÙÂÙ™.
+tpython:S100ì"VRename method "Show_HomeWindow" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(õ§ï:8àÙÂÙ™.
+upython:S116+"RRename this field "gridLayout" to match the regular expression ^[_a-z][_a-z0-9]*$.(´ş‘Øúÿÿÿÿ8´ÁÙ™.
+xpython:S100"TRename method "retranslateUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(”«Àşÿÿÿÿ8´ÁÙ™.
+Gpython:S1481”	"'Remove the unused local variable "Pos".(·„ëñ8´ÁÙ™.
+ppython:S116G"RRename this field "comboBox_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(‹Ø8´ÁÙ™.
+upython:S116´"VRename this field "actionBloodsim" to match the regular expression ^[_a-z][_a-z0-9]*$.(‚á²’8´ÁÙ™.
+vpython:S116"SRename this field "buttonGroup" to match the regular expression ^[_a-z][_a-z0-9]*$.(áİÚËùÿÿÿÿ8´ÁÙ™.
+zpython:S1160"WRename this field "doubleSpinBox_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(¼Ç—ıÿÿÿÿ8´ÁÙ™.
+±python:S1192»"‹Define a constant instead of duplicating this literal 'The common carotid arteries are present on the left and right sides of the' 6 times.(ÍÔĞåúÿÿÿÿ8´ÁÙ™.
+opython:S1192ƒ"ODefine a constant instead of duplicating this literal "volume plotted" 4 times.( ±Æ€8àÙÂÙ™.
+Lpython:S1481Ã
+"'Remove the unused local variable "Pos".(¸‘ÑØøÿÿÿÿ8àÙÂÙ™.
+zpython:S116>"WRename this field "doubleSpinBox_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(„×åúÿÿÿÿ8´ÁÙ™.
+ªpython:S1192î"‰Define a constant instead of duplicating this literal 'The femoral artery is a large artery in the thigh and the main arterial ' 6 times.(„Õùû8´ÁÙ™.
+qpython:S116ª"RRename this field "actionQuit" to match the regular expression ^[_a-z][_a-z0-9]*$.(×¤ëÿ8´ÁÙ™.
+xpython:S116"URename this field "radioButton_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬Ğ‰ıÿÿÿÿ8´ÁÙ™.
+xpython:S116Z"URename this field "gridLayout_11" to match the regular expression ^[_a-z][_a-z0-9]*$.(è½ °ùÿÿÿÿ8´ÁÙ™.
+opython:S1192Ì	"JDefine a constant instead of duplicating this literal 'Time (s)' 11 times.(‡ŞÌ˜øÿÿÿÿ8´ÁÙ™.
+spython:S116¾"TRename this field "pushButton_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(–Ìüè8´ÁÙ™.
+ppython:S116,"RRename this field "groupBox_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(•ÔÉ§8´ÁÙ™.
+upython:S116M"RRename this field "groupBox_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(ö«Ÿİøÿÿÿÿ8´ÁÙ™.
+tpython:S3776´"TRefactor this function to reduce its Cognitive Complexity from 46 to the 15 allowed.(ÎÖÛé8àÙÂÙ™.
+´python:S1192à"Define a constant instead of duplicating this literal 'The renal arteries normally arise off the left interior side of the abdominal' 3 times.(ÌñÁ„úÿÿÿÿ8´ÁÙ™.
+ppython:S100´"QRename method "showDock_1" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(«€‰Â8´ÁÙ™.
+ypython:S1192Ì"YDefine a constant instead of duplicating this literal 'common_carotid_right.png' 3 times.(¶ªîª8àÙÂÙ™.
+|python:S1192¡"WDefine a constant instead of duplicating this literal "Subclavian artery left" 3 times.(›¹³¯üÿÿÿÿ8´ÁÙ™.
+tpython:S116°"VRename this field "actionWaveform" to match the regular expression ^[_a-z][_a-z0-9]*$.(¯¢×-8´ÁÙ™.
+spython:S116Ä"TRename this field "pushButton_6" to match the regular expression ^[_a-z][_a-z0-9]*$.(ş“µã8´ÁÙ™.
+¯python:S1192"‰Define a constant instead of duplicating this literal 'The ulnar artery is the main blood vessel, with oxygenated blood, of the' 6 times.(×Æòäûÿÿÿÿ8´ÁÙ™.
+spython:S116"URename this field "radioButton_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(¼Â¼Ğ8´ÁÙ™.
+rpython:S116"TRename this field "gridLayout_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(†ˆùŞ8´ÁÙ™.
+ppython:S116H"RRename this field "comboBox_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(Õ½Ë€8´ÁÙ™.
+rpython:S1192¯"SDefine a constant instead of duplicating this literal 'brachial_right.png' 3 times.(ÒÀäK8àÙÂÙ™.
+rpython:S116:"TRename this field "gridLayout_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(à×Š8´ÁÙ™.
+Gpython:S1481ô"'Remove the unused local variable "Pos".(Üù“Î8´ÁÙ™.
+Ÿpython:S1192ß"Define a constant instead of duplicating this literal 'This artery supplies the anterior chest wall and the breasts. ' 3 times.(ò’©ı8´ÁÙ™.
+Lpython:S1481ø"'Remove the unused local variable "Pos".(´”½äüÿÿÿÿ8´ÁÙ™.
+ppython:S100º"QRename method "showDock_2" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(¬›ü¢8´ÁÙ™.
+Gpython:S1481¯
+"'Remove the unused local variable "Pos".(¢¾Ç×8àÙÂÙ™.
+Gpython:S1481¤	"'Remove the unused local variable "Pos".(˜æÆ8´ÁÙ™.
+lpython:S1192 "LDefine a constant instead of duplicating this literal "Aortic arch" 3 times.(¿ú¾°8´ÁÙ™.
+Lpython:S1481ç
+"'Remove the unused local variable "Pos".(³´à§şÿÿÿÿ8àÙÂÙ™.
+Fpython:S1481Œ	"'Remove the unused local variable "Pos".(Ù½ùG8´ÁÙ™.
+rpython:S116×"NRename this field "Bottom" to match the regular expression ^[_a-z][_a-z0-9]*$.(ñ´“®ÿÿÿÿÿ8àÙÂÙ™.
+zpython:S1192ª"UDefine a constant instead of duplicating this literal 'subclavian_right.png' 3 times.(ÔŠ±êùÿÿÿÿ8àÙÂÙ™.
+ppython:S116$"SRename this field "comboBox_G2" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ø¶-8´ÁÙ™.
+opython:S1169"RRename this field "groupBox_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÁÃ€8´ÁÙ™.
+Lpython:S1481÷
+"'Remove the unused local variable "Pos".(øÈ´şÿÿÿÿ8àÙÂÙ™.
+€python:S116¶"\Rename this field "actionAbout_Bloodsim" to match the regular expression ^[_a-z][_a-z0-9]*$.(Œÿ“úøÿÿÿÿ8´ÁÙ™.
+wpython:S100ô"XRename method "Show_SecondWindow" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.( ¦š¼8àÙÂÙ™.
+Gpython:S1481‹"'Remove the unused local variable "cb1".(ıì¨ş8´ÁÙ™.
+Gpython:S1481°	"'Remove the unused local variable "Pos".(”æƒ8´ÁÙ™.
+²python:S1192ğ"‘Define a constant instead of duplicating this literal 'The cerebral arteries describe three main pairs of arteries and their branches, ' 6 times.(ùàõØ8àÙÂÙ™.
+ppython:S116["RRename this field "groupBox_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(ŠŞÚê8´ÁÙ™.
+²python:S1192²"ŒDefine a constant instead of duplicating this literal 'The radial artery arises from the bifurcation of the brachial artery in the' 6 times.(Î”ìàûÿÿÿÿ8´ÁÙ™.
+‹python:S1192¾"fDefine a constant instead of duplicating this literal "background-color: rgb(32, 99, 155);\n" 5 times.(’œÍûÿÿÿÿÿ8´ÁÙ™.
+¤python:S1192›"„Define a constant instead of duplicating this literal 'The abdominal aorta is the largest artery in the abdominal cavity. ' 3 times.(ê­›y8´ÁÙ™.
+vpython:S116¦"RRename this field "actionStop" to match the regular expression ^[_a-z][_a-z0-9]*$.(İşı ûÿÿÿÿ8´ÁÙ™.
+wpython:S1192Á"RDefine a constant instead of duplicating this literal 'brachial_left.png' 3 times.(ÅŠ§ùÿÿÿÿ8àÙÂÙ™.
+vpython:S116O"SRename this field "labelEdit_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(Äù¨°úÿÿÿÿ8´ÁÙ™.
+xpython:S116É"TRename this field "pushButton_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÊéÅøÿÿÿÿ8´ÁÙ™.
+Jpython:S1481İ"%Remove the unused local variable "i".(ØÈøÏøÿÿÿÿ8´ÁÙ™.
+Gpython:S1481˜	"'Remove the unused local variable "Pos".(ı­“•8´ÁÙ™.
+~python:S1186é"YAdd a nested comment explaining why this method is empty, or complete the implementation.(Áû¹Çûÿÿÿÿ8àÙÂÙ™.
+Lpython:S1481 	"'Remove the unused local variable "Pos".(ãæÒ³øÿÿÿÿ8´ÁÙ™.
+}python:S1192¢"XDefine a constant instead of duplicating this literal "Subclavian artery right" 3 times.(•È¨şÿÿÿÿ8´ÁÙ™.
+Jpython:S1481°"%Remove the unused local variable "i".(ØÈøÏøÿÿÿÿ8´ÁÙ™.
+Gpython:S1481ã
+"'Remove the unused local variable "Pos".(óæ©É8àÙÂÙ™.
+ypython:S3776"TRefactor this function to reduce its Cognitive Complexity from 20 to the 15 allowed.(æ¶«Èûÿÿÿÿ8àÙÂÙ™.
+xpython:S100ã"TRename method "retranslateUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ëÖÆŠùÿÿÿÿ8àÙÂÙ™.
+spython:S3776÷"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÌËÒn8àÙÂÙ™.
+Gpython:S1481´	"'Remove the unused local variable "Pos".(ôÎØ8´ÁÙ™.
+Epython:S1481É"%Remove the unused local variable "i".(¤›öÌ8´ÁÙ™.
+Lpython:S1481ˆ	"'Remove the unused local variable "Pos".(¸‘ÑØøÿÿÿÿ8´ÁÙ™.
+upython:S1162"RRename this field "checkBox_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬š©§ûÿÿÿÿ8´ÁÙ™.
+ƒpython:S1871”"dEither merge this branch with the identical one on line "2561" or change one of the implementations.(‡ˆ·28àÙÂÙ™.
+ppython:S116;"RRename this field "checkBox_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(²¶¬8´ÁÙ™.
+rpython:S116´"TRename this field "pushButton_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÔÁ¤8´ÁÙ™.
+qpython:S116-"TRename this field "gridLayout_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(·¶ŒP8´ÁÙ™.
+qpython:S100o"NRename method "setupUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ÂéÇ´ÿÿÿÿÿ8´ÁÙ™.
+xpython:S116\"URename this field "gridLayout_12" to match the regular expression ^[_a-z][_a-z0-9]*$.(”Ïî¥ÿÿÿÿÿ8´ÁÙ™.
+opython:S116›"PRename this field "menuHelp" to match the regular expression ^[_a-z][_a-z0-9]*$.(¦×é§8´ÁÙ™.
+xpython:S116"URename this field "radioButton_6" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÿ­Áßøÿÿÿÿ8´ÁÙ™.
+opython:S116W"RRename this field "labelStyle" to match the regular expression ^[_a-z][_a-z0-9]*$.(¡·	8´ÁÙ™.
+Lpython:S1481¼	"'Remove the unused local variable "Pos".(øÈ´şÿÿÿÿ8´ÁÙ™.
+opython:S116’"PRename this field "menuFile" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ö‰§»8´ÁÙ™.
+Lpython:S1481Û
+"'Remove the unused local variable "Pos".(ãæÒ³øÿÿÿÿ8àÙÂÙ™.
+spython:S1192Ó"SDefine a constant instead of duplicating this literal 'hepatic_artery.png' 3 times.(´¥ìÏ8àÙÂÙ™.
+spython:S116æ"TRename this field "pushButton_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÓÇÊ²8´ÁÙ™.
+{python:S1192î"[Define a constant instead of duplicating this literal 'cereberal_artery_right.png' 3 times.(·œŠ©8àÙÂÙ™.
+ypython:S1192„"ZDefine a constant instead of duplicating this literal 'cereberal_artery_left.png' 3 times.(¶³§28àÙÂÙ™.
+Gpython:S1481Ó
+"'Remove the unused local variable "Pos".(ı­“•8àÙÂÙ™.
+vpython:S1192ß"QDefine a constant instead of duplicating this literal 'renal_artery.png' 3 times.(‹Ëª´ıÿÿÿÿ8àÙÂÙ™.
+wpython:S116L"TRename this field "gridLayout_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬ˆò˜ÿÿÿÿÿ8´ÁÙ™.
+spython:S116˜"ORename this field "menuRun" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÿÕİíıÿÿÿÿ8´ÁÙ™.
+ppython:S1163"RRename this field "checkBox_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(º£×ü8´ÁÙ™.
+Špython:S1192É"eDefine a constant instead of duplicating this literal "background-color: rgb(35, 35, 35);\n" 5 times.(¯ªğæûÿÿÿÿ8´ÁÙ™.
+opython:S1192«"ODefine a constant instead of duplicating this literal "Hepatic artery" 3 times.(¯¸ûª8´ÁÙ™.
+Lpython:S1481¿
+"'Remove the unused local variable "Pos".(µªìûÿÿÿÿ8àÙÂÙ™.
+xpython:S116"URename this field "buttonGroup_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(™è›—üÿÿÿÿ8´ÁÙ™.
+xpython:S116ƒ"TRename this field "pushButton_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ÿ¶–úÿÿÿÿ8´ÁÙ™.
+Jpython:S1481Ç"%Remove the unused local variable "i".(Ïµõ¢ıÿÿÿÿ8àÙÂÙ™.
+ppython:S1192‘"PDefine a constant instead of duplicating this literal 'aortic_arch.png' 3 times.(«¶ÅÒ8àÙÂÙ™.
+Gpython:S1481×
+"'Remove the unused local variable "Pos".(³¯û¢8àÙÂÙ™.
+Jpython:S1481‰"%Remove the unused local variable "i".(€•ãøøÿÿÿÿ8´ÁÙ™.
+qpython:S100¡
+"SRename method "mainViewer_2" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ìŒÊ[8àÙÂÙ™.
+®python:S1192"Define a constant instead of duplicating this literal 'The subclavian arteries are paired major arteries of the upper thorax, below' 3 times.(ŸÍˆ8´ÁÙ™.
+qpython:S116%"SRename this field "comboBox_G3" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ş¤Ğê8´ÁÙ™.
+Fpython:S1481ó
+"'Remove the unused local variable "Pos".(ò¹ùm8àÙÂÙ™.
+wpython:S116¨"SRename this field "actionClear" to match the regular expression ^[_a-z][_a-z0-9]*$.(íµ°×øÿÿÿÿ8´ÁÙ™.
+€python:S1192…"[Define a constant instead of duplicating this literal 'images/artery tree images' 40 times.(şÙÜÏøÿÿÿÿ8àÙÂÙ™.
+upython:S116<"WRename this field "doubleSpinBox_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(éÌğ8´ÁÙ™.
+Gpython:S1481¨	"'Remove the unused local variable "Pos".(óæ©É8´ÁÙ™.
+rpython:S1192¯"RDefine a constant instead of duplicating this literal "Ulnar artery left" 3 times.(üÏ‚À8´ÁÙ™.
+upython:S1192 "PDefine a constant instead of duplicating this literal 'ulnar_right.png' 3 times.(ëı®Ãûÿÿÿÿ8àÙÂÙ™.
+ppython:S100Ì"QRename method "showDock_3" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(éŒ¦ú8´ÁÙ™.
+ypython:S3776©
+"TRefactor this function to reduce its Cognitive Complexity from 24 to the 15 allowed.(À½úÿÿÿÿ8àÙÂÙ™.
+Lpython:S1481Ë
+"'Remove the unused local variable "Pos".(¨ÏŞ±ÿÿÿÿÿ8àÙÂÙ™.
+zpython:S116K"\Rename this field "dockWidgetContents_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(¢Éµş8´ÁÙ™.
+rpython:S116)"TRename this field "dockWidget_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(íÙëÓ8´ÁÙ™.
+mpython:S116Ô"NRename this field "p_Peak" to match the regular expression ^[_a-z][_a-z0-9]*$.(íŸ’¼8´ÁÙ™.
+lpython:S1764“"LCorrect one of the identical sub-expressions on both sides of operator "in".(ü”Æé8´ÁÙ™.
+Gpython:S1481ğ"'Remove the unused local variable "Pos".(ÚŒ˜ì8´ÁÙ™.
+Gpython:S1481·
+"'Remove the unused local variable "Pos".(ÙŠáÁ8àÙÂÙ™.
+rpython:S1192£"RDefine a constant instead of duplicating this literal "Common carotid(L)" 3 times.(‹ùÆ8´ÁÙ™.
+spython:S116"URename this field "buttonGroup_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(†ìŠ¸8´ÁÙ™.
+xpython:S116"URename this field "radioButton_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(ˆÓ±Èıÿÿÿÿ8´ÁÙ™.
+upython:S1192Ÿ"PDefine a constant instead of duplicating this literal "Ascending aorta" 3 times.(öÔÈœÿÿÿÿÿ8´ÁÙ™.
+upython:S116F"RRename this field "comboBox_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(Êüéÿÿÿÿÿ8´ÁÙ™.
+Fpython:S1481Ç
+"'Remove the unused local variable "Pos".(Ù½ùG8àÙÂÙ™.
+Gpython:S1481ü"'Remove the unused local variable "Pos".(ÙŠáÁ8´ÁÙ™.
+Fpython:S1481»
+"'Remove the unused local variable "Pos".(ªß…8àÙÂÙ™.
+Gpython:S1481œ	"'Remove the unused local variable "Pos".(³¯û¢8´ÁÙ™.
+Fpython:S1481¸	"'Remove the unused local variable "Pos".(ò¹ùm8´ÁÙ™.
+ƒpython:S1871Â"dEither merge this branch with the identical one on line "1711" or change one of the implementations.(‡ˆ·28àÙÂÙ™.
+ˆpython:S1192ç"cDefine a constant instead of duplicating this literal "background-color: rgb(35, 35, 35);" 7 times.(–ÒŒ‘ûÿÿÿÿ8´ÁÙ™.
+spython:S116"URename this field "radioButton_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÀßØü8´ÁÙ™.
+npython:S116•"PRename this field "menuView" to match the regular expression ^[_a-z][_a-z0-9]*$.(£ù©l8´ÁÙ™.
+‰python:S1845×"dRename field "Bottom" to prevent any misunderstanding/clash with field "bottom" defined on line 1750(ñ´“®ÿÿÿÿÿ8àÙÂÙ™.
+Jpython:S1481ã"%Remove the unused local variable "i".(Ïµõ¢ıÿÿÿÿ8àÙÂÙ™.
+zpython:S116="WRename this field "doubleSpinBox_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÑÂ™ïıÿÿÿÿ8´ÁÙ™.
+Špython:S1192¿"eDefine a constant instead of duplicating this literal "background-color: rgb(35, 35, 35);\n" 3 times.(­ûæĞùÿÿÿÿ8´ÁÙ™.
+«python:S1192°"…Define a constant instead of duplicating this literal 'The brachial artery is the major blood vessel of the (upper) arm. It' 6 times.(ÄØØôùÿÿÿÿ8´ÁÙ™.
+Gpython:S1481ï
+"'Remove the unused local variable "Pos".(ôÎØ8àÙÂÙ™.
+tpython:S116ï"URename this field "gridLayout_13" to match the regular expression ^[_a-z][_a-z0-9]*$.(ê¶Ó¿8´ÁÙ™.
+zpython:S116."WRename this field "doubleSpinBox_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬Â‚–úÿÿÿÿ8´ÁÙ™.
+ppython:S116^"RRename this field "groupBox_6" to match the regular expression ^[_a-z][_a-z0-9]*$.(ôû¦8´ÁÙ™.
+…python:S1192Ÿ"`Define a constant instead of duplicating this literal "font: 9pt \"MS Shell Dlg 2\";\n" 7 times.(æºŸŸıÿÿÿÿ8´ÁÙ™.
+tpython:S1192¥"ODefine a constant instead of duplicating this literal "Thoracic aorta" 3 times.(ŸÆ·…ıÿÿÿÿ8´ÁÙ™.
+wpython:S1192ş"RDefine a constant instead of duplicating this literal 'femoral_right.png' 3 times.(±š‰Àıÿÿÿÿ8àÙÂÙ™.
+{python:S1192¦"VDefine a constant instead of duplicating this literal "Cerebral artery right" 3 times.(Ùåñòúÿÿÿÿ8´ÁÙ™.
+zpython:S116/"WRename this field "doubleSpinBox_6" to match the regular expression ^[_a-z][_a-z0-9]*$.(ù´µåşÿÿÿÿ8´ÁÙ™.
+Gpython:S1481«
+"'Remove the unused local variable "Pos".(ÚŒ˜ì8àÙÂÙ™.
+tpython:S3776Ó"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(Ş‰—Œ8àÙÂÙ™.
+Lpython:S1481„	"'Remove the unused local variable "Pos".(µªìûÿÿÿÿ8´ÁÙ™.
+|python:S116¸"]Rename this field "actionHeart_Parameter" to match the regular expression ^[_a-z][_a-z0-9]*$.(˜Ñá¤8´ÁÙ™.
+tpython:S1192š"TDefine a constant instead of duplicating this literal 'abdominal_aorta.png' 3 times.(ƒà»¨8àÙÂÙ™.
+tpython:S116¬"PRename this field "actionIp" to match the regular expression ^[_a-z][_a-z0-9]*$.(š—³›úÿÿÿÿ8´ÁÙ™.
+mpython:S100§"NRename method "setupUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(„•æ£8àÙÂÙ™.
+ƒpython:S1871¡"dEither merge this branch with the identical one on line "2062" or change one of the implementations.(‡ˆ·28àÙÂÙ™.
+xpython:S116÷"TRename this field "pushButton_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ºÛ·±ûÿÿÿÿ8´ÁÙ™.
+ppython:S116P"RRename this field "groupBox_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÁºæÊ8´ÁÙ™.
+Lpython:S1481	"'Remove the unused local variable "Pos".(¨ÏŞ±ÿÿÿÿÿ8´ÁÙ™.
+vpython:S116õ"RRename this field "MainWindow" to match the regular expression ^[_a-z][_a-z0-9]*$.(ó®§ÿÿÿÿÿ8àÙÂÙ™.
+python:S116Y"\Rename this field "dockWidgetContents_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(ïÕöÚüÿÿÿÿ8´ÁÙ™.
+spython:S116Q"URename this field "textBrowser_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(“î€å8´ÁÙ™.
+upython:S1161"RRename this field "checkBox_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(ßÎµÿÿÿÿÿ8´ÁÙ™.
