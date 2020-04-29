@@ -1,8 +1,9 @@
 import numpy as np
 
+
 def integrated_ode(t, x, Vin, clock):
 
-    rlcnewval = np.genfromtxt('DB/rlcnewval.txt', delimiter=',')
+    rlcnewval = np.genfromtxt('DBS/rlcnewval.txt', delimiter=',')
     Rs = rlcnewval[:, 0]
     L = rlcnewval[:, 1]
     C = rlcnewval[:, 2]

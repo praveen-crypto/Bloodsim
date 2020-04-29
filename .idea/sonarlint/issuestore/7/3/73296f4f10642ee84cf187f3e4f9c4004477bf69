@@ -1,11 +1,0 @@
-
-Bpython:S125="Remove this commented out code.(åç‚üÿÿÿÿ8±Ì¯Ù™.
-=python:S1481"%Remove the unused local variable "b".(£í¼
-Tpython:S5754@"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-Bpython:S125"Remove this commented out code.(Á«ÒÃıÿÿÿÿ8İ¯°Ù™.
->python:S1481"&Remove the unused local variable "Rs".(æ´·«
->python:S1481"&Remove the unused local variable "Rp".(Óÿ¡”
-=python:S1253"Remove this commented out code.(ê½´Ì8ÄïÑ¿™.
-Bpython:S125
-"Remove this commented out code.(€¡¡µûÿÿÿÿ8ÊèÒ¿™.
-Bpython:S1481"*Remove the unused local variable "eqn_no".(ÕÔ±Ì
