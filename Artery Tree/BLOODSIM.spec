@@ -4,7 +4,11 @@ block_cipher = None
 
 
 a = Analysis(['BLOODSIM.py'],
+<<<<<<< HEAD
              pathex=['C:\\Users\\Prave\\OneDrive\\Documents\\GitHub\\stenor.github.io\\Artery Tree'],
+=======
+             pathex=['C:\\Users\\Balaji\\Documents\\Bloodsim\\Artery Tree'],
+>>>>>>> 529d64a9d26e86bd1a8251b3921bd5d2aab6b3ca
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -30,4 +34,8 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
+<<<<<<< HEAD
           console=False , icon='BloodSim.ico')
+=======
+          console=True )
+>>>>>>> 529d64a9d26e86bd1a8251b3921bd5d2aab6b3ca
