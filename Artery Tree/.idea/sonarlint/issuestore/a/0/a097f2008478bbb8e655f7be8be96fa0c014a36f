@@ -1,0 +1,473 @@
+
+ypython:S116¦&"\Rename this field "doubleSpinBox_RES_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(İº­“ûÿÿÿÿ
+npython:S116/"RRename this field "gridLayout" to match the regular expression ^[_a-z][_a-z0-9]*$.(´ş‘Øúÿÿÿÿ
+hpython:S116¯"PRename this field "label_HA" to match the regular expression ^[_a-z][_a-z0-9]*$.(Éû¸®
+npython:S116µ"QRename this field "label_CMP" to match the regular expression ^[_a-z][_a-z0-9]*$.(¹Î’ıÿÿÿÿ
+spython:S116Ê"VRename this field "checkBox_BR_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ûìÙºÿÿÿÿÿ
+<python:S125Å"Remove this commented out code.(£Öæ•øÿÿÿÿ
+npython:S116"QRename this field "label_UAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(æıûÿÿÿÿ
+ipython:S116)"SRename this field "comboBox_G2" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ø¶-
+ppython:S116!"XRename this field "checkBox_ELA_RVb" to match the regular expression ^[_a-z][_a-z0-9]*$.(ƒ«
+opython:S116î"RRename this field "label_AbAO" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÒÓéŒıÿÿÿÿ
+lpython:S116©%"TRename this field "label_IND_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(ëÌ©
+Epython:S1481¯"'Remove the unused local variable "Pos".(ãæÒ³øÿÿÿÿ
+Fpython:S1481Ò"-Remove the unused local variable "RAR_STATE".(¥ıÖ×
+Kpython:S1481Ç"-Remove the unused local variable "CAL_STATE".(êâ®ûÿÿÿÿ
+ppython:S116™#"XRename this field "checkBox_VE_PUVA" to match the regular expression ^[_a-z][_a-z0-9]*$.(×˜Î¦
+Cpython:S1481Œ"%Remove the unused local variable "i".(€•ãøøÿÿÿÿ
+mpython:S116¼"URename this field "gridLayout_13" to match the regular expression ^[_a-z][_a-z0-9]*$.(ê¶Ó¿
+lpython:S116Ş%"TRename this field "label_VE_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(óß”Ì
+npython:S116µ"QRename this field "label_CCL" to match the regular expression ^[_a-z][_a-z0-9]*$.(á´ú€üÿÿÿÿ
+tpython:S116¹!"\Rename this field "doubleSpinBox_IND_VI" to match the regular expression ^[_a-z][_a-z0-9]*$.(«ùë
+zpython:S116†"]Rename this field "doubleSpinBox_CMP_ART" to match the regular expression ^[_a-z][_a-z0-9]*$.(¡µ¦Ôÿÿÿÿÿ
+£python:S1192·"‰Define a constant instead of duplicating this literal 'The ulnar artery is the main blood vessel, with oxygenated blood, of the' 6 times.(üŞøÓ
+xpython:S116Y"\Rename this field "dockWidgetContents_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(ïÕöÚüÿÿÿÿ
+upython:S116ñ$"]Rename this field "doubleSpinBox_RES_PUC" to match the regular expression ^[_a-z][_a-z0-9]*$.(É®åñ
+upython:S116ï#"XRename this field "checkBox_RES_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(×¡ıÿÿÿÿ
+spython:S116„&"[Rename this field "doubleSpinBox_VE_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(éªì¶
+rpython:S1192ñ
+"YDefine a constant instead of duplicating this literal 'common_carotid_right.png' 3 times.(¶ªîª
+qpython:S116ş"YRename this field "doubleSpinBox_BAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(¼±«¥
+npython:S116‡"VRename this field "actionBloodsim" to match the regular expression ^[_a-z][_a-z0-9]*$.(‚á²’
+Upython:S5754½	"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
+Epython:S1481ä	"'Remove the unused local variable "Pos".(¨ÏŞ±ÿÿÿÿÿ
+@python:S1481„
+"'Remove the unused local variable "Pos".(”æƒ
+Jpython:S1481Ë",Remove the unused local variable "HA_STATE".(ßìîêşÿÿÿÿ
+gpython:S116ç"PRename this field "menuView" to match the regular expression ^[_a-z][_a-z0-9]*$.(£ù©l
+rpython:S116×#"URename this field "label_RES_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ä©“€ÿÿÿÿÿ
+ppython:S3923Ü"RRemove this if statement or edit its code blocks so that they're not all the same.(ô¾Æåûÿÿÿÿ
+lpython:S116ˆ"TRename this field "pushButton_6" to match the regular expression ^[_a-z][_a-z0-9]*$.(ş“µã
+upython:S116‹"]Rename this field "actionHeart_Parameter" to match the regular expression ^[_a-z][_a-z0-9]*$.(˜Ñá¤
+spython:S116ª"[Rename this field "doubleSpinBox_BR_PV" to match the regular expression ^[_a-z][_a-z0-9]*$.(Öùş¥
+rpython:S116×&"[Rename this field "doubleSpinBox_VE_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(Œ³ó`
+kpython:S1192ï("MDefine a constant instead of duplicating this literal "Mitral Valve" 4 times.(­ƒÏ—ıÿÿÿÿ
+ipython:S116Ú!"QRename this field "label_IND" to match the regular expression ^[_a-z][_a-z0-9]*$.(í§©Û
+Cpython:S1481…"%Remove the unused local variable "i".(Ïµõ¢ıÿÿÿÿ
+Epython:S1481Ø	"'Remove the unused local variable "Pos".(µªìûÿÿÿÿ
+lpython:S116ê"ORename this field "menuRun" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÿÕİíıÿÿÿÿ
+tpython:S116¼$"]Rename this field "doubleSpinBox_VE_PUVA" to match the regular expression ^[_a-z][_a-z0-9]*$.(ñ³Ûp
+ppython:S116L"TRename this field "gridLayout_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬ˆò˜ÿÿÿÿÿ
+spython:S116Ò#"VRename this field "label_RES_PUVA" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ùæøùÿÿÿÿÿ
+python:S1192¢"aDefine a constant instead of duplicating this literal "font: 9pt \"MS Shell Dlg 2\";\n" 77 times.(æºŸŸıÿÿÿÿ
+Epython:S1481
+"'Remove the unused local variable "Pos".(øÈ´şÿÿÿÿ
+jpython:S100r"NRename method "setupUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(¼¡Ö·øÿÿÿÿ
+rpython:S116´""URename this field "label_VE_TV_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(Š²¶éûÿÿÿÿ
+ƒpython:S1192Ì"eDefine a constant instead of duplicating this literal "background-color: rgb(35, 35, 35);\n" 5 times.(¯ªğæûÿÿÿÿ
+opython:S116Ã"WRename this field "checkBox_CMP_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(ËÌà
+opython:S116O"SRename this field "labelEdit_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(Äù¨°úÿÿÿÿ
+opython:S116"SRename this field "buttonGroup" to match the regular expression ^[_a-z][_a-z0-9]*$.(áİÚËùÿÿÿÿ
+@python:S1481ƒ"'Remove the unused local variable "Pos".(Üù“Î
+spython:S116K"\Rename this field "dockWidgetContents_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(¢Éµş
+ipython:S116Ê"RRename this field "label_ELAS" to match the regular expression ^[_a-z][_a-z0-9]*$.(¶¨çQ
+npython:S116Ÿ"VRename this field "checkBox_BR_PV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ºú™ñ
+npython:S116â"QRename this field "label_SAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(´¯ØŸúÿÿÿÿ
+Kpython:S1481Ï"-Remove the unused local variable "UAL_STATE".(ƒ“ä·şÿÿÿÿ
+ªpython:S1192à
+"‹Define a constant instead of duplicating this literal 'The common carotid arteries are present on the left and right sides of the' 6 times.(¹²¥ùÿÿÿÿ
+Epython:S1481Ë"'Remove the unused local variable "Pos".(øÈ´şÿÿÿÿ
+Cpython:S1481ê"%Remove the unused local variable "i".(Ïµõ¢ıÿÿÿÿ
+ipython:S116["RRename this field "groupBox_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(ŠŞÚê
+spython:S1162"WRename this field "doubleSpinBox_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬Â‚–úÿÿÿÿ
+qpython:S100Ï"TRename method "retranslateUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(”«Àşÿÿÿÿ
+rpython:S116ú"ZRename this field "doubleSpinBox_AbAO" to match the regular expression ^[_a-z][_a-z0-9]*$.(“®ˆÁ
+ppython:S116J"TRename this field "dockWidget_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(æšæ—øÿÿÿÿ
+hpython:S116†"QRename this field "label_CAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(Çø÷Z
+mpython:S3776ò"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(ø±¯Û
+Epython:S1481Å",Remove the unused local variable "TA_STATE".(âÂı
+python:S1192¾"„Define a constant instead of duplicating this literal 'The abdominal aorta is the largest artery in the abdominal cavity. ' 3 times.(ê­›y
+mpython:S116ƒ"VRename this field "actionWaveform" to match the regular expression ^[_a-z][_a-z0-9]*$.(¯¢×-
+mpython:S116Å"URename this field "label_ELA_LAb" to match the regular expression ^[_a-z][_a-z0-9]*$.(¤¶ÖÜ
+ipython:S116—"QRename this field "label_SAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(˜“ë›
+upython:S116¢"]Rename this field "doubleSpinBox_CMP_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(–ÖÒû
+npython:S116÷"QRename this field "label_UAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(–×Ûÿûÿÿÿÿ
+opython:S116–!"RRename this field "gridLayout" to match the regular expression ^[_a-z][_a-z0-9]*$.( ÷œşÿÿÿÿ
+lpython:S1192ö"SDefine a constant instead of duplicating this literal 'hepatic_artery.png' 3 times.(´¥ìÏ
+rpython:S3776À	"TRefactor this function to reduce its Cognitive Complexity from 25 to the 15 allowed.(À½úÿÿÿÿ
+qpython:S116ˆ"YRename this field "doubleSpinBox_CAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(»æğ³
+dpython:S1192)"KDefine a constant instead of duplicating this literal "Pul Artery" 3 times.(é—‹¤
+zpython:S116‘ "]Rename this field "doubleSpinBox_ELA_LVb" to match the regular expression ^[_a-z][_a-z0-9]*$.(®Å’Œşÿÿÿÿ
+qpython:S116…"YRename this field "doubleSpinBox_FAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(æóõ
+Fpython:S1481Ã"-Remove the unused local variable "CCL_STATE".(ã²í»
+rpython:S116Û"URename this field "checkBox_AbAO" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ò°Š½ùÿÿÿÿ
+lpython:S116¸"TRename this field "gridLayout_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(Òæœ„
+ppython:S116›$"XRename this field "checkBox_IND_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(å”’ö
+upython:S116%"]Rename this field "doubleSpinBox_RES_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(İû»†
+kpython:S116¯&"SRename this field "label_VE_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(Å™‚Ğ
+npython:S1166"RRename this field "checkBox_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬š©§ûÿÿÿÿ
+lpython:S116œ"TRename this field "checkBox_SAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ù´‹
+tpython:S116È""\Rename this field "doubleSpinBox_RES_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÛµÜ†
+upython:S116ÿ"]Rename this field "doubleSpinBox_ELA_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(ËÂŸİ
+mpython:S116¾"PRename this field "label_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(¢üÈ’üÿÿÿÿ
+lpython:S116 "URename this field "radioButton_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(ªšøŸ
+npython:S116ú"QRename this field "label_BAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(¢‘ü·ùÿÿÿÿ
+opython:S116¹"XRename this field "pushButton_STENO" to match the regular expression ^[_a-z][_a-z0-9]*$.(‹õÊ
+qpython:S116Ô"TRename this field "pushButton_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ÿ¶–úÿÿÿÿ
+kpython:S116"NRename this field "Bottom" to match the regular expression ^[_a-z][_a-z0-9]*$.(ñ´“®ÿÿÿÿÿ
+ipython:S116­"QRename this field "tabWidget" to match the regular expression ^[_a-z][_a-z0-9]*$.(â„âÆ
+Gpython:S1481È".Remove the unused local variable "AbAo_STATE".(‚ÖÏ
+{python:S116É#"^Rename this field "doubleSpinBox_RES_PUVA" to match the regular expression ^[_a-z][_a-z0-9]*$.(Í±È‚ûÿÿÿÿ
+jpython:S116™"SRename this field "label_BR_PV" to match the regular expression ^[_a-z][_a-z0-9]*$.(©¯Á
+ppython:S116›"SRename this field "checkBox_RA" to match the regular expression ^[_a-z][_a-z0-9]*$.(—–âııÿÿÿÿ
+ipython:S116ß"QRename this field "label_CCR" to match the regular expression ^[_a-z][_a-z0-9]*$.(ñµ«Ÿ
+|python:S1871Ò"dEither merge this branch with the identical one on line "2495" or change one of the implementations.(‡ˆ·2
+Jpython:S1481¿",Remove the unused local variable "AO_STATE".( éí˜øÿÿÿÿ
+ipython:S116?"RRename this field "checkBox_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(²¶¬
+lpython:S116É"TRename this field "checkBox_FAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(–Æ¢ÿ
+?python:S1481à	"'Remove the unused local variable "Pos".(Ù½ùG
+ppython:S116ƒ$"XRename this field "checkBox_RES_PUC" to match the regular expression ^[_a-z][_a-z0-9]*$.(³üÊ…
+qpython:S116\"URename this field "gridLayout_12" to match the regular expression ^[_a-z][_a-z0-9]*$.(”Ïî¥ÿÿÿÿÿ
+hpython:S1192v"PDefine a constant instead of duplicating this literal 'images/logo.png' 3 times.(ŞÂßİ
+spython:S116®%"\Rename this field "doubleSpinBox_IND_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(£â¼p
+qpython:S1192ƒ"SDefine a constant instead of duplicating this literal 'thoracic_aorta.png' 3 times.(ş½Ù¹ÿÿÿÿÿ
+mpython:S116õ"URename this field "label_CMP_ART" to match the regular expression ^[_a-z][_a-z0-9]*$.(æÇ°‹
+?python:S1481Œ
+"'Remove the unused local variable "Pos".(ò¹ùm
+˜python:S1192„"Define a constant instead of duplicating this literal 'This artery supplies the anterior chest wall and the breasts. ' 3 times.(ò’©ı
+@python:S1481ü	"'Remove the unused local variable "Pos".(óæ©É
+ppython:S116Ï"SRename this field "checkBox_AA" to match the regular expression ^[_a-z][_a-z0-9]*$.(»¥€µùÿÿÿÿ
+tpython:S116É "]Rename this field "doubleSpinBox_ELA_RAb" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÆçÌt
+ipython:S116Ä"QRename this field "label_FAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(Û¨
+qpython:S116ç"TRename this field "checkBox_SAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(™ÂÈÉşÿÿÿÿ
+qpython:S100ã("TRename method "retranslateUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ßÿ»´üÿÿÿÿ
+ipython:S116P"RRename this field "groupBox_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÁºæÊ
+qpython:S116Æ"TRename this field "pushButton_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ºÛ·±ûÿÿÿÿ
+@python:S1481ø	"'Remove the unused local variable "Pos".(˜æÆ
+kpython:S116’""TRename this field "label_IND_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÊÖÛ@
+upython:S116"XRename this field "checkBox_ELA_PUC" to match the regular expression ^[_a-z][_a-z0-9]*$.(ó™Ü¨üÿÿÿÿ
+mpython:S3776‹"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(Ş‰—Œ
+lpython:S116È&"TRename this field "label_RES_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ğ¢ˆ
+Kpython:S1481Æ"-Remove the unused local variable "CAR_STATE".(ÓÄ´üùÿÿÿÿ
+hpython:S116¼"PRename this field "label_BR" to match the regular expression ^[_a-z][_a-z0-9]*$.(¸ª›Ñ
+¨python:S1192„"Define a constant instead of duplicating this literal 'The renal arteries normally arise off the left interior side of the abdominal' 3 times.(ğµ‘
+npython:S1192°
+"PDefine a constant instead of duplicating this literal 'aortic_arch.png' 3 times.(ç´¦²ıÿÿÿÿ
+upython:S116ÿ"XRename this field "doubleSpinBox_AA" to match the regular expression ^[_a-z][_a-z0-9]*$.(¾óúúÿÿÿÿ
+tpython:S116í%"\Rename this field "doubleSpinBox_VE_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÃÇ¡Ï
+Epython:S1481Ì",Remove the unused local variable "RA_STATE".(ˆê¡¨
+ppython:S116ô"XRename this field "checkBox_ELA_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(³Ñï¨
+opython:S1192ÿ("QDefine a constant instead of duplicating this literal "Venous inertance" 3 times.(¥½ÊÉüÿÿÿÿ
+lpython:S116¡"TRename this field "checkBox_FAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(¨””Ã
+gpython:S1192)"NDefine a constant instead of duplicating this literal "Pul Capillary" 3 times.(Ë¨¥í
+spython:S116ı""[Rename this field "doubleSpinBox_VE_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ë³û
+hpython:S116W"RRename this field "labelStyle" to match the regular expression ^[_a-z][_a-z0-9]*$.(¡·	
+mpython:S116ù#"URename this field "label_IND_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(ı“’
+qpython:S116û"YRename this field "doubleSpinBox_UAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(–¯ş«
+opython:S116Ú "XRename this field "checkBox_ELA_RVa" to match the regular expression ^[_a-z][_a-z0-9]*$.(¸¬P
+upython:S116¯"XRename this field "checkBox_ELA_LAa" to match the regular expression ^[_a-z][_a-z0-9]*$.(ƒ»•¸ÿÿÿÿÿ
+£python:S1192“"‰Define a constant instead of duplicating this literal 'The femoral artery is a large artery in the thigh and the main arterial ' 6 times.(Ç¦Ûâ
+ppython:S116ı"SRename this field "label_BR_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ı¶…úÿÿÿÿ
+kpython:S116à&"SRename this field "label_VE_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(üê·®
+npython:S116"RRename this field "MainWindow" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ü¥ãèùÿÿÿÿ
+qpython:S116¹""TRename this field "label_VE_VC_" to match the regular expression ^[_a-z][_a-z0-9]*$.(ß»ùÏøÿÿÿÿ
+@python:S1481‹"'Remove the unused local variable "Pos".(ÙŠáÁ
+lpython:S116Ë%"TRename this field "label_IND_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ò˜‡ƒ
+opython:S116Å$"XRename this field "checkBox_IND_PUC" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ò†ÿ
+opython:S116•"RRename this field "gridLayout" to match the regular expression ^[_a-z][_a-z0-9]*$.(ø—Û·ùÿÿÿÿ
+Fpython:S1481Á"-Remove the unused local variable "SAL_STATE".(×éÓ„
+@python:S1481ğ	"'Remove the unused local variable "Pos".(³¯û¢
+qpython:S116ƒ"YRename this field "doubleSpinBox_CCR" to match the regular expression ^[_a-z][_a-z0-9]*$.(æªÛ˜
+npython:S116#"VRename this field "label_IND_PUVA" to match the regular expression ^[_a-z][_a-z0-9]*$.(Êß­‡
+?python:S1481›"'Remove the unused local variable "Pos".(Ù½ùG
+Cpython:S1481à"%Remove the unused local variable "i".(ØÈøÏøÿÿÿÿ
+opython:S116 ""WRename this field "checkBox_IND_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ûÆ¸¿
+ipython:S100Õ"QRename method "showDock_3" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(éŒ¦ú
+ppython:S116Â"SRename this field "checkBox_TA" to match the regular expression ^[_a-z][_a-z0-9]*$.(öÂ™šûÿÿÿÿ
+rpython:S116Ò"URename this field "label_CMP_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(‡Â¨ğûÿÿÿÿ
+upython:S116æ#"]Rename this field "doubleSpinBox_IND_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(‰Ä£¶
+vpython:S116¶#"YRename this field "checkBox_RES_PUVA" to match the regular expression ^[_a-z][_a-z0-9]*$.(ĞÁ‡Ÿşÿÿÿÿ
+kpython:S116-"TRename this field "dockWidget_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(íÙëÓ
+npython:S116¸"QRename this field "label_BAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(÷¨âŞøÿÿÿÿ
+spython:S3776¦)"URefactor this function to reduce its Cognitive Complexity from 106 to the 15 allowed.(Œ°Ôÿÿÿÿÿ
+mpython:S116Š"URename this field "label_ELA_PUC" to match the regular expression ^[_a-z][_a-z0-9]*$.(Âø¹§
+npython:S116©!"QRename this field "label_RES" to match the regular expression ^[_a-z][_a-z0-9]*$.(›ŠşÖıÿÿÿÿ
+qpython:S116"URename this field "radioButton_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(ˆÓ±Èıÿÿÿÿ
+qpython:S116ü"TRename this field "checkBox_CAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(†Ä”Ëÿÿÿÿÿ
+ipython:S116"QRename this field "label_CAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(äª›¬
+npython:S116ƒ"VRename this field "checkBox_BR_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(—Î›ƒ
+qpython:S116!"URename this field "radioButton_6" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÿ­Áßøÿÿÿÿ
+rpython:S116­"URename this field "label_CMP_VCO" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬°…éüÿÿÿÿ
+Epython:S1481À",Remove the unused local variable "AA_STATE".(ı‚‚ğ
+upython:S116Ø"XRename this field "checkBox_ELA_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÊÍ“Üşÿÿÿÿ
+fpython:S116ş"NRename this field "p_Peak" to match the regular expression ^[_a-z][_a-z0-9]*$.(íŸ’¼
+spython:S116„""[Rename this field "doubleSpinBox_VE_VI" to match the regular expression ^[_a-z][_a-z0-9]*$.(®é­ì
+rpython:S116ş#"URename this field "label_RES_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(û¥Áıÿÿÿÿ
+qpython:S116"URename this field "buttonGroup_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(™è›—üÿÿÿÿ
+Epython:S1481Ü	"'Remove the unused local variable "Pos".(¸‘ÑØøÿÿÿÿ
+ppython:S116ö%"SRename this field "label_VE_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(—•æ˜ûÿÿÿÿ
+@python:S1481Ä	"'Remove the unused local variable "Pos".(ÚŒ˜ì
+tpython:S116†#"\Rename this field "doubleSpinBox_IND_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(¨îéª
+hpython:S1192Û"JDefine a constant instead of duplicating this literal 'Time (s)' 11 times.(‡ŞÌ˜øÿÿÿÿ
+Epython:S1481—"'Remove the unused local variable "Pos".(¸‘ÑØøÿÿÿÿ
+kpython:S116X"TRename this field "dockWidget_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(¡úÙ¯
+mpython:S116ÿ"PRename this field "actionIp" to match the regular expression ^[_a-z][_a-z0-9]*$.(š—³›úÿÿÿÿ
+«python:S1192”"‘Define a constant instead of duplicating this literal 'The cerebral arteries describe three main pairs of arteries and their branches, ' 6 times.(ùàõØ
+rpython:S116ã"URename this field "label_ELA_LVa" to match the regular expression ^[_a-z][_a-z0-9]*$.(°¨¢Ùÿÿÿÿÿ
+vpython:S116‹"YRename this field "doubleSpinBox_RAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(ùç‚¸ùÿÿÿÿ
+mpython:S116¿"URename this field "pushButton_HP" to match the regular expression ^[_a-z][_a-z0-9]*$.(§Š†Ü
+ypython:S116Õ%"\Rename this field "doubleSpinBox_IND_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(·´Ñ¬úÿÿÿÿ
+lpython:S116Ñ""TRename this field "label_RES_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(¥Š¿¹
+dpython:S116"LRename this field "Form" to match the regular expression ^[_a-z][_a-z0-9]*$.(…á”í
+opython:S116ê&"XRename this field "checkBox_IND_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÁÁ‰)
+cpython:S1192÷("JDefine a constant instead of duplicating this literal "Vena Cava" 4 times.(™Šğé
+rpython:S116å&"URename this field "label_IND_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÒÑş¨øÿÿÿÿ
+lpython:S116Ñ"TRename this field "checkBox_RAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(›…õ¶
+mpython:S116â$"VRename this field "label_VE_CAP_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(µäü
+tpython:S116Â!"\Rename this field "doubleSpinBox_RES_VI" to match the regular expression ^[_a-z][_a-z0-9]*$.(ã¹ÖÛ
+spython:S116À#"[Rename this field "doubleSpinBox_VE_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(Åáòâ
+python:S1192§"fDefine a constant instead of duplicating this literal "background-color: rgb(35, 35, 35);\n" 73 times.(Ê¸‡
+vpython:S116Š"YRename this field "doubleSpinBox_BAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(ˆé˜Ëùÿÿÿÿ
+hpython:S116à!"PRename this field "label_VE" to match the regular expression ^[_a-z][_a-z0-9]*$.(¾ãÛæ
+mpython:S3776ƒ"TRefactor this function to reduce its Cognitive Complexity from 24 to the 15 allowed.(•åïé
+ipython:S116I"RRename this field "checkBox_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÖÊ˜¯
+mpython:S116–"PRename this field "label_RA" to match the regular expression ^[_a-z][_a-z0-9]*$.(³ÃíŠüÿÿÿÿ
+upython:S116—%"]Rename this field "doubleSpinBox_IND_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(î´–î
+ipython:S116^"RRename this field "groupBox_6" to match the regular expression ^[_a-z][_a-z0-9]*$.(ôû¦
+upython:S116ª$"]Rename this field "doubleSpinBox_RES_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(æˆìš
+spython:S1192§"ZDefine a constant instead of duplicating this literal 'cereberal_artery_left.png' 3 times.(Ó”ïè
+@python:S1481«"'Remove the unused local variable "Pos".(³¯û¢
+kpython:S1192Ò"SDefine a constant instead of duplicating this literal 'brachial_right.png' 3 times.(ÒÀäK
+vpython:S116‰"YRename this field "doubleSpinBox_CCL" to match the regular expression ^[_a-z][_a-z0-9]*$.(ğ¢šÖüÿÿÿÿ
+Cpython:S1481³"%Remove the unused local variable "i".(ØÈøÏøÿÿÿÿ
+upython:S116›"]Rename this field "doubleSpinBox_ELA_PUC" to match the regular expression ^[_a-z][_a-z0-9]*$.(êÑ›×
+npython:S1192ò("PDefine a constant instead of duplicating this literal "Tricuspid Valve" 4 times.(ñÜšüÿÿÿÿ
+upython:S116‚"XRename this field "doubleSpinBox_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(âıßÿıÿÿÿÿ
+mpython:S116Ü"PRename this field "label_AA" to match the regular expression ^[_a-z][_a-z0-9]*$.(ØóÇ˜üÿÿÿÿ
+lpython:S116"TRename this field "pushButton_7" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÄÊû¯
+@python:S1481ÿ"'Remove the unused local variable "Pos".(ÚŒ˜ì
+spython:S116é""VRename this field "checkBox_VE_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(üÙ÷ûÿÿÿÿÿ
+lpython:S116®"TRename this field "checkBox_BAL" to match the regular expression ^[_a-z][_a-z0-9]*$.( íš×
+upython:S116—"XRename this field "checkBox_CMP_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(óÂ¯¦ùÿÿÿÿ
+@python:S1481ˆ
+"'Remove the unused local variable "Pos".(ôÎØ
+qpython:S116"YRename this field "doubleSpinBox_SAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(¦—‚¤
+jpython:S116ı"RRename this field "actionQuit" to match the regular expression ^[_a-z][_a-z0-9]*$.(×¤ëÿ
+Kpython:S1481Ğ"-Remove the unused local variable "UAR_STATE".(ŠÒ¡°ùÿÿÿÿ
+Fpython:S1481Â"-Remove the unused local variable "SAR_STATE".(‚ı«Ê
+lpython:S116…"URename this field "graphWidget_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(«ã®
+vpython:S116ù"YRename this field "doubleSpinBox_RAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ÿéâûÿÿÿÿ
+upython:S116¾ "XRename this field "checkBox_ELA_RAb" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ù‚¢øÿÿÿÿ
+@python:S1481³"'Remove the unused local variable "Pos".(˜æÆ
+ppython:S1192£"RDefine a constant instead of duplicating this literal 'femoral_right.png' 3 times.(±š‰Àıÿÿÿÿ
+mpython:S116œ "URename this field "label_ELA_RAa" to match the regular expression ^[_a-z][_a-z0-9]*$.(ìµÄ¡
+opython:S116ğ!"WRename this field "checkBox_RES_VI" to match the regular expression ^[_a-z][_a-z0-9]*$.(…Ğş
+xpython:S116Õ"[Rename this field "doubleSpinBox_BR_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(İç²ˆıÿÿÿÿ
+rpython:S116ñ "URename this field "label_ELA_RVb" to match the regular expression ^[_a-z][_a-z0-9]*$.(‘£¸¶úÿÿÿÿ
+Kpython:S1481Ä"-Remove the unused local variable "CCR_STATE".(³ˆƒ¬ıÿÿÿÿ
+@python:S1481£"'Remove the unused local variable "Pos".(·„ëñ
+@python:S1481è	"'Remove the unused local variable "Pos".(·„ëñ
+Fpython:S1481Î"-Remove the unused local variable "FAR_STATE".(â†¶ê
+npython:S116M"RRename this field "groupBox_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(ö«Ÿİøÿÿÿÿ
+?python:S1481"'Remove the unused local variable "Pos".(ªß…
+upython:S116ı"XRename this field "doubleSpinBox_RA" to match the regular expression ^[_a-z][_a-z0-9]*$.(À“şÿÿÿÿ
+mpython:S116©"URename this field "label_ELA_LAa" to match the regular expression ^[_a-z][_a-z0-9]*$.(­º‡Ù
+spython:S1163"WRename this field "doubleSpinBox_6" to match the regular expression ^[_a-z][_a-z0-9]*$.(ù´µåşÿÿÿÿ
+npython:S116÷"QRename this field "actionRun" to match the regular expression ^[_a-z][_a-z0-9]*$.(ñ€Á±ùÿÿÿÿ
+kpython:S1192û"MDefine a constant instead of duplicating this literal "Renal Artery" 3 times.(Ğ Éòùÿÿÿÿ
+ipython:S1160"RRename this field "groupBox_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(•ÔÉ§
+upython:S116Í&"XRename this field "checkBox_RES_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(²Êñıÿÿÿÿ
+hpython:S1192ğ("JDefine a constant instead of duplicating this literal "Pul Valve" 4 times.(¶…Åãıÿÿÿÿ
+opython:S116ù"RRename this field "actionStop" to match the regular expression ^[_a-z][_a-z0-9]*$.(İşı ûÿÿÿÿ
+@python:S1481È	"'Remove the unused local variable "Pos".(¢¾Ç×
+kpython:S116Ì"TRename this field "checkBox_CCR" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ÿå{
+upython:S116é"XRename this field "checkBox_ELA_LVa" to match the regular expression ^[_a-z][_a-z0-9]*$.(¸Ëéøÿÿÿÿ
+qpython:S116"URename this field "radioButton_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬Ğ‰ıÿÿÿÿ
+Kpython:S1481Í"-Remove the unused local variable "FAL_STATE".(”…µœüÿÿÿÿ
+ppython:S116à"SRename this field "label_BR_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ö„’˜úÿÿÿÿ
+qpython:S116ü"TRename this field "checkBox_CAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(ìØÆøÿÿÿÿ
+hpython:S116="RRename this field "groupBox_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÁÃ€
+qpython:S116£"TRename this field "gridLayout_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ü»š–üÿÿÿÿ
+tpython:S116Œ'"\Rename this field "doubleSpinBox_IND_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(³ššâ
+Epython:S1481Ê"-Remove the unused local variable "BAL_STATE".(ÿàS
+kpython:S116Ù"TRename this field "label_CMP_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(êî›i
+qpython:S116""TRename this field "label_RES_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(„¯¶Äÿÿÿÿÿ
+vpython:S1192Ş
+"XDefine a constant instead of duplicating this literal 'common_carotid_left.png' 3 times.(ªíãûÿÿÿÿ
+kpython:S116´"SRename this field "checkBox_HA" to match the regular expression ^[_a-z][_a-z0-9]*$.(’á
+zpython:S1192½"aDefine a constant instead of duplicating this literal "font: 10pt \"MS Shell Dlg 2\";\n" 6 times.(ïÉ¶Ö
+™python:S1192÷"€Define a constant instead of duplicating this literal 'The common hepatic artery is a short blood vessel that supplies' 3 times.(•ÑÌ
+qpython:S116—&"TRename this field "label_RES_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÛÉŠÀøÿÿÿÿ
+ypython:S116³$"\Rename this field "doubleSpinBox_VE_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ÿİ­õøÿÿÿÿ
+ppython:S116Ä"SRename this field "label_BR_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÛÊô÷ùÿÿÿÿ
+tpython:S116Ü#"WRename this field "checkBox_VE_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(±ß®Ğúÿÿÿÿ
+@python:S1481·"'Remove the unused local variable "Pos".(óæ©É
+vpython:S116‡"YRename this field "doubleSpinBox_UAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(µúÖ’ÿÿÿÿÿ
+qpython:S100ª"TRename method "retranslateUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ı‰·úÿÿÿÿ
+xpython:S116"[Rename this field "doubleSpinBox_BR_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ª¿¾…ıÿÿÿÿ
+lpython:S116á"TRename this field "checkBox_RAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(ê‹Òì
+upython:S116¢ "XRename this field "checkBox_ELA_RAa" to match the regular expression ^[_a-z][_a-z0-9]*$.(¾×âşÿÿÿÿ
+kpython:S116>"TRename this field "gridLayout_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(à×Š
+npython:S116œ"QRename this field "label_FAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(˜¥üÿÿÿÿ
+ypython:S1192£
+"[Define a constant instead of duplicating this literal 'images/artery tree images' 61 times.(şÙÜÏøÿÿÿÿ
+qpython:S116Ë!"TRename this field "label_IND_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(»²…Úúÿÿÿÿ
+lpython:S116"TRename this field "pushButton_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(–Ìüè
+mpython:S116ú$"URename this field "label_RES_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ší¦„
+Epython:S1481É"-Remove the unused local variable "BAR_STATE".(Ÿ‘¢}
+qpython:S116À'"TRename this field "label_VE_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(ŒÈßÖşÿÿÿÿ
+tpython:S116œ&"WRename this field "checkBox_RES_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ª¶­ãüÿÿÿÿ
+hpython:S116í"PRename this field "menuHelp" to match the regular expression ^[_a-z][_a-z0-9]*$.(¦×é§
+@python:S1481¿"'Remove the unused local variable "Pos".(”æƒ
+¦python:S1192Û"ŒDefine a constant instead of duplicating this literal 'The radial artery arises from the bifurcation of the brachial artery in the' 6 times.(£ÊÍ´
+ppython:S116€"XRename this field "doubleSpinBox_HA" to match the regular expression ^[_a-z][_a-z0-9]*$.(­”Ñ«
+qpython:S116¢"TRename this field "checkBox_UAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(¿ÕŠıÿÿÿÿ
+Fpython:S1481Ñ"-Remove the unused local variable "RAL_STATE".(ÇÜ°ô
+opython:S116ª""WRename this field "checkBox_RES_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(–Ñû“
+qpython:S116Z"URename this field "gridLayout_11" to match the regular expression ^[_a-z][_a-z0-9]*$.(è½ °ùÿÿÿÿ
+@python:S1481Ã"'Remove the unused local variable "Pos".(ôÎØ
+jpython:S1192Ù"QDefine a constant instead of duplicating this literal 'radial_right.png' 6 times.(™œŞó
+lpython:S116ÿ"TRename this field "checkBox_BAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(Îƒ°ı
+mpython:S1192Í
+"UDefine a constant instead of duplicating this literal 'subclavian_right.png' 3 times.(™‘l
+spython:S116­'"VRename this field "checkBox_VE_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(Şê˜şüÿÿÿÿ
+opython:S116Ğ!"WRename this field "checkBox_IND_VI" to match the regular expression ^[_a-z][_a-z0-9]*$.(‚´Ç
+ppython:S116"SRename this field "actionReset" to match the regular expression ^[_a-z][_a-z0-9]*$.(» øÿÿÿÿ
+qpython:S116„"YRename this field "doubleSpinBox_FAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(­Á®¤
+upython:S116’$"]Rename this field "doubleSpinBox_IND_PUC" to match the regular expression ^[_a-z][_a-z0-9]*$.(×à˜æ
+zpython:S116ô"]Rename this field "doubleSpinBox_ELA_LVa" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ñ“¸ûÿÿÿÿÿ
+lpython:S116º"TRename this field "checkBox_CCL" to match the regular expression ^[_a-z][_a-z0-9]*$.(óõœ„
+npython:S116ú!"VRename this field "checkBox_VE_VI" to match the regular expression ^[_a-z][_a-z0-9]*$.(ª­±ğ
+tpython:S1192½"[Define a constant instead of duplicating this literal "color: rgb(255, 255, 255);" 6 times.(ÔË™¾
+npython:S1165"RRename this field "checkBox_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(ßÎµÿÿÿÿÿ
+?python:S1481Ô	"'Remove the unused local variable "Pos".(ªß…
+@python:S1481Ğ	"'Remove the unused local variable "Pos".(ÙŠáÁ
+tpython:S116Ù$"\Rename this field "doubleSpinBox_VE_PUC" to match the regular expression ^[_a-z][_a-z0-9]*$.(ç÷øß
+upython:S116ç$"XRename this field "checkBox_IND_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(Š”Âíûÿÿÿÿ
+rpython:S1192£
+"TDefine a constant instead of duplicating this literal 'ascending_aorta.png' 3 times.(şÙÜÏøÿÿÿÿ
+zpython:S116·'"]Rename this field "doubleSpinBox_RES_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(¶ãğıÿÿÿÿ
+§python:S1192¿
+"Define a constant instead of duplicating this literal 'The subclavian arteries are paired major arteries of the upper thorax, below' 3 times.(¥îŠÍ
+ppython:S100ª	"SRename method "mainViewer_1" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(å³öºøÿÿÿÿ
+tpython:S116Î"\Rename this field "doubleSpinBox_CMP_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(ªá¥
+fpython:S1192ø("MDefine a constant instead of duplicating this literal "Aortic Valve" 4 times.(çİËÑ
+gpython:S1192µ"ODefine a constant instead of duplicating this literal 'ulnar_left.png' 3 times.(»€¡4
+qpython:S116½"TRename this field "label_CMP_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(ºô—Õøÿÿÿÿ
+lpython:S116"URename this field "buttonGroup_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(†ìŠ¸
+qpython:S116ä"TRename this field "checkBox_UAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(ì¥ùşÿÿÿÿ
+jpython:S116*"SRename this field "comboBox_G3" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ş¤Ğê
+mpython:S116‘"URename this field "label_CMP_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(¿Àä
+lpython:S116Q"URename this field "textBrowser_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(“î€å
+ipython:S100Ã"QRename method "showDock_2" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(¬›ü¢
+tpython:S116à""\Rename this field "doubleSpinBox_RES_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(Öæù
+lpython:S116"URename this field "radioButton_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(¼Â¼Ğ
+kpython:S100"NRename method "setupUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(¼¡Ö·øÿÿÿÿ
+tpython:S116Ö""WRename this field "checkBox_IND_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ÿã±ğüÿÿÿÿ
+python:S1192î"cDefine a constant instead of duplicating this literal "background-color: rgb(33, 57, 86);" 3 times.(£Ç—ßÿÿÿÿÿ
+upython:S116† "XRename this field "checkBox_ELA_LVb" to match the regular expression ^[_a-z][_a-z0-9]*$.(İ×¹±ùÿÿÿÿ
+‚python:S1845"dRename field "Bottom" to prevent any misunderstanding/clash with field "bottom" defined on line 1664(ñ´“®ÿÿÿÿÿ
+tpython:S116ı&"WRename this field "checkBox_IND_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(ûš©Œøÿÿÿÿ
+mpython:S3776í"TRefactor this function to reduce its Cognitive Complexity from 46 to the 15 allowed.(ÎÖÛé
+hpython:S116Ã"QRename this field "label_RAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(öÜà"
+mpython:S116”"URename this field "graphWidget_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(û£¦Ï
+zpython:S116Ö"]Rename this field "doubleSpinBox_ELA_LAb" to match the regular expression ^[_a-z][_a-z0-9]*$.(‚œ¿Âúÿÿÿÿ
+spython:S1164"WRename this field "doubleSpinBox_4" to match the regular expression ^[_a-z][_a-z0-9]*$.(¼Ç—ıÿÿÿÿ
+upython:S116†"XRename this field "doubleSpinBox_TA" to match the regular expression ^[_a-z][_a-z0-9]*$.(ëò™óúÿÿÿÿ
+zpython:S116Ÿ'"]Rename this field "doubleSpinBox_IND_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(âıëóıÿÿÿÿ
+qpython:S116¬#"YRename this field "checkBox_IND_PUVA" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ïè’£
+tpython:S116Î'"WRename this field "checkBox_VE_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(´íşüÿÿÿÿ
+ppython:S116Ë"XRename this field "checkBox_ELA_LAb" to match the regular expression ^[_a-z][_a-z0-9]*$.(±²„
+opython:S116ó""WRename this field "checkBox_RES_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ä‹ì
+Cpython:S1481¢"%Remove the unused local variable "i".(Ïµõ¢ıÿÿÿÿ
+lpython:S116Í"TRename this field "pushButton_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(©ğ‹€
+opython:S116ß"WRename this field "checkBox_CMP_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(¨“î‹
+ypython:S116‰"\Rename this field "actionAbout_Bloodsim" to match the regular expression ^[_a-z][_a-z0-9]*$.(Œÿ“úøÿÿÿÿ
+Upython:S5754™
+"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
+lpython:S1192³	"NDefine a constant instead of duplicating this literal 'error ocurred' 3 times.(Â û€ùÿÿÿÿ
+kpython:S116N"TRename this field "gridLayout_8" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ñîö’
+@python:S1481ì	"'Remove the unused local variable "Pos".(ı­“•
+ppython:S116û"SRename this field "actionClear" to match the regular expression ^[_a-z][_a-z0-9]*$.(íµ°×øÿÿÿÿ
+Epython:S1481€
+"'Remove the unused local variable "Pos".(³´à§şÿÿÿÿ
+lpython:S3776¶"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÌËÒn
+?python:S1481Ç"'Remove the unused local variable "Pos".(ò¹ùm
+vpython:S116Œ"YRename this field "doubleSpinBox_SAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(¡ˆòøÿÿÿÿ
+npython:S116¾""VRename this field "checkBox_VE_TV" to match the regular expression ^[_a-z][_a-z0-9]*$.(¢¤íÍ
+upython:S116³"XRename this field "checkBox_CMP_VCO" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÃÇ‘şÿÿÿÿ
+upython:S116å "]Rename this field "doubleSpinBox_ELA_RVa" to match the regular expression ^[_a-z][_a-z0-9]*$.(ëÄ€–
+spython:S116 %"[Rename this field "doubleSpinBox_VE_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ö¢ËÔ
+|python:S1871ë"dEither merge this branch with the identical one on line "1623" or change one of the implementations.(‡ˆ·2
+ypython:S116ô&"\Rename this field "doubleSpinBox_RES_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(÷ëŠ›úÿÿÿÿ
+@python:S1481§"'Remove the unused local variable "Pos".(ı­“•
+lpython:S116ÿ$"URename this field "label_IND_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ˆÇ
+upython:S116¾"]Rename this field "doubleSpinBox_CMP_VCO" to match the regular expression ^[_a-z][_a-z0-9]*$.(´¤Û²
+lpython:S116ë!"TRename this field "label_RES_VI" to match the regular expression ^[_a-z][_a-z0-9]*$.(İ‚Ü€
+spython:S116A"WRename this field "doubleSpinBox_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÑÂ™ïıÿÿÿÿ
+upython:S116ã"]Rename this field "doubleSpinBox_ELA_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(üîâ
+ppython:S1192ä"RDefine a constant instead of duplicating this literal 'brachial_left.png' 3 times.(ÅŠ§ùÿÿÿÿ
+ipython:S1167"RRename this field "checkBox_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(º£×ü
+|python:S1192º"cDefine a constant instead of duplicating this literal "background-color: rgb(35, 35, 35);" 8 times.(ÉæğÇ
+tpython:S116&"WRename this field "checkBox_IND_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(à•¡¥úÿÿÿÿ
+tpython:S116Á%"WRename this field "checkBox_VE_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÂÜÈÿÿÿÿÿ
+upython:S116­ "]Rename this field "doubleSpinBox_ELA_RAa" to match the regular expression ^[_a-z][_a-z0-9]*$.(ëó½
+tpython:S116ê"\Rename this field "doubleSpinBox_CMP_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ô‹¹
+qpython:S116ü"YRename this field "doubleSpinBox_CAL" to match the regular expression ^[_a-z][_a-z0-9]*$.(¢ €Ğ
+lpython:S116‡'"TRename this field "label_RES_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(¤‹ÅŸ
+spython:S116."\Rename this field "dockWidgetContents_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(¬Ó®À
+kpython:S116´!"TRename this field "label_IND_VI" to match the regular expression ^[_a-z][_a-z0-9]*$.(“‘·x
+opython:S116û"XRename this field "checkBox_CMP_ART" to match the regular expression ^[_a-z][_a-z0-9]*$.(”Şå*
+tpython:S1192’"[Define a constant instead of duplicating this literal 'cereberal_artery_right.png' 3 times.(ğŞè¤
+rpython:S1192½
+"TDefine a constant instead of duplicating this literal 'subclavian_left.png' 3 times.(”…Çÿÿÿÿÿ
+npython:S116¾&"VRename this field "checkBox_VE_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(´ÄÊî
+hpython:S116ä"PRename this field "menuFile" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ö‰§»
+opython:S116·%"WRename this field "checkBox_RES_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ãòşŒ
+lpython:S116¤!"URename this field "label_VE_VI_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(èƒ€
+Epython:S1481‡"'Remove the unused local variable "Pos".(´”½äüÿÿÿÿ
+|python:S1871Ù"dEither merge this branch with the identical one on line "1989" or change one of the implementations.(‡ˆ·2
+Epython:S1481Ì	"'Remove the unused local variable "Pos".(´”½äüÿÿÿÿ
+opython:S116¨'"WRename this field "label_RES_CAP_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(‡ìæŠ
+mpython:S1192½"TDefine a constant instead of duplicating this literal 'abdominal_aorta.png' 3 times.(ƒà»¨
+ipython:S116ô"QRename this field "label_RAR" to match the regular expression ^[_a-z][_a-z0-9]*$.(îëÃû
+jpython:S100µ	"SRename method "mainViewer_2" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ìŒÊ[
+Epython:S1481ô	"'Remove the unused local variable "Pos".(ãæÒ³øÿÿÿÿ
+rpython:S3776ˆ"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ã¨ÿÏùÿÿÿÿ
+rpython:S116”#"URename this field "label_VE_PUVA" to match the regular expression ^[_a-z][_a-z0-9]*$.(¿±Ãûÿÿÿÿ
+opython:S116Ï$"WRename this field "checkBox_VE_PUC" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ô…ÕÁ
+{python:S116£#"^Rename this field "doubleSpinBox_IND_PUVA" to match the regular expression ^[_a-z][_a-z0-9]*$.(¢ĞâŒşÿÿÿÿ
+ypython:S116—""\Rename this field "doubleSpinBox_IND_VC" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ì”°­ûÿÿÿÿ
+opython:S116•'"WRename this field "checkBox_RES_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(œ÷ÆÀ
+mpython:S116¸ "URename this field "label_ELA_RAb" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÍåÈˆ
+§python:S1192Ï
+"Define a constant instead of duplicating this literal 'The subclavian arteries are paired major arteries of the upper thorax, below' 3 times.(¥îŠÍ
+mpython:S3776Â"TRefactor this function to reduce its Cognitive Complexity from 40 to the 15 allowed.(šéÊ¼
+rpython:S3776œ
+"TRefactor this function to reduce its Cognitive Complexity from 24 to the 15 allowed.(æ¶«Èûÿÿÿÿ
+mpython:S116€ "URename this field "label_ELA_LVb" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ò‡‘
+lpython:S116"URename this field "radioButton_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÀßØü
+rpython:S116î"URename this field "label_CMP_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(¶©¸øÿÿÿÿ
+¤python:S1192Ó"…Define a constant instead of duplicating this literal 'The brachial artery is the major blood vessel of the (upper) arm. It' 6 times.(ÄØØôùÿÿÿÿ
+Epython:S1481»"'Remove the unused local variable "Pos".(³´à§şÿÿÿÿ
+mpython:S116ç"VRename this field "checkBox_BR_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(·½Œ
+upython:S116º"]Rename this field "doubleSpinBox_ELA_LAa" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÆºÉö
+opython:S1192‘"QDefine a constant instead of duplicating this literal 'femoral_left.png' 3 times.(åÏÈ¤øÿÿÿÿ
+tpython:S116û%"\Rename this field "doubleSpinBox_RES_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(»â‘À
+hpython:S116½"PRename this field "label_TA" to match the regular expression ^[_a-z][_a-z0-9]*$.(ù¡Œ
+Upython:S5754²	"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
+ppython:S1192ş"RDefine a constant instead of duplicating this literal "Run Heart Model!!" 3 times.(Û¥“Æüÿÿÿÿ
+kpython:S116"TRename this field "gridLayout_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(†ˆùŞ
+npython:S1192Ç"PDefine a constant instead of duplicating this literal 'ulnar_right.png' 3 times.(ëı®Ãûÿÿÿÿ
+kpython:S100"NRename method "setupUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ÚşíŸûÿÿÿÿ
+jpython:S1161"TRename this field "gridLayout_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(·¶ŒP
+Epython:S1481“"'Remove the unused local variable "Pos".(µªìûÿÿÿÿ
+„python:S1192Á"fDefine a constant instead of duplicating this literal "background-color: rgb(32, 99, 155);\n" 5 times.(’œÍûÿÿÿÿÿ
+opython:S1192‚"QDefine a constant instead of duplicating this literal 'renal_artery.png' 3 times.(‹Ëª´ıÿÿÿÿ
+ipython:S100½"QRename method "showDock_1" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(«€‰Â
+lpython:S116¥$"TRename this field "label_VE_PUA" to match the regular expression ^[_a-z][_a-z0-9]*$.(ìâá
+mpython:S116$"URename this field "label_IND_PUC" to match the regular expression ^[_a-z][_a-z0-9]*$.(€ŸŸ
+spython:S116´&"VRename this field "checkBox_VE_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(ôï¢Ìùÿÿÿÿ
+lpython:S116ø"TRename this field "gridLayout_5" to match the regular expression ^[_a-z][_a-z0-9]*$.(©í«§
+qpython:S116Ğ%"TRename this field "label_IND_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(×¯Ü”ùÿÿÿÿ
+npython:S116@"WRename this field "doubleSpinBox_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(éÌğ
+ppython:S116‰"SRename this field "checkBox_AO" to match the regular expression ^[_a-z][_a-z0-9]*$.(«ÙÕÛüÿÿÿÿ
+zpython:S116÷ "]Rename this field "doubleSpinBox_ELA_RVb" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ìí«·ûÿÿÿÿ
+opython:S116ã%"WRename this field "checkBox_IND_MV" to match the regular expression ^[_a-z][_a-z0-9]*$.(§†§›
+Epython:S1481Ÿ"'Remove the unused local variable "Pos".(¨ÏŞ±ÿÿÿÿÿ
+spython:S116Å'"\Rename this field "doubleSpinBox_VE_CAP" to match the regular expression ^[_a-z][_a-z0-9]*$.(¢£‡
+bpython:S1192”)"IDefine a constant instead of duplicating this literal "Pul Vein" 3 times.(«˜İı
+ppython:S116„%"XRename this field "checkBox_RES_PUV" to match the regular expression ^[_a-z][_a-z0-9]*$.(¾Ï¢‡
+rpython:S116Ô "URename this field "label_ELA_RVa" to match the regular expression ^[_a-z][_a-z0-9]*$.(«¯ƒÎùÿÿÿÿ
+ipython:S116("SRename this field "comboBox_G1" to match the regular expression ^[_a-z][_a-z0-9]*$.(†ùÄ;
+xpython:S116ò"[Rename this field "doubleSpinBox_BR_AV" to match the regular expression ^[_a-z][_a-z0-9]*$.(€ªÖ»ûÿÿÿÿ

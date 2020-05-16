@@ -1,8 +1,8 @@
 
->python:S1481"&Remove the unused local variable "Rp".(Óÿ¡”
+Tpython:S5754="<Specify an exception class to catch or reraise the exception(ˆÊÉ·
 ;python:S125
 "Remove this commented out code.(€¡¡µûÿÿÿÿ
+>python:S1481"&Remove the unused local variable "Rp".(Óÿ¡”
+;python:S125:"Remove this commented out code.(åç‚üÿÿÿÿ
 ;python:S125"Remove this commented out code.(Á«ÒÃýÿÿÿÿ
 >python:S1481"&Remove the unused local variable "Rs".(æ´·«
-Tpython:S5754="<Specify an exception class to catch or reraise the exception(ˆÊÉ·
-;python:S125:"Remove this commented out code.(åç‚üÿÿÿÿ

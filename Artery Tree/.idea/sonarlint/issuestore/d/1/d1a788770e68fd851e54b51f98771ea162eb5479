@@ -1,0 +1,6 @@
+
+ppython:S116"TRename this field "pushButton_1" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÊéÅøÿÿÿÿ
+fpython:S116	"ORename this field "HomeWin" to match the regular expression ^[_a-z][_a-z0-9]*$.(ú˜ÏË
+kpython:S116"TRename this field "pushButton_3" to match the regular expression ^[_a-z][_a-z0-9]*$.(ØòİÏ
+jpython:S116"TRename this field "pushButton_2" to match the regular expression ^[_a-z][_a-z0-9]*$.(ÔÁ¤
+jpython:S100"NRename method "setupUi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(¼¡Ö·øÿÿÿÿ

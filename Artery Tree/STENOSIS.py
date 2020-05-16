@@ -9,7 +9,7 @@ def steno(M, R, G, **data):
     D = np.zeros(shape=(128))                            #easier to type # creating empty arrays of size 128,0
     mu = M                                               #0.04  #blood viscosity
     rho = R                                              #1.05       #blood density
-    G0 =  G                                              #0.6   #Reflection coefficient
+    G0 = G                                              #0.6   #Reflection coefficient
     pi = m.pi                                            #value of pi
     pos = []
     values = []
