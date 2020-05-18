@@ -3344,7 +3344,7 @@ class Steno_para(object):
             self.doubleSpinBox_BAR.setDisabled(True)
 
         if self.checkBox_CAL.isChecked():
-            self.doubleSpinBox_CAL.setDisabled(True)
+            self.doubleSpinBox_CAL.setDisabled(False)
         else:
             self.doubleSpinBox_CAL.setDisabled(True)
 
@@ -3496,26 +3496,29 @@ class Steno_para(object):
         query = "SELECT val FROM STENO"
         value = execute_read_query(connection, query)
         c1 = sum(value, ())
-        self.doubleSpinBox_AA.setValue(c1[0])
-        self.doubleSpinBox_AO.setValue(c1[1])
-        self.doubleSpinBox_AAO.setValue(c1[2])
-        self.doubleSpinBox_BAL.setValue(c1[3])
-        self.doubleSpinBox_BAR.setValue(c1[4])
-        self.doubleSpinBox_CAL.setValue(c1[5])
-        self.doubleSpinBox_CAR.setValue(c1[6])
-        self.doubleSpinBox_CCL.setValue(c1[7])
-        self.doubleSpinBox_CCR.setValue(c1[8])
-        self.doubleSpinBox_FAL.setValue(c1[9])
-        self.doubleSpinBox_FAR.setValue(c1[10])
-        self.doubleSpinBox_HA.setValue(c1[11])
-        self.doubleSpinBox_RA.setValue(c1[12])
-        self.doubleSpinBox_RAL.setValue(c1[13])
-        self.doubleSpinBox_RAR.setValue(c1[14])
-        self.doubleSpinBox_SAL.setValue(c1[15])
-        self.doubleSpinBox_SAR.setValue(c1[16])
-        self.doubleSpinBox_TA.setValue(c1[17])
-        self.doubleSpinBox_UAL.setValue(c1[18])
-        self.doubleSpinBox_UAR.setValue(c1[19])
+        self.doubleSpinBox_AO.setValue(c1[0])
+        self.doubleSpinBox_AA.setValue(c1[1])
+        self.doubleSpinBox_SAL.setValue(c1[2])
+        self.doubleSpinBox_SAR.setValue(c1[3])
+        self.doubleSpinBox_CCL.setValue(c1[4])
+        self.doubleSpinBox_CCR.setValue(c1[5])
+        self.doubleSpinBox_TA.setValue(c1[6])
+        self.doubleSpinBox_CAR.setValue(c1[7])
+        self.doubleSpinBox_CAL.setValue(c1[8])
+        self.doubleSpinBox_AAO.setValue(c1[9])
+        self.doubleSpinBox_BAR.setValue(c1[10])
+        self.doubleSpinBox_BAL.setValue(c1[11])
+        self.doubleSpinBox_HA.setValue(c1[12])
+        self.doubleSpinBox_RA.setValue(c1[13])
+        self.doubleSpinBox_FAL.setValue(c1[14])
+        self.doubleSpinBox_FAR.setValue(c1[15])
+        self.doubleSpinBox_UAL.setValue(c1[16])
+        self.doubleSpinBox_UAR.setValue(c1[17])
+        self.doubleSpinBox_RAL.setValue(c1[18])
+        self.doubleSpinBox_RAR.setValue(c1[19])
+
+
+
 
         # ==========RETRIVING CHECKBOX STATE
         c = []
@@ -5746,14 +5749,11 @@ class Heart_para(object):
         css[50] = VE_AV = self.doubleSpinBox_VE_AV.isEnabled()
         css[51] = VE_AO = self.doubleSpinBox_VE_AO.isEnabled()
         css[52] = VE_CAP = self.doubleSpinBox_VE_CAP.isEnabled()
-
         for i in range(53):
             if css[i] == True:
                 css[i] = 1
             else:
                 css[i] = 0
-
-
         query = "Update CARDI set state = ? where id = ?"
         query_list = [(css[0], 0), (css[1], 1), (css[2], 2), (css[3], 3), (css[4], 4), (css[5], 5), (css[6], 6),\
                       (css[7], 7), (css[8], 8), (css[9], 9), (css[10], 10), (css[11], 11), (css[12], 12), (css[13], 13),\
