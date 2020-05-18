@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import pyqtgraph as pg
-import MAIN
+import Artery_model
 import numpy as np
 import STENOSIS
 import os
@@ -1221,7 +1221,7 @@ class Ui_MainWindow(object):
                 r = self.doubleSpinBox_5.value()
                 g = self.doubleSpinBox_6.value()
                 STENOSIS.steno(m, r, g, **datas)
-                self.clock, self.pulse = MAIN.calc(H, P)
+                self.clock, self.pulse = Artery_model.calc(H, P)
                 self.c = np.all(self.clock != -1)
                 self.p = np.all(self.pulse != -10000)
                 self.alert('ARTERY MODEL EXECUTED')

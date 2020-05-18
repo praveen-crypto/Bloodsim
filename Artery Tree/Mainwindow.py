@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import pyqtgraph as pg
-import MAIN
+import Artery_model
 import numpy as np
 import STENOSIS
 import os
@@ -1021,7 +1021,7 @@ class Ui_MainWindow(object):
                 r = self.doubleSpinBox_5.value()
                 g = self.doubleSpinBox_6.value()
                 STENOSIS.steno(m, r, g, **datas)
-                self.clock, self.pulse = MAIN.calc(H, P)
+                self.clock, self.pulse = Artery_model.calc(H, P)
                 self.c = np.all(self.clock != -1)
                 self.p = np.all(self.pulse != -10000)
                 self.alert('ARTERY MODEL EXECUTED')
@@ -2733,7 +2733,7 @@ class Ui_MainWindow(object):
 class Steno_para(object):
     def __init__(self, Form):
         self.doubleSpinBox_RAL = QtWidgets.QDoubleSpinBox(Form)
-        self.doubleSpinBox_AbAO = QtWidgets.QDoubleSpinBox(Form)
+        self.doubleSpinBox_AAO = QtWidgets.QDoubleSpinBox(Form)
         self.doubleSpinBox_UAR = QtWidgets.QDoubleSpinBox(Form)
         self.doubleSpinBox_CAL = QtWidgets.QDoubleSpinBox(Form)
         self.doubleSpinBox_RA = QtWidgets.QDoubleSpinBox(Form)
@@ -2841,14 +2841,14 @@ class Steno_para(object):
         self.checkBox_AbAO.setObjectName("checkBox_AbAO")
         self.gridLayout.addWidget(self.checkBox_AbAO, 10, 1, 1, 1)
 
-        self.doubleSpinBox_AbAO.setStyleSheet("background-color: rgb(35, 35, 35);\n"
+        self.doubleSpinBox_AAO.setStyleSheet("background-color: rgb(35, 35, 35);\n"
                                               "color: rgb(255, 210, 119);\n"
                                               "selection-color: rgb(237, 85, 59);\n"
                                               "selection-background-color: rgb(33, 57, 86);\n"
                                               "\n"
                                               "font: 11pt \"Calibri\";")
-        self.doubleSpinBox_AbAO.setObjectName("doubleSpinBox_AbAO")
-        self.gridLayout.addWidget(self.doubleSpinBox_AbAO, 10, 2, 1, 1)
+        self.doubleSpinBox_AAO.setObjectName("doubleSpinBox_AbAO")
+        self.gridLayout.addWidget(self.doubleSpinBox_AAO, 10, 2, 1, 1)
         self.label_AbAO = QtWidgets.QLabel(self.Form)
         self.label_AbAO.setStyleSheet("font: 9pt \"MS Shell Dlg 2\";\n"
                                       "color: rgb(255,255,255);")
@@ -3329,9 +3329,9 @@ class Steno_para(object):
             self.doubleSpinBox_AO.setDisabled(True)
 
         if self.checkBox_AbAO.isChecked():
-            self.doubleSpinBox_AbAO.setDisabled(False)
+            self.doubleSpinBox_AAO.setDisabled(False)
         else:
-            self.doubleSpinBox_AbAO.setDisabled(True)
+            self.doubleSpinBox_AAO.setDisabled(True)
 
         if self.checkBox_BAL.isChecked():
             self.doubleSpinBox_BAL.setDisabled(False)
@@ -3422,34 +3422,32 @@ class Steno_para(object):
         global stn_dat
         path = os.path.join("DBS", "bloodsim.sqlite")
         connection = create_connection(path)
-
         # ==========UPDATE VAL
-        AA = self.doubleSpinBox_AA.value()
         AO = self.doubleSpinBox_AO.value()
-        AbAo = self.doubleSpinBox_AbAO.value()
-        BAL = self.doubleSpinBox_BAL.value()
-        BAR = self.doubleSpinBox_BAR.value()
-        CAL = self.doubleSpinBox_CAL.value()
-        CAR = self.doubleSpinBox_CAR.value()
-        CCL = self.doubleSpinBox_CCL.value()
-        CCR = self.doubleSpinBox_CCR.value()
-        FAL = self.doubleSpinBox_FAL.value()
-        FAR = self.doubleSpinBox_FAR.value()
-        HA = self.doubleSpinBox_HA.value()
-        RA = self.doubleSpinBox_RA.value()
-        RAL = self.doubleSpinBox_RAL.value()
-        RAR = self.doubleSpinBox_RAR.value()
+        AA = self.doubleSpinBox_AA.value()
         SAL = self.doubleSpinBox_SAL.value()
         SAR = self.doubleSpinBox_SAR.value()
+        CCL = self.doubleSpinBox_CCL.value()
+        CCR = self.doubleSpinBox_CCR.value()
         TA = self.doubleSpinBox_TA.value()
+        CAR = self.doubleSpinBox_CAR.value()
+        CAL = self.doubleSpinBox_CAL.value()
+        AAO = self.doubleSpinBox_AAO.value()
+        BAR = self.doubleSpinBox_BAR.value()
+        BAL = self.doubleSpinBox_BAL.value()
+        HA = self.doubleSpinBox_HA.value()
+        RA = self.doubleSpinBox_RA.value()
+        FAL = self.doubleSpinBox_FAL.value()
+        FAR = self.doubleSpinBox_FAR.value()
         UAL = self.doubleSpinBox_UAL.value()
         UAR = self.doubleSpinBox_UAR.value()
-
+        RAL = self.doubleSpinBox_RAL.value()
+        RAR = self.doubleSpinBox_RAR.value()
         query = "Update STENO set val = ? where id = ?"
-        query_list = [(AA, 0), (AO, 1), (AbAo, 2), (BAL, 3), (BAR, 4), (CAL, 5),
-                      (CAR, 6), (CCL, 7), (CCR, 8), (FAL, 9), (FAR, 10), (HA, 11),
-                      (RA, 12), (RAL, 13), (RAR, 14), (SAL, 15), (SAR, 16),
-                      (TA, 17), (UAL, 18), (UAR, 19)]
+        query_list = [(AO, 0), (AA, 1), (SAL, 2), (SAR, 3), (CCL, 4), (CCR, 5),
+                      (TA, 6), (CAR, 7), (CAL, 8), (AAO, 9), (BAR, 10), (BAL, 11),
+                      (HA, 12), (RA, 13), (FAL, 14), (FAR, 15), (UAL, 16),
+                      (UAR, 17), (RAL, 18), (RAR, 19)]
         execute_many_query(connection, query, query_list)
 
         # ====== UPDATE STATE
@@ -3463,7 +3461,7 @@ class Steno_para(object):
         css[6] = TA_STATE= self.doubleSpinBox_TA.isEnabled()
         css[7] = CAR_STATE = self.doubleSpinBox_CAR.isEnabled()
         css[8] = CAL_STATE = self.doubleSpinBox_CAL.isEnabled()
-        css[9] = AbAo_STATE = self.doubleSpinBox_AbAO.isEnabled()
+        css[9] = AbAo_STATE = self.doubleSpinBox_AAO.isEnabled()
         css[10] = BAR_STATE = self.doubleSpinBox_BAR.isEnabled()
         css[11] = BAL_STATE = self.doubleSpinBox_BAL.isEnabled()
         css[12] = HA_STATE = self.doubleSpinBox_HA.isEnabled()
@@ -3474,37 +3472,33 @@ class Steno_para(object):
         css[17] = UAR_STATE = self.doubleSpinBox_UAR.isEnabled()
         css[18] = RAL_STATE = self.doubleSpinBox_RAL.isEnabled()
         css[19] = RAR_STATE = self.doubleSpinBox_RAR.isEnabled()
-
         for i in range(20):
             if css[i] == True:
                 css[i] = 1
             else:
                 css[i] = 0
-
         query = "Update STENO set state = ? where id = ?"
         query_list = [(css[0], 0), (css[1], 1), (css[2], 2), (css[3], 3), (css[4], 4), (css[5], 5), (css[6], 6),\
                       (css[7], 7), (css[8], 8), (css[9], 9), (css[10], 10), (css[11], 11), (css[12], 12), (css[13], 13),\
                       (css[14], 14), (css[15], 15), (css[16], 16), (css[17], 17), (css[18], 18), (css[19], 19)]
-
         execute_many_query(connection, query, query_list)
-        query = 'SELECT state FROM STENO'
-        state = execute_read_query(connection, query)
-
-        stn_dat = {'0': AA, '1': AO, '7': AbAo, '13': BAL, '3': BAR, '11': CAL, '10': CAR, '51': CCL,
+        stn_dat = {'0': AA, '1': AO, '7': AAO, '13': BAL, '3': BAR, '11': CAL, '10': CAR, '51': CCL,
                    '46': CCR, '74': FAL, '56': FAR, '70': HA, '62': RA, '63': RAL, '108': RAR,
                    '109': SAL, '102': SAR, '107': TA, '96': UAL, '92': UAR}
+
+        self.Form.close()
 
     def state(self):
         path = os.path.join("DBS", "bloodsim.sqlite")
         connection = create_connection(path)
         # ======RETRIVING BOX VALUE
         c1 = []
-        query = "SELECT state FROM STENO"
+        query = "SELECT val FROM STENO"
         value = execute_read_query(connection, query)
         c1 = sum(value, ())
         self.doubleSpinBox_AA.setValue(c1[0])
         self.doubleSpinBox_AO.setValue(c1[1])
-        self.doubleSpinBox_AbAO.setValue(c1[2])
+        self.doubleSpinBox_AAO.setValue(c1[2])
         self.doubleSpinBox_BAL.setValue(c1[3])
         self.doubleSpinBox_BAR.setValue(c1[4])
         self.doubleSpinBox_CAL.setValue(c1[5])
@@ -3537,7 +3531,7 @@ class Steno_para(object):
         self.doubleSpinBox_TA.setEnabled(c[6])
         self.doubleSpinBox_CAR.setEnabled(c[7])
         self.doubleSpinBox_CAL.setEnabled(c[8])
-        self.doubleSpinBox_AbAO.setEnabled(c[9])
+        self.doubleSpinBox_AAO.setEnabled(c[9])
         self.doubleSpinBox_BAL.setEnabled(c[10])
         self.doubleSpinBox_BAR.setEnabled(c[11])
         self.doubleSpinBox_HA.setEnabled(c[12])
@@ -5769,8 +5763,8 @@ class Heart_para(object):
                       (css[33], 33),(css[34], 34),(css[35], 35),(css[36], 36),(css[37], 37),(css[38], 38),(css[39], 39),\
                       (css[40], 40),(css[41], 41),(css[42], 42),(css[43], 43),(css[44], 44),(css[45], 45),(css[46], 46),\
                       (css[47], 47),(css[48], 48),(css[49], 49),(css[50], 50),(css[51], 51),(css[52], 52)]
-
         execute_many_query(connection, query, query_list)
+        self.widget_1.close()
 
     def state(self):
         path = os.path.join("DBS", "bloodsim.sqlite")

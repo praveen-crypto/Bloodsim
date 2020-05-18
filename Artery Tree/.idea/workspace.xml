@@ -56,9 +56,6 @@
       <module name="Artery Tree" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -78,6 +75,9 @@
       <module name="Artery Tree" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -139,8 +139,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Mainwindow" />
         <item itemvalue="Python.BloodSim" />
+        <item itemvalue="Python.Mainwindow" />
         <item itemvalue="Python.SQLFILE" />
       </list>
     </recent_temporary>
@@ -168,6 +168,7 @@
       <workItem from="1589702497808" duration="4243000" />
       <workItem from="1589735379999" duration="3565000" />
       <workItem from="1589777336763" duration="895000" />
+      <workItem from="1589798600810" duration="1257000" />
     </task>
     <servers />
   </component>
