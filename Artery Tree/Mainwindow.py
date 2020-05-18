@@ -63,13 +63,11 @@ class Ui_MainWindow(object):
             self.checkBox_1 = QtWidgets.QCheckBox(self.groupBox_1)
             self.doubleSpinBox_1 = QtWidgets.QDoubleSpinBox(self.groupBox_1)
             self.doubleSpinBox_2 = QtWidgets.QDoubleSpinBox(self.groupBox_1)
-
             self.label_1 = QtWidgets.QLabel(self.groupBox_1)
             self.label_2 = QtWidgets.QLabel(self.groupBox_1)
             self.label_3 = QtWidgets.QLabel(self.groupBox_1)
             self.label_4 = QtWidgets.QLabel(self.groupBox_1)
             self.label_5 = QtWidgets.QLabel(self.groupBox_1)
-
             self.checkBox_2 = QtWidgets.QCheckBox(self.groupBox_1)
             self.dockWidget_2 = QtWidgets.QDockWidget(MainWindow)
             self.dockWidgetContents_2 = QtWidgets.QWidget()
@@ -1018,89 +1016,6 @@ class Ui_MainWindow(object):
                 self.radioButton_4.setEnabled(True)
                 H = self.doubleSpinBox_1.value()  # read HR value
                 P = self.doubleSpinBox_2.value()  # read P value
-                #Index = self.comboBox_3.currentIndex()
-                '''
-                if Index == 1:
-                    Pos = 0
-                    self.plot_p = 1
-                    self.plot_f = 0
-                elif Index == 2:  # Index value in combo_box
-                    Pos = 1  # Initalize position
-                    self.plot_p = 3
-                    self.plot_f = 2
-                elif Index == 3:
-                    Pos = 7
-                    self.plot_p = 7  # 5
-                    self.plot_f = 6  # 4
-                elif Index == 4:
-                    Pos = 13
-                    self.plot_p = 31
-                    self.plot_f = 30
-                elif Index == 5:
-                    Pos = 3
-                    self.plot_p = 53
-                    self.plot_f = 52
-                elif Index == 6:
-                    Pos = 11
-                    self.plot_p = 83
-                    self.plot_f = 82
-                elif Index == 7:
-                    Pos = 10
-                    self.plot_p = 113
-                    self.plot_f = 112
-                elif Index == 8:
-                    Pos = 51
-                    self.plot_p = 103
-                    self.plot_f = 102
-                elif Index == 9:
-                    Pos = 46
-                    self.plot_p = 75
-                    self.plot_f = 74
-                elif Index == 10:
-                    Pos = 74
-                    self.plot_p = 123
-                    self.plot_f = 122
-                elif Index == 11:
-                    Pos = 56
-                    self.plot_p = 207
-                    self.plot_f = 206
-                elif Index == 12:
-                    Pos = 70
-                    self.plot_p = 211
-                    self.plot_f = 210
-                elif Index == 13:
-                    Pos = 62
-                    self.plot_p = 131
-                    self.plot_f = 130
-                elif Index == 14:
-                    Pos = 63
-                    self.plot_p = 133
-                    self.plot_f = 132
-                elif Index == 15:
-                    Pos = 108
-                    self.plot_p = 149
-                    self.plot_f = 148
-                elif Index == 16:
-                    Pos = 109
-                    self.plot_p = 181
-                    self.plot_f = 180
-                elif Index == 17:
-                    Pos = 102
-                    self.plot_p = 249
-                    self.plot_f = 248
-                elif Index == 18:
-                    Pos = 107
-                    self.plot_p = 253
-                    self.plot_f = 252
-                elif Index == 19:
-                    Pos = 96
-                    self.plot_p = 251
-                    self.plot_f = 250
-                elif Index == 20:
-                    Pos = 92
-                    self.plot_p = 245
-                    self.plot_f = 244
-                '''
                 datas = stn_dat
                 m = self.doubleSpinBox_4.value()
                 r = self.doubleSpinBox_5.value()
@@ -1162,7 +1077,7 @@ class Ui_MainWindow(object):
 
         def alert(self, msg):
             alert = QtWidgets.QMessageBox()
-            alert.setWindowTitle("Warning!!")
+            alert.setWindowTitle("Alert!!")
             alert.setText(msg)
             alert.exec_()
 
@@ -1175,23 +1090,32 @@ class Ui_MainWindow(object):
             help.exec_()
 
         def about(self):
-            about = QtWidgets.QMessageBox()
-            about.setWindowIcon(QtGui.QIcon('images/logo.png'))
-            about.setWindowTitle("About")
-            about.setText(
+            self.about = QtWidgets.QWidget()
+            self.about.setWindowIcon(QtGui.QIcon('images/logo.png'))
+            self.about.setWindowTitle("About")
+            # self.about.setWindowFlag(QtCore.Qt.AA_EnableHighDpiScaling )#| QtCore.Qt.FramelessWindowHint)
+            self.about.resize(800,400)
+            self.about.setStyleSheet("background-color: rgb(35, 35, 35);\n"
+                                     "color: rgb(255, 210, 119);\n")
+            line_edit = QtWidgets.QTextBrowser(self.about)
+            line_edit.setDisabled(1)
+            layout = QtWidgets.QGridLayout(self.about)
+            layout.addWidget(line_edit, 0,1,1,1)
+            line_edit.setText(
                 'BloodSim is an open-source software to simulate blood pressure, flow and volume waveforms in the cardiovascular system. Effect of stenosis on the pressure and flow of blood in the arterial tree is modelled.\n'
                 '\nThe model is based on the following authors works,\n'
-                '\nDr.Suganthi L             (Associate professor, Department of Biomedical Engineering, SSN college of Engineering)\n'
+                '\nDr.Suganthi L     (Associate professor, Department of Biomedical Engineering, SSN college of Engineering)\n'
                 '\nDr,Manivannan M     (Professor, Department of Applied Mechanics, Indian Institute of Technology, Madras)\n'
                 '\nDr. Hemalatha K\n'
-                'The model is based on thefollowing works,\n'
+                '\nThe model is based on the following works,\n'
                 '1.  HYBRID CARDIOPULMONARY INTERACTION MODEL TOWARDS NOVEL DIGNOSTIC TECHNIQUES\n'
                 '2.  TAKAYASUS ARTERITIS – CLINICAL ANALYSIS, MODELING AND SIMULATION TOWARDS NOVEL DIAGNOSTIC TECHNIQUE\n'
-                '\n The software is developed in Python using Qt designer\n'
+                '\nThe software is developed in Python using Qt designer\n'
                 '\nDevelopers\n\n'
                 'Praveen Kumar S\n'
                 'Arvindh Swaminathan MB\n')
-            about.exec_()
+            self.about.show()
+            # return self.about
 
         def mainViewer_1(self):
             try:
@@ -3496,6 +3420,8 @@ class Steno_para(object):
 
     def clicked(self):
         global stn_dat
+        path = os.path.join("DBS", "bloodsim.sqlite")
+        connection = create_connection(path)
 
         # ==========UPDATE VAL
         AA = self.doubleSpinBox_AA.value()
@@ -6058,9 +5984,16 @@ class Heart_para(object):
 
 
 if __name__ == "__main__":
+    # import threading
     import sys
+    # def printit():
+    #    threading.Timer(5.0, printit).start()
+    # printit()
     app = QtWidgets.QApplication(sys.argv)
-    form = QtWidgets.QWidget()
-    ui = Heart_para(form)
+    form = QtWidgets.QMainWindow()
+    # form = QtWidgets.QWidget()
+    ui = Ui_MainWindow(form)
     form.show()
     sys.exit(app.exec_())
+
+

@@ -37,7 +37,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -51,11 +51,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Mainwindow">
+  <component name="RunManager" selected="Python.BloodSim">
     <configuration name="BloodSim" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Artery Tree" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -161,6 +164,10 @@
       <workItem from="1589508172187" duration="20670000" />
       <workItem from="1589589142513" duration="13114000" />
       <workItem from="1589610930374" duration="17608000" />
+      <workItem from="1589682446798" duration="5333000" />
+      <workItem from="1589702497808" duration="4243000" />
+      <workItem from="1589735379999" duration="3565000" />
+      <workItem from="1589777336763" duration="895000" />
     </task>
     <servers />
   </component>
