@@ -1,11 +1,11 @@
 from PyQt5 import QtGui, QtCore, QtWidgets
-from PyQt5.QtWidgets import QMainWindow
 import os
 
 
 class Ui_HomeWindow(object):
     def __init__(self, HomeWin):
         super().__init__()
+        HomeWin.setWindowIcon(QtGui.QIcon('images/logo.png'))
         self.HomeWin = HomeWin
         self.setupUi()
 

@@ -1,10 +1,10 @@
 import numpy as np
 
 
-def lumped(HR, ncyc, dt):
+def lumped(HR, ncyc, dt, *param):
 
     def Integrated_ode():
-        global Aav, Amv, Apv, Atv, Gpw, cn
+        global Aav, Amv, Apv, Atv, Gpw
         global Epua, Epuc, Epuv, Epwc, Epwv
         global yav, ymv, ypv, ytv, ypua, ypuc, ypuv, ypwa, ypwc, ypwv
         global Rav, Rmv, Rpua, Rpuc, Rpuv, Rpv, Rpwc, Rpwv, Rtv, bav, bmv, bpv, btv
@@ -12,7 +12,7 @@ def lumped(HR, ncyc, dt):
         global Zpua, Zpuc, Zpuv, Zpwc, Zpwv
         global Caor, Cart, Ccap, Cven, Cvca
         global yaor, yart, ycap, yven, yvca
-        global Raor, Rart, Rcap, Rven, Rvca
+        global Raor, Rart, Rcap, Rv, Rvc
         global Saor, Sart, Scap, Sven, Svca
         global dvq, P_0d
         global dv, v, q
@@ -23,14 +23,14 @@ def lumped(HR, ncyc, dt):
 
         P_0d[0, 0] = v[0, 0] / Cven + Sven * dv[0, 0]  # Venous  Pressure
 
-        dvq[0, 1] = (v[0, 0] / Cven + Sven * dv[0, 0] - Rven * q[0, 0] - v[0, 1] / Cvca - Svca * dv[
+        dvq[0, 1] = (v[0, 0] / Cven + Sven * dv[0, 0] - Rv * q[0, 0] - v[0, 1] / Cvca - Svca * dv[
             0, 1]) / yven  # Venous flow
 
         dvq[0, 2] = q[0, 0] - q[0, 1]  # VC volume
 
         P_0d[0, 1] = v[0, 1] / Cvca + Svca * dv[0, 1]  # VC Pressure
 
-        dvq[0, 3] = (v[0, 1] / Cvca - era * v[0, 2] - Rvca * q[0, 1] + Svca * dv[0, 1] - Sra * dv[
+        dvq[0, 3] = (v[0, 1] / Cvca - era * v[0, 2] - Rvc * q[0, 1] + Svca * dv[0, 1] - Sra * dv[
             0, 2] - ppc - pit) / yvca  # VC Flow
 
         qco = 0.0
@@ -254,7 +254,7 @@ def lumped(HR, ncyc, dt):
             AAtv = 0.0
         return AAtv
 
-    def rungekutta(subresultcr):
+    def cardiac_state(subresultcr):
         global Aav, Amv, Apv, Atv, dvq
         global dv, v, dq, q, ddt
 
@@ -309,7 +309,7 @@ def lumped(HR, ncyc, dt):
     global Z_cardiopul, Zpua, Zpuc, Zpuv, Zpwa, Zpwc, Zpwv
     global C_peripheral, Caor, Cart, Ccap, Cven, Cvca
     global yL_peripheral, yaor, yart, ycap, yven, yvca
-    global R_peripheral, Raor, Rart, Rcap, Rven, Rvca
+    global R_peripheral, Raor, Rart, Rcap, Rv, Rvc
     global S_peripheral, Saor, Sart, Scap, Sven, Svca
     global sdvsdqdvdq, dvq, P_0d
     global dvdq_cardiopul, dv, v, dq, q
@@ -339,91 +339,107 @@ def lumped(HR, ncyc, dt):
     Pit = -2.5
     pit = Pit
     jj = 0
-
+      
     # --------------------------------------------------------------------------------
-    Elva = 2.87                       # !Peak-systolic elastance of left ventricle
-    Elvb = 0.06                       # !Basic diastolic elastance of left ventricle
-    Elaa = 0.07                       # !Peak-systolic elastance of left atrium
-    Elab = 0.075                      # !Basic diastolic elastance of left atrium
-    Erva = 0.52                       # !Peak-systolic elastance of right ventricle
-    Ervb = 0.043                      # !Basic diastolic elastance of right ventricle
-    Eraa = 0.055                      # !Peak-systolic elastance of right atrium
-    Erab = 0.06                       # !Basic diastolic elastance of right atrium
+    br = param[0]
+    cmp = param[1]
+    ela = param[2]
+    ind = param[3]
+    res = param[4]
+    ve = param[5]
 
-    Vmax = 900                        # Reference volume of Frank-Starling law
-    Es = 45.9                         # !Effective septal elastance
-    Vpc0 = 380.0                      # !Reference total pericardial and cardiac volume old value 380
-    Vpe = 30.0                        # !Pericardial volume of heart
-    Vcon = 40.0                       # !Volume constant
-    Sva0 = 0.0005                     # !Coefficient of cardiac viscoelasticity
+    Elva = ela[10]                         # !Peak-systolic elastance of left ventricle
+    Elvb = ela[3]                          # !Basic diastolic elastance of left ventricle
+    Elaa = ela[8]                          # !Peak-systolic elastance of left atrium
+    Elab = ela[9]                          # !Basic diastolic elastance of left atrium
+    Erva = ela[6]                          # !Peak-systolic elastance of right ventricle
+    Ervb = ela[7]                          # !Basic diastolic elastance of right ventricle
+    Eraa = ela[4]                          # !Peak-systolic elastance of right atrium
+    Erab = ela[5]                          # !Basic diastolic elastance of right atrium
 
-    # ! Cardiac valve parameters
-    # !(aortic valve(AV),mitral valve(MV), tricuspid valve(TV),pulmonary valve(PV))
-    bav = 0.000025                         # !Bernoulli's resistance of AV
-    bmv = 0.000016                         # !Bernoulli's resistance of MV
-    btv = 0.000016                         # !Bernoulli's resistance of TV
-    bpv = 0.000025                         # !Bernoulli's resistance of PV
-    Rav = 0.005                            # !Viscous resistance of AV
-    Rmv = 0.005                            # !Viscous resistance of MV
-    Rtv = 0.005                            # !Viscous resistance of TV
-    Rpv = 0.005                            # !Viscous resistance of PV
-    yav = 0.0005                           # !Inertance of AV
-    ymv = 0.0002                           # !Inertance of MV
-    ytv = 0.0002                           # !Inertance of TV
-    ypv = 0.0005                           # !Inertance of PV
+    Vmax = 900                             # Reference volume of Frank-Starling law
+    Es = 45.9                              # !Effective septal elastance
+    Vpc0 = 380.0                           # !Reference total pericardial and cardiac volume old value 380
+    Vpe = 30.0                             # !Pericardial volume of heart
+    Vcon = 40.0                            # !Volume constant
+    Sva0 = 0.0005                          # !Coefficient of cardiac viscoelasticity
 
-    # ! Pulmonary circulation
-    Epua0 = 0.0200
-    Epuc0 = 0.0200
-    Epuv0 = 0.0200
+    # Cardiac valve parameters
+    # (aortic valve(AV),mitral valve(MV), tricuspid valve(TV),pulmonary valve(PV))
+    bav = br[2]                            # !Bernoulli's resistance of AV
+    bmv = br[0]                            # !Bernoulli's resistance of MV
+    btv = br[3]                            # !Bernoulli's resistance of TV
+    bpv = br[1]                            # !Bernoulli's resistance of PV
+    
+    Rav = res[8]                           # !Viscous resistance of AV
+    Rmv = res[7]                           # !Viscous resistance of MV
+    Rtv = res[2]                           # !Viscous resistance of TV
+    Rpv = res[3]                           # !Viscous resistance of PV
+    
+    yav = ind[8]                           # !Inertance of AV
+    ymv = ind[7]                           # !Inertance of MV
+    ytv = ind[2]                           # !Inertance of TV
+    ypv = ind[3]                           # !Inertance of PV
+
+    #  Pulmonary circulation
+    Epua0 = ela[1]
+    Epuc0 = ela[2]
+    Epuv0 = ela[0]
     Epwc0 = 0.7000
     Epwv0 = 0.7000
-    Rpua = 0.04
-    Rpuc = 0.04
-    Rpuv = 0.005
+
+    Rpua = res[1]
+    Rpuc = res[2]
+    Rpuv = res[3]
     Rpwa = 0.0005
     Rpwc = 0.4
     Rpwv = 0.4
-    ypua = 0.0005
-    ypuc = 0.0005
-    ypuv = 0.0005
+
+    ypua = ind[4]
+    ypuc = ind[5]
+    ypuv = ind[6]
     ypwa = 0.0005
     ypwc = 0.0005
     ypwv = 0.0005
+
     Zpua = 20.0
     Zpuc = 60.0
     Zpuv = 200.0
     Zpwa = 1.0
     Zpwc = 1.0
     Zpwv = 1.0
-    Spua = 0.01
-    Spuc = 0.01
-    Spuv = 0.01
+
+    Spua = ve[4]
+    Spuc = ve[5]
+    Spuv = ve[6]
     Spwa = 0.01
     Spwc = 0.01
     Spwv = 0.01
 
-    # ! Peripheral circulation
-    Caor = 0.9
-    Cart = 0.3
-    Ccap = 0.06
-    Cven = 100.0
-    Cvca = 30.0
-    yaor = 0.015
+    #  Peripheral circulation
+    Caor = cmp[2]
+    Cart = cmp[1]
+    Ccap = cmp[0]
+    Cven = cmp[4]
+    Cvca = cmp[3]
+
+    yaor = ind[9]
     yart = 0.05
-    ycap = 0.0005
-    yven = 0.0005
-    yvca = 0.0005
-    Raor = 0.08
+    ycap = ind[10]
+    yven = ind[0]
+    yvca = ind[1]
+
+    Raor = res[9]
     Rart = 0.8
-    Rcap = 0.35
-    Rven = 0.07
-    Rvca = 0.001
-    Saor = 0.01
+    Rcap = res[10]
+    Rv = res[0]
+    Rvc = res[1]
+    
+    Saor = ve[9]
     Sart = 0.01
-    Scap = 0.01
-    Sven = 0.01
-    Svca = 0.01
+    Scap = ve[10]
+    Sven = ve[0]
+    Svca = ve[1]
     qco = 0.0
 
     # ------------------------------------------------------------------------------------------------
@@ -438,7 +454,7 @@ def lumped(HR, ncyc, dt):
     ddt = dt
     ntotal = (ncycle * Tduration / dt)
     ntotal = int(ntotal)
-    # print(ntotal)
+    
 
     # ------------------------------------------------------------------------
     for nstep in np.arange(ntotal):
@@ -516,7 +532,7 @@ def lumped(HR, ncyc, dt):
 
         # c.....Implement fourth - order Runge - Kutta method
         resultcr[0, :101] = result[0, :101]
-        rukuk = rungekutta(resultcr)
+        rukuk = cardiac_state(resultcr)
 
         # c.....Update variables with Runge-Kutta method
         for j in np.arange(29):
@@ -570,10 +586,23 @@ def lumped(HR, ncyc, dt):
     T = t
     # Pa_1 = MyResult1[:ntotal, 23]
     # F_1 = MyResult1[:ntotal, 22]
-    print('hello')
+    #print('hello')
 
     return MyResult1, T
 
 
 if __name__ == "__main__":
-    lumped(72, 10, 0.00015)
+    heart_br_para = [0.000016,0.000025, 0.000025, 0.000016]
+    heart_cmp_para = [0.06, 0.3, 0.9, 30.0, 100.0]
+    heart_ela_para = [0.0200,0.0200, 0.0200, 0.06, 0.055, 0.06, 0.52, 0.043, 0.07, 0.075, 2.87]
+    heart_ind_para = [0.0005,0.0005,0.0002, 0.0005,0.005, 0.0005,
+                            0.0005, 0.0002, 0.0005, 0.015, 0.0005]
+    heart_res_para = [0.001, 0.07, 0.005, 0.005, 0.04, 0.04,
+                            0.005, 0.005, 0.005, 0.08, 0.35]
+    heart_ve_para = [0.01, 0.01, 0.01, 0.01, 0.01, 0.01,
+                            0.01, 0.01, 0.01, 0.01, 0.01]
+
+    cda_dat = [ heart_br_para, heart_cmp_para, heart_ela_para, heart_ind_para, heart_res_para, heart_ve_para ]
+
+    lumped(72, 10, 0.00015, *cda_dat)
+    print('completed')

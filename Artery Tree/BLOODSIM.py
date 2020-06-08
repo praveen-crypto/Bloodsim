@@ -1,14 +1,13 @@
 from Mainwindow import Ui_MainWindow, Steno_para, Heart_para
 from HomeWindow import Ui_HomeWindow
 from PyQt5 import QtGui, QtCore, QtWidgets
-from PyQt5.QtWidgets import QMainWindow
 import os
 import sys
 
 class Controller():
 
     def Show_HomeWindow(self):
-        self.HomeWindow = QMainWindow()
+        self.HomeWindow = QtWidgets.QMainWindow()
         self.ui = Ui_HomeWindow(self.HomeWindow)
         self.ui.pushButton_1.clicked.connect(self.Show_SecondWindow)
         self.ui.pushButton_2.clicked.connect(self.manual)
