@@ -1061,21 +1061,56 @@ class Ui_MainWindow(object):
             alert.exec_()
 
         def help(self):
-            help = QtWidgets.QMessageBox()
-            help.setWindowIcon(QtGui.QIcon('images/logo.png'))
-            help.setWindowTitle("Help")
-            help.setText(
-                "To run Artery model, go to \n\n RUN >> ARTERY MODEL\n\nTo run Heart model, go to \n\nRUN  HEART MODEL")
-            help.exec_()
+            self.help = QtWidgets.QWidget()
+            qtRectangle = self.help.frameGeometry()
+            centerPoint = QtWidgets.QDesktopWidget().screenGeometry()
+            y =  qtRectangle.width() - qtRectangle.height()
+            self.help.move(y, y)
+            self.help.setMaximumSize(qtRectangle.width(), qtRectangle.height())
+            self.help.setWindowIcon(QtGui.QIcon('images/logo.png'))
+            self.help.setWindowTitle("Help")
+            self.help.setStyleSheet("background-color: rgb(35, 35, 35);\n" "color: rgb(255, 210, 119);\n")
+            self.help_label = QtWidgets.QLabel()
+            self.help_nxt_btn = QtWidgets.QPushButton()
+            self.help_bck_btn = QtWidgets.QPushButton()
+            self.help_nxt_btn.setText("Next")
+            self.help_bck_btn.setText("Back")
+            self.help_layout = QtWidgets.QGridLayout(self.help)
+            self.help_layout.addWidget(self.help_bck_btn, 0,1)
+            self.help_layout.addWidget(self.help_label, 0,2)
+            self.help_layout.addWidget(self.help_nxt_btn, 0,3)
+            self.img_lists = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png','10.png']
+            self.nxt_img = 0
+            pixmap = QtGui.QPixmap(os.path.join('tutorial', self.img_lists[self.nxt_img]))
+            self.help_label.setPixmap(pixmap)      
+            def next(btn):
+                sender = btn 
+                if sender == self.help_nxt_btn:
+                    if self.nxt_img == 9:
+                        self.nxt_img = -1               
+                    self.nxt_img = self.nxt_img + 1
+                elif sender == self.help_bck_btn:
+                    if self.nxt_img == 0:
+                        self.nxt_img = 10
+                    self.nxt_img = self.nxt_img - 1
+                    
+                self.help_label.setPixmap(QtGui.QPixmap(os.path.join('tutorial', self.img_lists[self.nxt_img])))                
+                self.help_layout.addWidget(self.help_bck_btn, 0,1)
+                self.help_layout.addWidget(self.help_label, 0,2)
+                self.help_layout.addWidget(self.help_nxt_btn, 0,3)
+            from functools import partial
+            self.help_nxt_btn.clicked.connect(partial(next, self.help_nxt_btn))
+            self.help_bck_btn.clicked.connect(partial(next, self.help_bck_btn))
+            self.help.show()
 
         def about(self):
             self.about = QtWidgets.QWidget()
             self.about.setWindowIcon(QtGui.QIcon('images/logo.png'))
             self.about.setWindowTitle("About")
-            # self.about.setWindowFlag(QtCore.Qt.AA_EnableHighDpiScaling )#| QtCore.Qt.FramelessWindowHint)
+            # self.about.setWindowFlag(QtCore.Qt.AA_EnableHighDpiScaling | QtCore.Qt.FramelessWindowHint)
             self.about.resize(800,400)
             self.about.setStyleSheet("background-color: rgb(35, 35, 35);\n"
-                                     "color: rgb(255, 210, 119);\n")
+                                        "color: rgb(255, 210, 119);\n")
             line_edit = QtWidgets.QTextBrowser(self.about)
             line_edit.setDisabled(1)
             layout = QtWidgets.QGridLayout(self.about)
@@ -1120,7 +1155,6 @@ class Ui_MainWindow(object):
 
         def viewing(self, Index, Txt, plt):
             try:
-
                 if Index == 1:
                     Pos = 0
                     self.plot_p = 1
@@ -1207,8 +1241,8 @@ class Ui_MainWindow(object):
                 elif self.radioButton_2.isChecked() or self.radioButton_4.isChecked():
                     plt.plot(self.clock, self.pulse[self.plot_f][:], pen=pg.mkPen('#3CAEA3', width=2), name=Txt)
                 self.statusbar.showMessage('PLOTTED', msecs=10000)
-            except:
-                self.alert('error ocurred')
+            except Exception as e:
+                self.alert(str(e))
 
         def button_graph_1(self):
             if self.comboBox_G1.currentIndex() == 0 or self.comboBox_G2.currentIndex() == 1:
@@ -1370,43 +1404,41 @@ class Ui_MainWindow(object):
                         'topography, position, source and prominence nevertheless exists.')
                 elif index == 10:
                     self.labelEdit_1.setPixmap(QtGui.QPixmap(
-                        os.path.join('images/artery tree images',
-                                     'abdominal_aorta.png')))
+                        os.path.join('images/artery tree images', 'abdominal_aorta.png')))
                     self.textBrowser_2.setText('The abdominal aorta is the largest artery in the abdominal cavity. '
-                                               'As part of the aorta, it is a direct continuation of the descending aorta'
-                                               ' (of the thorax)The abdominal aorta begins at the level of the diaphragm,'
-                                               ' crossing it via the aortic hiatus, technically behind the diaphragm, at '
-                                               'the vertebral level of T12. It travels down the posterior wall of the '
-                                               'abdomen, anterior to the vertebral column. It thus follows the curvature of '
-                                               'the lumbar vertebrae, that is, convex anteriorly. The peak of this convexity'
-                                               ' is at the level of the third lumbar vertebra (L3). It runs parallel to the'
-                                               ' inferior vena cava, which is located just to the right of the abdominal aorta,'
-                                               ' and becomes smaller in diameter as it gives off branches. This is thought to '
-                                               'be due to the large size of its principal branches. At the 11th rib, '
-                                               'the diameter is 122mm long and 55mm wide and this is because of the constant'
-                                               ' pressure. The abdominal aorta is clinically divided into 2 segments: '
-                                               '>> The suprarenal abdominal or paravisceral segment, inferior to the diaphragm '
-                                               'but superior to the renal arteries.'
-                                               '>> The Infrarenal segment, inferior to the renal arteries and superior to '
-                                               'the iliac bifurcation.')
+                                                'As part of the aorta, it is a direct continuation of the descending aorta'
+                                                ' (of the thorax)The abdominal aorta begins at the level of the diaphragm,'
+                                                ' crossing it via the aortic hiatus, technically behind the diaphragm, at '
+                                                'the vertebral level of T12. It travels down the posterior wall of the '
+                                                'abdomen, anterior to the vertebral column. It thus follows the curvature of '
+                                                'the lumbar vertebrae, that is, convex anteriorly. The peak of this convexity'
+                                                ' is at the level of the third lumbar vertebra (L3). It runs parallel to the'
+                                                ' inferior vena cava, which is located just to the right of the abdominal aorta,'
+                                                ' and becomes smaller in diameter as it gives off branches. This is thought to '
+                                                'be due to the large size of its principal branches. At the 11th rib, '
+                                                'the diameter is 122mm long and 55mm wide and this is because of the constant'
+                                                ' pressure. The abdominal aorta is clinically divided into 2 segments: '
+                                                '>> The suprarenal abdominal or paravisceral segment, inferior to the diaphragm '
+                                                'but superior to the renal arteries.'
+                                                '>> The Infrarenal segment, inferior to the renal arteries and superior to '
+                                                'the iliac bifurcation.')
                 elif index == 11:
                     self.labelEdit_1.setPixmap(QtGui.QPixmap(
-                        os.path.join('images/artery tree images',
-                                     'brachial_right.png')))
+                        os.path.join('images/artery tree images', 'brachial_right.png')))
                     self.textBrowser_2.setText('The brachial artery is the major blood vessel of the (upper) arm. It'
-                                               ' is the continuation of the axillary artery beyond the lower margin of'
-                                               ' teres major muscle. It continues down the ventral surface of the arm'
-                                               ' until it reaches the cubital fossa at the elbow. It then divides into'
-                                               ' the radial and ulnar arteries which run down the forearm.[1][2] In some '
-                                               'individuals, the bifurcation occurs much earlier and the ulnar and radial'
-                                               ' arteries extend through the upper arm. The pulse of the brachial artery is'
-                                               ' palpable on the anterior aspect of the elbow, medial to the tendon of the'
-                                               ' biceps, and, with the use of a stethoscope and sphygmomanometer'
-                                               ' (blood pressure cuff) often used to measure the blood pressure.'
-                                               'The brachial artery is closely related to the median nerve; in proximal'
-                                               ' regions, the median nerve is immediately lateral to the brachial artery.'
-                                               ' Distally, the median nerve crosses the medial side of the brachial artery'
-                                               ' and lies anterior to the elbow joint.')
+                                                ' is the continuation of the axillary artery beyond the lower margin of'
+                                                ' teres major muscle. It continues down the ventral surface of the arm'
+                                                ' until it reaches the cubital fossa at the elbow. It then divides into'
+                                                ' the radial and ulnar arteries which run down the forearm.[1][2] In some '
+                                                'individuals, the bifurcation occurs much earlier and the ulnar and radial'
+                                                ' arteries extend through the upper arm. The pulse of the brachial artery is'
+                                                ' palpable on the anterior aspect of the elbow, medial to the tendon of the'
+                                                ' biceps, and, with the use of a stethoscope and sphygmomanometer'
+                                                ' (blood pressure cuff) often used to measure the blood pressure.'
+                                                'The brachial artery is closely related to the median nerve; in proximal'
+                                                ' regions, the median nerve is immediately lateral to the brachial artery.'
+                                                ' Distally, the median nerve crosses the medial side of the brachial artery'
+                                                ' and lies anterior to the elbow joint.')
                 elif index == 12:
                     self.labelEdit_1.setPixmap(QtGui.QPixmap(
                         os.path.join('images/artery tree images',
@@ -2102,23 +2134,20 @@ class Ui_MainWindow(object):
 
             elif Id == 1:
                 self.labelEdit_1.setPixmap(QtGui.QPixmap(
-                    os.path.join('images/artery tree images',
-                                 'ascending_aorta.png')))
+                    os.path.join('images/artery tree images', 'ascending_aorta.png')))
                 self.textBrowser_2.setText(
                     'The ascending aorta  is a portion of the commencing at the upper part of the base of the left ventricle, on a level with the lower border of the third costal cartilage behind the left half of the sternum. The upper limit of standard reference range of the ascending aorta may be up to 4.3 cm among large, elderly individuals. The ascending aorta is contained within the pericardium, and is enclosed in a tube of the serous pericardium, common to it and the pulmonary artery. The only branches of the ascending aorta are the two coronary arteries which supply the heart; they arise near the commencement of the aorta from the aortic sinuses which are opposite the aortic valve.')
 
             elif Id == 2:
                 self.labelEdit_1.setPixmap(QtGui.QPixmap(
-                    os.path.join('images/artery tree images',
-                                 'aortic_arch.png')))
+                    os.path.join('images/artery tree images', 'aortic_arch.png')))
                 self.textBrowser_2.setText(
                     'The aortic arch s the part of the aorta between the ascending and descending aorta. The arch travels backward, so that it ultimately runs to the left of the trachea. \n'
                     '\nThe aortic arch has three branches,\n\n1.    brachiocephalic trunk\n2.  left common carotid artery\n3. left subclavian artery\n\nThe aortic arch is the connection between the ascending and descending aorta, and its central part is formed by the left 4th aortic arch during early development.')
 
             elif Id == 3:
                 self.labelEdit_1.setPixmap(QtGui.QPixmap(
-                    os.path.join('images/artery tree images',
-                                 'subclavian_left.png')))
+                    os.path.join('images/artery tree images', 'subclavian_left.png')))
                 self.textBrowser_2.setText(
                     'The subclavian arteries are paired major arteries of the upper thorax, below'
                     ' the clavicle. They receive blood from the aortic arch. The left subclavian '
@@ -2134,8 +2163,7 @@ class Ui_MainWindow(object):
                     ' border of the Scalenus anterior.')
             elif Id == 4:
                 self.labelEdit_1.setPixmap(QtGui.QPixmap(
-                    os.path.join('images/artery tree images',
-                                 'subclavian_right.png')))
+                    os.path.join('images/artery tree images', 'subclavian_right.png')))
                 self.textBrowser_2.setText(
                     'The subclavian arteries are paired major arteries of the upper thorax, below'
                     ' the clavicle. They receive blood from the aortic arch. The left subclavian'
@@ -2151,43 +2179,41 @@ class Ui_MainWindow(object):
                     ' clavicle, the extent to which it does so varying in different cases.')
             elif Id == 5:
                 self.labelEdit_1.setPixmap(QtGui.QPixmap(
-                    os.path.join('images/artery tree images',
-                                 'common_carotid_left.png')))
-                self.textBrowser_2.setText('The common carotid arteries are present on the left and right sides of the'
-                                           ' body. These arteries originate from different arteries but follow'
-                                           ' symmetrical courses. The right common carotid originates in the neck from'
-                                           ' the brachiocephalic trunk; the left from the aortic arch in the thorax.'
-                                           ' These split into the external and internal carotid arteries at the upper'
-                                           ' border of the thyroid cartilage, at around the level of the fourth cervical'
-                                           ' vertebra. On the left, the common carotid arises directly from the aortic'
-                                           ' arch whereas, on the right, the origin is from the brachiocephaic trunk. The'
-                                           ' left common carotid artery can be thought of as having two distinct parts: '
-                                           'thoracic and cervical. Since the right common carotid arises cranially, '
-                                           'it only really has a cervical portion.In the thoracic section, the left '
-                                           'common carotid travels upwards through the superior mediastinum to the level'
-                                           ' of the left sternoclavicular joint where it is continuous with the '
-                                           'cervical portion.')
+                    os.path.join('images/artery tree images', 'common_carotid_left.png')))
+                self.textBrowser_2.setText( 'The common carotid arteries are present on the left and right sides of the'
+                                            ' body. These arteries originate from different arteries but follow'
+                                            ' symmetrical courses. The right common carotid originates in the neck from'
+                                            ' the brachiocephalic trunk; the left from the aortic arch in the thorax.'
+                                            ' These split into the external and internal carotid arteries at the upper'
+                                            ' border of the thyroid cartilage, at around the level of the fourth cervical'
+                                            ' vertebra. On the left, the common carotid arises directly from the aortic'
+                                            ' arch whereas, on the right, the origin is from the brachiocephaic trunk. The'
+                                            ' left common carotid artery can be thought of as having two distinct parts: '
+                                            'thoracic and cervical. Since the right common carotid arises cranially, '
+                                            'it only really has a cervical portion.In the thoracic section, the left '
+                                            'common carotid travels upwards through the superior mediastinum to the level'
+                                            ' of the left sternoclavicular joint where it is continuous with the '
+                                            'cervical portion.')
             elif Id == 6:
                 self.labelEdit_1.setPixmap(QtGui.QPixmap(
                     os.path.join('images/artery tree images', 'common_carotid_right.png')))
-                self.textBrowser_2.setText('The common carotid arteries are present on the left and right sides of the'
-                                           ' body. These arteries originate from different arteries but follow'
-                                           ' symmetrical courses. The right common carotid originates in the neck from'
-                                           ' the brachiocephalic trunk; the left from the aortic arch in the thorax.'
-                                           ' These split into the external and internal carotid arteries at the upper'
-                                           ' border of the thyroid cartilage, at around the level of the fourth cervical'
-                                           ' vertebra. On the left, the common carotid arises directly from the aortic'
-                                           ' arch whereas, on the right, the origin is from the brachiocephaic trunk. The'
-                                           ' left common carotid artery can be thought of as having two distinct parts: '
-                                           'thoracic and cervical. Since the right common carotid arises cranially, '
-                                           'it only really has a cervical portion.In the thoracic section, the left '
-                                           'common carotid travels upwards through the superior mediastinum to the level'
-                                           ' of the left sternoclavicular joint where it is continuous with the '
-                                           'cervical portion.')
+                self.textBrowser_2.setText( 'The common carotid arteries are present on the left and right sides of the'
+                                            ' body. These arteries originate from different arteries but follow'
+                                            ' symmetrical courses. The right common carotid originates in the neck from'
+                                            ' the brachiocephalic trunk; the left from the aortic arch in the thorax.'
+                                            ' These split into the external and internal carotid arteries at the upper'
+                                            ' border of the thyroid cartilage, at around the level of the fourth cervical'
+                                            ' vertebra. On the left, the common carotid arises directly from the aortic'
+                                            ' arch whereas, on the right, the origin is from the brachiocephaic trunk. The'
+                                            ' left common carotid artery can be thought of as having two distinct parts: '
+                                            'thoracic and cervical. Since the right common carotid arises cranially, '
+                                            'it only really has a cervical portion.In the thoracic section, the left '
+                                            'common carotid travels upwards through the superior mediastinum to the level'
+                                            ' of the left sternoclavicular joint where it is continuous with the '
+                                            'cervical portion.')
             elif Id == 7:
                 self.labelEdit_1.setPixmap(QtGui.QPixmap(
-                    os.path.join('images/artery tree images',
-                                 'thoracic_aorta.png')))
+                    os.path.join('images/artery tree images', 'thoracic_aorta.png')))
                 self.textBrowser_2.setText('This artery supplies the anterior chest wall and the breasts. '
                                             'It is a paired artery, with one running along each side of the sternum, to'
                                             ' continue after its bifurcation as the superior epigastric and musculophrenic'
